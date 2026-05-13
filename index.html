@@ -211,14 +211,16 @@ html.dark .logo-name{
 .tdot.active{outline-color:var(--color-brand-500);}
 
 /* Unit toggle */
-.urow{display:flex;align-items:center;gap:var(--s2);}
+.urow{display:flex;align-items:center;gap:var(--s2);flex-wrap:wrap;justify-content:center;min-width:0;}
 .ulbl{
   font-size:.75rem;font-weight:600;letter-spacing:.01em;
   color:var(--tx3);cursor:default;user-select:none;
   transition:color var(--t1);
+  white-space:nowrap;
 }
 .ulbl.on{color:var(--color-brand-500);}
 html.dark .ulbl.on{color:var(--color-brand-400);}
+.sw{flex-shrink:0;}
 .sw{
   position:relative;width:2.375rem;height:1.25rem;
   border-radius:9999px;padding:2px;
@@ -662,11 +664,9 @@ html.dark #__tt[data-arrow="down"]::after{border-bottom-color:#232326;}
 
       <div class="urow">
         <span class="ulbl on" id="lbl-m">Metrik</span>
-        <div class="sw" id="sw" role="switch" aria-checked="false" tabindex="0"
+        <div class="sw" id="sw" role="switch" aria-label="Ganti satuan metrik / imperial" aria-checked="false" tabindex="0"
              onclick="toggleUnit()"
-             onkeydown="if(event.key==='Enter'||event.key===' ')toggleUnit()">
-          <div class="swk"></div>
-        </div>
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleUnit();}">
         <span class="ulbl" id="lbl-i">Imperial</span>
       </div>
 
@@ -695,7 +695,7 @@ html.dark #__tt[data-arrow="down"]::after{border-bottom-color:#232326;}
 
   <!-- Input panel -->
   <div class="inp-panel">
-    <button class="trig" onclick="toggleSec('inp','ch-inp')">
+    <button type="button" class="trig" aria-controls="inp" aria-expanded="true" onclick="toggleSec('inp','ch-inp')">
       <span class="trig-lbl">
         <span class="trig-bar"></span>Data Fisik Anda
       </span>
@@ -703,7 +703,7 @@ html.dark #__tt[data-arrow="down"]::after{border-bottom-color:#232326;}
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
       </svg>
     </button>
-    <div class="coll" id="inp">
+    <div class="coll" id="inp" aria-hidden="false">
       <div><div class="cp">
         <div class="fgrid">
 
@@ -803,52 +803,52 @@ html.dark #__tt[data-arrow="down"]::after{border-bottom-color:#232326;}
   <div class="rstack">
 
     <div class="rsec">
-      <button class="trig" onclick="toggleSec('ru','ch-ru')">
+      <button type="button" class="trig" aria-controls="ru" aria-expanded="true" onclick="toggleSec('ru','ch-ru')">
         <span class="trig-lbl"><span class="trig-bar"></span>Status Fisik Umum</span>
         <svg class="chev open" id="ch-ru" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
       </button>
-      <div class="coll" id="ru"><div><div class="cp">
-        <div class="cgrid w" id="cat-umum"></div>
+      <div class="coll" id="ru" aria-hidden="false"><div><div class="cp">
+        <div class="cgrid w" id="cat-umum" aria-live="polite"></div>
       </div></div></div>
     </div>
 
     <div class="rsec">
-      <button class="trig" onclick="toggleSec('rk','ch-rk')">
+      <button type="button" class="trig" aria-controls="rk" aria-expanded="true" onclick="toggleSec('rk','ch-rk')">
         <span class="trig-lbl"><span class="trig-bar"></span>Komposisi Lemak &amp; Otot</span>
         <svg class="chev open" id="ch-rk" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
       </button>
-      <div class="coll" id="rk"><div><div class="cp">
-        <div class="cgrid w" id="cat-komposisi"></div>
+      <div class="coll" id="rk" aria-hidden="false"><div><div class="cp">
+        <div class="cgrid w" id="cat-komposisi" aria-live="polite"></div>
       </div></div></div>
     </div>
 
     <div class="rsec">
-      <button class="trig" onclick="toggleSec('rkd','ch-rkd')">
+      <button type="button" class="trig" aria-controls="rkd" aria-expanded="true" onclick="toggleSec('rkd','ch-rkd')">
         <span class="trig-lbl"><span class="trig-bar"></span>Kebugaran Kardiovaskular</span>
         <svg class="chev open" id="ch-rkd" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
       </button>
-      <div class="coll" id="rkd"><div><div class="cp">
-        <div class="cgrid w" id="cat-kardio"></div>
+      <div class="coll" id="rkd" aria-hidden="false"><div><div class="cp">
+        <div class="cgrid w" id="cat-kardio" aria-live="polite"></div>
       </div></div></div>
     </div>
 
     <div class="rsec">
-      <button class="trig" onclick="toggleSec('rm','ch-rm')">
+      <button type="button" class="trig" aria-controls="rm" aria-expanded="true" onclick="toggleSec('rm','ch-rm')">
         <span class="trig-lbl"><span class="trig-bar"></span>Metabolisme Energi</span>
         <svg class="chev open" id="ch-rm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
       </button>
-      <div class="coll" id="rm"><div><div class="cp">
-        <div class="cgrid" id="cat-metabolisme"></div>
+      <div class="coll" id="rm" aria-hidden="false"><div><div class="cp">
+        <div class="cgrid" id="cat-metabolisme" aria-live="polite"></div>
       </div></div></div>
     </div>
 
     <div class="rsec">
-      <button class="trig" onclick="toggleSec('rr','ch-rr')">
+      <button type="button" class="trig" aria-controls="rr" aria-expanded="true" onclick="toggleSec('rr','ch-rr')">
         <span class="trig-lbl"><span class="trig-bar"></span>Prediksi Kardiometabolik</span>
         <svg class="chev open" id="ch-rr" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
       </button>
-      <div class="coll" id="rr"><div><div class="cp">
-        <div class="cgrid" id="cat-risiko"></div>
+      <div class="coll" id="rr" aria-hidden="false"><div><div class="cp">
+        <div class="cgrid" id="cat-risiko" aria-live="polite"></div>
       </div></div></div>
     </div>
 
@@ -893,7 +893,7 @@ const TDEFS=[
 ];
 function mkDots(id){
   document.getElementById(id).innerHTML=TDEFS.map(t=>
-    `<button class="tdot" data-theme="${t.id}" onclick="setTheme('${t.id}')" title="${t.label}">
+    `<button type="button" class="tdot" data-theme="${t.id}" onclick="setTheme('${t.id}')" title="${t.label}">
       <div style="width:50%;background:${t.h1};height:100%;"></div>
       <div style="width:50%;background:${t.h2};height:100%;"></div>
     </button>`).join('');
@@ -939,7 +939,10 @@ function toggleSec(id,chId){
   const sec=document.getElementById(id);
   const ch=document.getElementById(chId);
   sec.classList.toggle('shut');
-  ch.classList.toggle('open',!sec.classList.contains('shut'));
+  const expanded = !sec.classList.contains('shut');
+  ch.classList.toggle('open', expanded);
+  ch.setAttribute('aria-expanded', expanded.toString());
+  sec.setAttribute('aria-hidden', (!expanded).toString());
 }
 
 /* ── Unit toggle ─────────────────────────────────────────── */
@@ -1215,7 +1218,8 @@ function initTooltips(){
     const ico=e.target.closest('[data-tip]');if(ico)showTip(ico);
   });
   document.addEventListener('mouseout',e=>{
-    const ico=e.target.closest('[data-tip]');if(ico)hideTip();
+    const ico=e.target.closest('[data-tip]');
+    if(ico && (!e.relatedTarget || !e.relatedTarget.closest('[data-tip]'))) hideTip();
   });
   document.addEventListener('focusin',e=>{
     const ico=e.target.closest('[data-tip]');if(ico)showTip(ico);
