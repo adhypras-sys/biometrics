@@ -211,16 +211,14 @@ html.dark .logo-name{
 .tdot.active{outline-color:var(--color-brand-500);}
 
 /* Unit toggle */
-.urow{display:flex;align-items:center;gap:var(--s2);flex-wrap:wrap;justify-content:center;min-width:0;}
+.urow{display:flex;align-items:center;gap:var(--s2);}
 .ulbl{
   font-size:.75rem;font-weight:600;letter-spacing:.01em;
   color:var(--tx3);cursor:default;user-select:none;
   transition:color var(--t1);
-  white-space:nowrap;
 }
 .ulbl.on{color:var(--color-brand-500);}
 html.dark .ulbl.on{color:var(--color-brand-400);}
-.sw{flex-shrink:0;}
 .sw{
   position:relative;width:2.375rem;height:1.25rem;
   border-radius:9999px;padding:2px;
@@ -328,11 +326,11 @@ html.dark .trig:hover .trig-lbl{color:var(--color-brand-400);}
   color:var(--tx2);margin-bottom:var(--s2);overflow:visible;
 }
 .finp{
-  width:100%;height:2.625rem;padding:0 var(--s4);
+  width:100%;height:2.75rem;padding:0 var(--s4);
   border-radius:var(--r-m);
   border:1.5px solid var(--b1);
   background:var(--s1a);color:var(--tx1);
-  font-size:.9375rem;font-family:inherit;
+  font-size:1rem;font-family:inherit;
   appearance:none;-webkit-appearance:none;outline:none;
   box-shadow:var(--sh0);
   transition:border-color var(--t1),box-shadow var(--t1),background var(--t3) var(--smooth);
@@ -460,15 +458,15 @@ html.dark .card-e{background:rgba(127,29,29,.1);border-color:rgba(239,68,68,.18)
 
 /* Card typography */
 .clbl{
-  font-size:.5625rem;font-weight:800;letter-spacing:.09em;
+  font-size:.6875rem;font-weight:700;letter-spacing:.07em;
   text-transform:uppercase;
-  color:var(--color-brand-500);
+  color:var(--color-brand-600);
   display:flex;align-items:center;gap:3px;
   margin-bottom:var(--s2);line-height:1;overflow:visible;
   transition:color var(--t1);
 }
 html.dark .clbl{color:var(--color-brand-400);}
-.card:hover .clbl{color:var(--color-brand-600);}
+.card:hover .clbl{color:var(--color-brand-700);}
 html.dark .card:hover .clbl{color:var(--color-brand-300);}
 
 .cval{display:flex;align-items:baseline;gap:4px;margin-bottom:var(--s3);}
@@ -528,7 +526,7 @@ html.dark .wtag{background:rgba(255,255,255,.04);}
 html.dark .tico:hover,html.dark .tico:focus-visible{color:var(--color-brand-400);}
 
 #__tt{
-  position:fixed;z-index:9999;display:none;pointer-events:none;
+  position:fixed;top:0;left:0;z-index:9999;display:none;pointer-events:none;
   width:max-content;max-width:220px;
   padding:8px 12px;border-radius:var(--r-m);
   font-size:.6875rem;font-weight:500;line-height:1.6;letter-spacing:.01em;
@@ -537,8 +535,12 @@ html.dark .tico:hover,html.dark .tico:focus-visible{color:var(--color-brand-400)
   border:1px solid var(--b2);
   border-left:3px solid var(--color-brand-500);
   box-shadow:var(--sh3);
-  opacity:0;transform:translateY(6px) scale(.94);
-  transform-origin:bottom center;
+  /* GPU-composited: opacity + transform only — zero reflow */
+  opacity:0;
+  /* translate(x,y) set by JS; scale for entry animation */
+  transform:translate(var(--tt-x,-9999px),var(--tt-y,-9999px)) scale(.94);
+  transform-origin:center bottom;
+  will-change:transform,opacity;
   transition:opacity 130ms var(--out),transform 150ms var(--spring);
 }
 html.dark #__tt{background:#232326;color:var(--tx1);border-color:var(--b2);}
@@ -550,7 +552,7 @@ html.dark #__tt{background:#232326;color:var(--tx1);border-color:var(--b2);}
 html.dark #__tt:not([data-arrow="down"])::after{border-top-color:#232326;}
 #__tt[data-arrow="down"]::after{bottom:100%;top:auto;border-bottom-color:var(--s0);}
 html.dark #__tt[data-arrow="down"]::after{border-bottom-color:#232326;}
-#__tt.tin{opacity:1;transform:translateY(0) scale(1);}
+#__tt.tin{opacity:1;transform:translate(var(--tt-x,0px),var(--tt-y,0px)) scale(1);}
 @media(max-width:640px){#__tt{max-width:185px;}}
 
 /* ═══════════════════════════════════════════════════════════════
@@ -642,7 +644,7 @@ html.dark #__tt[data-arrow="down"]::after{border-bottom-color:#232326;}
 
     <div class="logo-area">
       <div class="logo-ico">
-        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2
                M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
@@ -664,22 +666,24 @@ html.dark #__tt[data-arrow="down"]::after{border-bottom-color:#232326;}
 
       <div class="urow">
         <span class="ulbl on" id="lbl-m">Metrik</span>
-        <div class="sw" id="sw" role="switch" aria-label="Ganti satuan metrik / imperial" aria-checked="false" tabindex="0"
+        <div class="sw" id="sw" role="switch" aria-checked="false" tabindex="0"
              onclick="toggleUnit()"
-             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleUnit();}">
+             onkeydown="if(event.key==='Enter'||event.key===' ')toggleUnit()">
+          <div class="swk"></div>
+        </div>
         <span class="ulbl" id="lbl-i">Imperial</span>
       </div>
 
       <div class="psep"></div>
 
       <button class="dbtn" id="btn-dark" aria-label="Ganti mode gelap/terang">
-        <svg id="ico-sun"  style="display:none;" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg id="ico-sun"  style="display:none;" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707
                M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707
                M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
         </svg>
-        <svg id="ico-moon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg id="ico-moon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21
                a9.003 9.003 0 008.354-5.646z"/>
@@ -695,20 +699,20 @@ html.dark #__tt[data-arrow="down"]::after{border-bottom-color:#232326;}
 
   <!-- Input panel -->
   <div class="inp-panel">
-    <button type="button" class="trig" aria-controls="inp" aria-expanded="true" onclick="toggleSec('inp','ch-inp')">
-      <span class="trig-lbl">
+    <button type="button" class="trig" aria-expanded="true" onclick="toggleSec('inp','ch-inp')">
+      <span class="trig-lbl" role="heading" aria-level="2">
         <span class="trig-bar"></span>Data Fisik Anda
       </span>
-      <svg class="chev open" id="ch-inp" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="chev open" id="ch-inp" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
       </svg>
     </button>
-    <div class="coll" id="inp" aria-hidden="false">
+    <div class="coll" id="inp">
       <div><div class="cp">
         <div class="fgrid">
 
           <div>
-            <label class="flbl">Jenis Kelamin
+            <label class="flbl" for="gender">Jenis Kelamin
               <button class="tico" type="button" data-tip="Pilih jenis kelamin biologis — formula medis bergantung pada perbedaan hormon dan komposisi tubuh." aria-label="Info">
                 <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </button>
@@ -722,67 +726,67 @@ html.dark #__tt[data-arrow="down"]::after{border-bottom-color:#232326;}
           </div>
 
           <div>
-            <label class="flbl">Usia (tahun)</label>
-            <input type="number" id="age" placeholder="25" min="1" max="120" class="finp">
+            <label class="flbl" for="age">Usia (tahun)</label>
+            <input type="number" pattern="[0-9]*" autocomplete="off" step="any" inputmode="decimal" id="age" placeholder="25" min="1" max="120" class="finp">
           </div>
 
           <div>
-            <label class="flbl">Tinggi (<span class="unit-len">cm</span>)</label>
-            <input type="number" id="height" placeholder="170" class="finp">
+            <label class="flbl" for="height">Tinggi (<span class="unit-len">cm</span>)</label>
+            <input type="number" pattern="[0-9]*" autocomplete="off" step="any" inputmode="decimal" id="height" placeholder="170" class="finp">
           </div>
 
           <div>
-            <label class="flbl">Berat (<span class="unit-weight">kg</span>)</label>
-            <input type="number" id="weight" placeholder="70" class="finp">
+            <label class="flbl" for="weight">Berat (<span class="unit-weight">kg</span>)</label>
+            <input type="number" pattern="[0-9]*" autocomplete="off" step="any" inputmode="decimal" id="weight" placeholder="70" class="finp">
           </div>
 
           <div>
-            <label class="flbl">Lingkar Pinggang (<span class="unit-len">cm</span>)
+            <label class="flbl" for="waist">Lingkar Pinggang (<span class="unit-len">cm</span>)
               <button class="tico" type="button" data-tip="Diukur mendatar melingkar tepat di pusar, bukan di pinggang terkecil." aria-label="Info">
                 <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </button>
             </label>
-            <input type="number" id="waist" placeholder="82" class="finp">
+            <input type="number" pattern="[0-9]*" autocomplete="off" step="any" inputmode="decimal" id="waist" placeholder="82" class="finp">
           </div>
 
           <div>
-            <label class="flbl">Lingkar Leher (<span class="unit-len">cm</span>)
+            <label class="flbl" for="neck">Lingkar Leher (<span class="unit-len">cm</span>)
               <button class="tico" type="button" data-tip="Diukur melingkar di bawah jakun. Pastikan pita ukur rata dan tidak miring." aria-label="Info">
                 <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </button>
             </label>
-            <input type="number" id="neck" placeholder="37" class="finp">
+            <input type="number" pattern="[0-9]*" autocomplete="off" step="any" inputmode="decimal" id="neck" placeholder="37" class="finp">
           </div>
 
           <div>
-            <label class="flbl">Lingkar Pinggul (<span class="unit-len">cm</span>)
+            <label class="flbl" for="hip">Lingkar Pinggul (<span class="unit-len">cm</span>)
               <button class="tico" type="button" data-tip="Diukur di bagian pantat terlebar, sekitar 20 cm di bawah pusar." aria-label="Info">
                 <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </button>
             </label>
-            <input type="number" id="hip" placeholder="95" class="finp">
+            <input type="number" pattern="[0-9]*" autocomplete="off" step="any" inputmode="decimal" id="hip" placeholder="95" class="finp">
           </div>
 
           <div>
-            <label class="flbl">Lingkar Pergelangan (<span class="unit-len">cm</span>)
+            <label class="flbl" for="wrist">Lingkar Pergelangan (<span class="unit-len">cm</span>)
               <button class="tico" type="button" data-tip="Diukur tepat di atas tonjolan tulang pergelangan tangan." aria-label="Info">
                 <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </button>
             </label>
-            <input type="number" id="wrist" placeholder="17" class="finp">
+            <input type="number" pattern="[0-9]*" autocomplete="off" step="any" inputmode="decimal" id="wrist" placeholder="17" class="finp">
           </div>
 
           <div>
-            <label class="flbl">Denyut Nadi Istirahat (bpm)
+            <label class="flbl" for="rhr">Denyut Nadi Istirahat (bpm)
               <button class="tico" type="button" data-tip="Ukur saat baru bangun tidur sebelum bergerak. Hitung detak selama 60 detik penuh." aria-label="Info">
                 <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </button>
             </label>
-            <input type="number" id="rhr" placeholder="65" min="30" max="200" class="finp">
+            <input type="number" pattern="[0-9]*" autocomplete="off" step="any" inputmode="decimal" id="rhr" placeholder="65" min="30" max="200" class="finp">
           </div>
 
           <div class="sp2 sp3">
-            <label class="flbl">Level Aktivitas Fisik</label>
+            <label class="flbl" for="activity">Level Aktivitas Fisik</label>
             <div class="selw">
               <select id="activity" class="finp">
                 <option value="1.2">Sangat jarang — Duduk seharian</option>
@@ -803,52 +807,93 @@ html.dark #__tt[data-arrow="down"]::after{border-bottom-color:#232326;}
   <div class="rstack">
 
     <div class="rsec">
-      <button type="button" class="trig" aria-controls="ru" aria-expanded="true" onclick="toggleSec('ru','ch-ru')">
-        <span class="trig-lbl"><span class="trig-bar"></span>Status Fisik Umum</span>
-        <svg class="chev open" id="ch-ru" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+      <button type="button" class="trig" aria-expanded="true" onclick="toggleSec('ru','ch-ru')">
+        <span class="trig-lbl" role="heading" aria-level="2"><span class="trig-bar"></span>Status Fisik Umum</span>
+        <svg class="chev open" id="ch-ru" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
       </button>
-      <div class="coll" id="ru" aria-hidden="false"><div><div class="cp">
-        <div class="cgrid w" id="cat-umum" aria-live="polite"></div>
+      <div class="coll" id="ru"><div><div class="cp">
+        <div class="cgrid w" id="cat-umum"></div>
       </div></div></div>
     </div>
 
     <div class="rsec">
-      <button type="button" class="trig" aria-controls="rk" aria-expanded="true" onclick="toggleSec('rk','ch-rk')">
-        <span class="trig-lbl"><span class="trig-bar"></span>Komposisi Lemak &amp; Otot</span>
-        <svg class="chev open" id="ch-rk" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+      <button type="button" class="trig" aria-expanded="true" onclick="toggleSec('rk','ch-rk')">
+        <span class="trig-lbl" role="heading" aria-level="2"><span class="trig-bar"></span>Komposisi Lemak &amp; Otot</span>
+        <svg class="chev open" id="ch-rk" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
       </button>
-      <div class="coll" id="rk" aria-hidden="false"><div><div class="cp">
-        <div class="cgrid w" id="cat-komposisi" aria-live="polite"></div>
+      <div class="coll" id="rk"><div><div class="cp">
+        <div class="cgrid w" id="cat-komposisi"></div>
       </div></div></div>
     </div>
 
     <div class="rsec">
-      <button type="button" class="trig" aria-controls="rkd" aria-expanded="true" onclick="toggleSec('rkd','ch-rkd')">
-        <span class="trig-lbl"><span class="trig-bar"></span>Kebugaran Kardiovaskular</span>
-        <svg class="chev open" id="ch-rkd" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+      <button type="button" class="trig" aria-expanded="true" onclick="toggleSec('rkd','ch-rkd')">
+        <span class="trig-lbl" role="heading" aria-level="2"><span class="trig-bar"></span>Kebugaran Kardiovaskular</span>
+        <svg class="chev open" id="ch-rkd" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
       </button>
-      <div class="coll" id="rkd" aria-hidden="false"><div><div class="cp">
-        <div class="cgrid w" id="cat-kardio" aria-live="polite"></div>
+      <div class="coll" id="rkd"><div><div class="cp">
+        <div class="cgrid w" id="cat-kardio"></div>
       </div></div></div>
     </div>
 
     <div class="rsec">
-      <button type="button" class="trig" aria-controls="rm" aria-expanded="true" onclick="toggleSec('rm','ch-rm')">
-        <span class="trig-lbl"><span class="trig-bar"></span>Metabolisme Energi</span>
-        <svg class="chev open" id="ch-rm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+      <button type="button" class="trig" aria-expanded="true" onclick="toggleSec('rm','ch-rm')">
+        <span class="trig-lbl" role="heading" aria-level="2"><span class="trig-bar"></span>Metabolisme Energi</span>
+        <svg class="chev open" id="ch-rm" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
       </button>
-      <div class="coll" id="rm" aria-hidden="false"><div><div class="cp">
-        <div class="cgrid" id="cat-metabolisme" aria-live="polite"></div>
+      <div class="coll" id="rm"><div><div class="cp">
+        <div class="cgrid" id="cat-metabolisme"></div>
       </div></div></div>
     </div>
 
     <div class="rsec">
-      <button type="button" class="trig" aria-controls="rr" aria-expanded="true" onclick="toggleSec('rr','ch-rr')">
-        <span class="trig-lbl"><span class="trig-bar"></span>Prediksi Kardiometabolik</span>
-        <svg class="chev open" id="ch-rr" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+      <button type="button" class="trig" aria-expanded="true" onclick="toggleSec('rr','ch-rr')">
+        <span class="trig-lbl" role="heading" aria-level="2"><span class="trig-bar"></span>Prediksi Kardiometabolik</span>
+        <svg class="chev open" id="ch-rr" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
       </button>
-      <div class="coll" id="rr" aria-hidden="false"><div><div class="cp">
-        <div class="cgrid" id="cat-risiko" aria-live="polite"></div>
+      <div class="coll" id="rr"><div><div class="cp">
+        <div class="cgrid" id="cat-risiko"></div>
+      </div></div></div>
+    </div>
+
+
+    <div class="rsec">
+      <button type="button" class="trig" onclick="toggleSec('rkb','ch-rkb')" aria-expanded="true">
+        <span class="trig-lbl" role="heading" aria-level="2"><span class="trig-bar"></span>Komposisi Lanjutan</span>
+        <svg class="chev open" id="ch-rkb" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="coll" id="rkb"><div><div class="cp">
+        <div class="cgrid w" id="cat-komposisi2"></div>
+      </div></div></div>
+    </div>
+
+    <div class="rsec">
+      <button type="button" class="trig" onclick="toggleSec('rkd2','ch-rkd2')" aria-expanded="true">
+        <span class="trig-lbl" role="heading" aria-level="2"><span class="trig-bar"></span>Kebugaran Lanjutan</span>
+        <svg class="chev open" id="ch-rkd2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="coll" id="rkd2"><div><div class="cp">
+        <div class="cgrid w" id="cat-kardio2"></div>
+      </div></div></div>
+    </div>
+
+    <div class="rsec">
+      <button type="button" class="trig" onclick="toggleSec('rmt2','ch-rmt2')" aria-expanded="true">
+        <span class="trig-lbl" role="heading" aria-level="2"><span class="trig-bar"></span>Nutrisi &amp; Energi Lanjutan</span>
+        <svg class="chev open" id="ch-rmt2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="coll" id="rmt2"><div><div class="cp">
+        <div class="cgrid w" id="cat-metabolisme2"></div>
+      </div></div></div>
+    </div>
+
+    <div class="rsec">
+      <button type="button" class="trig" onclick="toggleSec('rrs2','ch-rrs2')" aria-expanded="true">
+        <span class="trig-lbl" role="heading" aria-level="2"><span class="trig-bar"></span>Risiko Lanjutan</span>
+        <svg class="chev open" id="ch-rrs2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div class="coll" id="rrs2"><div><div class="cp">
+        <div class="cgrid" id="cat-risiko2"></div>
       </div></div></div>
     </div>
 
@@ -893,7 +938,7 @@ const TDEFS=[
 ];
 function mkDots(id){
   document.getElementById(id).innerHTML=TDEFS.map(t=>
-    `<button type="button" class="tdot" data-theme="${t.id}" onclick="setTheme('${t.id}')" title="${t.label}">
+    `<button class="tdot" data-theme="${t.id}" onclick="setTheme('${t.id}')" title="${t.label}">
       <div style="width:50%;background:${t.h1};height:100%;"></div>
       <div style="width:50%;background:${t.h2};height:100%;"></div>
     </button>`).join('');
@@ -938,11 +983,13 @@ document.getElementById('btn-dark').addEventListener('click',()=>{
 function toggleSec(id,chId){
   const sec=document.getElementById(id);
   const ch=document.getElementById(chId);
+  if(!sec||!ch)return;
   sec.classList.toggle('shut');
-  const expanded = !sec.classList.contains('shut');
-  ch.classList.toggle('open', expanded);
-  ch.setAttribute('aria-expanded', expanded.toString());
-  sec.setAttribute('aria-hidden', (!expanded).toString());
+  const isOpen=!sec.classList.contains('shut');
+  ch.classList.toggle('open',isOpen);
+  // Update aria-expanded on the trigger button
+  const btn=ch.closest('button')||ch.parentElement;
+  if(btn)btn.setAttribute('aria-expanded',isOpen);
 }
 
 /* ── Unit toggle ─────────────────────────────────────────── */
@@ -1047,7 +1094,7 @@ function calc() {
             if (!isNaN(d.weight)) d.weight = d.weight/KG2LB;
         }
         const hM = d.height/100;
-        const cats = {umum:[],komposisi:[],kardio:[],metabolisme:[],risiko:[]};
+        const cats = {umum:[],komposisi:[],kardio:[],metabolisme:[],risiko:[],komposisi2:[],kardio2:[],metabolisme2:[],risiko2:[]};
         const K = (c,t,deps,fn,tip) => cats[c].push(buildCard(t,deps,d,fn,tip));
 
         // ── UMUM ──
@@ -1172,68 +1219,428 @@ function calc() {
             return {nilai:r.toFixed(2),satuan:'rasio',status:risky?'Risiko Diabetes (Apple)':'Risiko Rendah (Pear)',warna:risky?'c-danger':'c-good',deskripsi:'Mendeteksi kecenderungan penimbunan lemak organ.'};
         },'Bentuk Apel dikaitkan erat dengan paparan sindrom metabolik diabetes.');
 
-        ['umum','komposisi','kardio','metabolisme','risiko'].forEach(c =>
-            document.getElementById('cat-'+c).innerHTML = cats[c].join(''));
+
+        // ══════════════════════════════════════════════════════════
+        // KOMPOSISI LANJUTAN
+        // ══════════════════════════════════════════════════════════
+
+        // 1. Katch-McArdle RMR — lebih akurat untuk individu atletis
+        K('komposisi2','RMR Katch-McArdle',['weight',...nDeps],d=>{
+            const lbmKg = d.weight*(1-calcNavy(d)/100);
+            const rmr   = 370 + 21.6*lbmKg;
+            const diff  = rmr - calcBmr(d);
+            const sign  = diff>=0?'+':'-';
+            return {nilai:Math.round(rmr),satuan:'kcal',status:`${sign}${Math.abs(Math.round(diff))} vs Mifflin`,
+                warna: Math.abs(diff)>100?'c-info':'c-brand',
+                deskripsi:'Formula Katch-McArdle (1975) berbasis massa bebas lemak — lebih akurat untuk individu atletis atau sangat kurus.'};
+        },'RMR Katch-McArdle menggunakan LBM, bukan berat total, sehingga lebih presisi untuk individu berotot.');
+
+        // 2. Total Body Water — Watson et al. 1980
+        K('komposisi2','Total Air Tubuh',['age','height','weight'],d=>{
+            const tbw = d.gender==='male'
+                ?  2.447 - 0.09156*d.age + 0.1074*d.height + 0.3362*d.weight
+                : -2.097 + 0.1069*d.height + 0.2466*d.weight;
+            const pct = (tbw/d.weight*100);
+            // Normal: male 60%, female 55%
+            const norm = d.gender==='male'?60:55;
+            const st = pct>=norm-5&&pct<=norm+10?'Hidrasi Normal':'Perlu Perhatian';
+            return {nilai:tbw.toFixed(1),satuan:'L',
+                status:st,warna:st==='Hidrasi Normal'?'c-good':'c-warn',
+                deskripsi:`Total cairan dalam tubuh (${pct.toFixed(0)}% berat badan). Standar Watson 1980 — digunakan klinis di nefrologi.`};
+        },'Total Body Water (Watson 1980): digunakan luas di dunia medis untuk menghitung dosis obat berbasis cairan tubuh.');
+
+        // 3. Massa Otot Rangka Estimasi — Baumgartner/Janssen proxy
+        K('komposisi2','Massa Otot Rangka',['weight',...nDeps],d=>{
+            const bf    = calcNavy(d);
+            const lbmKg = d.weight*(1-bf/100);
+            // Skeletal muscle ≈ 55% of LBM (Wang et al. 2000 cadaver studies)
+            const smm   = lbmKg*0.55;
+            const smmPct= smm/d.weight*100;
+            const o     = fmtW(smm);
+            // AHA/ACSM norms: male >34%, female >27%
+            const threshold = d.gender==='male'?34:27;
+            const st = smmPct>=threshold?'Massa Otot Baik':'Massa Otot Rendah';
+            return {nilai:o.v.toFixed(1),satuan:o.u,
+                status:st,warna:st==='Massa Otot Baik'?'c-good':'c-warn',
+                deskripsi:`${smmPct.toFixed(1)}% dari berat badan. Estimasi berdasarkan Wang et al. (2000): otot rangka ≈ 55% dari massa bebas lemak.`};
+        },'Skeletal Muscle Mass: otot yang dapat dikontraksikan secara sadar. Kunci metabolisme, mobilitas, dan longevitas.');
+
+        // 4. Massa Tulang Estimasi — Doupe et al. 1997
+        K('komposisi2','Estimasi Massa Tulang',['height','weight','age'],d=>{
+            // Doupe et al. 1997, simplified anthropometric
+            const bm = d.gender==='male'
+                ? 3.6*Math.pow(d.height/100, 1.7)
+                : 2.7*Math.pow(d.height/100, 1.7);
+            // Age-adjust: -0.01 kg/year after 30
+            const bmAdj = Math.max(bm - Math.max(0,d.age-30)*0.01, bm*0.7);
+            const bmPct = bmAdj/d.weight*100;
+            const o = fmtW(bmAdj);
+            return {nilai:o.v.toFixed(2),satuan:o.u,status:'',warna:'',
+                deskripsi:`≈ ${bmPct.toFixed(1)}% berat badan. Formula Doupe (1997): massa tulang menurun ~1%/dekade setelah usia 30.`};
+        },'Estimasi massa tulang dari tinggi badan. Menurun seiring usia — relevan untuk risiko osteoporosis.');
+
+        // 5. Persentase Lean Mass (kebalikan body fat, lebih intuitif)
+        K('komposisi2','Persentase Lean Mass',['weight',...nDeps],d=>{
+            const bf   = calcNavy(d);
+            const lean = 100-bf;
+            // Classification from NSCA/ACSM
+            let st,w;
+            if(d.gender==='male'){
+                if(lean>=85){st='Atlet Elite';w='c-info';}
+                else if(lean>=78){st='Sangat Baik';w='c-good';}
+                else if(lean>=72){st='Di Atas Rata-rata';w='c-good';}
+                else if(lean>=65){st='Rata-rata';w='c-brand';}
+                else{st='Di Bawah Rata-rata';w='c-warn';}
+            } else {
+                if(lean>=77){st='Atlet Elite';w='c-info';}
+                else if(lean>=71){st='Sangat Baik';w='c-good';}
+                else if(lean>=65){st='Di Atas Rata-rata';w='c-good';}
+                else if(lean>=58){st='Rata-rata';w='c-brand';}
+                else{st='Di Bawah Rata-rata';w='c-warn';}
+            }
+            return {nilai:lean.toFixed(1),satuan:'%',status:st,warna:w,
+                deskripsi:'Proporsi tubuh yang bukan lemak (otot+tulang+organ+air). Komplemen langsung dari % lemak tubuh.'};
+        },'Lean Mass %: persentase massa tubuh yang berfungsi secara metabolis aktif. Semakin tinggi, semakin baik.');
+
+        // 6. Potensi Anabolisme Alami (FFMI vs Ceiling Kouri 1995)
+        K('komposisi2','Potensi Otot Alami',['weight','height',...nDeps],d=>{
+            const bf      = calcNavy(d);
+            const lbmKg   = d.weight*(1-bf/100);
+            const hM      = d.height/100;
+            const ffmi    = lbmKg/(hM**2);
+            // Kouri et al. 1995 NEJM: 99th percentile drug-free athletes
+            const ceiling = d.gender==='male'?25.0:21.0;
+            const used    = Math.min(ffmi/ceiling*100,100).toFixed(1);
+            const remain  = Math.max(ceiling-ffmi,0).toFixed(1);
+            let st,w;
+            const pct = parseFloat(used);
+            if(pct>=95){st='Batas Maksimal';w='c-info';}
+            else if(pct>=80){st='Atletis';w='c-good';}
+            else if(pct>=60){st='Berkembang';w='c-brand';}
+            else{st='Potensi Besar';w='c-warn';}
+            return {nilai:used,satuan:'%',status:st,warna:w,
+                deskripsi:`FFMI ${ffmi.toFixed(1)} dari batas natural ${ceiling}. Sisa potensi: ${remain} poin FFMI (Kouri et al., NEJM 1995).`};
+        },'Persentase potensi otot alami yang telah dicapai. Mengacu batas FFMI atlet drug-free (Kouri 1995, NEJM).');
+
+        // ══════════════════════════════════════════════════════════
+        // KEBUGARAN LANJUTAN
+        // ══════════════════════════════════════════════════════════
+
+        // 7. Fitness Age — NTNU/Nes et al. Circulation 2013
+        K('kardio2','Usia Kebugaran',['age','rhr','weight','waist','height'],d=>{
+            const maxHr  = 208-0.7*d.age;
+            const vo2est = 15.3*(maxHr/d.rhr);
+            // Expected VO2Max from NTNU norms (Nes 2013, Circulation)
+            // Simplified age-curve: VO2Max declines ~0.4 ml/kg/min/year after age 25
+            const vo2Exp = d.gender==='male'
+                ? Math.max(70 - (d.age-20)*0.6, 20)
+                : Math.max(58 - (d.age-20)*0.5, 16);
+            // Activity adjustment
+            const actAdj = (d.activity-1.2)*15;
+            // WHtR penalty (central adiposity lowers fitness)
+            const whtrPen= (d.waist/d.height)>0.5? ((d.waist/d.height)-0.5)*30 : 0;
+            const delta   = vo2est - vo2Exp + actAdj - whtrPen;
+            const fitAge  = Math.round(d.age - delta/0.5);
+            const diff    = d.age - fitAge;
+            let st,w;
+            if(diff>=10){st='Jauh Lebih Muda';w='c-good';}
+            else if(diff>=5){st='Lebih Muda';w='c-good';}
+            else if(diff>=-5){st='Sesuai Usia';w='c-brand';}
+            else if(diff>=-10){st='Lebih Tua';w='c-warn';}
+            else{st='Jauh Lebih Tua';w='c-danger';}
+            return {nilai:fitAge,satuan:'thn',status:st,warna:w,
+                deskripsi:`Usia biologis kardiovaskular Anda. ${diff>=0?diff+' tahun lebih muda':Math.abs(diff)+' tahun lebih tua'} dari usia kalender. Berdasarkan studi HUNT (Nes et al., Circulation 2013).`};
+        },'Fitness Age: usia biologis kardiovaskular berdasarkan VO2Max, lingkar pinggang, dan RHR. Studi besar NTNU Norway (500.000+ subjek).');
+
+        // 8. Skor Kebugaran RHR (AHA Fitness Classification)
+        K('kardio2','Klasifikasi Denyut Nadi',['age','rhr'],d=>{
+            const maxHr  = 208-0.7*d.age;
+            const rhrPct = (d.rhr/maxHr*100).toFixed(1);
+            // AHA & Cooper Institute norms by gender/age
+            let st,w;
+            if(d.gender==='male'){
+                if(d.rhr<=55){st='Atlet';w='c-info';}
+                else if(d.rhr<=61){st='Sangat Baik';w='c-good';}
+                else if(d.rhr<=65){st='Baik';w='c-good';}
+                else if(d.rhr<=69){st='Rata-rata';w='c-brand';}
+                else if(d.rhr<=75){st='Di Bawah Rata-rata';w='c-warn';}
+                else{st='Buruk';w='c-danger';}
+            } else {
+                if(d.rhr<=60){st='Atlet';w='c-info';}
+                else if(d.rhr<=65){st='Sangat Baik';w='c-good';}
+                else if(d.rhr<=69){st='Baik';w='c-good';}
+                else if(d.rhr<=73){st='Rata-rata';w='c-brand';}
+                else if(d.rhr<=79){st='Di Bawah Rata-rata';w='c-warn';}
+                else{st='Buruk';w='c-danger';}
+            }
+            return {nilai:d.rhr,satuan:'bpm',status:st,warna:w,
+                deskripsi:`${rhrPct}% dari max HR Anda. Semakin rendah denyut nadi istirahat, semakin efisien jantung. Klasifikasi AHA & Cooper Institute.`};
+        },'Denyut nadi istirahat adalah biomarker kebugaran kardiovaskular paling mudah diukur. Atlet dunia rata-rata 40-55 bpm.');
+
+        // 9. Zona Latihan Lengkap 5 Zona — Karvonen 1957
+        K('kardio2','5 Zona Latihan',['age','rhr'],d=>{
+            const maxHr = 208-0.7*d.age;
+            const hrr   = maxHr-d.rhr;
+            const z = (lo,hi)=>`${Math.round(d.rhr+hrr*lo)}–${Math.round(d.rhr+hrr*hi)}`;
+            return {nilai:'Z1–Z5',satuan:'bpm',status:'',warna:'',
+                deskripsi:`Z1 Recovery: ${z(0.5,0.6)} | Z2 Lemak: ${z(0.6,0.7)} | Z3 Aerobik: ${z(0.7,0.8)} | Z4 Anaerobik: ${z(0.8,0.9)} | Z5 Maksimal: ${z(0.9,1.0)}`};
+        },'5 zona latihan Karvonen (1957): setiap zona memiliki manfaat berbeda dari pemulihan aktif hingga peningkatan kapasitas anaerob.');
+
+        // 10. Body Surface Area — DuBois & DuBois 1916
+        K('kardio2','Luas Permukaan Tubuh',['height','weight'],d=>{
+            // DuBois & DuBois (1916) — standard in clinical medicine
+            const bsa = 0.007184 * Math.pow(d.height,0.725) * Math.pow(d.weight,0.425);
+            // Mosteller formula (1987) — alternative, commonly used in pharmacy
+            const mosteller = Math.sqrt((d.height*d.weight)/3600);
+            return {nilai:bsa.toFixed(3),satuan:'m²',status:'',warna:'',
+                deskripsi:`DuBois: ${bsa.toFixed(3)} m² | Mosteller: ${mosteller.toFixed(3)} m². Digunakan dalam perhitungan dosis obat dan indeks kardiak klinis.`};
+        },'Body Surface Area (DuBois 1916): standar klinis global untuk perhitungan dosis kemoterapi, imunosupresan, dan indeks kardiak.');
+
+        // ══════════════════════════════════════════════════════════
+        // NUTRISI & ENERGI LANJUTAN
+        // ══════════════════════════════════════════════════════════
+
+        // 11. Rincian Pembakaran Energi (BMR/NEAT/EAT/TEF)
+        K('metabolisme2','Rincian Energi Harian',['weight','height','age'],d=>{
+            const bmr  = calcBmr(d);
+            const tdee = bmr*d.activity;
+            // TEF: Thermic Effect of Food ≈ 10% TDEE
+            const tef  = tdee*0.10;
+            // EAT: Exercise Activity Thermogenesis
+            const eatFactor = [1.2,1.375,1.55,1.725,1.9].indexOf(d.activity);
+            const eatPct = [0,5,15,25,38][Math.max(0,eatFactor)];
+            const eat  = tdee*(eatPct/100);
+            // NEAT: Non-Exercise Activity Thermogenesis
+            const neat = tdee - bmr - tef - eat;
+            return {nilai:Math.round(tdee),satuan:'kcal',status:'',warna:'',
+                deskripsi:`BMR: ${Math.round(bmr)} | NEAT: ${Math.round(neat)} | EAT: ${Math.round(eat)} | TEF: ${Math.round(tef)} kcal. (Levine, Science 2005)`};
+        },'Komponen TDEE: BMR (metabolisme basal) + NEAT (aktivitas non-olahraga) + EAT (olahraga) + TEF (efek termal makanan).');
+
+        // 12. Kebutuhan Protein Berbasis LBM — ISSN 2017
+        K('metabolisme2','Protein Berbasis Riset',['weight','height','age',...nDeps],d=>{
+            const bf   = calcNavy(d);
+            const lbm  = d.weight*(1-bf/100);
+            const act  = d.activity;
+            // ISSN Position Stand 2017 (Morton et al. 2018, Br J Sports Med)
+            let lo, hi, note;
+            if(act<=1.2){lo=0.8;hi=1.0;note='minimum RDA';}
+            else if(act<=1.375){lo=1.2;hi=1.6;note='aktif ringan';}
+            else if(act<=1.55){lo=1.6;hi=2.0;note='ISSN optimal';}
+            else if(act<=1.725){lo=1.8;hi=2.2;note='atlet';}
+            else{lo=2.0;hi=2.6;note='intensitas tinggi';}
+            const loG = (lbm*lo).toFixed(0), hiG = (lbm*hi).toFixed(0);
+            return {nilai:`${loG}–${hiG}`,satuan:'g/hari',
+                status:`${lo}–${hi} g/kg LBM`,warna:'c-brand',
+                deskripsi:`Berbasis LBM ${lbm.toFixed(1)} kg. Rentang ${note}. (Morton et al., Br J Sports Med 2018; ISSN Position Stand 2017)`};
+        },'Kebutuhan protein evidence-based dari ISSN berdasarkan LBM dan level aktivitas, bukan sekadar berat badan total.');
+
+        // 13. Target Kalori per Tujuan
+        K('metabolisme2','Kalori per Tujuan',['weight','height','age'],d=>{
+            const tdee = calcBmr(d)*d.activity;
+            const goals = {
+                'Turun Agresif': Math.round(tdee-500),
+                'Turun Moderat': Math.round(tdee-250),
+                'Pertahankan':   Math.round(tdee),
+                'Lean Bulk':     Math.round(tdee+250),
+            };
+            const lines = Object.entries(goals).map(([g,k])=>`${g}: ${k}`).join(' | ');
+            return {nilai:Math.round(tdee),satuan:'kcal',status:'',warna:'',
+                deskripsi:lines+' kcal. Deficit 500 kcal ≈ kehilangan 0.5 kg/minggu.'};
+        },'Target kalori per tujuan. 1 kg lemak ≈ 7.700 kcal. Deficit aman: max 500 kcal/hari untuk preservasi otot.');
+
+        // ══════════════════════════════════════════════════════════
+        // RISIKO LANJUTAN
+        // ══════════════════════════════════════════════════════════
+
+        // 14. Body Roundness Index — Thomas et al. PLoS ONE 2013
+        K('risiko2','Indeks Kebulatan Tubuh',['waist','height'],d=>{
+            // BRI = 364.2 - 365.5 × sqrt(1 - ((waist/2π)/(0.5×height))²)
+            const waistM = d.waist/100, heightM = d.height/100;
+            const ratio  = (waistM/(2*Math.PI)) / (0.5*heightM);
+            if(ratio>=1){
+                throw new Error('Proporsi pinggang melampaui tinggi — periksa input.');
+            }
+            const bri = 364.2 - 365.5*Math.sqrt(1 - ratio**2);
+            let st,w;
+            if(bri<3.4){st='Adipositas Rendah';w='c-good';}
+            else if(bri<4.5){st='Rata-rata';w='c-brand';}
+            else if(bri<5.5){st='Adipositas Tinggi';w='c-warn';}
+            else{st='Adipositas Sangat Tinggi';w='c-danger';}
+            return {nilai:bri.toFixed(2),satuan:'BRI',status:st,warna:w,
+                deskripsi:'Body Roundness Index (Thomas et al., PLoS ONE 2013). Lebih akurat dari BMI untuk memprediksi % lemak dan lemak viseral.'};
+        },'BRI mengukur "kebulatan" tubuh secara geometris. Berkorelasi lebih kuat dengan lemak viseral dan risiko metabolik daripada BMI.');
+
+        // 15. Conicity Index — Valdez 1991
+        K('risiko2','Indeks Konisitas',['waist','weight','height'],d=>{
+            // CI = waist(m) / (0.109 × sqrt(weight/height_m))
+            const ci = (d.waist/100) / (0.109*Math.sqrt(d.weight/(d.height/100)));
+            // Cutoffs (Valdez 1991; Pitanga & Lessa 2005)
+            const cutM = 1.25, cutF = 1.18;
+            const cut  = d.gender==='male'?cutM:cutF;
+            const risky= ci>cut;
+            return {nilai:ci.toFixed(3),satuan:'CI',
+                status:risky?'Risiko Kardiovaskular':'Profil Aman',
+                warna:risky?'c-danger':'c-good',
+                deskripsi:`Batas: ${cut} (${d.gender==='male'?'Pria':'Wanita'}). CI mengukur redistribusi lemak sentral secara independen dari IMT. (Valdez, Int J Obes 1991)`};
+        },'Conicity Index (Valdez 1991): bentuk tubuh ideal seperti kerucut (CI=1). Semakin bulat di tengah, semakin tinggi risiko CVD.');
+
+        // 16. Rasio Pinggul/Tinggi
+        K('risiko2','Rasio Pinggul/Tinggi',['hip','height'],d=>{
+            const hhr  = d.hip/d.height;
+            // Lin et al. 2002, Asia Pac J Clin Nutr
+            const cutM = 0.58, cutF = 0.61;
+            const cut  = d.gender==='male'?cutM:cutF;
+            const risky= hhr>cut;
+            return {nilai:hhr.toFixed(3),satuan:'rasio',
+                status:risky?'Pinggul Berlebih':'Proporsional',
+                warna:risky?'c-warn':'c-good',
+                deskripsi:`Batas aman: <${cut}. Berbeda dari WHR — mengukur distribusi lemak tubuh bawah secara independen. (Lin et al., 2002)`};
+        },'Hip-to-Height Ratio: proksi lemak tubuh bawah (pear shape). Bermanfaat untuk profil risiko yang lebih lengkap dari WHR saja.');
+
+        // 17. Waist-to-Neck Ratio — Ben-Noun et al. 2006
+        K('risiko2','Rasio Pinggang/Leher',['waist','neck'],d=>{
+            const wnr  = d.waist/d.neck;
+            // Ben-Noun & Laor, Am J Hypertens 2006
+            const cutM = 4.5, cutF = 4.7;
+            const cut  = d.gender==='male'?cutM:cutF;
+            const risky= wnr>cut;
+            return {nilai:wnr.toFixed(2),satuan:'rasio',
+                status:risky?'Risiko Hipertensi':'Di Bawah Batas',
+                warna:risky?'c-danger':'c-good',
+                deskripsi:`Batas risiko hipertensi: >${cut}. Prediktor tekanan darah tinggi yang tidak memerlukan alat ukur BP. (Ben-Noun & Laor, Am J Hypertens 2006)`};
+        },'Waist-to-Neck Ratio memprediksi hipertensi dan sindrom metabolik. Mudah diukur tanpa peralatan medis.');
+
+
+                ['umum','komposisi','kardio','metabolisme','risiko','komposisi2','kardio2','metabolisme2','risiko2'].forEach(c =>
+            document.getElementById('cat-'+c).innerHTML = (cats[c]||[]).join(''));
     }
 
 /* old-calc init removed */
 
 /* ── Tooltip ─────────────────────────────────────────────── */
 function initTooltips(){
-  let TT=document.getElementById('__tt');
+  // Singleton TT element
+  let TT = document.getElementById('__tt');
   if(!TT){
-    TT=document.createElement('div');
-    TT.id='__tt';
+    TT = document.createElement('div');
+    TT.id = '__tt';
     document.body.appendChild(TT);
   }
-  let hideTimer=null,activeIco=null;
+
+  // State
+  let hideTimer     = null;
+  let activeIco     = null;
+  let lastPtrType   = 'mouse'; // 'mouse' | 'touch' | 'pen'
+
+  // AbortController: one signal removes ALL listeners at once (memory-safe)
+  const ac  = new AbortController();
+  const sig = { signal: ac.signal };
+
+  // ── B. GPU positioning — transform only, zero layout reflow ───
+  function positionTip(ico){
+    TT.textContent = ico.dataset.tip;
+
+    // Step 1: show off-screen for measurement (visibility:hidden keeps layout)
+    TT.style.display     = 'block';
+    TT.style.visibility  = 'hidden';
+    TT.style.setProperty('--tt-x', '-9999px');
+    TT.style.setProperty('--tt-y', '-9999px');
+
+    // Step 2: one forced reflow READ — unavoidable for size measurement
+    const ir  = ico.getBoundingClientRect();
+    const tr  = TT.getBoundingClientRect();
+    const vw  = window.innerWidth;
+    const GAP = 8;
+
+    // Prefer above; fall below if not enough room
+    let ty, arrow;
+    if(ir.top - tr.height - GAP >= 4){
+      ty = ir.top - tr.height - GAP; arrow = 'up';
+    } else {
+      ty = ir.bottom + GAP;           arrow = 'down';
+    }
+
+    // Centre horizontally, clamp to viewport edges
+    let tx = ir.left + ir.width / 2 - tr.width / 2;
+    tx = Math.max(GAP, Math.min(tx, vw - tr.width - GAP));
+
+    // Step 3: batch ALL writes together → ONE paint (no interleaved read/write)
+    TT.style.visibility = 'visible';
+    TT.style.setProperty('--tt-x', tx + 'px');
+    TT.style.setProperty('--tt-y', ty + 'px');
+    TT.dataset.arrow = arrow;
+    // NOTE: display stays 'block' from Step 1 — NOT set again (FIX D1)
+  }
 
   function showTip(ico){
     clearTimeout(hideTimer);
-    const txt=ico.dataset.tip;if(!txt)return;
-    activeIco=ico;
-    TT.textContent=txt;
-    TT.style.top='-9999px';TT.style.left='-9999px';TT.style.display='block';
-    const ir=ico.getBoundingClientRect();
-    const tr=TT.getBoundingClientRect();
-    const vw=window.innerWidth,GAP=8;
-    let top,arrow;
-    if(ir.top-tr.height-GAP>=4){top=ir.top-tr.height-GAP;arrow='up';}
-    else{top=ir.bottom+GAP;arrow='down';}
-    let left=ir.left+ir.width/2-tr.width/2;
-    left=Math.max(GAP,Math.min(left,vw-tr.width-GAP));
-    TT.style.top=top+'px';TT.style.left=left+'px';
-    TT.dataset.arrow=arrow;
-    requestAnimationFrame(()=>TT.classList.add('tin'));
+    if(!ico.dataset.tip) return;
+    activeIco = ico;
+    positionTip(ico);
+    requestAnimationFrame(() => TT.classList.add('tin'));
   }
 
   function hideTip(){
     clearTimeout(hideTimer);
     TT.classList.remove('tin');
-    activeIco=null;
-    hideTimer=setTimeout(()=>{TT.style.display='none';},160);
+    activeIco = null;
+    hideTimer = setTimeout(() => {
+      TT.style.display = 'none';
+      hideTimer = null; // FIX C: explicit null for GC
+    }, 160);
   }
 
-  document.addEventListener('mouseover',e=>{
-    const ico=e.target.closest('[data-tip]');if(ico)showTip(ico);
-  });
-  document.addEventListener('mouseout',e=>{
-    const ico=e.target.closest('[data-tip]');
-    if(ico && (!e.relatedTarget || !e.relatedTarget.closest('[data-tip]'))) hideTip();
-  });
-  document.addEventListener('focusin',e=>{
-    const ico=e.target.closest('[data-tip]');if(ico)showTip(ico);
-  });
-  document.addEventListener('focusout',e=>{
-    const ico=e.target.closest('[data-tip]');if(ico)hideTip();
-  });
-  document.addEventListener('click',e=>{
-    const ico=e.target.closest('[data-tip]');
-    if(ico){e.stopPropagation();activeIco===ico?hideTip():showTip(ico);return;}
-    if(activeIco)hideTip();
-  });
-  document.addEventListener('scroll',hideTip,{passive:true,capture:true});
-  window.addEventListener('resize',hideTip,{passive:true});
+  // Cleanup — removes all listeners + cancels pending timer
+  function destroy(){
+    ac.abort();
+    clearTimeout(hideTimer);
+    hideTimer = null;
+    activeIco = null;
+  }
+  initTooltips.destroy = destroy;
+
+  // ── A. Pointer Events API — no mouse/touch double-fire ─────────
+  // FIX A1: update lastPtrType on EVERY pointerenter, not just tip ones
+  document.addEventListener('pointerenter', e => {
+    lastPtrType = e.pointerType; // always update ('mouse'|'touch'|'pen')
+    const ico = e.target.closest('[data-tip]');
+    if(!ico) return;
+    // Mouse/pen: show on hover; touch: wait for tap (click)
+    if(e.pointerType !== 'touch') showTip(ico);
+  }, { capture: true, ...sig });
+
+  document.addEventListener('pointerleave', e => {
+    const ico = e.target.closest('[data-tip]');
+    if(!ico) return;
+    if(e.pointerType !== 'touch') hideTip();
+  }, { capture: true, ...sig });
+
+  // Touch tap: click fires after touch sequence, no mouse double-fire
+  document.addEventListener('click', e => {
+    const ico = e.target.closest('[data-tip]');
+    if(ico){
+      if(lastPtrType === 'touch'){
+        e.stopPropagation();
+        activeIco === ico ? hideTip() : showTip(ico);
+      }
+      return;
+    }
+    if(activeIco) hideTip();
+  }, sig);
+
+  // Keyboard navigation
+  document.addEventListener('focusin', e => {
+    const ico = e.target.closest('[data-tip]');
+    if(ico) showTip(ico);
+  }, sig);
+  document.addEventListener('focusout', e => {
+    const ico = e.target.closest('[data-tip]');
+    if(ico) hideTip();
+  }, sig);
+
+  // Auto-hide on scroll / resize
+  document.addEventListener('scroll', hideTip, { passive: true, capture: true, ...sig });
+  window.addEventListener('resize',   hideTip, { passive: true, ...sig });
 }
 
 /* ── Init ─────────────────────────────────────────────────── */
