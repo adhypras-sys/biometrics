@@ -699,30 +699,34 @@ html.dark #__tt[data-arrow="down"]::after{border-bottom-color:#202028;}
 ═══════════════════════════════════════════════════════════════ */
 .summary-block { overflow: visible; }
 
+/* Body: flex column always — top row then alerts */
 .sum-body {
-  padding: var(--sp-5) var(--sp-5) var(--sp-6);
+  padding: var(--sp-4) var(--sp-4) var(--sp-5);
   display: flex;
   flex-direction: column;
-  gap: var(--sp-5);
-}
-@media (min-width: 640px) {
-  .sum-body {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: var(--sp-6);
-  }
+  gap: var(--sp-4);
 }
 
-/* ── Score ring ──────────────────────────────────────────────── */
+/* Top row: ring LEFT, pills RIGHT */
+.sum-top {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--sp-4);
+}
+
+/* ── Score ring ─────────────────────────────────────────────── */
 .score-ring-wrap {
   position: relative;
-  width: 9rem; height: 9rem;
-  flex-shrink: 0; margin: 0 auto;
+  width: 7.5rem;
+  height: 7.5rem;
+  flex-shrink: 0;
 }
-@media (min-width: 640px) { .score-ring-wrap { margin: 0; } }
-
-.score-ring { width: 100%; height: 100%; transform: rotate(-90deg); }
-
+.score-ring {
+  width: 100%; height: 100%;
+  transform: rotate(-90deg);
+  display: block;
+}
 .ring-bg {
   fill: none;
   stroke: var(--b1);
@@ -733,156 +737,136 @@ html.dark #__tt[data-arrow="down"]::after{border-bottom-color:#202028;}
   stroke: var(--color-brand-500);
   stroke-width: 8;
   stroke-linecap: round;
-  transition: stroke-dashoffset .9s cubic-bezier(.4,0,.2,1),
-              stroke .4s ease;
+  transition: stroke-dashoffset .9s cubic-bezier(.4,0,.2,1), stroke .4s ease;
 }
-
 .ring-label {
   position: absolute; inset: 0;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
-  gap: 1px;
+  text-align: center;
+  pointer-events: none;
 }
 .ring-num {
-  font-size: 2rem; font-weight: 900; letter-spacing: -.04em; line-height: 1;
+  font-size: 1.75rem; font-weight: 900; letter-spacing: -.04em; line-height: 1;
   color: var(--tx1);
 }
 .ring-sub {
-  font-size: .6875rem; font-weight: 600; color: var(--tx3);
+  font-size: .625rem; font-weight: 600; color: var(--tx3); margin-top: 1px;
 }
 .ring-tag {
-  font-size: .625rem; font-weight: 800; letter-spacing: .06em;
-  text-transform: uppercase; margin-top: var(--sp-1);
-  padding: 2px 8px; border-radius: var(--r-s);
-  background: color-mix(in oklab, currentColor 10%, transparent);
-  border: 1px solid color-mix(in oklab, currentColor 20%, transparent);
+  font-size: .5rem; font-weight: 800; letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  padding: 2px 6px; border-radius: var(--r-s);
+  background: color-mix(in oklab, currentColor 12%, transparent);
+  border: 1px solid color-mix(in oklab, currentColor 22%, transparent);
+  max-width: 5.5rem;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
-/* Score badge next to heading */
+/* Score badge in header */
 .score-badge {
-  font-size: .6875rem; font-weight: 800; letter-spacing: .06em;
+  font-size: .625rem; font-weight: 800; letter-spacing: .05em;
   text-transform: uppercase;
   padding: 3px 10px; border-radius: var(--r-s);
   background: color-mix(in oklab, currentColor 10%, transparent);
   border: 1px solid color-mix(in oklab, currentColor 22%, transparent);
   flex-shrink: 0;
   display: none;
+  white-space: nowrap;
 }
 
-/* ── Metric pills grid ───────────────────────────────────────── */
+/* ── Metric pills ───────────────────────────────────────────── */
 .sum-metrics {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--sp-2);
-  flex: 1;
+  align-content: start;
+  min-width: 0;
 }
-@media (min-width: 480px) {
-  .sum-metrics { grid-template-columns: repeat(3, 1fr); }
-}
-@media (min-width: 900px) {
-  .sum-metrics { grid-template-columns: repeat(4, 1fr); }
-}
+@media (min-width: 540px)  { .sum-metrics { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px)  { .sum-metrics { grid-template-columns: repeat(4, 1fr); } }
 
 .mpill {
   display: flex; flex-direction: column; gap: 3px;
-  padding: var(--sp-3) var(--sp-3);
+  padding: var(--sp-2) var(--sp-3);
   border-radius: var(--r-m);
   background: var(--s1);
   border: 1px solid var(--b0);
+  min-width: 0;
   transition: border-color var(--t1), transform var(--t1) var(--spring);
 }
 html.dark .mpill { background: var(--s0); }
 .mpill:hover { border-color: var(--b2); transform: translateY(-1px); }
 
 .mpill-label {
-  font-size: .5625rem; font-weight: 800; letter-spacing: .08em;
+  font-size: .5rem; font-weight: 800; letter-spacing: .07em;
   text-transform: uppercase; color: var(--tx3); line-height: 1;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .mpill-val {
-  font-size: 1.0625rem; font-weight: 900; letter-spacing: -.025em;
+  font-size: 1rem; font-weight: 900; letter-spacing: -.025em;
   color: var(--tx1); line-height: 1; font-variant-numeric: tabular-nums;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .mpill-status {
-  font-size: .5625rem; font-weight: 700; letter-spacing: .04em;
+  font-size: .5rem; font-weight: 700; letter-spacing: .04em;
   text-transform: uppercase; line-height: 1.2;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
-/* ── Alert banners ───────────────────────────────────────────── */
-#sum-alerts { display: flex; flex-direction: column; gap: var(--sp-2); }
+/* ── Alert banners — full width below sum-top ─────────────────── */
+.sum-alerts-wrap {
+  display: flex; flex-direction: column; gap: var(--sp-2);
+  width: 100%;
+}
 
 .alert-banner {
   display: flex; align-items: flex-start; gap: var(--sp-3);
   padding: var(--sp-3) var(--sp-4);
   border-radius: var(--r-m);
   border-left: 3px solid currentColor;
+  word-break: break-word;
 }
-.alert-banner.lvl-danger {
-  color: var(--danger);
-  background: var(--danger-bg);
-  border-color: var(--danger);
-}
-.alert-banner.lvl-warn {
-  color: var(--warn);
-  background: var(--warn-bg);
-  border-color: var(--warn);
-}
-.alert-banner.lvl-good {
-  color: var(--good);
-  background: var(--good-bg);
-  border-color: var(--good);
-}
-.alert-banner.lvl-info {
-  color: var(--info);
-  background: var(--info-bg);
-  border-color: var(--info);
-}
+.alert-banner.lvl-danger { color:var(--danger); background:var(--danger-bg); }
+.alert-banner.lvl-warn   { color:var(--warn);   background:var(--warn-bg);   }
+.alert-banner.lvl-good   { color:var(--good);   background:var(--good-bg);   }
+.alert-banner.lvl-info   { color:var(--info);   background:var(--info-bg);   }
+
 .alert-ico { flex-shrink: 0; margin-top: 1px; }
-.alert-text { flex: 1; }
+.alert-text { flex: 1; min-width: 0; }
 .alert-title {
-  font-size: .8125rem; font-weight: 700; line-height: 1.2;
-  margin-bottom: 2px; color: inherit;
+  font-size: .8125rem; font-weight: 700; line-height: 1.3;
+  margin-bottom: 3px; color: inherit;
 }
 .alert-desc {
-  font-size: .75rem; line-height: 1.5;
+  font-size: .75rem; line-height: 1.55;
   color: color-mix(in oklab, currentColor 80%, var(--tx2));
 }
 
 /* ═══════════════════════════════════════════════════════════════
    RECOMMENDATION BLOCK
 ═══════════════════════════════════════════════════════════════ */
-.reco-sub-label {
-  font-size: .75rem; font-weight: 500; color: var(--tx3);
-  margin-left: auto; padding-left: var(--sp-3);
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-@media (max-width: 480px) { .reco-sub-label { display: none; } }
+.reco-sub-label { display: none; }
 
 .reco-body {
-  padding: 0 var(--sp-5) var(--sp-6);
+  padding: 0 var(--sp-4) var(--sp-5);
   display: flex; flex-direction: column; gap: var(--sp-3);
-}
-
-/* Priority group header */
-.reco-group-hdr {
-  display: flex; align-items: center; gap: var(--sp-2);
-  margin-bottom: var(--sp-1);
-  font-size: .6875rem; font-weight: 800; letter-spacing: .08em;
-  text-transform: uppercase;
-}
-.reco-dot {
-  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
 }
 
 /* Recommendation card */
 .reco-card {
-  display: flex; align-items: flex-start; gap: var(--sp-4);
-  padding: var(--sp-4) var(--sp-4);
+  display: flex; align-items: flex-start;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
   border-radius: var(--r-l);
   background: var(--s0);
   border: 1px solid var(--b0);
   box-shadow: var(--sh0);
-  transition: border-color var(--t1), box-shadow var(--t2), transform var(--t2) var(--spring);
   animation: cardIn .3s var(--spring) both;
+  transition: border-color var(--t1), box-shadow var(--t2), transform var(--t2) var(--spring);
+  min-width: 0;
 }
 html.dark .reco-card { background: var(--s0); border-color: var(--b1); }
 .reco-card:hover {
@@ -893,59 +877,77 @@ html.dark .reco-card { background: var(--s0); border-color: var(--b1); }
 
 /* Icon bubble */
 .reco-ico-wrap {
-  width: 2.5rem; height: 2.5rem;
-  border-radius: var(--r-m);
+  width: 2.25rem; height: 2.25rem;
+  border-radius: var(--r-m); flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
   background: color-mix(in oklab, currentColor 12%, transparent);
   border: 1px solid color-mix(in oklab, currentColor 18%, transparent);
 }
-.reco-ico-wrap svg { flex-shrink: 0; }
 
-/* Text area */
+/* Text */
 .reco-content { flex: 1; min-width: 0; }
 .reco-title {
   font-size: .9375rem; font-weight: 700; letter-spacing: -.015em;
-  color: var(--tx1); line-height: 1.2; margin-bottom: var(--sp-1);
+  color: var(--tx1); line-height: 1.25;
+  margin-bottom: var(--sp-1);
+  word-break: break-word;
 }
 .reco-why {
   font-size: .75rem; font-weight: 500; line-height: 1.55;
   color: var(--tx2); margin-bottom: var(--sp-2);
+  word-break: break-word;
 }
+
+/* Steps list */
 .reco-steps {
-  display: flex; flex-direction: column; gap: 5px;
-  list-style: none;
+  display: flex; flex-direction: column; gap: 6px;
+  list-style: none; padding: 0; margin: 0;
 }
 .reco-step {
-  display: flex; align-items: baseline; gap: var(--sp-2);
-  font-size: .75rem; line-height: 1.5; color: var(--tx2);
+  display: grid;
+  grid-template-columns: 1.375rem 1fr;
+  gap: var(--sp-2);
+  font-size: .75rem; line-height: 1.55; color: var(--tx2);
+  align-items: start;
 }
 .reco-step::before {
   content: attr(data-n);
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 1.125rem; height: 1.125rem; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  width: 1.375rem; height: 1.375rem; border-radius: 50%;
   font-size: .5625rem; font-weight: 800;
   background: color-mix(in oklab, currentColor 12%, transparent);
   color: currentColor;
-  flex-shrink: 0; margin-top: 1px;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 /* Target chip */
 .reco-target {
   display: inline-flex; align-items: center; gap: 4px;
   margin-top: var(--sp-2);
-  padding: 3px 9px; border-radius: var(--r-s);
+  padding: 4px 10px; border-radius: var(--r-s);
   font-size: .625rem; font-weight: 800; letter-spacing: .04em;
   text-transform: uppercase;
   background: color-mix(in oklab, currentColor 10%, transparent);
   border: 1px solid color-mix(in oklab, currentColor 20%, transparent);
+  word-break: break-word; white-space: normal;
+  max-width: 100%;
 }
 
-/* Animations */
+/* Entrance animations */
 @keyframes fadeSlideUp {
-  from { opacity: 0; transform: translateY(12px); }
+  from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+#summary-wrap, #reco-wrap {
+  animation: fadeSlideUp .35s var(--out) both;
+}
+.reco-card:nth-child(1) { animation-delay: .04s; }
+.reco-card:nth-child(2) { animation-delay: .08s; }
+.reco-card:nth-child(3) { animation-delay: .12s; }
+.reco-card:nth-child(4) { animation-delay: .16s; }
+.reco-card:nth-child(5) { animation-delay: .20s; }
+.reco-card:nth-child(6) { animation-delay: .24s; }
 #summary-wrap, #reco-wrap {
   animation: fadeSlideUp .4s var(--out) both;
 }
@@ -1225,30 +1227,31 @@ html.dark .reco-card { background: var(--s0); border-color: var(--b1); }
     <div id="summary-wrap" style="display:none;" class="rsec summary-block">
       <div class="trig" style="cursor:default;">
         <span class="trig-lbl" role="heading" aria-level="2">
-          <span class="trig-bar"></span>Kesimpulan Kondisi Tubuh
+          <span class="trig-bar"></span>Kesimpulan
         </span>
         <span id="summary-score-badge" class="score-badge"></span>
       </div>
       <div class="sum-body">
-        <!-- Score ring -->
-        <div class="score-ring-wrap">
-          <svg class="score-ring" viewBox="0 0 120 120" aria-hidden="true">
-            <circle class="ring-bg" cx="60" cy="60" r="50"/>
-            <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="50"
-              stroke-dasharray="314" stroke-dashoffset="314"/>
-          </svg>
-          <div class="ring-label">
-            <span class="ring-num" id="ring-num">–</span>
-            <span class="ring-sub">/ 100</span>
-            <span class="ring-tag" id="ring-tag"></span>
+        <!-- Top row: ring + pills -->
+        <div class="sum-top">
+          <!-- Score ring -->
+          <div class="score-ring-wrap">
+            <svg class="score-ring" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="ring-bg" cx="60" cy="60" r="50"/>
+              <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="50"
+                stroke-dasharray="314" stroke-dashoffset="314"/>
+            </svg>
+            <div class="ring-label">
+              <span class="ring-num" id="ring-num">–</span>
+              <span class="ring-sub">/ 100</span>
+              <span class="ring-tag" id="ring-tag"></span>
+            </div>
           </div>
+          <!-- Metric pills -->
+          <div class="sum-metrics" id="sum-metrics"></div>
         </div>
-
-        <!-- Metric pills -->
-        <div class="sum-metrics" id="sum-metrics"></div>
-
-        <!-- Alert banners -->
-        <div id="sum-alerts"></div>
+        <!-- Alert banners — always full width below -->
+        <div class="sum-alerts-wrap" id="sum-alerts"></div>
       </div>
     </div>
 
@@ -1256,7 +1259,7 @@ html.dark .reco-card { background: var(--s0); border-color: var(--b1); }
     <div id="reco-wrap" style="display:none;" class="rsec">
       <div class="trig" style="cursor:default;">
         <span class="trig-lbl" role="heading" aria-level="2">
-          <span class="trig-bar"></span>Rekomendasi Aksi
+          <span class="trig-bar"></span>Rekomendasi
         </span>
         <span class="reco-sub-label">Langkah nyata berdasarkan hasil Anda</span>
       </div>
