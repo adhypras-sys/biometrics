@@ -716,7 +716,16 @@ html.dark #__tt[data-arrow="down"]::after{border-bottom-color:#202028;}
 }
 
 /* ── Score ring ─────────────────────────────────────────────── */
+/* score-ring-wrap: flex column → SVG on top, tag below */
 .score-ring-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+/* score-ring-svg: position context for absolute ring-label */
+.score-ring-svg {
   position: relative;
   width: 7.5rem;
   height: 7.5rem;
@@ -753,15 +762,16 @@ html.dark #__tt[data-arrow="down"]::after{border-bottom-color:#202028;}
 .ring-sub {
   font-size: .625rem; font-weight: 600; color: var(--tx3); margin-top: 1px;
 }
+/* ring-tag: now BELOW ring, not inside overlay */
 .ring-tag {
-  font-size: .5rem; font-weight: 800; letter-spacing: .05em;
+  display: inline-block;
+  font-size: .5625rem; font-weight: 800; letter-spacing: .06em;
   text-transform: uppercase;
-  margin-top: 4px;
-  padding: 2px 6px; border-radius: var(--r-s);
+  padding: 3px 8px; border-radius: var(--r-s);
   background: color-mix(in oklab, currentColor 12%, transparent);
   border: 1px solid color-mix(in oklab, currentColor 22%, transparent);
-  max-width: 5.5rem;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
 }
 
 /* Score badge in header */
@@ -958,6 +968,15 @@ html.dark .reco-card { background: var(--s0); border-color: var(--b1); }
 .reco-card:nth-child(5) { animation-delay: .25s; }
 .reco-card:nth-child(6) { animation-delay: .30s; }
 
+
+/* reco-step text content must not overflow grid cell */
+.reco-step span,
+.reco-step .reco-em {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.reco-em { font-weight: 700; color: var(--tx1); }
 </style>
 
 </head>
@@ -1236,16 +1255,18 @@ html.dark .reco-card { background: var(--s0); border-color: var(--b1); }
         <div class="sum-top">
           <!-- Score ring -->
           <div class="score-ring-wrap">
-            <svg class="score-ring" viewBox="0 0 120 120" aria-hidden="true">
-              <circle class="ring-bg" cx="60" cy="60" r="50"/>
-              <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="50"
-                stroke-dasharray="314" stroke-dashoffset="314"/>
-            </svg>
-            <div class="ring-label">
-              <span class="ring-num" id="ring-num">–</span>
-              <span class="ring-sub">/ 100</span>
-              <span class="ring-tag" id="ring-tag"></span>
+            <div class="score-ring-svg">
+              <svg class="score-ring" viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="50"
+                  stroke-dasharray="314" stroke-dashoffset="314"/>
+              </svg>
+              <div class="ring-label">
+                <span class="ring-num" id="ring-num">–</span>
+                <span class="ring-sub">/ 100</span>
+              </div>
             </div>
+            <div id="ring-tag" class="ring-tag"></div>
           </div>
           <!-- Metric pills -->
           <div class="sum-metrics" id="sum-metrics"></div>
@@ -2227,6 +2248,7 @@ function buildSummary(d) {
   ringTag.textContent  = tier.label;
   ringTag.className    = 'ring-tag ' + tier.cls;
   ringTag.style.color  = tier.col;
+  ringTag.style.display = '';
 
   const badge = document.getElementById('summary-score-badge');
   badge.textContent = tier.label;
@@ -2397,7 +2419,7 @@ function buildReco(d, ctx) {
     `<div class="reco-ico-wrap" style="color:${col}"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">${ICOS[key]||ICOS.check}</svg></div>`;
 
   const steps = (...s) => s.map((t,i) =>
-    `<li class="reco-step" data-n="${i+1}" style="color:var(--tx2)">${t}</li>`).join('');
+    `<li class="reco-step" data-n="${i+1}" style="color:var(--tx2)"><span>${t}</span></li>`).join('');
 
   const target = (label, col) =>
     `<div class="reco-target" style="color:${col}">🎯 ${label}</div>`;
@@ -2425,7 +2447,7 @@ function buildReco(d, ctx) {
       title:'Kurangi asupan kalori secara moderat',
       why:`IMT ${bmi.toFixed(1)} dan lemak tubuh ${bf?.toFixed(1)||'-'}% di atas rentang ideal. Defisit ${deficit} kkal/hari adalah pendekatan aman yang mempertahankan massa otot.`,
       steps_html: steps(
-        tdeeTarget ? `Targetkan total kalori harian <strong>${tdeeTarget.toLocaleString('id')} kkal</strong> (defisit ${deficit} kkal dari TDEE Anda).` : 'Kurangi 300–500 kkal dari asupan harian saat ini.',
+        tdeeTarget ? `Targetkan total kalori harian <span class="reco-em">${tdeeTarget.toLocaleString('id')} kkal</span> (defisit ${deficit} kkal dari TDEE Anda).` : 'Kurangi 300–500 kkal dari asupan harian saat ini.',
         'Prioritaskan protein 1,6–2,0 g per kg massa bebas lemak agar otot terjaga.',
         'Hindari minuman manis, makanan ultra-proses, dan gorengan berlebih.',
         'Makan perlahan — butuh ~20 menit otak menyadari rasa kenyang.'
@@ -2443,7 +2465,7 @@ function buildReco(d, ctx) {
       title:'Tingkatkan asupan kalori dan protein',
       why:`IMT ${bmi.toFixed(1)} di bawah 18,5 — kondisi ini berisiko menurunkan imunitas, kepadatan tulang, dan energi.`,
       steps_html: steps(
-        tdeeTarget ? `Targetkan asupan <strong>${tdeeTarget.toLocaleString('id')} kkal/hari</strong> (surplus ${surplus} kkal dari TDEE Anda).` : 'Tambahkan 300 kkal/hari dari makanan padat nutrisi.',
+        tdeeTarget ? `Targetkan asupan <span class="reco-em">${tdeeTarget.toLocaleString('id')} kkal/hari</span> (surplus ${surplus} kkal dari TDEE Anda).` : 'Tambahkan 300 kkal/hari dari makanan padat nutrisi.',
         'Pilih sumber kalori berkualitas: kacang-kacangan, alpukat, nasi merah, telur, ikan.',
         'Makan 4–5 kali sehari dalam porsi kecil daripada 2–3 porsi besar.',
         'Latihan beban ringan 2–3×/minggu untuk memastikan kenaikan berat berupa otot.'
@@ -2464,7 +2486,7 @@ function buildReco(d, ctx) {
         ? `Estimasi VO₂ Maks ${vo2val} ml/kg/min dan RHR ${d.rhr||'-'} bpm mengindikasikan jantung perlu lebih banyak latihan aerobik.`
         : 'Denyut nadi istirahat yang tinggi menandakan kondisi kardiovaskular yang perlu dilatih.',
       steps_html: steps(
-        'Mulai dengan <strong>150 menit/minggu kardio intensitas sedang</strong> — jalan cepat, bersepeda, atau berenang.',
+        'Mulai dengan <span class="reco-em">150 menit/minggu kardio intensitas sedang</span> — jalan cepat, bersepeda, atau berenang.',
         'Pertahankan detak jantung di zona 2 (60–70% detak maks) untuk membangun fondasi aerobik.',
         'Tambahkan 1–2 sesi HIIT per minggu (2 menit intens : 1 menit istirahat, 15–20 menit) setelah 4 minggu rutin.',
         'Ukur RHR tiap pagi setelah bangun tidur — penurunan 5 bpm pertanda kemajuan signifikan.'
@@ -2480,7 +2502,7 @@ function buildReco(d, ctx) {
       title:'Kurangi lemak perut dengan gerakan harian',
       why:`Rasio pinggang/tinggi ${(d.waist/d.height).toFixed(2)} di atas 0,50 — lemak di area ini lebih berbahaya dari lemak bawah kulit.`,
       steps_html: steps(
-        'Capai <strong>8.000–10.000 langkah/hari</strong> — gunakan tangga, parkir lebih jauh, jalan saat istirahat makan.',
+        'Capai <span class="reco-em">8.000–10.000 langkah/hari</span> — gunakan tangga, parkir lebih jauh, jalan saat istirahat makan.',
         'Kurangi waktu duduk terus-menerus — berdiri atau berjalan singkat setiap 45–60 menit.',
         'Hindari karbohidrat olahan malam hari; pilih sayuran, protein tanpa lemak, dan lemak sehat.',
         'Tidur cukup 7–9 jam — kurang tidur meningkatkan kortisol yang mendorong akumulasi lemak perut.'
@@ -2499,7 +2521,7 @@ function buildReco(d, ctx) {
       title:'Bangun massa otot dengan latihan beban',
       why:'Otot yang lebih banyak meningkatkan metabolisme basal, memperbaiki sensitivitas insulin, dan melindungi sendi serta kepadatan tulang.',
       steps_html: steps(
-        'Mulai <strong>latihan beban 2–3× per minggu</strong> — fokus gerakan compound: squat, deadlift, push-up, row.',
+        'Mulai <span class="reco-em">latihan beban 2–3× per minggu</span> — fokus gerakan compound: squat, deadlift, push-up, row.',
         'Pastikan asupan protein cukup: 1,6 g/kg massa bebas lemak/hari minimal.',
         'Istirahat 48 jam antar sesi otot yang sama — otot tumbuh saat istirahat, bukan saat latihan.',
         'Progressif overload: naikkan beban atau repetisi secara bertahap setiap 1–2 minggu.'
@@ -2516,7 +2538,7 @@ function buildReco(d, ctx) {
       title:`Penuhi kebutuhan cairan ${waterL} L/hari`,
       why:'Dehidrasi ringan (1–2% berat badan) sudah cukup menurunkan performa fisik dan kognitif serta meningkatkan nafsu makan palsu.',
       steps_html: steps(
-        `Sebar asupan — minum <strong>1 gelas (250 ml) setiap jam</strong> selama 8 jam aktif.`,
+        `Sebar asupan — minum <span class="reco-em">1 gelas (250 ml) setiap jam</span> selama 8 jam aktif.`,
         'Minum 500 ml air 30 menit sebelum makan — membantu mengontrol porsi makan.',
         'Pantau warna urin: kuning pucat = cukup hidrasi; kuning pekat = perlu minum lebih.',
         'Tambahkan buah-buahan tinggi air (semangka, mentimun, jeruk) sebagai sumber cairan alami.'
@@ -2532,7 +2554,7 @@ function buildReco(d, ctx) {
       title:'Perbaiki kualitas tidur dan pemulihan',
       why:`RHR ${d.rhr||'-'} bpm bisa dipengaruhi kualitas tidur yang buruk dan stres kronis — keduanya meningkatkan kortisol dan menekan sistem imun.`,
       steps_html: steps(
-        'Targetkan <strong>7–9 jam tidur</strong> dengan waktu tidur dan bangun yang konsisten setiap hari.',
+        'Targetkan <span class="reco-em">7–9 jam tidur</span> dengan waktu tidur dan bangun yang konsisten setiap hari.',
         'Hindari layar (HP/TV) minimal 1 jam sebelum tidur — cahaya biru menekan melatonin.',
         'Ruangan tidur sejuk (18–22°C), gelap, dan tenang meningkatkan kualitas tidur dalam.',
         'Coba teknik relaksasi 4-7-8: hirup 4 detik, tahan 7 detik, hembuskan 8 detik.'
