@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BioMetrics Pro</title>
-
-<!-- Prevent flash of wrong theme -->
 <script>
 (function(){
   try{
@@ -15,118 +13,134 @@
   }catch(e){}
 })();
 </script>
-
-<!-- Tailwind v4 (offline) -->
 <style id="tw">/*! tailwindcss v4.3.0 | MIT License | https://tailwindcss.com */
 @layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-pan-x:initial;--tw-pan-y:initial;--tw-pinch-zoom:initial;--tw-scroll-snap-strictness:proximity;--tw-space-y-reverse:0;--tw-space-x-reverse:0;--tw-divide-x-reverse:0;--tw-border-style:solid;--tw-divide-y-reverse:0;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-ordinal:initial;--tw-slashed-zero:initial;--tw-numeric-figure:initial;--tw-numeric-spacing:initial;--tw-numeric-fraction:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw-backdrop-contrast:initial;--tw-backdrop-grayscale:initial;--tw-backdrop-hue-rotate:initial;--tw-backdrop-invert:initial;--tw-backdrop-opacity:initial;--tw-backdrop-saturate:initial;--tw-backdrop-sepia:initial;--tw-duration:initial;--tw-ease:initial;--tw-contain-size:initial;--tw-contain-layout:initial;--tw-contain-paint:initial;--tw-contain-style:initial;--tw-content:"";--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1}}}@layer theme{:root,:host{--font-sans:"Inter", ui-sans-serif, system-ui, sans-serif;--font-mono:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;--color-red-50:oklch(97.1% .013 17.38);--color-red-100:oklch(93.6% .032 17.717);--color-red-200:oklch(88.5% .062 18.334);--color-red-400:oklch(70.4% .191 22.216);--color-red-500:oklch(63.7% .237 25.331);--color-red-600:oklch(57.7% .245 27.325);--color-red-800:oklch(44.4% .177 26.899);--color-red-900:oklch(39.6% .141 25.723);--color-red-950:oklch(25.8% .092 26.042);--color-amber-500:oklch(76.9% .188 70.08);--color-emerald-300:oklch(84.5% .143 164.978);--color-emerald-400:oklch(76.5% .177 163.223);--color-emerald-500:oklch(69.6% .17 162.48);--color-teal-500:oklch(70.4% .14 182.503);--color-sky-300:oklch(82.8% .111 230.318);--color-blue-500:oklch(62.3% .214 259.815);--color-purple-300:oklch(82.7% .119 306.383);--color-fuchsia-500:oklch(66.7% .295 322.15);--color-pink-300:oklch(82.3% .12 346.018);--color-rose-500:oklch(64.5% .246 16.439);--color-black:#000;--color-white:#fff;--spacing:.25rem;--container-6xl:72rem;--text-xs:.75rem;--text-xs--line-height:calc(1 / .75);--text-sm:.875rem;--text-sm--line-height:calc(1.25 / .875);--text-lg:1.125rem;--text-lg--line-height:calc(1.75 / 1.125);--text-xl:1.25rem;--text-xl--line-height:calc(1.75 / 1.25);--text-3xl:1.875rem;--text-3xl--line-height:calc(2.25 / 1.875);--text-6xl:3.75rem;--text-6xl--line-height:1;--font-weight-thin:100;--font-weight-extralight:200;--font-weight-medium:500;--font-weight-semibold:600;--font-weight-bold:700;--font-weight-black:900;--tracking-tight:-.025em;--tracking-wider:.05em;--leading-relaxed:1.625;--radius-md:.375rem;--radius-lg:.5rem;--radius-xl:.75rem;--radius-2xl:1rem;--radius-3xl:1.5rem;--ease-in:cubic-bezier(.4, 0, 1, 1);--ease-out:cubic-bezier(0, 0, .2, 1);--ease-in-out:cubic-bezier(.4, 0, .2, 1);--default-transition-duration:.15s;--default-transition-timing-function:cubic-bezier(.4, 0, .2, 1);--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono);--color-brand-50:#f0f9ff;--color-brand-100:#e0f2fe;--color-brand-200:#bae6fd;--color-brand-300:#7dd3fc;--color-brand-400:#38bdf8;--color-brand-500:#0ea5e9;--color-brand-600:#0284c7;--color-brand-700:#0369a1;--color-brand-800:#075985;--color-brand-900:#0c4a6e;--color-brand-950:#082f49}}@layer base{*,:after,:before,::backdrop{box-sizing:border-box;border:0 solid;margin:0;padding:0}::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;tab-size:4;line-height:1.5;font-family:var(--default-font-family,ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");font-feature-settings:var(--default-font-feature-settings,normal);font-variation-settings:var(--default-font-variation-settings,normal);-webkit-tap-highlight-color:transparent}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;-webkit-text-decoration:inherit;-webkit-text-decoration:inherit;-webkit-text-decoration:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:var(--default-mono-font-family,ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);font-feature-settings:var(--default-mono-font-feature-settings,normal);font-variation-settings:var(--default-mono-font-variation-settings,normal);font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}:-moz-focusring{outline:auto}progress{vertical-align:baseline}summary{display:list-item}ol,ul,menu{list-style:none}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}button,input,select,optgroup,textarea{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}::file-selector-button{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}:where(select:is([multiple],[size])) optgroup{font-weight:bolder}:where(select:is([multiple],[size])) optgroup option{padding-inline-start:20px}::file-selector-button{margin-inline-end:4px}::placeholder{opacity:1}@supports (not ((-webkit-appearance:-apple-pay-button))) or (contain-intrinsic-size:1px){::placeholder{color:currentColor}@supports (color:color-mix(in lab, red, red)){::placeholder{color:color-mix(in oklab, currentcolor 50%, transparent)}}}textarea{resize:vertical}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-date-and-time-value{min-height:1lh;text-align:inherit}::-webkit-datetime-edit{display:inline-flex}::-webkit-datetime-edit-fields-wrapper{padding:0}::-webkit-datetime-edit{padding-block:0}::-webkit-datetime-edit-year-field{padding-block:0}::-webkit-datetime-edit-month-field{padding-block:0}::-webkit-datetime-edit-day-field{padding-block:0}::-webkit-datetime-edit-hour-field{padding-block:0}::-webkit-datetime-edit-minute-field{padding-block:0}::-webkit-datetime-edit-second-field{padding-block:0}::-webkit-datetime-edit-millisecond-field{padding-block:0}::-webkit-datetime-edit-meridiem-field{padding-block:0}::-webkit-calendar-picker-indicator{line-height:1}:-moz-ui-invalid{box-shadow:none}button,input:where([type=button],[type=reset],[type=submit]){appearance:button}::file-selector-button{appearance:button}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[hidden]:where(:not([hidden=until-found])){display:none!important}}@layer components;@layer utilities{.\@container{container-type:inline-size}.pointer-events-auto{pointer-events:auto}.pointer-events-none{pointer-events:none}.collapse{visibility:collapse}.invisible{visibility:hidden}.visible{visibility:visible}.sr-only{clip-path:inset(50%);white-space:nowrap;border-width:0;width:1px;height:1px;margin:-1px;padding:0;position:absolute;overflow:hidden}.not-sr-only{clip-path:none;white-space:normal;width:auto;height:auto;margin:0;padding:0;position:static;overflow:visible}.absolute{position:absolute}.fixed{position:fixed}.relative{position:relative}.static{position:static}.sticky{position:sticky}.-inset-1{inset:calc(var(--spacing) * -1)}.-top-6{top:calc(var(--spacing) * -6)}.top-0{top:calc(var(--spacing) * 0)}.-right-4{right:calc(var(--spacing) * -4)}.isolate{isolation:isolate}.isolation-auto{isolation:auto}.-z-10{z-index:calc(10 * -1)}.z-4{z-index:4}.z-10{z-index:10}.z-50{z-index:50}.order-first{order:-9999}.order-last{order:9999}.col-span-full{grid-column:1/-1}.row-span-full{grid-row:1/-1}.float-end{float:inline-end}.float-left{float:left}.float-none{float:none}.float-right{float:right}.float-start{float:inline-start}.clear-both{clear:both}.clear-end{clear:inline-end}.clear-left{clear:left}.clear-none{clear:none}.clear-right{clear:right}.clear-start{clear:inline-start}.container{width:100%}@media (min-width:40rem){.container{max-width:40rem}}@media (min-width:48rem){.container{max-width:48rem}}@media (min-width:64rem){.container{max-width:64rem}}@media (min-width:80rem){.container{max-width:80rem}}@media (min-width:96rem){.container{max-width:96rem}}.-mx-6{margin-inline:calc(var(--spacing) * -6)}.mx-auto{margin-inline:auto}.my-auto{margin-block:auto}.mt-1\.5{margin-top:calc(var(--spacing) * 1.5)}.mt-2{margin-top:calc(var(--spacing) * 2)}.mt-auto{margin-top:auto}.mr-1{margin-right:calc(var(--spacing) * 1)}.mb-1{margin-bottom:calc(var(--spacing) * 1)}.mb-2{margin-bottom:calc(var(--spacing) * 2)}.mb-2\.5{margin-bottom:calc(var(--spacing) * 2.5)}.mb-3{margin-bottom:calc(var(--spacing) * 3)}.mb-8{margin-bottom:calc(var(--spacing) * 8)}.mb-auto{margin-bottom:auto}.ml-1\.5{margin-left:calc(var(--spacing) * 1.5)}.box-border{box-sizing:border-box}.box-content{box-sizing:content-box}.line-clamp-none{-webkit-line-clamp:unset;-webkit-box-orient:horizontal;display:block;overflow:visible}.block{display:block}.contents{display:contents}.flex{display:flex}.flow-root{display:flow-root}.grid{display:grid}.hidden{display:none}.inline{display:inline}.inline\!{display:inline!important}.inline-block{display:inline-block}.inline-flex{display:inline-flex}.inline-grid{display:inline-grid}.inline-table{display:inline-table}.list-item{display:list-item}.table{display:table}.table-caption{display:table-caption}.table-cell{display:table-cell}.table-column{display:table-column}.table-column-group{display:table-column-group}.table-footer-group{display:table-footer-group}.table-header-group{display:table-header-group}.table-row{display:table-row}.table-row-group{display:table-row-group}.h-4{height:calc(var(--spacing) * 4)}.h-5{height:calc(var(--spacing) * 5)}.h-6{height:calc(var(--spacing) * 6)}.min-h-\[140px\]{min-height:140px}.min-h-screen{min-height:100vh}.w-1\/2{width:50%}.w-2{width:calc(var(--spacing) * 2)}.w-4{width:calc(var(--spacing) * 4)}.w-5{width:calc(var(--spacing) * 5)}.w-6{width:calc(var(--spacing) * 6)}.w-11{width:calc(var(--spacing) * 11)}.w-full{width:100%}.w-px{width:1px}.max-w-6xl{max-width:var(--container-6xl)}.max-w-none{max-width:none}.max-w-prose{max-width:65ch}.flex-shrink,.shrink{flex-shrink:1}.flex-grow,.grow{flex-grow:1}.table-auto{table-layout:auto}.table-fixed{table-layout:fixed}.caption-bottom{caption-side:bottom}.caption-top{caption-side:top}.border-collapse{border-collapse:collapse}.border-separate{border-collapse:separate}.translate-x-1{--tw-translate-x:calc(var(--spacing) * 1);translate:var(--tw-translate-x) var(--tw-translate-y)}.translate-x-6{--tw-translate-x:calc(var(--spacing) * 6);translate:var(--tw-translate-x) var(--tw-translate-y)}.rotate-180{rotate:180deg}.transform,.transform-cpu{transform:var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,)}.transform-gpu{transform:translateZ(0) var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,)}.transform-none{transform:none}.cursor-help{cursor:help}.cursor-move{cursor:move}.cursor-text{cursor:text}.cursor-wait{cursor:wait}.touch-pan-left{--tw-pan-x:pan-left;touch-action:var(--tw-pan-x,) var(--tw-pan-y,) var(--tw-pinch-zoom,)}.touch-pan-right{--tw-pan-x:pan-right;touch-action:var(--tw-pan-x,) var(--tw-pan-y,) var(--tw-pinch-zoom,)}.touch-pan-x{--tw-pan-x:pan-x;touch-action:var(--tw-pan-x,) var(--tw-pan-y,) var(--tw-pinch-zoom,)}.touch-pan-down{--tw-pan-y:pan-down;touch-action:var(--tw-pan-x,) var(--tw-pan-y,) var(--tw-pinch-zoom,)}.touch-pan-up{--tw-pan-y:pan-up;touch-action:var(--tw-pan-x,) var(--tw-pan-y,) var(--tw-pinch-zoom,)}.touch-pan-y{--tw-pan-y:pan-y;touch-action:var(--tw-pan-x,) var(--tw-pan-y,) var(--tw-pinch-zoom,)}.touch-pinch-zoom{--tw-pinch-zoom:pinch-zoom;touch-action:var(--tw-pan-x,) var(--tw-pan-y,) var(--tw-pinch-zoom,)}.touch-auto{touch-action:auto}.touch-manipulation{touch-action:manipulation}.touch-none{touch-action:none}.resize{resize:both}.resize-none{resize:none}.resize-x{resize:horizontal}.resize-y{resize:vertical}.snap-both{scroll-snap-type:both var(--tw-scroll-snap-strictness)}.snap-none{scroll-snap-type:none}.snap-x{scroll-snap-type:x var(--tw-scroll-snap-strictness)}.snap-y{scroll-snap-type:y var(--tw-scroll-snap-strictness)}.snap-mandatory{--tw-scroll-snap-strictness:mandatory}.snap-proximity{--tw-scroll-snap-strictness:proximity}.snap-align-none{scroll-snap-align:none}.snap-center{scroll-snap-align:center}.snap-end{scroll-snap-align:end}.snap-start{scroll-snap-align:start}.snap-always{scroll-snap-stop:always}.snap-normal{scroll-snap-stop:normal}.list-inside{list-style-position:inside}.list-outside{list-style-position:outside}.appearance-auto{appearance:auto}.appearance-none{appearance:none}.break-before-all{break-before:all}.break-before-auto{break-before:auto}.break-before-avoid{break-before:avoid}.break-before-avoid-page{break-before:avoid-page}.break-before-column{break-before:column}.break-before-left{break-before:left}.break-before-page{break-before:page}.break-before-right{break-before:right}.break-inside-auto{break-inside:auto}.break-inside-avoid{break-inside:avoid}.break-inside-avoid-column{break-inside:avoid-column}.break-inside-avoid-page{break-inside:avoid-page}.break-after-all{break-after:all}.break-after-auto{break-after:auto}.break-after-avoid{break-after:avoid}.break-after-avoid-page{break-after:avoid-page}.break-after-column{break-after:column}.break-after-left{break-after:left}.break-after-page{break-after:page}.break-after-right{break-after:right}.grid-flow-col{grid-auto-flow:column}.grid-flow-col-dense{grid-auto-flow:column dense}.grid-flow-dense{grid-auto-flow:dense}.grid-flow-row{grid-auto-flow:row}.grid-flow-row-dense{grid-auto-flow:dense}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-col-reverse{flex-direction:column-reverse}.flex-row{flex-direction:row}.flex-row-reverse{flex-direction:row-reverse}.flex-nowrap{flex-wrap:nowrap}.flex-wrap{flex-wrap:wrap}.flex-wrap-reverse{flex-wrap:wrap-reverse}.place-content-around{place-content:space-around}.place-content-baseline{place-content:baseline start}.place-content-between{place-content:space-between}.place-content-center{place-content:center}.place-content-end{place-content:end}.place-content-evenly{place-content:space-evenly}.place-content-start{place-content:start}.place-content-stretch{place-content:stretch}.place-items-baseline{place-items:baseline}.place-items-center{place-items:center}.place-items-end{place-items:end}.place-items-start{place-items:start}.place-items-stretch{place-items:stretch stretch}.content-around{align-content:space-around}.content-baseline{align-content:baseline}.content-between{align-content:space-between}.content-center{align-content:center}.content-end{align-content:flex-end}.content-evenly{align-content:space-evenly}.content-normal{align-content:normal}.content-start{align-content:flex-start}.content-stretch{align-content:stretch}.items-baseline{align-items:baseline}.items-center{align-items:center}.items-end{align-items:flex-end}.items-start{align-items:flex-start}.items-stretch{align-items:stretch}.justify-around{justify-content:space-around}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.justify-end{justify-content:flex-end}.justify-evenly{justify-content:space-evenly}.justify-normal{justify-content:normal}.justify-start{justify-content:flex-start}.justify-stretch{justify-content:stretch}.justify-items-center{justify-items:center}.justify-items-end{justify-items:end}.justify-items-start{justify-items:start}.justify-items-stretch{justify-items:stretch}.gap-1\.5{gap:calc(var(--spacing) * 1.5)}.gap-2{gap:calc(var(--spacing) * 2)}.gap-3{gap:calc(var(--spacing) * 3)}.gap-4{gap:calc(var(--spacing) * 4)}:where(.space-y-6>:not(:last-child)){--tw-space-y-reverse:0;margin-block-start:calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));margin-block-end:calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)))}:where(.space-y-reverse>:not(:last-child)){--tw-space-y-reverse:1}.gap-x-6{column-gap:calc(var(--spacing) * 6)}:where(.space-x-0>:not(:last-child)){--tw-space-x-reverse:0;margin-inline-start:calc(calc(var(--spacing) * 0) * var(--tw-space-x-reverse));margin-inline-end:calc(calc(var(--spacing) * 0) * calc(1 - var(--tw-space-x-reverse)))}:where(.space-x-2>:not(:last-child)){--tw-space-x-reverse:0;margin-inline-start:calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));margin-inline-end:calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)))}:where(.space-x-reverse>:not(:last-child)){--tw-space-x-reverse:1}.gap-y-5{row-gap:calc(var(--spacing) * 5)}:where(.divide-x>:not(:last-child)){--tw-divide-x-reverse:0;border-inline-style:var(--tw-border-style);border-inline-start-width:calc(1px * var(--tw-divide-x-reverse));border-inline-end-width:calc(1px * calc(1 - var(--tw-divide-x-reverse)))}:where(.divide-y>:not(:last-child)){--tw-divide-y-reverse:0;border-bottom-style:var(--tw-border-style);border-top-style:var(--tw-border-style);border-top-width:calc(1px * var(--tw-divide-y-reverse));border-bottom-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)))}:where(.divide-y-reverse>:not(:last-child)){--tw-divide-y-reverse:1}:where(.divide-dashed>:not(:last-child)){--tw-border-style:dashed;border-style:dashed}:where(.divide-dotted>:not(:last-child)){--tw-border-style:dotted;border-style:dotted}:where(.divide-double>:not(:last-child)){--tw-border-style:double;border-style:double}:where(.divide-none>:not(:last-child)){--tw-border-style:none;border-style:none}:where(.divide-solid>:not(:last-child)){--tw-border-style:solid;border-style:solid}.place-self-auto{place-self:auto}.place-self-center{place-self:center}.place-self-end{place-self:end}.place-self-start{place-self:start}.place-self-stretch{place-self:stretch stretch}.self-auto{align-self:auto}.self-baseline{align-self:baseline}.self-center{align-self:center}.self-end{align-self:flex-end}.self-start{align-self:flex-start}.self-stretch{align-self:stretch}.justify-self-auto{justify-self:auto}.justify-self-center{justify-self:center}.justify-self-end{justify-self:flex-end}.justify-self-start{justify-self:flex-start}.justify-self-stretch{justify-self:stretch}.truncate{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.overflow-auto{overflow:auto}.overflow-clip{overflow:clip}.overflow-hidden{overflow:hidden}.overflow-scroll{overflow:scroll}.overflow-visible{overflow:visible}.overflow-x-auto{overflow-x:auto}.overflow-x-clip{overflow-x:clip}.overflow-x-hidden{overflow-x:hidden}.overflow-x-scroll{overflow-x:scroll}.overflow-x-visible{overflow-x:visible}.overflow-y-auto{overflow-y:auto}.overflow-y-clip{overflow-y:clip}.overflow-y-hidden{overflow-y:hidden}.overflow-y-scroll{overflow-y:scroll}.overflow-y-visible{overflow-y:visible}.overscroll-auto{overscroll-behavior:auto}.overscroll-contain{overscroll-behavior:contain}.overscroll-none{overscroll-behavior:none}.overscroll-x-auto{overscroll-behavior-x:auto}.overscroll-x-contain{overscroll-behavior-x:contain}.overscroll-x-none{overscroll-behavior-x:none}.overscroll-y-auto{overscroll-behavior-y:auto}.overscroll-y-contain{overscroll-behavior-y:contain}.overscroll-y-none{overscroll-behavior-y:none}.scroll-auto{scroll-behavior:auto}.scroll-smooth{scroll-behavior:smooth}.rounded{border-radius:.25rem}.rounded-2xl{border-radius:var(--radius-2xl)}.rounded-3xl{border-radius:var(--radius-3xl)}.rounded-full{border-radius:3.40282e38px}.rounded-lg{border-radius:var(--radius-lg)}.rounded-md{border-radius:var(--radius-md)}.rounded-xl{border-radius:var(--radius-xl)}.rounded-s{border-start-start-radius:.25rem;border-end-start-radius:.25rem}.rounded-ss{border-start-start-radius:.25rem}.rounded-e{border-start-end-radius:.25rem;border-end-end-radius:.25rem}.rounded-se{border-start-end-radius:.25rem}.rounded-ee{border-end-end-radius:.25rem}.rounded-es{border-end-start-radius:.25rem}.rounded-t{border-top-left-radius:.25rem;border-top-right-radius:.25rem}.rounded-l{border-top-left-radius:.25rem;border-bottom-left-radius:.25rem}.rounded-tl{border-top-left-radius:.25rem}.rounded-r{border-top-right-radius:.25rem;border-bottom-right-radius:.25rem}.rounded-tr{border-top-right-radius:.25rem}.rounded-b{border-bottom-right-radius:.25rem;border-bottom-left-radius:.25rem}.rounded-br{border-bottom-right-radius:.25rem}.rounded-bl{border-bottom-left-radius:.25rem}.border{border-style:var(--tw-border-style);border-width:1px}.border-2{border-style:var(--tw-border-style);border-width:2px}.border-x{border-inline-style:var(--tw-border-style);border-inline-width:1px}.border-y{border-block-style:var(--tw-border-style);border-block-width:1px}.border-s{border-inline-start-style:var(--tw-border-style);border-inline-start-width:1px}.border-e{border-inline-end-style:var(--tw-border-style);border-inline-end-width:1px}.border-t{border-top-style:var(--tw-border-style);border-top-width:1px}.border-r{border-right-style:var(--tw-border-style);border-right-width:1px}.border-b{border-bottom-style:var(--tw-border-style);border-bottom-width:1px}.border-l{border-left-style:var(--tw-border-style);border-left-width:1px}.border-dashed{--tw-border-style:dashed;border-style:dashed}.border-dotted{--tw-border-style:dotted;border-style:dotted}.border-double{--tw-border-style:double;border-style:double}.border-hidden{--tw-border-style:hidden;border-style:hidden}.border-none{--tw-border-style:none;border-style:none}.border-solid{--tw-border-style:solid;border-style:solid}.border-brand-50{border-color:var(--color-brand-50)}.border-brand-100{border-color:var(--color-brand-100)}.border-brand-200{border-color:var(--color-brand-200)}.border-red-100{border-color:var(--color-red-100)}.border-red-200{border-color:var(--color-red-200)}.bg-\[rgb\(255\,0\,0\)\]{background-color:red}.bg-blue-500{background-color:var(--color-blue-500)}.bg-brand-50{background-color:var(--color-brand-50)}.bg-brand-50\/40{background-color:#f0f9ff66}@supports (color:color-mix(in lab, red, red)){.bg-brand-50\/40{background-color:color-mix(in oklab, var(--color-brand-50) 40%, transparent)}}.bg-brand-100\/50{background-color:#e0f2fe80}@supports (color:color-mix(in lab, red, red)){.bg-brand-100\/50{background-color:color-mix(in oklab, var(--color-brand-100) 50%, transparent)}}.bg-brand-300{background-color:var(--color-brand-300)}.bg-brand-500{background-color:var(--color-brand-500)}.bg-emerald-300{background-color:var(--color-emerald-300)}.bg-fuchsia-500{background-color:var(--color-fuchsia-500)}.bg-pink-300{background-color:var(--color-pink-300)}.bg-purple-300{background-color:var(--color-purple-300)}.bg-red-50\/80{background-color:#fef2f2cc}@supports (color:color-mix(in lab, red, red)){.bg-red-50\/80{background-color:color-mix(in oklab, var(--color-red-50) 80%, transparent)}}.bg-rose-500{background-color:var(--color-rose-500)}.bg-sky-300{background-color:var(--color-sky-300)}.bg-teal-500{background-color:var(--color-teal-500)}.bg-transparent{background-color:#0000}.bg-white{background-color:var(--color-white)}.bg-none{background-image:none}.box-decoration-clone{-webkit-box-decoration-break:clone;box-decoration-break:clone}.box-decoration-slice{-webkit-box-decoration-break:slice;box-decoration-break:slice}.decoration-clone{-webkit-box-decoration-break:clone;box-decoration-break:clone}.decoration-slice{-webkit-box-decoration-break:slice;box-decoration-break:slice}.bg-auto{background-size:auto}.bg-fixed{background-attachment:fixed}.bg-local{background-attachment:local}.bg-scroll{background-attachment:scroll}.bg-clip-border{background-clip:border-box}.bg-clip-content{background-clip:content-box}.bg-clip-padding{background-clip:padding-box}.bg-clip-text{-webkit-background-clip:text;background-clip:text}.bg-no-repeat{background-repeat:no-repeat}.bg-repeat{background-repeat:repeat}.bg-repeat-round{background-repeat:round}.bg-repeat-space{background-repeat:space}.bg-repeat-x{background-repeat:repeat-x}.bg-repeat-y{background-repeat:repeat-y}.bg-origin-border{background-origin:border-box}.bg-origin-content{background-origin:content-box}.bg-origin-padding{background-origin:padding-box}.mask-repeat{-webkit-mask-repeat:repeat;mask-repeat:repeat}.fill-none{fill:none}.stroke-none{stroke:none}.object-contain{object-fit:contain}.object-cover{object-fit:cover}.object-fill{object-fit:fill}.object-none{object-fit:none}.object-scale-down{object-fit:scale-down}.p-0{padding:calc(var(--spacing) * 0)}.p-1{padding:calc(var(--spacing) * 1)}.p-2{padding:calc(var(--spacing) * 2)}.p-2\.5{padding:calc(var(--spacing) * 2.5)}.p-4{padding:calc(var(--spacing) * 4)}.p-5{padding:calc(var(--spacing) * 5)}.p-6{padding:calc(var(--spacing) * 6)}.px-1{padding-inline:calc(var(--spacing) * 1)}.px-1\.5{padding-inline:calc(var(--spacing) * 1.5)}.px-2\.5{padding-inline:calc(var(--spacing) * 2.5)}.px-3{padding-inline:calc(var(--spacing) * 3)}.px-4{padding-inline:calc(var(--spacing) * 4)}.px-5{padding-inline:calc(var(--spacing) * 5)}.py-1{padding-block:calc(var(--spacing) * 1)}.py-1\.5{padding-block:calc(var(--spacing) * 1.5)}.py-4{padding-block:calc(var(--spacing) * 4)}.py-5{padding-block:calc(var(--spacing) * 5)}.py-8{padding-block:calc(var(--spacing) * 8)}.pt-2{padding-top:calc(var(--spacing) * 2)}.pr-3{padding-right:calc(var(--spacing) * 3)}.pb-6{padding-bottom:calc(var(--spacing) * 6)}.pl-3{padding-left:calc(var(--spacing) * 3)}.text-center{text-align:center}.text-end{text-align:end}.text-justify{text-align:justify}.text-left{text-align:left}.text-right{text-align:right}.text-start{text-align:start}.align-baseline{vertical-align:baseline}.align-bottom{vertical-align:bottom}.align-middle{vertical-align:middle}.align-sub{vertical-align:sub}.align-super{vertical-align:super}.align-text-bottom{vertical-align:text-bottom}.align-text-top{vertical-align:text-top}.align-top{vertical-align:top}.font-sans{font-family:var(--font-sans)}.text-3xl{font-size:var(--text-3xl);line-height:var(--tw-leading,var(--text-3xl--line-height))}.text-6xl{font-size:var(--text-6xl);line-height:var(--tw-leading,var(--text-6xl--line-height))}.text-lg{font-size:var(--text-lg);line-height:var(--tw-leading,var(--text-lg--line-height))}.text-sm{font-size:var(--text-sm);line-height:var(--tw-leading,var(--text-sm--line-height))}.text-xl{font-size:var(--text-xl);line-height:var(--tw-leading,var(--text-xl--line-height))}.text-xs{font-size:var(--text-xs);line-height:var(--tw-leading,var(--text-xs--line-height))}.text-\[11px\]{font-size:11px}.leading-relaxed{--tw-leading:var(--leading-relaxed);line-height:var(--leading-relaxed)}.font-black{--tw-font-weight:var(--font-weight-black);font-weight:var(--font-weight-black)}.font-bold{--tw-font-weight:var(--font-weight-bold);font-weight:var(--font-weight-bold)}.font-extralight{--tw-font-weight:var(--font-weight-extralight);font-weight:var(--font-weight-extralight)}.font-medium{--tw-font-weight:var(--font-weight-medium);font-weight:var(--font-weight-medium)}.font-semibold{--tw-font-weight:var(--font-weight-semibold);font-weight:var(--font-weight-semibold)}.font-thin{--tw-font-weight:var(--font-weight-thin);font-weight:var(--font-weight-thin)}.tracking-tight{--tw-tracking:var(--tracking-tight);letter-spacing:var(--tracking-tight)}.tracking-wider{--tw-tracking:var(--tracking-wider);letter-spacing:var(--tracking-wider)}.text-balance{text-wrap:balance}.text-nowrap{text-wrap:nowrap}.text-pretty{text-wrap:pretty}.text-wrap{text-wrap:wrap}.break-normal{overflow-wrap:normal;word-break:normal}.break-words{overflow-wrap:break-word}.break-all{word-break:break-all}.break-keep{word-break:keep-all}.overflow-ellipsis{text-overflow:ellipsis}.text-clip{text-overflow:clip}.text-ellipsis{text-overflow:ellipsis}.hyphens-auto{-webkit-hyphens:auto;hyphens:auto}.hyphens-manual{-webkit-hyphens:manual;hyphens:manual}.hyphens-none{-webkit-hyphens:none;hyphens:none}.whitespace-break-spaces{white-space:break-spaces}.whitespace-normal{white-space:normal}.whitespace-nowrap{white-space:nowrap}.whitespace-pre{white-space:pre}.whitespace-pre-line{white-space:pre-line}.whitespace-pre-wrap{white-space:pre-wrap}.text-\[\#336699\]\/\[\.35\]{color:oklab(49.9314% -.0330435 -.0929666/.35)}.text-amber-500{color:var(--color-amber-500)}.text-blue-500{color:var(--color-blue-500)}.text-brand-400{color:var(--color-brand-400)}.text-brand-500{color:var(--color-brand-500)}.text-brand-600{color:var(--color-brand-600)}.text-brand-600\/90{color:#0284c7e6}@supports (color:color-mix(in lab, red, red)){.text-brand-600\/90{color:color-mix(in oklab, var(--color-brand-600) 90%, transparent)}}.text-brand-700{color:var(--color-brand-700)}.text-brand-800{color:var(--color-brand-800)}.text-brand-900{color:var(--color-brand-900)}.text-brand-950{color:var(--color-brand-950)}.text-emerald-500{color:var(--color-emerald-500)}.text-red-500{color:var(--color-red-500)}.text-red-600{color:var(--color-red-600)}.text-white{color:var(--color-white)}.capitalize{text-transform:capitalize}.lowercase{text-transform:lowercase}.normal-case{text-transform:none}.uppercase{text-transform:uppercase}.italic{font-style:italic}.not-italic{font-style:normal}.diagonal-fractions{--tw-numeric-fraction:diagonal-fractions;font-variant-numeric:var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,)}.lining-nums{--tw-numeric-figure:lining-nums;font-variant-numeric:var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,)}.oldstyle-nums{--tw-numeric-figure:oldstyle-nums;font-variant-numeric:var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,)}.ordinal{--tw-ordinal:ordinal;font-variant-numeric:var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,)}.proportional-nums{--tw-numeric-spacing:proportional-nums;font-variant-numeric:var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,)}.slashed-zero{--tw-slashed-zero:slashed-zero;font-variant-numeric:var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,)}.stacked-fractions{--tw-numeric-fraction:stacked-fractions;font-variant-numeric:var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,)}.tabular-nums{--tw-numeric-spacing:tabular-nums;font-variant-numeric:var(--tw-ordinal,) var(--tw-slashed-zero,) var(--tw-numeric-figure,) var(--tw-numeric-spacing,) var(--tw-numeric-fraction,)}.normal-nums{font-variant-numeric:normal}.line-through{text-decoration-line:line-through}.no-underline{text-decoration-line:none}.overline{text-decoration-line:overline}.underline{text-decoration-line:underline}.decoration-dashed{text-decoration-style:dashed}.decoration-dotted{text-decoration-style:dotted}.decoration-double{text-decoration-style:double}.decoration-solid{text-decoration-style:solid}.decoration-wavy{text-decoration-style:wavy}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.subpixel-antialiased{-webkit-font-smoothing:auto;-moz-osx-font-smoothing:auto}.opacity-80{opacity:.8}.bg-blend-color{background-blend-mode:color}.bg-blend-color-burn{background-blend-mode:color-burn}.bg-blend-color-dodge{background-blend-mode:color-dodge}.bg-blend-darken{background-blend-mode:darken}.bg-blend-difference{background-blend-mode:difference}.bg-blend-exclusion{background-blend-mode:exclusion}.bg-blend-hard-light{background-blend-mode:hard-light}.bg-blend-hue{background-blend-mode:hue}.bg-blend-lighten{background-blend-mode:lighten}.bg-blend-luminosity{background-blend-mode:luminosity}.bg-blend-multiply{background-blend-mode:multiply}.bg-blend-normal{background-blend-mode:normal}.bg-blend-overlay{background-blend-mode:overlay}.bg-blend-saturation{background-blend-mode:saturation}.bg-blend-screen{background-blend-mode:screen}.bg-blend-soft-light{background-blend-mode:soft-light}.mix-blend-color{mix-blend-mode:color}.mix-blend-color-burn{mix-blend-mode:color-burn}.mix-blend-color-dodge{mix-blend-mode:color-dodge}.mix-blend-darken{mix-blend-mode:darken}.mix-blend-difference{mix-blend-mode:difference}.mix-blend-exclusion{mix-blend-mode:exclusion}.mix-blend-hard-light{mix-blend-mode:hard-light}.mix-blend-hue{mix-blend-mode:hue}.mix-blend-lighten{mix-blend-mode:lighten}.mix-blend-luminosity{mix-blend-mode:luminosity}.mix-blend-multiply{mix-blend-mode:multiply}.mix-blend-normal{mix-blend-mode:normal}.mix-blend-overlay{mix-blend-mode:overlay}.mix-blend-plus-darker{mix-blend-mode:plus-darker}.mix-blend-plus-lighter{mix-blend-mode:plus-lighter}.mix-blend-saturation{mix-blend-mode:saturation}.mix-blend-screen{mix-blend-mode:screen}.mix-blend-soft-light{mix-blend-mode:soft-light}.shadow{--tw-shadow:0 1px 3px 0 var(--tw-shadow-color,#0000001a), 0 1px 2px -1px var(--tw-shadow-color,#0000001a);box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px var(--tw-shadow-color,#0000001a), 0 4px 6px -4px var(--tw-shadow-color,#0000001a);box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 3px 0 var(--tw-shadow-color,#0000001a), 0 1px 2px -1px var(--tw-shadow-color,#0000001a);box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}.shadow-xs{--tw-shadow:0 1px 2px 0 var(--tw-shadow-color,#0000000d);box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}.shadow\/ring{--tw-shadow:0 1px 3px 0 var(--tw-shadow-color,#0000001a), 0 1px 2px -1px var(--tw-shadow-color,#0000001a);box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}.ring{--tw-ring-shadow:var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor);box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}.shadow-brand-100{--tw-shadow-color:#e0f2fe}@supports (color:color-mix(in lab, red, red)){.shadow-brand-100{--tw-shadow-color:color-mix(in oklab, var(--color-brand-100) var(--tw-shadow-alpha), transparent)}}.shadow-brand-200\/50{--tw-shadow-color:#bae6fd80}@supports (color:color-mix(in lab, red, red)){.shadow-brand-200\/50{--tw-shadow-color:color-mix(in oklab, color-mix(in oklab, var(--color-brand-200) 50%, transparent) var(--tw-shadow-alpha), transparent)}}.shadow-brand-500\/30{--tw-shadow-color:#0ea5e94d}@supports (color:color-mix(in lab, red, red)){.shadow-brand-500\/30{--tw-shadow-color:color-mix(in oklab, color-mix(in oklab, var(--color-brand-500) 30%, transparent) var(--tw-shadow-alpha), transparent)}}.ring-offset-0{--tw-ring-offset-width:0px;--tw-ring-offset-shadow:var(--tw-ring-inset,) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)}.outline-hidden{--tw-outline-style:none;outline-style:none}@media (forced-colors:active){.outline-hidden{outline-offset:2px;outline:2px solid #0000}}.outline{outline-style:var(--tw-outline-style);outline-width:1px}.outline-black{outline-color:var(--color-black)}.outline-white{outline-color:var(--color-white)}.blur{--tw-blur:blur(8px);filter:var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,)}.blur-none{--tw-blur: ;filter:var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,)}.drop-shadow{--tw-drop-shadow-size:drop-shadow(0 1px 2px var(--tw-drop-shadow-color,#0000001a)) drop-shadow(0 1px 1px var(--tw-drop-shadow-color,#0000000f));--tw-drop-shadow:drop-shadow(0 1px 2px #0000001a) drop-shadow(0 1px 1px #0000000f);filter:var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,)}.grayscale{--tw-grayscale:grayscale(100%);filter:var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,)}.invert{--tw-invert:invert(100%);filter:var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,)}.sepia{--tw-sepia:sepia(100%);filter:var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,)}.\!filter{filter:var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,)!important}.filter{filter:var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,)}.filter-none{filter:none}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);backdrop-filter:var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,)}.backdrop-blur-none{--tw-backdrop-blur: ;-webkit-backdrop-filter:var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);backdrop-filter:var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,)}.backdrop-grayscale{--tw-backdrop-grayscale:grayscale(100%);-webkit-backdrop-filter:var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);backdrop-filter:var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,)}.backdrop-invert{--tw-backdrop-invert:invert(100%);-webkit-backdrop-filter:var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);backdrop-filter:var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,)}.backdrop-sepia{--tw-backdrop-sepia:sepia(100%);-webkit-backdrop-filter:var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);backdrop-filter:var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,)}.backdrop-filter{-webkit-backdrop-filter:var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);backdrop-filter:var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,)}.backdrop-filter-none{-webkit-backdrop-filter:none;backdrop-filter:none}.transition{transition-property:color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,--tw-gradient-from,--tw-gradient-via,--tw-gradient-to,opacity,box-shadow,transform,translate,scale,rotate,filter,-webkit-backdrop-filter,backdrop-filter,display,content-visibility,overlay,pointer-events;transition-timing-function:var(--tw-ease,var(--default-transition-timing-function));transition-duration:var(--tw-duration,var(--default-transition-duration))}.transition-all{transition-property:all;transition-timing-function:var(--tw-ease,var(--default-transition-timing-function));transition-duration:var(--tw-duration,var(--default-transition-duration))}.transition-colors{transition-property:color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,--tw-gradient-from,--tw-gradient-via,--tw-gradient-to;transition-timing-function:var(--tw-ease,var(--default-transition-timing-function));transition-duration:var(--tw-duration,var(--default-transition-duration))}.transition-shadow{transition-property:box-shadow;transition-timing-function:var(--tw-ease,var(--default-transition-timing-function));transition-duration:var(--tw-duration,var(--default-transition-duration))}.transition-transform{transition-property:transform,translate,scale,rotate;transition-timing-function:var(--tw-ease,var(--default-transition-timing-function));transition-duration:var(--tw-duration,var(--default-transition-duration))}.delay-0{transition-delay:0s}.duration-0{--tw-duration:0s;transition-duration:0s}.duration-200{--tw-duration:.2s;transition-duration:.2s}.duration-300{--tw-duration:.3s;transition-duration:.3s}.ease-in{--tw-ease:var(--ease-in);transition-timing-function:var(--ease-in)}.ease-in-out{--tw-ease:var(--ease-in-out);transition-timing-function:var(--ease-in-out)}.ease-out{--tw-ease:var(--ease-out);transition-timing-function:var(--ease-out)}.will-change-transform{will-change:transform}.contain-inline-size{--tw-contain-size:inline-size;contain:var(--tw-contain-size,) var(--tw-contain-layout,) var(--tw-contain-paint,) var(--tw-contain-style,)}.contain-layout{--tw-contain-layout:layout;contain:var(--tw-contain-size,) var(--tw-contain-layout,) var(--tw-contain-paint,) var(--tw-contain-style,)}.contain-paint{--tw-contain-paint:paint;contain:var(--tw-contain-size,) var(--tw-contain-layout,) var(--tw-contain-paint,) var(--tw-contain-style,)}.contain-size{--tw-contain-size:size;contain:var(--tw-contain-size,) var(--tw-contain-layout,) var(--tw-contain-paint,) var(--tw-contain-style,)}.contain-style{--tw-contain-style:style;contain:var(--tw-contain-size,) var(--tw-contain-layout,) var(--tw-contain-paint,) var(--tw-contain-style,)}.contain-content{contain:content}.contain-none{contain:none}.contain-strict{contain:strict}.content-\[\'this-is-also-valid\]-weirdly-enough\'\]{--tw-content:"this-is-also-valid]-weirdly-enough";content:var(--tw-content)}.forced-color-adjust-auto{forced-color-adjust:auto}.forced-color-adjust-none{forced-color-adjust:none}.outline-dashed{--tw-outline-style:dashed;outline-style:dashed}.outline-dotted{--tw-outline-style:dotted;outline-style:dotted}.outline-double{--tw-outline-style:double;outline-style:double}.outline-none{--tw-outline-style:none;outline-style:none}.select-all{-webkit-user-select:all;user-select:all}.select-auto{-webkit-user-select:auto;user-select:auto}.select-none{-webkit-user-select:none;user-select:none}.select-text{-webkit-user-select:text;user-select:text}.\[category\:memory-infra\]{category:memory-infra}:where(.divide-x-reverse>:not(:last-child)){--tw-divide-x-reverse:1}.ring-inset{--tw-ring-inset:inset}@media (hover:hover){.group-hover\:text-brand-500:is(:where(.group):hover *){color:var(--color-brand-500)}.group-hover\:text-brand-600:is(:where(.group):hover *){color:var(--color-brand-600)}.hover\:z-40:hover{z-index:40}.hover\:-translate-y-1\.5:hover{--tw-translate-y:calc(var(--spacing) * -1.5);translate:var(--tw-translate-x) var(--tw-translate-y)}.hover\:scale-110:hover{--tw-scale-x:110%;--tw-scale-y:110%;--tw-scale-z:110%;scale:var(--tw-scale-x) var(--tw-scale-y)}.hover\:bg-brand-50:hover{background-color:var(--color-brand-50)}.hover\:bg-brand-50\/80:hover{background-color:#f0f9ffcc}@supports (color:color-mix(in lab, red, red)){.hover\:bg-brand-50\/80:hover{background-color:color-mix(in oklab, var(--color-brand-50) 80%, transparent)}}.hover\:bg-brand-100\/50:hover{background-color:#e0f2fe80}@supports (color:color-mix(in lab, red, red)){.hover\:bg-brand-100\/50:hover{background-color:color-mix(in oklab, var(--color-brand-100) 50%, transparent)}}.hover\:bg-red-100\/80:hover{background-color:#ffe2e2cc}@supports (color:color-mix(in lab, red, red)){.hover\:bg-red-100\/80:hover{background-color:color-mix(in oklab, var(--color-red-100) 80%, transparent)}}.hover\:font-bold:hover{--tw-font-weight:var(--font-weight-bold);font-weight:var(--font-weight-bold)}.hover\:text-brand-600:hover{color:var(--color-brand-600)}.hover\:text-brand-700:hover{color:var(--color-brand-700)}.hover\:opacity-100:hover{opacity:1}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px var(--tw-shadow-color,#0000001a), 0 4px 6px -4px var(--tw-shadow-color,#0000001a);box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}.hover\:shadow-brand-200\/50:hover{--tw-shadow-color:#bae6fd80}@supports (color:color-mix(in lab, red, red)){.hover\:shadow-brand-200\/50:hover{--tw-shadow-color:color-mix(in oklab, color-mix(in oklab, var(--color-brand-200) 50%, transparent) var(--tw-shadow-alpha), transparent)}}}.before\:hover\:text-center:before{content:var(--tw-content)}@media (hover:hover){.before\:hover\:text-center:before:hover{text-align:center}.hover\:before\:text-center:hover:before{content:var(--tw-content);text-align:center}}.focus\:border-brand-500:focus{border-color:var(--color-brand-500)}.focus\:ring-2:focus{--tw-ring-shadow:var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color,currentcolor);box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}.focus\:ring-brand-500:focus{--tw-ring-color:var(--color-brand-500)}.focus\:ring-brand-500\/30:focus{--tw-ring-color:#0ea5e94d}@supports (color:color-mix(in lab, red, red)){.focus\:ring-brand-500\/30:focus{--tw-ring-color:color-mix(in oklab, var(--color-brand-500) 30%, transparent)}}.focus\:ring-offset-2:focus{--tw-ring-offset-width:2px;--tw-ring-offset-shadow:var(--tw-ring-inset,) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)}.focus\:outline-none:focus{--tw-outline-style:none;outline-style:none}@media (hover:hover){.focus\:hover\:text-center:focus:hover,.hover\:focus\:text-center:hover:focus{text-align:center}}@media (min-width:40rem){.sm\:col-span-2{grid-column:span 2/span 2}.sm\:container{width:100%}@media (min-width:40rem){.sm\:container{max-width:40rem}}@media (min-width:48rem){.sm\:container{max-width:48rem}}@media (min-width:64rem){.sm\:container{max-width:64rem}}@media (min-width:80rem){.sm\:container{max-width:80rem}}@media (min-width:96rem){.sm\:container{max-width:96rem}}.sm\:flex{display:flex}.sm\:hidden{display:none}.sm\:w-auto{width:auto}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:flex-row{flex-direction:row}.sm\:justify-start{justify-content:flex-start}.sm\:gap-4{gap:calc(var(--spacing) * 4)}.sm\:rounded-3xl{border-radius:var(--radius-3xl)}.sm\:border{border-style:var(--tw-border-style);border-width:1px}.sm\:bg-brand-50{background-color:var(--color-brand-50)}.sm\:bg-white{background-color:var(--color-white)}.sm\:p-8{padding:calc(var(--spacing) * 8)}.sm\:px-4{padding-inline:calc(var(--spacing) * 4)}.sm\:px-6{padding-inline:calc(var(--spacing) * 6)}.sm\:px-8{padding-inline:calc(var(--spacing) * 8)}.sm\:pb-8{padding-bottom:calc(var(--spacing) * 8)}.sm\:underline{text-decoration-line:underline}.sm\:shadow-xl{--tw-shadow:0 20px 25px -5px var(--tw-shadow-color,#0000001a), 0 8px 10px -6px var(--tw-shadow-color,#0000001a);box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}}@media (min-width:64rem){.lg\:col-span-3{grid-column:span 3/span 3}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.lg\:px-8{padding-inline:calc(var(--spacing) * 8)}@media (hover:hover){.lg\:hover\:bg-blue-500:hover{background-color:var(--color-blue-500)}}}@media (min-width:80rem){.xl\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}}.dark\:block:where(.dark,.dark *){display:block}.dark\:hidden:where(.dark,.dark *){display:none}.dark\:border-brand-800:where(.dark,.dark *){border-color:var(--color-brand-800)}.dark\:border-brand-800\/60:where(.dark,.dark *){border-color:#07598599}@supports (color:color-mix(in lab, red, red)){.dark\:border-brand-800\/60:where(.dark,.dark *){border-color:color-mix(in oklab, var(--color-brand-800) 60%, transparent)}}.dark\:border-brand-950:where(.dark,.dark *){border-color:var(--color-brand-950)}.dark\:border-red-800\/30:where(.dark,.dark *){border-color:#9f07124d}@supports (color:color-mix(in lab, red, red)){.dark\:border-red-800\/30:where(.dark,.dark *){border-color:color-mix(in oklab, var(--color-red-800) 30%, transparent)}}.dark\:border-red-800\/50:where(.dark,.dark *){border-color:#9f071280}@supports (color:color-mix(in lab, red, red)){.dark\:border-red-800\/50:where(.dark,.dark *){border-color:color-mix(in oklab, var(--color-red-800) 50%, transparent)}}.dark\:bg-brand-700:where(.dark,.dark *){background-color:var(--color-brand-700)}.dark\:bg-brand-900\/20:where(.dark,.dark *){background-color:#0c4a6e33}@supports (color:color-mix(in lab, red, red)){.dark\:bg-brand-900\/20:where(.dark,.dark *){background-color:color-mix(in oklab, var(--color-brand-900) 20%, transparent)}}.dark\:bg-brand-900\/50:where(.dark,.dark *){background-color:#0c4a6e80}@supports (color:color-mix(in lab, red, red)){.dark\:bg-brand-900\/50:where(.dark,.dark *){background-color:color-mix(in oklab, var(--color-brand-900) 50%, transparent)}}.dark\:bg-brand-950:where(.dark,.dark *){background-color:var(--color-brand-950)}.dark\:bg-brand-950\/40:where(.dark,.dark *){background-color:#082f4966}@supports (color:color-mix(in lab, red, red)){.dark\:bg-brand-950\/40:where(.dark,.dark *){background-color:color-mix(in oklab, var(--color-brand-950) 40%, transparent)}}.dark\:bg-brand-950\/50:where(.dark,.dark *){background-color:#082f4980}@supports (color:color-mix(in lab, red, red)){.dark\:bg-brand-950\/50:where(.dark,.dark *){background-color:color-mix(in oklab, var(--color-brand-950) 50%, transparent)}}.dark\:bg-brand-950\/80:where(.dark,.dark *){background-color:#082f49cc}@supports (color:color-mix(in lab, red, red)){.dark\:bg-brand-950\/80:where(.dark,.dark *){background-color:color-mix(in oklab, var(--color-brand-950) 80%, transparent)}}.dark\:bg-red-900\/10:where(.dark,.dark *){background-color:#82181a1a}@supports (color:color-mix(in lab, red, red)){.dark\:bg-red-900\/10:where(.dark,.dark *){background-color:color-mix(in oklab, var(--color-red-900) 10%, transparent)}}.dark\:bg-red-950\/50:where(.dark,.dark *){background-color:#46080980}@supports (color:color-mix(in lab, red, red)){.dark\:bg-red-950\/50:where(.dark,.dark *){background-color:color-mix(in oklab, var(--color-red-950) 50%, transparent)}}.dark\:text-brand-50:where(.dark,.dark *){color:var(--color-brand-50)}.dark\:text-brand-100:where(.dark,.dark *){color:var(--color-brand-100)}.dark\:text-brand-200:where(.dark,.dark *){color:var(--color-brand-200)}.dark\:text-brand-300:where(.dark,.dark *){color:var(--color-brand-300)}.dark\:text-brand-300\/80:where(.dark,.dark *){color:#7dd3fccc}@supports (color:color-mix(in lab, red, red)){.dark\:text-brand-300\/80:where(.dark,.dark *){color:color-mix(in oklab, var(--color-brand-300) 80%, transparent)}}.dark\:text-brand-400:where(.dark,.dark *){color:var(--color-brand-400)}.dark\:text-brand-500:where(.dark,.dark *){color:var(--color-brand-500)}.dark\:text-brand-600:where(.dark,.dark *){color:var(--color-brand-600)}.dark\:text-emerald-400:where(.dark,.dark *){color:var(--color-emerald-400)}.dark\:text-red-400:where(.dark,.dark *){color:var(--color-red-400)}.dark\:shadow-none:where(.dark,.dark *){--tw-shadow:0 0 #0000;box-shadow:var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}@media (hover:hover){.dark\:group-hover\:text-brand-300:where(.dark,.dark *):is(:where(.group):hover *){color:var(--color-brand-300)}.dark\:group-hover\:text-brand-400:where(.dark,.dark *):is(:where(.group):hover *){color:var(--color-brand-400)}.dark\:hover\:border-brand-600:where(.dark,.dark *):hover{border-color:var(--color-brand-600)}.dark\:hover\:bg-brand-800\/50:where(.dark,.dark *):hover{background-color:#07598580}@supports (color:color-mix(in lab, red, red)){.dark\:hover\:bg-brand-800\/50:where(.dark,.dark *):hover{background-color:color-mix(in oklab, var(--color-brand-800) 50%, transparent)}}.dark\:hover\:bg-brand-900\/40:where(.dark,.dark *):hover{background-color:#0c4a6e66}@supports (color:color-mix(in lab, red, red)){.dark\:hover\:bg-brand-900\/40:where(.dark,.dark *):hover{background-color:color-mix(in oklab, var(--color-brand-900) 40%, transparent)}}.dark\:hover\:bg-brand-900\/50:where(.dark,.dark *):hover{background-color:#0c4a6e80}@supports (color:color-mix(in lab, red, red)){.dark\:hover\:bg-brand-900\/50:where(.dark,.dark *):hover{background-color:color-mix(in oklab, var(--color-brand-900) 50%, transparent)}}.dark\:hover\:bg-red-900\/20:where(.dark,.dark *):hover{background-color:#82181a33}@supports (color:color-mix(in lab, red, red)){.dark\:hover\:bg-red-900\/20:where(.dark,.dark *):hover{background-color:color-mix(in oklab, var(--color-red-900) 20%, transparent)}}.dark\:hover\:text-brand-200:where(.dark,.dark *):hover{color:var(--color-brand-200)}.dark\:hover\:text-brand-300:where(.dark,.dark *):hover{color:var(--color-brand-300)}}.dark\:focus\:ring-offset-brand-900:where(.dark,.dark *):focus{--tw-ring-offset-color:var(--color-brand-900)}@media (min-width:40rem){.dark\:sm\:bg-brand-900:where(.dark,.dark *),.sm\:dark\:bg-brand-900:where(.dark,.dark *){background-color:var(--color-brand-900)}}@media (min-width:64rem){@media (hover:hover){.dark\:lg\:hover\:\[paint-order\:markers\]:where(.dark,.dark *):hover{paint-order:markers}}}}@property --tw-translate-x{syntax:"*";inherits:false;initial-value:0}@property --tw-translate-y{syntax:"*";inherits:false;initial-value:0}@property --tw-translate-z{syntax:"*";inherits:false;initial-value:0}@property --tw-rotate-x{syntax:"*";inherits:false}@property --tw-rotate-y{syntax:"*";inherits:false}@property --tw-rotate-z{syntax:"*";inherits:false}@property --tw-skew-x{syntax:"*";inherits:false}@property --tw-skew-y{syntax:"*";inherits:false}@property --tw-pan-x{syntax:"*";inherits:false}@property --tw-pan-y{syntax:"*";inherits:false}@property --tw-pinch-zoom{syntax:"*";inherits:false}@property --tw-scroll-snap-strictness{syntax:"*";inherits:false;initial-value:proximity}@property --tw-space-y-reverse{syntax:"*";inherits:false;initial-value:0}@property --tw-space-x-reverse{syntax:"*";inherits:false;initial-value:0}@property --tw-divide-x-reverse{syntax:"*";inherits:false;initial-value:0}@property --tw-border-style{syntax:"*";inherits:false;initial-value:solid}@property --tw-divide-y-reverse{syntax:"*";inherits:false;initial-value:0}@property --tw-leading{syntax:"*";inherits:false}@property --tw-font-weight{syntax:"*";inherits:false}@property --tw-tracking{syntax:"*";inherits:false}@property --tw-ordinal{syntax:"*";inherits:false}@property --tw-slashed-zero{syntax:"*";inherits:false}@property --tw-numeric-figure{syntax:"*";inherits:false}@property --tw-numeric-spacing{syntax:"*";inherits:false}@property --tw-numeric-fraction{syntax:"*";inherits:false}@property --tw-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-shadow-color{syntax:"*";inherits:false}@property --tw-shadow-alpha{syntax:"<percentage>";inherits:false;initial-value:100%}@property --tw-inset-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-inset-shadow-color{syntax:"*";inherits:false}@property --tw-inset-shadow-alpha{syntax:"<percentage>";inherits:false;initial-value:100%}@property --tw-ring-color{syntax:"*";inherits:false}@property --tw-ring-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-inset-ring-color{syntax:"*";inherits:false}@property --tw-inset-ring-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-ring-inset{syntax:"*";inherits:false}@property --tw-ring-offset-width{syntax:"<length>";inherits:false;initial-value:0}@property --tw-ring-offset-color{syntax:"*";inherits:false;initial-value:#fff}@property --tw-ring-offset-shadow{syntax:"*";inherits:false;initial-value:0 0 #0000}@property --tw-outline-style{syntax:"*";inherits:false;initial-value:solid}@property --tw-blur{syntax:"*";inherits:false}@property --tw-brightness{syntax:"*";inherits:false}@property --tw-contrast{syntax:"*";inherits:false}@property --tw-grayscale{syntax:"*";inherits:false}@property --tw-hue-rotate{syntax:"*";inherits:false}@property --tw-invert{syntax:"*";inherits:false}@property --tw-opacity{syntax:"*";inherits:false}@property --tw-saturate{syntax:"*";inherits:false}@property --tw-sepia{syntax:"*";inherits:false}@property --tw-drop-shadow{syntax:"*";inherits:false}@property --tw-drop-shadow-color{syntax:"*";inherits:false}@property --tw-drop-shadow-alpha{syntax:"<percentage>";inherits:false;initial-value:100%}@property --tw-drop-shadow-size{syntax:"*";inherits:false}@property --tw-backdrop-blur{syntax:"*";inherits:false}@property --tw-backdrop-brightness{syntax:"*";inherits:false}@property --tw-backdrop-contrast{syntax:"*";inherits:false}@property --tw-backdrop-grayscale{syntax:"*";inherits:false}@property --tw-backdrop-hue-rotate{syntax:"*";inherits:false}@property --tw-backdrop-invert{syntax:"*";inherits:false}@property --tw-backdrop-opacity{syntax:"*";inherits:false}@property --tw-backdrop-saturate{syntax:"*";inherits:false}@property --tw-backdrop-sepia{syntax:"*";inherits:false}@property --tw-duration{syntax:"*";inherits:false}@property --tw-ease{syntax:"*";inherits:false}@property --tw-contain-size{syntax:"*";inherits:false}@property --tw-contain-layout{syntax:"*";inherits:false}@property --tw-contain-paint{syntax:"*";inherits:false}@property --tw-contain-style{syntax:"*";inherits:false}@property --tw-content{syntax:"*";inherits:false;initial-value:""}@property --tw-scale-x{syntax:"*";inherits:false;initial-value:1}@property --tw-scale-y{syntax:"*";inherits:false;initial-value:1}@property --tw-scale-z{syntax:"*";inherits:false;initial-value:1}</style>
-
 <style>
 /* ═══════════════════════════════════════════════════════════════
-   TOKENS
+   DESIGN TOKENS
 ═══════════════════════════════════════════════════════════════ */
 :root {
-  /* spacing */
-  --s1:.25rem;--s2:.5rem;--s3:.75rem;--s4:1rem;
-  --s5:1.25rem;--s6:1.5rem;--s8:2rem;
+  /* ── Spacing (4px base) ── */
+  --sp-1:.25rem; --sp-2:.5rem;  --sp-3:.75rem; --sp-4:1rem;
+  --sp-5:1.25rem;--sp-6:1.5rem; --sp-8:2rem;   --sp-10:2.5rem;
 
-  /* radius */
-  --r-s:.375rem;--r-m:.625rem;--r-l:.875rem;--r-xl:1.125rem;--r-2xl:1.625rem;
+  /* ── Radius ── */
+  --r-xs:.25rem; --r-s:.5rem;  --r-m:.75rem;
+  --r-l:1rem;    --r-xl:1.25rem;--r-2xl:1.75rem;
 
-  /* easing */
+  /* ── Easing ── */
   --spring:cubic-bezier(.34,1.56,.64,1);
-  --out:cubic-bezier(0,0,.2,1);
+  --out:   cubic-bezier(0,0,.2,1);
   --smooth:cubic-bezier(.4,0,.2,1);
-  --in-out:cubic-bezier(.4,0,.6,1);
 
-  /* duration */
-  --t1:80ms;--t2:160ms;--t3:280ms;--t4:420ms;
+  /* ── Duration ── */
+  --t1:90ms; --t2:180ms; --t3:300ms; --t4:500ms;
 
-  /* ── Light surfaces ── */
-  --pg:#f2f2f7;
-  --s0:#ffffff;
-  --s1a:#f9f9fc;
-  --s2a:#f0f0f5;
-  --hov:rgba(0,0,0,.04);
+  /* ── Neutral surfaces (light) ── */
+  --pg:   #f0f0f5;
+  --s0:   #ffffff;
+  --s1:   #f8f8fc;
+  --s2:   #eeeef5;
+  --hov:  rgba(0,0,0,.035);
 
-  --b0:rgba(0,0,0,.06);
-  --b1:rgba(0,0,0,.10);
-  --b2:rgba(0,0,0,.16);
+  /* ── Borders (light) ── */
+  --b0: rgba(0,0,0,.055);
+  --b1: rgba(0,0,0,.09);
+  --b2: rgba(0,0,0,.14);
 
-  --tx1:#0f0f12;
-  --tx2:#52525b;
-  --tx3:#a1a1aa;
-  --tx4:#d4d4d8;
+  /* ── Text (light) — higher contrast scale ── */
+  --tx1: #09090d;   /* primary — near black                */
+  --tx2: #3f3f50;   /* secondary — dark grey               */
+  --tx3: #8b8b9e;   /* muted — labels, hints               */
+  --tx4: #c4c4d0;   /* placeholder / disabled              */
 
-  --sh0:0 1px 2px rgba(0,0,0,.04);
-  --sh1:0 2px 8px rgba(0,0,0,.07),0 1px 3px rgba(0,0,0,.04);
-  --sh2:0 6px 20px rgba(0,0,0,.10),0 2px 6px rgba(0,0,0,.05);
-  --sh3:0 12px 36px rgba(0,0,0,.14),0 4px 12px rgba(0,0,0,.07);
+  /* ── Shadows (light) ── */
+  --sh0: 0 1px 2px rgba(0,0,0,.04);
+  --sh1: 0 2px 10px rgba(0,0,0,.07),0 1px 3px rgba(0,0,0,.04);
+  --sh2: 0 6px 24px rgba(0,0,0,.10),0 2px 6px rgba(0,0,0,.05);
+  --sh3: 0 16px 40px rgba(0,0,0,.13),0 4px 12px rgba(0,0,0,.07);
 
-  /* status */
-  --good:#16a34a;--warn:#d97706;--danger:#dc2626;--info:#2563eb;
+  /* ── Status semantics ── */
+  --good:   #15803d;
+  --good-bg:#f0fdf4;
+  --warn:   #b45309;
+  --warn-bg:#fffbeb;
+  --danger: #b91c1c;
+  --danger-bg:#fef2f2;
+  --info:   #1d4ed8;
+  --info-bg:#eff6ff;
 }
 
 html.dark {
-  --pg:#0a0a0d;
-  --s0:#18181b;
-  --s1a:#141417;
-  --s2a:#111114;
-  --hov:rgba(255,255,255,.05);
+  --pg:  #0c0c10;
+  --s0:  #17171d;
+  --s1:  #121217;
+  --s2:  #0e0e13;
+  --hov: rgba(255,255,255,.045);
 
-  --b0:rgba(255,255,255,.07);
-  --b1:rgba(255,255,255,.11);
-  --b2:rgba(255,255,255,.18);
+  --b0: rgba(255,255,255,.065);
+  --b1: rgba(255,255,255,.10);
+  --b2: rgba(255,255,255,.16);
 
-  --tx1:#f4f4f6;
-  --tx2:#a1a1aa;
-  --tx3:#71717a;
-  --tx4:#3f3f46;
+  --tx1: #f2f2f7;
+  --tx2: #9595a8;
+  --tx3: #5f5f72;
+  --tx4: #3a3a4a;
 
-  --sh0:0 1px 3px rgba(0,0,0,.5);
-  --sh1:0 2px 10px rgba(0,0,0,.55),0 1px 3px rgba(0,0,0,.4);
-  --sh2:0 6px 24px rgba(0,0,0,.65),0 2px 8px rgba(0,0,0,.45);
-  --sh3:0 14px 42px rgba(0,0,0,.75),0 4px 14px rgba(0,0,0,.55);
+  --sh0: 0 1px 3px rgba(0,0,0,.55);
+  --sh1: 0 2px 12px rgba(0,0,0,.60),0 1px 3px rgba(0,0,0,.45);
+  --sh2: 0 6px 28px rgba(0,0,0,.70),0 2px 8px rgba(0,0,0,.50);
+  --sh3: 0 16px 48px rgba(0,0,0,.80),0 4px 14px rgba(0,0,0,.60);
 
-  --good:#22c55e;--warn:#f59e0b;--danger:#f87171;--info:#60a5fa;
+  --good:    #22c55e;
+  --good-bg: rgba(34,197,94,.10);
+  --warn:    #f59e0b;
+  --warn-bg: rgba(245,158,11,.10);
+  --danger:  #f87171;
+  --danger-bg:rgba(248,113,113,.10);
+  --info:    #60a5fa;
+  --info-bg: rgba(96,165,250,.10);
 }
 
-/* ── base ── */
+/* ─── Base reset ─────────────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
 body{
   font-family:var(--font-sans);
-  background:var(--pg);color:var(--tx1);
-  min-height:100vh;line-height:1.5;
+  background:var(--pg);
+  color:var(--tx1);
+  min-height:100vh;
+  line-height:1.55;
   -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
   transition:background var(--t3) var(--smooth),color var(--t3) var(--smooth);
 }
-.c-good{color:var(--good);}.c-warn{color:var(--warn);}
-.c-danger{color:var(--danger);}.c-info{color:var(--info);}
-.c-brand{color:var(--color-brand-500);}
+
+/* ── Semantic colour helpers ─────────────────────────────────── */
+.c-good  {color:var(--good);}
+.c-warn  {color:var(--warn);}
+.c-danger{color:var(--danger);}
+.c-info  {color:var(--info);}
+.c-brand {color:var(--color-brand-600);}
 html.dark .c-brand{color:var(--color-brand-400);}
 
-/* ═══════════════════════════════════════════════════════════════
-   PAGE BACKGROUND — subtle mesh gradient that follows brand color
-═══════════════════════════════════════════════════════════════ */
+/* ─── Mesh ambient gradient ─────────────────────────────────── */
 body::before{
-  content:'';
-  position:fixed;inset:0;z-index:-1;
-  pointer-events:none;
+  content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:
-    radial-gradient(ellipse 70% 55% at 15% 0%,
-      color-mix(in oklab,var(--color-brand-400) 9%,transparent) 0%,transparent 70%),
-    radial-gradient(ellipse 55% 45% at 88% 100%,
-      color-mix(in oklab,var(--color-brand-500) 7%,transparent) 0%,transparent 65%),
+    radial-gradient(ellipse 80% 60% at 10% -5%,
+      color-mix(in oklab,var(--color-brand-500) 8%,transparent),transparent 65%),
+    radial-gradient(ellipse 60% 50% at 92% 105%,
+      color-mix(in oklab,var(--color-brand-600) 6%,transparent),transparent 60%),
     var(--pg);
   transition:background var(--t3) var(--smooth);
-  pointer-events:none;
 }
 html.dark body::before{
   background:
-    radial-gradient(ellipse 70% 55% at 15% 0%,
-      color-mix(in oklab,var(--color-brand-700) 12%,transparent) 0%,transparent 70%),
-    radial-gradient(ellipse 55% 45% at 88% 100%,
-      color-mix(in oklab,var(--color-brand-900) 15%,transparent) 0%,transparent 65%),
+    radial-gradient(ellipse 80% 60% at 10% -5%,
+      color-mix(in oklab,var(--color-brand-600) 14%,transparent),transparent 65%),
+    radial-gradient(ellipse 60% 50% at 92% 105%,
+      color-mix(in oklab,var(--color-brand-800) 18%,transparent),transparent 60%),
     var(--pg);
 }
 
@@ -135,65 +149,70 @@ html.dark body::before{
 ═══════════════════════════════════════════════════════════════ */
 .hdr{
   position:sticky;top:0;z-index:100;width:100%;
-  background:color-mix(in oklab,var(--s1a) 85%,transparent);
-  backdrop-filter:blur(24px) saturate(180%);
-  -webkit-backdrop-filter:blur(24px) saturate(180%);
+  background:color-mix(in oklab,var(--s0) 82%,transparent);
+  backdrop-filter:blur(28px) saturate(200%);
+  -webkit-backdrop-filter:blur(28px) saturate(200%);
   border-bottom:1px solid var(--b0);
   transition:background var(--t3) var(--smooth),border-color var(--t3) var(--smooth);
 }
 html.dark .hdr{
-  background:color-mix(in oklab,var(--s1a) 80%,transparent);
+  background:color-mix(in oklab,var(--s1) 78%,transparent);
   border-bottom-color:var(--b1);
 }
 .hdr-in{
   max-width:72rem;margin:0 auto;
-  padding:var(--s3) var(--s5);
+  padding:var(--sp-3) var(--sp-5);
   display:flex;align-items:center;justify-content:space-between;
-  gap:var(--s4);flex-wrap:wrap;
+  gap:var(--sp-4);flex-wrap:wrap;
 }
 
-/* Logo */
-.logo-area{display:flex;align-items:center;gap:var(--s3);flex:1;min-width:0;}
+/* ── Logo ─────────────────────────────────────────────────────── */
+.logo-area{display:flex;align-items:center;gap:var(--sp-3);flex:1;min-width:0;}
 .logo-ico{
-  width:2rem;height:2rem;border-radius:var(--r-m);flex-shrink:0;
+  width:2.125rem;height:2.125rem;border-radius:var(--r-m);flex-shrink:0;
   display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,var(--color-brand-400),var(--color-brand-600));
+  background:linear-gradient(140deg,var(--color-brand-400) 0%,var(--color-brand-600) 100%);
   color:#fff;
-  box-shadow:0 2px 10px color-mix(in oklab,var(--color-brand-500) 40%,transparent);
+  box-shadow:
+    0 3px 12px color-mix(in oklab,var(--color-brand-500) 45%,transparent),
+    0 1px 3px rgba(0,0,0,.12);
   transition:transform var(--t1) var(--spring),box-shadow var(--t2) var(--smooth);
 }
-.logo-ico:hover{transform:scale(1.08) rotate(-3deg);
-  box-shadow:0 4px 16px color-mix(in oklab,var(--color-brand-500) 50%,transparent);}
+.logo-ico:hover{
+  transform:scale(1.09) rotate(-5deg);
+  box-shadow:0 6px 20px color-mix(in oklab,var(--color-brand-500) 55%,transparent);
+}
+.logo-text{line-height:1.15;}
 .logo-name{
-  font-size:.9375rem;font-weight:800;letter-spacing:-.02em;
-  color:var(--tx1);
-  background:linear-gradient(135deg,var(--color-brand-500),var(--color-brand-700));
+  font-size:.9375rem;font-weight:800;letter-spacing:-.03em;
+  background:linear-gradient(130deg,var(--color-brand-500) 0%,var(--color-brand-700) 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
   background-clip:text;
 }
 html.dark .logo-name{
-  background:linear-gradient(135deg,var(--color-brand-300),var(--color-brand-500));
+  background:linear-gradient(130deg,var(--color-brand-300) 0%,var(--color-brand-500) 100%);
   -webkit-background-clip:text;background-clip:text;
 }
-.logo-sub{font-size:.625rem;font-weight:500;color:var(--tx3);letter-spacing:.02em;margin-top:1px;}
+.logo-sub{
+  font-size:.6rem;font-weight:500;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--tx3);margin-top:1px;
+}
 
 /* Mobile dots */
-.m-dots{
-  display:flex;align-items:center;gap:5px;
-  border-left:1px solid var(--b1);padding-left:var(--s3);margin-left:auto;
-}
+.m-dots{display:flex;align-items:center;gap:5px;border-left:1px solid var(--b1);padding-left:var(--sp-3);margin-left:auto;}
 @media(min-width:640px){.m-dots{display:none;}}
 
-/* Control pill */
+/* ── Control pill ─────────────────────────────────────────────── */
 .ctrl{
-  display:flex;align-items:center;gap:var(--s3);
+  display:flex;align-items:center;gap:var(--sp-3);
   background:var(--s0);
   border:1px solid var(--b1);border-radius:9999px;
-  padding:5px var(--s4);
+  padding:5px var(--sp-4);
   box-shadow:var(--sh0);
-  transition:background var(--t3) var(--smooth),border-color var(--t3) var(--smooth),box-shadow var(--t2) var(--smooth);
+  transition:background var(--t3),border-color var(--t3),box-shadow var(--t2);
 }
 .ctrl:hover{box-shadow:var(--sh1);}
+html.dark .ctrl{background:var(--s0);}
 .psep{width:1px;height:1.125rem;background:var(--b2);flex-shrink:0;}
 
 /* Theme dots */
@@ -201,96 +220,97 @@ html.dark .logo-name{
 @media(max-width:639px){.d-dots{display:none;}}
 .tdot{
   width:1.25rem;height:1.25rem;border-radius:50%;
-  border:2px solid var(--s0);
-  outline:2px solid transparent;outline-offset:2px;
+  border:2px solid var(--s0);outline:2px solid transparent;outline-offset:2px;
   overflow:hidden;display:flex;flex-shrink:0;cursor:pointer;
   box-shadow:var(--sh0);
   transition:transform var(--t1) var(--spring),outline-color var(--t1),box-shadow var(--t1);
 }
-.tdot:hover{transform:scale(1.25);box-shadow:var(--sh1);}
+.tdot:hover{transform:scale(1.28);box-shadow:var(--sh1);}
 .tdot.active{outline-color:var(--color-brand-500);}
 
 /* Unit toggle */
-.urow{display:flex;align-items:center;gap:var(--s2);}
+.urow{display:flex;align-items:center;gap:var(--sp-2);}
 .ulbl{
   font-size:.75rem;font-weight:600;letter-spacing:.01em;
   color:var(--tx3);cursor:default;user-select:none;
   transition:color var(--t1);
 }
-.ulbl.on{color:var(--color-brand-500);}
+.ulbl.on{color:var(--color-brand-600);}
 html.dark .ulbl.on{color:var(--color-brand-400);}
 .sw{
-  position:relative;width:2.375rem;height:1.25rem;
-  border-radius:9999px;padding:2px;
+  width:2.5rem;height:1.375rem;border-radius:9999px;padding:2px;
   background:var(--b2);cursor:pointer;
-  transition:background var(--t2) var(--smooth);
   display:flex;align-items:center;
+  transition:background var(--t2) var(--smooth);
 }
 .sw.on{background:var(--color-brand-500);}
 .swk{
-  width:.9375rem;height:.9375rem;border-radius:50%;
-  background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.3);
+  width:1rem;height:1rem;border-radius:50%;
+  background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.28);
   transition:transform var(--t2) var(--spring);flex-shrink:0;
 }
 .sw.on .swk{transform:translateX(1.125rem);}
-
-/* Dark button */
 .dbtn{
   width:1.875rem;height:1.875rem;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   color:var(--tx3);cursor:pointer;flex-shrink:0;
   transition:background var(--t1),color var(--t1),transform var(--t1) var(--spring);
 }
-.dbtn:hover{background:var(--hov);color:var(--color-brand-500);transform:rotate(20deg) scale(1.1);}
-html.dark .dbtn:hover{transform:rotate(-20deg) scale(1.1);}
+.dbtn:hover{background:var(--hov);color:var(--color-brand-500);transform:rotate(22deg) scale(1.12);}
+html.dark .dbtn:hover{transform:rotate(-22deg) scale(1.12);}
 
 /* ═══════════════════════════════════════════════════════════════
    PAGE LAYOUT
 ═══════════════════════════════════════════════════════════════ */
 .page{
   max-width:72rem;margin:0 auto;
-  padding:var(--s6) var(--s4) var(--s8);
+  padding:var(--sp-6) var(--sp-4) var(--sp-8);
 }
-@media(min-width:640px){.page{padding:var(--s8) var(--s6);}}
-@media(min-width:1024px){.page{padding:var(--s8);}}
+@media(min-width:640px){.page{padding:var(--sp-8) var(--sp-6);}}
+@media(min-width:1024px){.page{padding:var(--sp-8);}}
 
 /* ═══════════════════════════════════════════════════════════════
    INPUT PANEL
 ═══════════════════════════════════════════════════════════════ */
 .inp-panel{
   background:var(--s0);
-  border:1px solid var(--b0);border-radius:var(--r-xl);
-  overflow:hidden;margin-bottom:var(--s5);
+  border:1px solid var(--b0);
+  border-radius:var(--r-xl);
+  overflow:hidden;margin-bottom:var(--sp-5);
   box-shadow:var(--sh1);
-  transition:background var(--t3) var(--smooth),border-color var(--t3) var(--smooth),box-shadow var(--t2) var(--smooth);
+  transition:background var(--t3),border-color var(--t3),box-shadow var(--t2);
 }
-html.dark .inp-panel{background:var(--s1a);border-color:var(--b1);box-shadow:var(--sh0);}
+html.dark .inp-panel{background:var(--s1);border-color:var(--b1);box-shadow:var(--sh0);}
 .inp-panel:focus-within{
-  border-color:color-mix(in oklab,var(--color-brand-400) 45%,transparent);
-  box-shadow:var(--sh1),0 0 0 4px color-mix(in oklab,var(--color-brand-400) 8%,transparent);
+  border-color:color-mix(in oklab,var(--color-brand-500) 40%,transparent);
+  box-shadow:var(--sh1),0 0 0 4px color-mix(in oklab,var(--color-brand-500) 9%,transparent);
 }
 
-/* Section trigger */
+/* ── Section trigger ─────────────────────────────────────────── */
 .trig{
   width:100%;display:flex;align-items:center;justify-content:space-between;
-  padding:var(--s4) var(--s5);gap:var(--s3);
+  padding:var(--sp-4) var(--sp-5);gap:var(--sp-3);
   background:transparent;border:none;cursor:pointer;text-align:left;
   transition:background var(--t1);
 }
 .trig:hover{background:var(--hov);}
 .trig:focus-visible{outline:2px solid var(--color-brand-500);outline-offset:-2px;}
+
+/* Section heading typography */
 .trig-lbl{
-  display:flex;align-items:center;gap:var(--s2);
-  font-size:.875rem;font-weight:700;letter-spacing:-.01em;
+  display:flex;align-items:center;gap:var(--sp-2);
+  font-size:.9375rem;font-weight:700;letter-spacing:-.02em;
   color:var(--tx1);transition:color var(--t1);
 }
-.trig:hover .trig-lbl{color:var(--color-brand-500);}
+.trig:hover .trig-lbl{color:var(--color-brand-600);}
 html.dark .trig:hover .trig-lbl{color:var(--color-brand-400);}
+
+/* Accent bar — gradient pill */
 .trig-bar{
-  width:3px;height:.9375rem;border-radius:99px;flex-shrink:0;
+  width:3px;height:1rem;border-radius:99px;flex-shrink:0;
   background:linear-gradient(180deg,var(--color-brand-400),var(--color-brand-600));
-  transition:background var(--t2);
 }
+
 .chev{
   width:1.125rem;height:1.125rem;color:var(--tx3);flex-shrink:0;
   transition:transform var(--t2) var(--smooth),color var(--t1);
@@ -299,60 +319,56 @@ html.dark .trig:hover .trig-lbl{color:var(--color-brand-400);}
 .trig:hover .chev{color:var(--color-brand-500);}
 
 /* Collapsible */
-.coll{
-  display:grid;grid-template-rows:1fr;
-  transition:grid-template-rows var(--t2) var(--smooth);
-  overflow:hidden;
-}
+.coll{display:grid;grid-template-rows:1fr;overflow:hidden;
+      transition:grid-template-rows var(--t2) var(--smooth);}
 .coll.shut{grid-template-rows:0fr;}
 .coll>div{min-height:0;overflow:hidden;}
-.cp{padding:0 var(--s5) var(--s6);}
+.cp{padding:0 var(--sp-5) var(--sp-6);}
 
-/* Field grid */
-.fgrid{
-  display:grid;gap:var(--s4) var(--s5);
-  grid-template-columns:1fr;
-}
+/* ── Field grid ──────────────────────────────────────────────── */
+.fgrid{display:grid;gap:var(--sp-4) var(--sp-5);grid-template-columns:1fr;}
 @media(min-width:500px){.fgrid{grid-template-columns:repeat(2,1fr);}}
 @media(min-width:1024px){.fgrid{grid-template-columns:repeat(4,1fr);}}
 .sp2{grid-column:span 2;}
 @media(min-width:1024px){.sp3{grid-column:span 3;}}
 @media(max-width:499px){.sp2,.sp3{grid-column:span 1;}}
 
-/* Field */
+/* Field label */
 .flbl{
-  display:flex;align-items:center;gap:3px;
-  font-size:.75rem;font-weight:600;letter-spacing:.005em;
-  color:var(--tx2);margin-bottom:var(--s2);overflow:visible;
+  display:flex;align-items:center;gap:3px;overflow:visible;
+  font-size:.75rem;font-weight:700;letter-spacing:.005em;
+  color:var(--tx2);margin-bottom:var(--sp-2);
 }
+
+/* Field input */
 .finp{
-  width:100%;height:2.75rem;padding:0 var(--s4);
+  width:100%;height:2.75rem;padding:0 var(--sp-4);
   border-radius:var(--r-m);
   border:1.5px solid var(--b1);
-  background:var(--s1a);color:var(--tx1);
+  background:var(--s1);color:var(--tx1);
   font-size:1rem;font-family:inherit;
   appearance:none;-webkit-appearance:none;outline:none;
   box-shadow:var(--sh0);
-  transition:border-color var(--t1),box-shadow var(--t1),background var(--t3) var(--smooth);
+  transition:border-color var(--t1),box-shadow var(--t1),background var(--t3);
 }
-html.dark .finp{background:var(--s2a);border-color:var(--b1);color:var(--tx1);}
-.finp::placeholder{color:var(--tx4);font-style:italic;font-size:.875rem;}
+html.dark .finp{background:var(--s2);border-color:var(--b1);color:var(--tx1);}
+.finp::placeholder{color:var(--tx4);font-size:.9rem;font-style:italic;}
 .finp:hover{border-color:var(--b2);}
 .finp:focus{
   border-color:var(--color-brand-500);
   background:var(--s0);
-  box-shadow:0 0 0 3px color-mix(in oklab,var(--color-brand-500) 16%,transparent),var(--sh0);
+  box-shadow:0 0 0 3.5px color-mix(in oklab,var(--color-brand-500) 18%,transparent);
 }
-html.dark .finp:focus{background:var(--s1a);}
+html.dark .finp:focus{background:var(--s1);}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}
 .selw{position:relative;}
 .selw::after{
-  content:'';position:absolute;right:var(--s4);top:50%;
+  content:'';position:absolute;right:var(--sp-4);top:50%;
   transform:translateY(-50%);
-  width:.5rem;height:.5rem;
+  width:.55rem;height:.55rem;
   background:var(--tx3);
-  clip-path:polygon(100% 20%,0 20%,50% 82%);
+  clip-path:polygon(100% 18%,0 18%,50% 84%);
   pointer-events:none;transition:background var(--t1);
 }
 .selw:focus-within::after{background:var(--color-brand-500);}
@@ -360,48 +376,54 @@ input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}
 /* ═══════════════════════════════════════════════════════════════
    RESULT SECTIONS
 ═══════════════════════════════════════════════════════════════ */
-.rstack{display:flex;flex-direction:column;gap:var(--s3);}
+.rstack{display:flex;flex-direction:column;gap:var(--sp-3);}
 
 .rsec{
   background:var(--s0);
-  border:1px solid var(--b0);border-radius:var(--r-xl);
-  overflow:hidden;box-shadow:var(--sh0);
-  transition:background var(--t3) var(--smooth),border-color var(--t3) var(--smooth),
-    box-shadow var(--t2) var(--smooth),transform var(--t2) var(--spring);
+  border:1px solid var(--b0);
+  border-radius:var(--r-xl);
+  overflow:hidden;
+  box-shadow:var(--sh0);
+  transition:background var(--t3),border-color var(--t2),box-shadow var(--t2);
 }
-html.dark .rsec{background:var(--s1a);border-color:var(--b1);}
+html.dark .rsec{background:var(--s1);border-color:var(--b1);}
 .rsec:hover{
-  border-color:color-mix(in oklab,var(--color-brand-400) 35%,transparent);
+  border-color:color-mix(in oklab,var(--color-brand-400) 30%,transparent);
   box-shadow:var(--sh1);
-}
-html.dark .rsec:hover{
-  border-color:color-mix(in oklab,var(--color-brand-600) 40%,transparent);
 }
 
 /* Card grid */
-.cgrid{display:grid;gap:var(--s3);grid-template-columns:1fr;}
+.cgrid{display:grid;gap:var(--sp-3);grid-template-columns:1fr;}
 @media(min-width:500px){.cgrid{grid-template-columns:repeat(2,1fr);}}
 @media(min-width:1024px){.cgrid{grid-template-columns:repeat(3,1fr);}}
 @media(min-width:1280px){.cgrid.w{grid-template-columns:repeat(4,1fr);}}
 
 /* ═══════════════════════════════════════════════════════════════
-   CARDS
+   RESULT CARDS
 ═══════════════════════════════════════════════════════════════ */
+@keyframes cardIn{
+  from{opacity:0;transform:translateY(10px) scale(.975);}
+  to  {opacity:1;transform:translateY(0)    scale(1);}
+}
+
 .card{
   position:relative;
   background:var(--s0);
   border:1px solid var(--b0);
   border-radius:var(--r-l);
-  padding:var(--s4);
-  min-height:9rem;
+  padding:var(--sp-4);
+  min-height:10rem;
   display:flex;flex-direction:column;justify-content:space-between;
+  gap:var(--sp-3);
   box-shadow:var(--sh0);
+  animation:cardIn .28s var(--spring) both;
   transition:
-    transform var(--t2) var(--spring),
-    box-shadow var(--t2) var(--smooth),
-    border-color var(--t1) var(--smooth),
-    background var(--t3) var(--smooth);
+    transform     var(--t2) var(--spring),
+    box-shadow    var(--t2) var(--smooth),
+    border-color  var(--t1),
+    background    var(--t3);
   will-change:transform;
+  overflow:visible;
 }
 html.dark .card{background:var(--s0);border-color:var(--b1);}
 
@@ -409,101 +431,182 @@ html.dark .card{background:var(--s0);border-color:var(--b1);}
 .card:hover{
   transform:translateY(-3px);
   box-shadow:var(--sh2);
-  border-color:color-mix(in oklab,var(--color-brand-400) 45%,transparent);
+  border-color:color-mix(in oklab,var(--color-brand-400) 50%,transparent);
 }
 html.dark .card:hover{
-  border-color:color-mix(in oklab,var(--color-brand-500) 40%,transparent);
-  box-shadow:var(--sh2);
+  border-color:color-mix(in oklab,var(--color-brand-500) 45%,transparent);
 }
 
-/* Accent shimmer on hover — brand gradient left stripe */
+/* Left accent stripe */
 .card::before{
-  content:'';position:absolute;left:0;top:var(--s3);bottom:var(--s3);
+  content:'';position:absolute;left:0;top:var(--sp-4);bottom:var(--sp-4);
   width:3px;border-radius:0 3px 3px 0;
   background:linear-gradient(180deg,var(--color-brand-400),var(--color-brand-600));
-  opacity:0;transform:scaleY(.6);
+  opacity:0;transform:scaleY(.5);transform-origin:top;
   transition:opacity var(--t2) var(--smooth),transform var(--t2) var(--spring);
 }
 .card:hover::before{opacity:1;transform:scaleY(1);}
 
-/* Card — top highlight line on hover */
+/* Top shimmer line */
 .card::after{
-  content:'';position:absolute;left:0;right:0;top:0;
-  height:1px;border-radius:var(--r-l) var(--r-l) 0 0;
+  content:'';position:absolute;left:10%;right:10%;top:0;height:1px;
+  border-radius:99px;
   background:linear-gradient(90deg,
-    color-mix(in oklab,var(--color-brand-400) 0%,transparent),
-    color-mix(in oklab,var(--color-brand-400) 60%,transparent),
-    color-mix(in oklab,var(--color-brand-400) 0%,transparent));
-  opacity:0;
-  transition:opacity var(--t2) var(--smooth);
+    transparent,
+    color-mix(in oklab,var(--color-brand-500) 55%,transparent),
+    transparent);
+  opacity:0;transition:opacity var(--t2) var(--smooth);
 }
 .card:hover::after{opacity:1;}
 
-/* Card waiting */
+/* Card stagger delays */
+.card:nth-child(1){animation-delay:.00s;}
+.card:nth-child(2){animation-delay:.05s;}
+.card:nth-child(3){animation-delay:.09s;}
+.card:nth-child(4){animation-delay:.13s;}
+.card:nth-child(5){animation-delay:.02s;}
+.card:nth-child(6){animation-delay:.06s;}
+.card:nth-child(7){animation-delay:.10s;}
+.card:nth-child(8){animation-delay:.14s;}
+
+/* ── Card: waiting state ──────────────────────────────────────── */
 .card-w{
-  border-style:dashed;border-color:var(--b1);
-  background:var(--s1a);box-shadow:none;opacity:.55;
+  border-style:dashed;
+  border-color:var(--b1);
+  background:color-mix(in oklab,var(--s1) 70%,transparent);
+  box-shadow:none;opacity:.5;
+  min-height:7rem;
 }
-html.dark .card-w{background:rgba(255,255,255,.02);border-color:var(--b1);}
+html.dark .card-w{background:rgba(255,255,255,.015);}
 .card-w:hover{transform:none;box-shadow:none;opacity:.8;border-color:var(--b2);}
 .card-w::before,.card-w::after{display:none;}
 
-/* Card error */
+/* ── Card: error state ────────────────────────────────────────── */
 .card-e{
-  border-color:rgba(239,68,68,.2);background:rgba(254,242,242,.5);
+  background:var(--danger-bg);
+  border-color:color-mix(in oklab,var(--danger) 25%,transparent);
   box-shadow:none;
 }
-html.dark .card-e{background:rgba(127,29,29,.1);border-color:rgba(239,68,68,.18);}
+html.dark .card-e{background:var(--danger-bg);}
 .card-e:hover{transform:none;box-shadow:var(--sh0);}
+.card-e::before,.card-e::after{display:none;}
 
-/* Card typography */
+/* ═══════════════════════════════════════════════════════════════
+   CARD TYPOGRAPHY — visual hierarchy
+═══════════════════════════════════════════════════════════════ */
+
+/* ── Card head: icon + label row ─────────────────────────────── */
+.card-head{
+  display:flex;align-items:center;gap:var(--sp-2);
+}
+.card-head .clbl{margin-bottom:0;}
+
+/* ── Card icon ───────────────────────────────────────────────── */
+.card-ico{
+  flex-shrink:0;
+  color:var(--color-brand-500);
+  opacity:.8;
+  transition:opacity var(--t1),color var(--t1),transform var(--t2) var(--spring);
+}
+html.dark .card-ico{color:var(--color-brand-400);}
+.card:hover .card-ico{opacity:1;color:var(--color-brand-600);transform:scale(1.12) rotate(-5deg);}
+html.dark .card:hover .card-ico{color:var(--color-brand-300);}
+.card-w .card-ico{color:var(--tx3);opacity:.45;}
+
+/* ── Card label (category/type) ──────────────────────────────── */
 .clbl{
-  font-size:.6875rem;font-weight:700;letter-spacing:.07em;
+  font-size:.625rem;
+  font-weight:800;
+  letter-spacing:.1em;
   text-transform:uppercase;
-  color:var(--color-brand-600);
+  color:var(--tx3);           /* muted — not competing with value */
   display:flex;align-items:center;gap:3px;
-  margin-bottom:var(--s2);line-height:1;overflow:visible;
+  margin-bottom:var(--sp-2);
+  line-height:1;overflow:visible;
   transition:color var(--t1);
 }
-html.dark .clbl{color:var(--color-brand-400);}
-.card:hover .clbl{color:var(--color-brand-700);}
-html.dark .card:hover .clbl{color:var(--color-brand-300);}
+.card:hover .clbl{color:var(--color-brand-600);}
+html.dark .clbl{color:var(--tx3);}
+html.dark .card:hover .clbl{color:var(--color-brand-400);}
 
-.cval{display:flex;align-items:baseline;gap:4px;margin-bottom:var(--s3);}
-.cnum{
-  font-size:2rem;font-weight:900;letter-spacing:-.035em;line-height:1;
-  color:var(--tx1);font-variant-numeric:tabular-nums;
+/* ── Card value: the HERO number ─────────────────────────────── */
+.cval{
+  display:flex;align-items:baseline;gap:5px;
+  margin:var(--sp-1) 0 0;
 }
-.cunit{font-size:.75rem;font-weight:600;color:var(--tx3);letter-spacing:.01em;}
+.cnum{
+  font-size:2.25rem;
+  font-weight:900;
+  letter-spacing:-.04em;
+  line-height:1;
+  color:var(--tx1);
+  font-variant-numeric:tabular-nums;
+}
+.cunit{
+  font-size:.8125rem;
+  font-weight:600;
+  color:var(--tx3);
+  letter-spacing:.01em;
+  padding-bottom:.1em;
+}
 
+/* ── Card badge: status indicator ───────────────────────────── */
 .cbadge{
   display:inline-flex;align-items:center;
-  padding:2px 7px;border-radius:var(--r-s);
-  font-size:.5625rem;font-weight:800;letter-spacing:.05em;
-  text-transform:uppercase;margin-bottom:var(--s2);
-  background:color-mix(in oklab,currentColor 10%,transparent);
+  padding:3px 8px;
+  border-radius:var(--r-s);
+  font-size:.625rem;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  line-height:1.4;
+  /* Colour applied via utility classes on the colour token */
+  background:color-mix(in oklab,currentColor 11%,transparent);
   border:1px solid color-mix(in oklab,currentColor 22%,transparent);
 }
 
-.cdesc{font-size:.6875rem;line-height:1.55;color:var(--tx3);font-weight:400;}
+/* ── Card description ────────────────────────────────────────── */
+.cdesc{
+  font-size:.75rem;
+  line-height:1.58;
+  color:var(--tx2);       /* one step darker than before — more readable */
+  font-weight:400;
+  margin-top:var(--sp-2);
+}
+html.dark .cdesc{color:var(--tx2);}
 
-/* Wait tag */
+/* ── Reference link ──────────────────────────────────────────── */
+.card-ref{
+  display:inline-flex;align-items:center;gap:3px;
+  margin-top:var(--sp-2);
+  font-size:.6875rem;
+  font-weight:600;
+  letter-spacing:.01em;
+  color:var(--color-brand-600);
+  text-decoration:none;
+  border-bottom:1px dashed color-mix(in oklab,var(--color-brand-500) 40%,transparent);
+  transition:color var(--t1),border-color var(--t1),opacity var(--t1);
+  opacity:.75;
+}
+html.dark .card-ref{color:var(--color-brand-400);}
+.card-ref:hover{opacity:1;border-bottom-style:solid;}
+.card-ref svg{flex-shrink:0;}
+
+/* ── Wait tag ────────────────────────────────────────────────── */
 .wtag{
-  display:inline-flex;align-items:center;gap:var(--s1);
-  padding:3px var(--s3);border-radius:var(--r-s);
-  font-size:.6875rem;font-weight:500;
-  background:var(--s1a);color:var(--tx2);
+  display:inline-flex;align-items:center;gap:var(--sp-1);
+  padding:4px var(--sp-3);border-radius:var(--r-s);
+  font-size:.75rem;font-weight:500;
+  background:var(--s1);color:var(--tx2);
   border:1px solid var(--b1);box-shadow:var(--sh0);
 }
 html.dark .wtag{background:rgba(255,255,255,.04);}
-
-/* Wait dot — pulsing */
 .wdot{
   width:5px;height:5px;border-radius:50%;flex-shrink:0;
   background:var(--color-brand-400);
-  animation:pulse 2s var(--smooth) infinite;
+  animation:wPulse 2s var(--smooth) infinite;
 }
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.3;transform:scale(.65);}}
+@keyframes wPulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.3;transform:scale(.6);}}
 
 /* ═══════════════════════════════════════════════════════════════
    TOOLTIP
@@ -528,149 +631,334 @@ html.dark .tico:hover,html.dark .tico:focus-visible{color:var(--color-brand-400)
 #__tt{
   position:fixed;top:0;left:0;z-index:9999;display:none;pointer-events:none;
   width:max-content;max-width:220px;
-  padding:8px 12px;border-radius:var(--r-m);
-  font-size:.6875rem;font-weight:500;line-height:1.6;letter-spacing:.01em;
+  padding:9px 13px;border-radius:var(--r-m);
+  font-size:.75rem;font-weight:500;line-height:1.6;letter-spacing:.005em;
   text-align:left;white-space:normal;
   background:var(--s0);color:var(--tx1);
   border:1px solid var(--b2);
   border-left:3px solid var(--color-brand-500);
   box-shadow:var(--sh3);
-  /* GPU-composited: opacity + transform only — zero reflow */
   opacity:0;
-  /* translate(x,y) set by JS; scale for entry animation */
-  transform:translate(var(--tt-x,-9999px),var(--tt-y,-9999px)) scale(.94);
+  transform:translate(var(--tt-x,-9999px),var(--tt-y,-9999px)) scale(.93);
   transform-origin:center bottom;
   will-change:transform,opacity;
-  transition:opacity 130ms var(--out),transform 150ms var(--spring);
+  transition:opacity 120ms var(--out),transform 140ms var(--spring);
 }
-html.dark #__tt{background:#232326;color:var(--tx1);border-color:var(--b2);}
-#__tt::after{
-  content:'';position:absolute;left:50%;margin-left:-5px;
-  border:5px solid transparent;
-}
+html.dark #__tt{background:#202028;color:var(--tx1);border-color:var(--b2);}
+#__tt::after{content:'';position:absolute;left:50%;margin-left:-5px;border:5px solid transparent;}
 #__tt:not([data-arrow="down"])::after{top:100%;border-top-color:var(--s0);}
-html.dark #__tt:not([data-arrow="down"])::after{border-top-color:#232326;}
+html.dark #__tt:not([data-arrow="down"])::after{border-top-color:#202028;}
 #__tt[data-arrow="down"]::after{bottom:100%;top:auto;border-bottom-color:var(--s0);}
-html.dark #__tt[data-arrow="down"]::after{border-bottom-color:#232326;}
+html.dark #__tt[data-arrow="down"]::after{border-bottom-color:#202028;}
 #__tt.tin{opacity:1;transform:translate(var(--tt-x,0px),var(--tt-y,0px)) scale(1);}
-@media(max-width:640px){#__tt{max-width:185px;}}
+@media(max-width:640px){#__tt{max-width:195px;}}
 
 /* ═══════════════════════════════════════════════════════════════
-   ANIMATIONS
+   PAGE ANIMATIONS
 ═══════════════════════════════════════════════════════════════ */
+@keyframes hdrIn{from{opacity:0;transform:translateY(-12px);}to{opacity:1;transform:translateY(0);}}
+.hdr{animation:hdrIn .38s var(--out) both;}
 
-/* Header */
-@keyframes hdrIn{
-  from{opacity:0;transform:translateY(-14px);}
-  to{opacity:1;transform:translateY(0);}
-}
-.hdr{animation:hdrIn .4s var(--out) both;}
+@keyframes pgIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.page{animation:pgIn .5s .05s var(--out) both;}
+.inp-panel{animation:pgIn .42s .10s var(--out) both;}
+.rsec:nth-child(1){animation:pgIn .38s .15s var(--out) both;}
+.rsec:nth-child(2){animation:pgIn .38s .20s var(--out) both;}
+.rsec:nth-child(3){animation:pgIn .38s .25s var(--out) both;}
+.rsec:nth-child(4){animation:pgIn .38s .30s var(--out) both;}
+.rsec:nth-child(5){animation:pgIn .38s .35s var(--out) both;}
+.rsec:nth-child(6){animation:pgIn .38s .38s var(--out) both;}
+.rsec:nth-child(7){animation:pgIn .38s .41s var(--out) both;}
+.rsec:nth-child(8){animation:pgIn .38s .44s var(--out) both;}
+.rsec:nth-child(9){animation:pgIn .38s .47s var(--out) both;}
 
-/* Page */
-@keyframes pgIn{
-  from{opacity:0;transform:translateY(12px);}
-  to{opacity:1;transform:translateY(0);}
-}
-.page{animation:pgIn .5s .06s var(--out) both;}
-
-/* Input panel */
-.inp-panel{
-  animation:pgIn .4s .12s var(--out) both;
-}
-
-/* Result sections — staggered */
-.rsec:nth-child(1){animation:pgIn .38s .16s var(--out) both;}
-.rsec:nth-child(2){animation:pgIn .38s .22s var(--out) both;}
-.rsec:nth-child(3){animation:pgIn .38s .28s var(--out) both;}
-.rsec:nth-child(4){animation:pgIn .38s .34s var(--out) both;}
-.rsec:nth-child(5){animation:pgIn .38s .40s var(--out) both;}
-
-/* Cards — staggered entrance */
-@keyframes cardIn{
-  from{opacity:0;transform:translateY(10px) scale(.97);}
-  to{opacity:1;transform:translateY(0) scale(1);}
-}
-.card{animation:cardIn .28s var(--spring) both;}
-.card:nth-child(1){animation-delay:.00s;}
-.card:nth-child(2){animation-delay:.05s;}
-.card:nth-child(3){animation-delay:.10s;}
-.card:nth-child(4){animation-delay:.15s;}
-.card:nth-child(5){animation-delay:.02s;}
-.card:nth-child(6){animation-delay:.07s;}
-.card:nth-child(7){animation-delay:.12s;}
-.card:nth-child(8){animation-delay:.17s;}
-
-/* Theme dot pop on click */
-@keyframes dotPop{
-  0%{transform:scale(1);}40%{transform:scale(1.35);}100%{transform:scale(1);}
-}
+/* Theme dot pop */
+@keyframes dotPop{0%{transform:scale(1);}45%{transform:scale(1.4);}100%{transform:scale(1);}}
 .tdot.pop{animation:dotPop .3s var(--spring);}
 
-/* Dark mode toggle spin */
-@keyframes sunSpin{from{transform:rotate(-90deg) scale(.5);opacity:0;}to{transform:rotate(0deg) scale(1);opacity:1;}}
-@keyframes moonSlide{from{transform:translateX(8px);opacity:0;}to{transform:translateX(0);opacity:1;}}
+/* Dark mode icon swap */
+@keyframes sunSpin{from{transform:rotate(-80deg) scale(.4);opacity:0;}to{transform:rotate(0) scale(1);opacity:1;}}
+@keyframes moonIn {from{transform:translateX(10px);opacity:0;}         to{transform:translateX(0);opacity:1;}}
 .ico-spin{animation:sunSpin .3s var(--spring);}
-.ico-slide{animation:moonSlide .25s var(--out);}
+.ico-slide{animation:moonIn .25s var(--out);}
 
-/* Collapsible smooth open/close */
-.coll{
-  transition:grid-template-rows var(--t2) var(--smooth);
-}
-
-/* Focus ring — all interactive */
+/* Focus ring */
 :focus-visible{
-  outline:2px solid var(--color-brand-500);outline-offset:2px;border-radius:var(--r-s);
+  outline:2.5px solid var(--color-brand-500);
+  outline-offset:2px;
+  border-radius:var(--r-xs);
 }
-
-/* Input micro-interaction */
-.finp{transition:border-color var(--t1),box-shadow var(--t1),background var(--t3) var(--smooth),transform var(--t1) var(--spring);}
-.finp:focus{transform:scale(1.005);}
 
 /* Reduced motion */
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{
-    animation-duration:.01ms!important;
-    transition-duration:.01ms!important;
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SUMMARY BLOCK
+═══════════════════════════════════════════════════════════════ */
+.summary-block { overflow: visible; }
+
+.sum-body {
+  padding: var(--sp-5) var(--sp-5) var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+@media (min-width: 640px) {
+  .sum-body {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--sp-6);
   }
 }
 
-/* ── Card icon ───────────────────────────────────────────────── */
-.card-ico {
-  color: var(--color-brand-500);
+/* ── Score ring ──────────────────────────────────────────────── */
+.score-ring-wrap {
+  position: relative;
+  width: 9rem; height: 9rem;
+  flex-shrink: 0; margin: 0 auto;
+}
+@media (min-width: 640px) { .score-ring-wrap { margin: 0; } }
+
+.score-ring { width: 100%; height: 100%; transform: rotate(-90deg); }
+
+.ring-bg {
+  fill: none;
+  stroke: var(--b1);
+  stroke-width: 8;
+}
+.ring-fill {
+  fill: none;
+  stroke: var(--color-brand-500);
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset .9s cubic-bezier(.4,0,.2,1),
+              stroke .4s ease;
+}
+
+.ring-label {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 1px;
+}
+.ring-num {
+  font-size: 2rem; font-weight: 900; letter-spacing: -.04em; line-height: 1;
+  color: var(--tx1);
+}
+.ring-sub {
+  font-size: .6875rem; font-weight: 600; color: var(--tx3);
+}
+.ring-tag {
+  font-size: .625rem; font-weight: 800; letter-spacing: .06em;
+  text-transform: uppercase; margin-top: var(--sp-1);
+  padding: 2px 8px; border-radius: var(--r-s);
+  background: color-mix(in oklab, currentColor 10%, transparent);
+  border: 1px solid color-mix(in oklab, currentColor 20%, transparent);
+}
+
+/* Score badge next to heading */
+.score-badge {
+  font-size: .6875rem; font-weight: 800; letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 3px 10px; border-radius: var(--r-s);
+  background: color-mix(in oklab, currentColor 10%, transparent);
+  border: 1px solid color-mix(in oklab, currentColor 22%, transparent);
   flex-shrink: 0;
-  opacity: .85;
-  transition: opacity var(--t1), color var(--t1), transform var(--t2) var(--spring);
+  display: none;
 }
-html.dark .card-ico { color: var(--color-brand-400); }
-.card:hover .card-ico { opacity: 1; color: var(--color-brand-600); transform: scale(1.1) rotate(-4deg); }
-html.dark .card:hover .card-ico { color: var(--color-brand-300); }
-.card-w .card-ico { color: var(--tx3); opacity: .5; }
 
-/* Card top row: icon + label */
-.card-head {
-  display: flex; align-items: center; gap: var(--s2);
-  margin-bottom: var(--s2);
+/* ── Metric pills grid ───────────────────────────────────────── */
+.sum-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-2);
+  flex: 1;
 }
-.card-head .clbl { margin-bottom: 0; }
+@media (min-width: 480px) {
+  .sum-metrics { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 900px) {
+  .sum-metrics { grid-template-columns: repeat(4, 1fr); }
+}
 
-/* ── Reference link ──────────────────────────────────────────── */
-.card-ref {
-  display: inline-flex; align-items: center; gap: 3px;
-  margin-top: var(--s2);
-  font-size: .625rem; font-weight: 600; letter-spacing: .03em;
-  color: var(--color-brand-500); opacity: .8;
-  text-decoration: none;
-  border-bottom: 1px dashed color-mix(in oklab, var(--color-brand-500) 40%, transparent);
-  transition: opacity var(--t1), color var(--t1), border-color var(--t1);
-  line-height: 1.4;
+.mpill {
+  display: flex; flex-direction: column; gap: 3px;
+  padding: var(--sp-3) var(--sp-3);
+  border-radius: var(--r-m);
+  background: var(--s1);
+  border: 1px solid var(--b0);
+  transition: border-color var(--t1), transform var(--t1) var(--spring);
 }
-html.dark .card-ref { color: var(--color-brand-400); }
-.card-ref:hover { opacity: 1; color: var(--color-brand-700); border-bottom-style: solid; }
-html.dark .card-ref:hover { color: var(--color-brand-300); }
-.card-ref svg { flex-shrink: 0; }
+html.dark .mpill { background: var(--s0); }
+.mpill:hover { border-color: var(--b2); transform: translateY(-1px); }
+
+.mpill-label {
+  font-size: .5625rem; font-weight: 800; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--tx3); line-height: 1;
+}
+.mpill-val {
+  font-size: 1.0625rem; font-weight: 900; letter-spacing: -.025em;
+  color: var(--tx1); line-height: 1; font-variant-numeric: tabular-nums;
+}
+.mpill-status {
+  font-size: .5625rem; font-weight: 700; letter-spacing: .04em;
+  text-transform: uppercase; line-height: 1.2;
+}
+
+/* ── Alert banners ───────────────────────────────────────────── */
+#sum-alerts { display: flex; flex-direction: column; gap: var(--sp-2); }
+
+.alert-banner {
+  display: flex; align-items: flex-start; gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--r-m);
+  border-left: 3px solid currentColor;
+}
+.alert-banner.lvl-danger {
+  color: var(--danger);
+  background: var(--danger-bg);
+  border-color: var(--danger);
+}
+.alert-banner.lvl-warn {
+  color: var(--warn);
+  background: var(--warn-bg);
+  border-color: var(--warn);
+}
+.alert-banner.lvl-good {
+  color: var(--good);
+  background: var(--good-bg);
+  border-color: var(--good);
+}
+.alert-banner.lvl-info {
+  color: var(--info);
+  background: var(--info-bg);
+  border-color: var(--info);
+}
+.alert-ico { flex-shrink: 0; margin-top: 1px; }
+.alert-text { flex: 1; }
+.alert-title {
+  font-size: .8125rem; font-weight: 700; line-height: 1.2;
+  margin-bottom: 2px; color: inherit;
+}
+.alert-desc {
+  font-size: .75rem; line-height: 1.5;
+  color: color-mix(in oklab, currentColor 80%, var(--tx2));
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RECOMMENDATION BLOCK
+═══════════════════════════════════════════════════════════════ */
+.reco-sub-label {
+  font-size: .75rem; font-weight: 500; color: var(--tx3);
+  margin-left: auto; padding-left: var(--sp-3);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+@media (max-width: 480px) { .reco-sub-label { display: none; } }
+
+.reco-body {
+  padding: 0 var(--sp-5) var(--sp-6);
+  display: flex; flex-direction: column; gap: var(--sp-3);
+}
+
+/* Priority group header */
+.reco-group-hdr {
+  display: flex; align-items: center; gap: var(--sp-2);
+  margin-bottom: var(--sp-1);
+  font-size: .6875rem; font-weight: 800; letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.reco-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+
+/* Recommendation card */
+.reco-card {
+  display: flex; align-items: flex-start; gap: var(--sp-4);
+  padding: var(--sp-4) var(--sp-4);
+  border-radius: var(--r-l);
+  background: var(--s0);
+  border: 1px solid var(--b0);
+  box-shadow: var(--sh0);
+  transition: border-color var(--t1), box-shadow var(--t2), transform var(--t2) var(--spring);
+  animation: cardIn .3s var(--spring) both;
+}
+html.dark .reco-card { background: var(--s0); border-color: var(--b1); }
+.reco-card:hover {
+  border-color: color-mix(in oklab, var(--color-brand-400) 45%, transparent);
+  box-shadow: var(--sh1);
+  transform: translateY(-2px);
+}
+
+/* Icon bubble */
+.reco-ico-wrap {
+  width: 2.5rem; height: 2.5rem;
+  border-radius: var(--r-m);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  background: color-mix(in oklab, currentColor 12%, transparent);
+  border: 1px solid color-mix(in oklab, currentColor 18%, transparent);
+}
+.reco-ico-wrap svg { flex-shrink: 0; }
+
+/* Text area */
+.reco-content { flex: 1; min-width: 0; }
+.reco-title {
+  font-size: .9375rem; font-weight: 700; letter-spacing: -.015em;
+  color: var(--tx1); line-height: 1.2; margin-bottom: var(--sp-1);
+}
+.reco-why {
+  font-size: .75rem; font-weight: 500; line-height: 1.55;
+  color: var(--tx2); margin-bottom: var(--sp-2);
+}
+.reco-steps {
+  display: flex; flex-direction: column; gap: 5px;
+  list-style: none;
+}
+.reco-step {
+  display: flex; align-items: baseline; gap: var(--sp-2);
+  font-size: .75rem; line-height: 1.5; color: var(--tx2);
+}
+.reco-step::before {
+  content: attr(data-n);
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.125rem; height: 1.125rem; border-radius: 50%;
+  font-size: .5625rem; font-weight: 800;
+  background: color-mix(in oklab, currentColor 12%, transparent);
+  color: currentColor;
+  flex-shrink: 0; margin-top: 1px;
+}
+
+/* Target chip */
+.reco-target {
+  display: inline-flex; align-items: center; gap: 4px;
+  margin-top: var(--sp-2);
+  padding: 3px 9px; border-radius: var(--r-s);
+  font-size: .625rem; font-weight: 800; letter-spacing: .04em;
+  text-transform: uppercase;
+  background: color-mix(in oklab, currentColor 10%, transparent);
+  border: 1px solid color-mix(in oklab, currentColor 20%, transparent);
+}
+
+/* Animations */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+#summary-wrap, #reco-wrap {
+  animation: fadeSlideUp .4s var(--out) both;
+}
+.reco-card:nth-child(1) { animation-delay: .05s; }
+.reco-card:nth-child(2) { animation-delay: .10s; }
+.reco-card:nth-child(3) { animation-delay: .15s; }
+.reco-card:nth-child(4) { animation-delay: .20s; }
+.reco-card:nth-child(5) { animation-delay: .25s; }
+.reco-card:nth-child(6) { animation-delay: .30s; }
+
 </style>
-</head>
 
+</head>
 <body>
 
 <!-- ══ HEADER ══════════════════════════════════════════════════ -->
@@ -932,10 +1220,54 @@ html.dark .card-ref:hover { color: var(--color-brand-300); }
       </div></div></div>
     </div>
 
+
+    <!-- ══ KESIMPULAN ═══════════════════════════════════════════ -->
+    <div id="summary-wrap" style="display:none;" class="rsec summary-block">
+      <div class="trig" style="cursor:default;">
+        <span class="trig-lbl" role="heading" aria-level="2">
+          <span class="trig-bar"></span>Kesimpulan Kondisi Tubuh
+        </span>
+        <span id="summary-score-badge" class="score-badge"></span>
+      </div>
+      <div class="sum-body">
+        <!-- Score ring -->
+        <div class="score-ring-wrap">
+          <svg class="score-ring" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="ring-bg" cx="60" cy="60" r="50"/>
+            <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="50"
+              stroke-dasharray="314" stroke-dashoffset="314"/>
+          </svg>
+          <div class="ring-label">
+            <span class="ring-num" id="ring-num">–</span>
+            <span class="ring-sub">/ 100</span>
+            <span class="ring-tag" id="ring-tag"></span>
+          </div>
+        </div>
+
+        <!-- Metric pills -->
+        <div class="sum-metrics" id="sum-metrics"></div>
+
+        <!-- Alert banners -->
+        <div id="sum-alerts"></div>
+      </div>
+    </div>
+
+    <!-- ══ REKOMENDASI ═══════════════════════════════════════════ -->
+    <div id="reco-wrap" style="display:none;" class="rsec">
+      <div class="trig" style="cursor:default;">
+        <span class="trig-lbl" role="heading" aria-level="2">
+          <span class="trig-bar"></span>Rekomendasi Aksi
+        </span>
+        <span class="reco-sub-label">Langkah nyata berdasarkan hasil Anda</span>
+      </div>
+      <div class="reco-body" id="reco-body"></div>
+    </div>
+
   </div>
 </main>
 
 <script>
+
 /* ═══════════════════════════════════════════════════════════════
    PALETTES
 ═══════════════════════════════════════════════════════════════ */
@@ -1224,26 +1556,26 @@ function calc() {
             if(bmi<18.5){s='Kekurangan Berat';w='c-info';}
             else if(bmi>=25&&bmi<30){s='Kelebihan Berat';w='c-warn';}
             else if(bmi>=30){s='Obesitas';w='c-danger';}
-            return {nilai:bmi.toFixed(1),satuan:'kg/m²',status:s,warna:w,deskripsi:'Indikator standar WHO proporsi berat terhadap tinggi.'};
+            return {nilai:bmi.toFixed(1),satuan:'kg/m²',status:s,warna:w,deskripsi:'Mengukur proporsi berat badan terhadap kuadrat tinggi badan. Nilai di bawah 18,5 menandakan kekurangan berat, 18,5–24,9 normal, 25–29,9 kelebihan berat, dan ≥30 masuk kategori obesitas dengan risiko penyakit metabolik meningkat.'};
         },'Indeks Massa Tubuh (Body Mass Index).');
 
         K('umum','Indeks Ponderal',['height','weight'],()=>{
             const pi=d.weight/(hM**3);
             let s='Volume Normal',w='c-good';
             if(pi<11){s='Volume Kurang';w='c-info';}else if(pi>15){s='Volume Berlebih';w='c-danger';}
-            return {nilai:pi.toFixed(1),satuan:'kg/m³',status:s,warna:w,deskripsi:'Rasio ketebalan tubuh berdasar volume 3D.'};
+            return {nilai:pi.toFixed(1),satuan:'kg/m³',status:s,warna:w,deskripsi:'Mengukur kepadatan massa tubuh terhadap volume (tinggi pangkat tiga), sehingga lebih adil untuk individu sangat tinggi atau pendek dibanding IMT. Nilai normal 11–15 kg/m³; di bawah 11 menandakan tubuh sangat kurus, di atas 15 menandakan kelebihan massa relatif terhadap tinggi badan.'};
         },'Alternatif BMI lebih akurat untuk individu sangat tinggi/pendek.');
 
         K('umum','Rentang Sehat',['height'],()=>{
             const lo=fmtW(18.5*(hM**2)), hi=fmtW(24.9*(hM**2));
-            return {nilai:`${lo.v.toFixed(1)} – ${hi.v.toFixed(1)}`,satuan:lo.u,status:'',warna:'',deskripsi:'Batas agar skor IMT Anda eksklusif di zona normal.'};
+            return {nilai:`${lo.v.toFixed(1)} – ${hi.v.toFixed(1)}`,satuan:lo.u,status:'',warna:'',deskripsi:'Rentang berat badan di mana nilai IMT Anda berada pada 18,5–24,9 — zona tanpa peningkatan risiko penyakit terkait berat badan. Di luar rentang ini, risiko hipertensi, diabetes tipe 2, dan penyakit jantung mulai naik secara bermakna.'};
         },'Rentang berat minimum dan maksimum agar IMT tetap sehat.');
 
         K('umum','Berat Ideal',['height'],()=>{
             const hIn=d.height/2.54;
             const bKg=d.gender==='male'?50+2.3*(hIn-60):45.5+2.3*(hIn-60);
             const o=fmtW(bKg);
-            return {nilai:o.v.toFixed(1),satuan:o.u,status:'',warna:'',deskripsi:'Formula Devine (standar klinis). Akurasi optimal untuk tinggi 152–190 cm.'};
+            return {nilai:o.v.toFixed(1),satuan:o.u,status:'',warna:'',deskripsi:'Berat badan target yang dihitung dari tinggi badan menggunakan formula Devine — standar yang dipakai klinisi untuk menentukan dosis obat dan target rehabilitasi. Nilai ini bukan tujuan absolut, melainkan acuan klinis; komposisi tubuh dan kerangka lebih menentukan daripada angka tunggal ini.'};
         },'Target berat badan paling optimal yang direkomendasikan secara klinis.');
 
         K('umum','Ukuran Kerangka',['height','wrist'],()=>{
@@ -1251,29 +1583,29 @@ function calc() {
             let u='Sedang';
             if(d.gender==='male'){if(r>10.4)u='Kecil';else if(r<9.6)u='Besar';}
             else{if(r>11.0)u='Kecil';else if(r<10.1)u='Besar';}
-            return {nilai:u,satuan:'',status:'',warna:'',deskripsi:'Mempengaruhi batas maksimum otot natural Anda.'};
+            return {nilai:u,satuan:'',status:'',warna:'',deskripsi:'Ukuran kerangka tulang ditentukan dari rasio tinggi terhadap lingkar pergelangan. Kerangka besar memiliki kapasitas lebih tinggi untuk menopang massa otot dan berat badan yang sehat; hasil ini membantu menetapkan target berat dan otot yang realistis bagi tubuh Anda.'};
         },'Analisis kerangka tulang berdasarkan rasio tinggi dan lingkar pergelangan tangan.');
 
         // ── KOMPOSISI ──
         const nDeps=d.gender==='male'?['height','waist','neck']:['height','waist','neck','hip'];
         K('komposisi','Lemak Tubuh (US Navy)',nDeps,()=>{
             const f=calcNavy(d);
-            return {nilai:f.toFixed(1),satuan:'%',status:'',warna:'',deskripsi:'Estimasi persentase lemak standar US Navy.'};
+            return {nilai:f.toFixed(1),satuan:'%',status:'',warna:'',deskripsi:'Persentase lemak tubuh diestimasi dari lingkar tubuh menggunakan metode Angkatan Laut AS. Untuk pria, normal 8–19%; wanita 21–32%. Di atas ambang ini risiko sindrom metabolik meningkat, sedangkan terlalu rendah mengganggu fungsi hormonal dan imun.'};
         },'Tingkat akurasi tinggi menggunakan metode antropometri angkatan laut.');
 
         K('komposisi','Adipositas (BAI)',['height','hip'],()=>{
             const b=((d.hip/Math.pow(hM,1.5))-18).toFixed(1);
-            return {nilai:b,satuan:'%',status:'',warna:'',deskripsi:'Massa lemak berdasar distribusi panggul.'};
+            return {nilai:b,satuan:'%',status:'',warna:'',deskripsi:'Indeks Adipositas Tubuh menghitung estimasi lemak dari lingkar panggul dan tinggi badan tanpa menggunakan berat timbangan, sehingga tidak terpengaruh retensi cairan atau massa otot. Nilai BAI mendekati % lemak aktual; interpretasi serupa dengan persentase lemak tubuh standar.'};
         },'Body Adiposity Index: Estimasi lemak yang tak terpengaruh berat timbangan.');
 
         K('komposisi','Lemak Relatif (RFM)',['height','waist'],()=>{
             const rfm=d.gender==='male'?64-(20*(d.height/d.waist)):76-(20*(d.height/d.waist));
-            return {nilai:rfm.toFixed(1),satuan:'%',status:'',warna:'',deskripsi:'Prediktor komposisi lemak alternatif IMT.'};
+            return {nilai:rfm.toFixed(1),satuan:'%',status:'',warna:'',deskripsi:'Relative Fat Mass menggunakan rasio tinggi terhadap lingkar pinggang untuk mengestimasi lemak tubuh secara lebih akurat dari IMT, karena menangkap distribusi lemak sentral. Nilai lebih tinggi mencerminkan proporsi lemak yang lebih besar terhadap massa total tubuh.'};
         },'Metode estimasi jaringan lemak yang dianggap jauh lebih akurat daripada IMT.');
 
         K('komposisi','Massa Tanpa Lemak',['weight',...nDeps],()=>{
             const f=calcNavy(d), lbm=d.weight*(1-f/100), o=fmtW(lbm);
-            return {nilai:o.v.toFixed(1),satuan:o.u,status:'',warna:'',deskripsi:'Berat otot, organ, air, dan tulang (bersih).'};
+            return {nilai:o.v.toFixed(1),satuan:o.u,status:'',warna:'',deskripsi:'Massa tubuh setelah seluruh lemak dikurangi — mencakup otot, tulang, organ, dan air tubuh. Nilai ini adalah dasar untuk menghitung kebutuhan protein, dosis obat berbasis berat, dan menilai kebugaran tanpa bias dari kadar lemak.'};
         },'Berat Anda jika seluruh sel lemak dihilangkan.');
 
         K('komposisi','Indeks Bebas Lemak',['weight',...nDeps],()=>{
@@ -1281,7 +1613,7 @@ function calc() {
             let s='Kepadatan Otot Normal',w='c-brand';
             if(d.gender==='male'){if(ffmi>=22){s='Superior / Atletis';w='c-good';}else if(ffmi<18)s='Sub-Standar';}
             else{if(ffmi>=18){s='Superior / Atletis';w='c-good';}else if(ffmi<15)s='Sub-Standar';}
-            return {nilai:ffmi.toFixed(1),satuan:'skala',status:s,warna:w,deskripsi:'Parameter absolut batas kepadatan otot natural.'};
+            return {nilai:ffmi.toFixed(1),satuan:'skala',status:s,warna:w,deskripsi:'Fat-Free Mass Index mengukur kepadatan massa bebas lemak relatif terhadap tinggi badan. Pria dengan FFMI di atas 22 dan wanita di atas 18 tergolong atletis; batas natural tanpa doping sekitar 25 (pria) dan 21 (wanita) — melampaui batas ini sangat tidak mungkin tanpa suplemen hormonal.'};
         },'Fat-Free Mass Index: Standar untuk mengukur ketebalan perkembangan serabut otot rangka.');
 
         // ── KARDIO ──
@@ -1289,54 +1621,54 @@ function calc() {
             const maxHr=208-0.7*d.age, vo2=15.3*(maxHr/d.rhr);
             let s='Standar',w='c-brand';
             if(vo2>=45){s='Eksepsional';w='c-info';}else if(vo2<30){s='Lemah';w='c-danger';}
-            return {nilai:vo2.toFixed(1),satuan:'ml/kg/min',status:s,warna:w,deskripsi:'Efisiensi suplai O₂ & sirkulasi jantung.'};
+            return {nilai:vo2.toFixed(1),satuan:'ml/kg/min',status:s,warna:w,deskripsi:'Kapasitas aerobik maksimum — volume oksigen yang dapat diproses tubuh per menit per kilogram berat. Nilai di bawah 30 ml/kg/min menandakan kebugaran rendah dengan risiko kardiovaskular lebih tinggi; di atas 45 dikategorikan sangat baik; atlet elit sering mencapai 55–80.'};
         },'Kapasitas maksimum suplai oksigen yang diproses jantung Anda per menit.');
 
         K('kardio','Batas Max HR',['age'],()=>{
-            return {nilai:Math.round(208-0.7*d.age),satuan:'bpm',status:'',warna:'',deskripsi:'Ambang batas keselamatan kontraksi ventrikel.'};
+            return {nilai:Math.round(208-0.7*d.age),satuan:'bpm',status:'',warna:'',deskripsi:'Perkiraan detak jantung tertinggi yang aman dicapai saat latihan intens. Berolahraga secara konsisten di atas nilai ini dalam waktu lama membebani jantung secara berlebihan. Nilai ini menurun sekitar 0,7 detak per tahun seiring bertambahnya usia.'};
         },'Batas rasional tertinggi detak jantung aman saat berolahraga intens.');
 
         K('kardio','Zona Pembakaran Lemak',['age','rhr'],()=>{
             const mx=Math.round(208-0.7*d.age), res=mx-d.rhr;
             const lo=Math.round(res*0.6+d.rhr), hi=Math.round(res*0.7+d.rhr);
-            return {nilai:`${lo}–${hi}`,satuan:'bpm',status:'',warna:'',deskripsi:'Rentang detak optimal membakar adiposa.'};
+            return {nilai:`${lo}–${hi}`,satuan:'bpm',status:'',warna:'',deskripsi:'Pada rentang detak ini (60–70% cadangan detak jantung), tubuh mengutamakan pembakaran lemak sebagai bahan bakar utama dibanding karbohidrat. Pertahankan detak di zona ini minimal 30 menit untuk efek pembakaran lemak yang optimal.'};
         },'Rentang ritme detak jantung saat kardio agar prioritas tubuh adalah memecah lemak.');
 
         K('kardio','Kebutuhan Hidrasi',['weight'],()=>{
             let v=(d.weight*35)/1000; if(d.activity>=1.55)v+=0.5;
             const o=fmtV(v);
-            return {nilai:o.v.toFixed(1),satuan:o.u,status:'',warna:'',deskripsi:'Target minimal cairan untuk mengganti keringat.'};
+            return {nilai:o.v.toFixed(1),satuan:o.u,status:'',warna:'',deskripsi:'Kebutuhan cairan harian dihitung dari berat badan dengan penambahan untuk aktivitas fisik. Dehidrasi 1–2% berat badan sudah menurunkan performa fisik dan kognitif; di atas 2% mulai memicu kram dan pusing. Termasuk semua minuman, bukan hanya air putih.'};
         },'Target pemenuhan cairan harian Anda.');
 
         // ── METABOLISME ──
         K('metabolisme','Total Kalori (TDEE)',['weight','height','age'],()=>{
-            return {nilai:Math.round(calcBmr(d)*d.activity),satuan:'kcal',status:'',warna:'',deskripsi:'Akumulasi kalori terbakar dalam 24 jam.'};
+            return {nilai:Math.round(calcBmr(d)*d.activity),satuan:'kcal',status:'',warna:'',deskripsi:'Total energi yang dibakar tubuh dalam sehari, mencakup metabolisme basal, aktivitas fisik, dan efek termal makanan. Mengonsumsi lebih dari nilai ini secara konsisten akan menambah berat badan; di bawahnya akan mengurangi berat badan dengan laju sekitar 0,5 kg per defisit 500 kkal/hari.'};
         },'Total Daily Energy Expenditure: Kalori yang Anda bakar seharian berdasarkan rutinitas.');
 
         K('metabolisme','Target Protein',['weight','height','age'],()=>{
-            return {nilai:Math.round((calcBmr(d)*d.activity*0.3)/4),satuan:'g',status:'',warna:'',deskripsi:'30% dari total kalori harian.'};
+            return {nilai:Math.round((calcBmr(d)*d.activity*0.3)/4),satuan:'g',status:'',warna:'',deskripsi:'Asupan protein harian yang direkomendasikan berdasarkan proporsi 30% dari total kebutuhan kalori. Protein dibutuhkan untuk membangun dan mempertahankan otot, memproduksi enzim dan hormon, serta mendukung imunitas. Setiap gram protein menyumbang 4 kkal.'};
         },'Kebutuhan minimum asam amino untuk mempertahankan massa otot.');
 
         K('metabolisme','Karbo & Lemak',['weight','height','age'],()=>{
             const tdee=calcBmr(d)*d.activity;
-            return {nilai:`${Math.round((tdee*0.5)/4)} / ${Math.round((tdee*0.2)/9)}`,satuan:'g',status:'',warna:'',deskripsi:'50% Karbohidrat dan 20% Lemak.'};
+            return {nilai:`${Math.round((tdee*0.5)/4)} / ${Math.round((tdee*0.2)/9)}`,satuan:'g',status:'',warna:'',deskripsi:'Distribusi makronutrien berdasarkan panduan gizi seimbang: karbohidrat sebagai sumber energi utama (4 kkal/gram) dan lemak untuk fungsi hormonal serta penyerapan vitamin larut lemak (9 kkal/gram). Rasio ini dapat disesuaikan berdasarkan tujuan diet dan kondisi kesehatan.'};
         },'Alokasi sisa ruang kalori harian untuk sumber energi utama dan pelarut vitamin.');
 
         // ── RISIKO ──
         K('risiko','ABSI (Mortalitas)',['waist','height','weight'],()=>{
             const bmi=d.weight/(hM**2), absi=(d.waist/100)/(Math.pow(bmi,2/3)*Math.sqrt(hM));
-            return {nilai:absi.toFixed(4),satuan:'indeks',status:'',warna:'',deskripsi:'A Body Shape Index: Risiko kematian dini.'};
+            return {nilai:absi.toFixed(4),satuan:'indeks',status:'',warna:'',deskripsi:'Indeks bentuk tubuh yang menghubungkan lingkar pinggang dengan IMT dan tinggi badan untuk memprediksi risiko mortalitas. Nilai lebih tinggi dari rata-rata populasi menandakan akumulasi lemak viseral berlebih — jenis lemak yang paling berbahaya karena melingkupi organ dalam.'};
         },'Prediktor spesifik ancaman penyakit akibat lipatan lemak viseral.');
 
         K('risiko','Rasio Pinggang/Tinggi',['waist','height'],()=>{
             const r=d.waist/d.height, safe=r<=0.5;
-            return {nilai:r.toFixed(2),satuan:'rasio',status:safe?'Jantung Aman':'Rentan Jantung',warna:safe?'c-good':'c-danger',deskripsi:'Batas ideal: Pinggang di bawah separuh tinggi.'};
+            return {nilai:r.toFixed(2),satuan:'rasio',status:safe?'Jantung Aman':'Rentan Jantung',warna:safe?'c-good':'c-danger',deskripsi:'Rasio pinggang terhadap tinggi badan adalah prediktor risiko kardiovaskular yang lebih kuat dari IMT karena secara langsung menangkap lemak sentral. Nilai di atas 0,5 menandakan risiko meningkat; target ideal adalah menjaga lingkar pinggang di bawah setengah tinggi badan Anda.'};
         },'Indikator tajam prediksi penyakit kardiovaskular. Target < 0.5.');
 
         K('risiko','Rasio Pinggang/Pinggul',['waist','hip'],()=>{
             const r=d.waist/d.hip;
             const risky=(d.gender==='male'&&r>=0.90)||(d.gender==='female'&&r>=0.85);
-            return {nilai:r.toFixed(2),satuan:'rasio',status:risky?'Risiko Diabetes (Apple)':'Risiko Rendah (Pear)',warna:risky?'c-danger':'c-good',deskripsi:'Mendeteksi kecenderungan penimbunan lemak organ.'};
+            return {nilai:r.toFixed(2),satuan:'rasio',status:risky?'Risiko Diabetes (Apple)':'Risiko Rendah (Pear)',warna:risky?'c-danger':'c-good',deskripsi:'Rasio pinggang terhadap pinggul membedakan distribusi lemak tipe apel (sentral, berbahaya) dan tipe pir (perifer, lebih aman). Pria di atas 0,90 dan wanita di atas 0,85 masuk zona risiko sindrom metabolik, diabetes, dan penyakit kardiovaskular yang lebih tinggi.'};
         },'Bentuk Apel dikaitkan erat dengan paparan sindrom metabolik diabetes.');
 
 
@@ -1352,7 +1684,7 @@ function calc() {
             const sign  = diff>=0?'+':'-';
             return {nilai:Math.round(rmr),satuan:'kcal',status:`${sign}${Math.abs(Math.round(diff))} vs Mifflin`,
                 warna: Math.abs(diff)>100?'c-info':'c-brand',
-                deskripsi:'Formula Katch-McArdle (1975) berbasis massa bebas lemak — lebih akurat untuk individu atletis atau sangat kurus.'};
+                deskripsi:'Metabolisme basal dihitung dari massa bebas lemak, bukan berat total — membuatnya lebih akurat untuk individu berotot yang IMT-nya tinggi namun lemaknya rendah. Selisih dari nilai Mifflin-St Jeor menunjukkan seberapa jauh komposisi tubuh Anda memengaruhi kebutuhan energi.'};
         },'RMR Katch-McArdle menggunakan LBM, bukan berat total, sehingga lebih presisi untuk individu berotot.');
 
         // 2. Total Body Water — Watson et al. 1980
@@ -1366,7 +1698,7 @@ function calc() {
             const st = pct>=norm-5&&pct<=norm+10?'Hidrasi Normal':'Perlu Perhatian';
             return {nilai:tbw.toFixed(1),satuan:'L',
                 status:st,warna:st==='Hidrasi Normal'?'c-good':'c-warn',
-                deskripsi:`Total cairan dalam tubuh (${pct.toFixed(0)}% berat badan). Standar Watson 1980 — digunakan klinis di nefrologi.`};
+                deskripsi:`Air menyusun ${pct.toFixed(0)}% berat badan Anda. Total air tubuh mencakup cairan intrasel (dalam sel) dan ekstrasel (darah, limfa, cairan antar sel). Nilai di bawah 50% (pria) atau 45% (wanita) mengisyaratkan dehidrasi kronis atau rasio lemak yang tinggi karena jaringan lemak mengandung sangat sedikit air.`};
         },'Total Body Water (Watson 1980): digunakan luas di dunia medis untuk menghitung dosis obat berbasis cairan tubuh.');
 
         // 3. Massa Otot Rangka Estimasi — Baumgartner/Janssen proxy
@@ -1382,7 +1714,7 @@ function calc() {
             const st = smmPct>=threshold?'Massa Otot Baik':'Massa Otot Rendah';
             return {nilai:o.v.toFixed(1),satuan:o.u,
                 status:st,warna:st==='Massa Otot Baik'?'c-good':'c-warn',
-                deskripsi:`${smmPct.toFixed(1)}% dari berat badan. Estimasi berdasarkan Wang et al. (2000): otot rangka ≈ 55% dari massa bebas lemak.`};
+                deskripsi:`Otot rangka menyusun ${smmPct.toFixed(1)}% berat badan Anda. Massa otot yang tinggi meningkatkan laju metabolisme basal, memperbaiki sensitivitas insulin, dan melindungi sendi. Pria dengan SMM di bawah 34% dan wanita di bawah 27% berat badan berisiko mengalami sarkopenia seiring usia.`};
         },'Skeletal Muscle Mass: otot yang dapat dikontraksikan secara sadar. Kunci metabolisme, mobilitas, dan longevitas.');
 
         // 4. Massa Tulang Estimasi — Doupe et al. 1997
@@ -1396,7 +1728,7 @@ function calc() {
             const bmPct = bmAdj/d.weight*100;
             const o = fmtW(bmAdj);
             return {nilai:o.v.toFixed(2),satuan:o.u,status:'',warna:'',
-                deskripsi:`≈ ${bmPct.toFixed(1)}% berat badan. Formula Doupe (1997): massa tulang menurun ~1%/dekade setelah usia 30.`};
+                deskripsi:`Tulang menyusun sekitar ${bmPct.toFixed(1)}% berat badan Anda. Massa tulang mencapai puncaknya di usia 25–35 lalu menurun perlahan — terutama pada wanita pascamenopause. Nilai rendah untuk usia Anda dapat mengindikasikan risiko osteopenia; latihan beban dan kalsium terbukti memperlambat penurunan ini.`};
         },'Estimasi massa tulang dari tinggi badan. Menurun seiring usia — relevan untuk risiko osteoporosis.');
 
         // 5. Persentase Lean Mass (kebalikan body fat, lebih intuitif)
@@ -1419,7 +1751,7 @@ function calc() {
                 else{st='Di Bawah Rata-rata';w='c-warn';}
             }
             return {nilai:lean.toFixed(1),satuan:'%',status:st,warna:w,
-                deskripsi:'Proporsi tubuh yang bukan lemak (otot+tulang+organ+air). Komplemen langsung dari % lemak tubuh.'};
+                deskripsi:'Persentase seluruh massa tubuh yang bukan lemak — meliputi otot, tulang, organ, dan air. Semakin tinggi nilai ini, semakin efisien metabolisme tubuh karena jaringan aktif membakar lebih banyak kalori bahkan saat istirahat.'};
         },'Lean Mass %: persentase massa tubuh yang berfungsi secara metabolis aktif. Semakin tinggi, semakin baik.');
 
         // 6. Potensi Anabolisme Alami (FFMI vs Ceiling Kouri 1995)
@@ -1439,7 +1771,7 @@ function calc() {
             else if(pct>=60){st='Berkembang';w='c-brand';}
             else{st='Potensi Besar';w='c-warn';}
             return {nilai:used,satuan:'%',status:st,warna:w,
-                deskripsi:`FFMI ${ffmi.toFixed(1)} dari batas natural ${ceiling}. Sisa potensi: ${remain} poin FFMI (Kouri et al., NEJM 1995).`};
+                deskripsi:`FFMI Anda ${ffmi.toFixed(1)} dari batas genetik natural ${ceiling}. Sisa ruang perkembangan otot sebesar ${remain} poin FFMI dapat dicapai melalui latihan beban konsisten dan nutrisi optimal — tanpa bantuan hormon eksogen.`};
         },'Persentase potensi otot alami yang telah dicapai. Mengacu batas FFMI atlet drug-free (Kouri 1995, NEJM).');
 
         // ══════════════════════════════════════════════════════════
@@ -1469,7 +1801,7 @@ function calc() {
             else if(diff>=-10){st='Lebih Tua';w='c-warn';}
             else{st='Jauh Lebih Tua';w='c-danger';}
             return {nilai:fitAge,satuan:'thn',status:st,warna:w,
-                deskripsi:`Usia biologis kardiovaskular Anda. ${diff>=0?diff+' tahun lebih muda':Math.abs(diff)+' tahun lebih tua'} dari usia kalender. Berdasarkan studi HUNT (Nes et al., Circulation 2013).`};
+                deskripsi:`Jantung dan paru-paru Anda berfungsi setara dengan orang berusia ${fitAge} tahun. Usia kebugaran ${diff>=0?diff+' tahun lebih muda':'lebih tua '+Math.abs(diff)+' tahun'} dari usia kalender Anda. Setiap peningkatan VO2Max sebesar 3,5 ml/kg/min setara dengan meremajakan usia kebugaran sekitar 5 tahun.`};
         },'Fitness Age: usia biologis kardiovaskular berdasarkan VO2Max, lingkar pinggang, dan RHR. Studi besar NTNU Norway (500.000+ subjek).');
 
         // 8. Skor Kebugaran RHR (AHA Fitness Classification)
@@ -1494,7 +1826,7 @@ function calc() {
                 else{st='Buruk';w='c-danger';}
             }
             return {nilai:d.rhr,satuan:'bpm',status:st,warna:w,
-                deskripsi:`${rhrPct}% dari max HR Anda. Semakin rendah denyut nadi istirahat, semakin efisien jantung. Klasifikasi AHA & Cooper Institute.`};
+                deskripsi:`Denyut nadi Anda saat istirahat setara ${rhrPct}% dari kapasitas maksimum jantung. Jantung yang terlatih memompa lebih banyak darah per detak sehingga butuh detak lebih sedikit. Penurunan 10 detak/menit dikaitkan dengan pengurangan risiko kematian kardiovaskular sekitar 30%.`};
         },'Denyut nadi istirahat adalah biomarker kebugaran kardiovaskular paling mudah diukur. Atlet dunia rata-rata 40-55 bpm.');
 
         // 9. Zona Latihan Lengkap 5 Zona — Karvonen 1957
@@ -1503,7 +1835,7 @@ function calc() {
             const hrr   = maxHr-d.rhr;
             const z = (lo,hi)=>`${Math.round(d.rhr+hrr*lo)}–${Math.round(d.rhr+hrr*hi)}`;
             return {nilai:'Z1–Z5',satuan:'bpm',status:'',warna:'',
-                deskripsi:`Z1 Recovery: ${z(0.5,0.6)} | Z2 Lemak: ${z(0.6,0.7)} | Z3 Aerobik: ${z(0.7,0.8)} | Z4 Anaerobik: ${z(0.8,0.9)} | Z5 Maksimal: ${z(0.9,1.0)}`};
+                deskripsi:`Z1 Pemulihan ${z(0.5,0.6)} bpm · Z2 Pembakaran Lemak ${z(0.6,0.7)} bpm · Z3 Aerobik ${z(0.7,0.8)} bpm · Z4 Ambang Laktat ${z(0.8,0.9)} bpm · Z5 Maksimal ${z(0.9,1.0)} bpm. Latihan di Z2 membangun fondasi aerobik; Z4–Z5 meningkatkan kapasitas anaerob dan VO2Max.`};
         },'5 zona latihan Karvonen (1957): setiap zona memiliki manfaat berbeda dari pemulihan aktif hingga peningkatan kapasitas anaerob.');
 
         // 10. Body Surface Area — DuBois & DuBois 1916
@@ -1513,7 +1845,7 @@ function calc() {
             // Mosteller formula (1987) — alternative, commonly used in pharmacy
             const mosteller = Math.sqrt((d.height*d.weight)/3600);
             return {nilai:bsa.toFixed(3),satuan:'m²',status:'',warna:'',
-                deskripsi:`DuBois: ${bsa.toFixed(3)} m² | Mosteller: ${mosteller.toFixed(3)} m². Digunakan dalam perhitungan dosis obat dan indeks kardiak klinis.`};
+                deskripsi:`Luas permukaan tubuh Anda ${bsa.toFixed(3)} m². Nilai ini digunakan klinisi untuk menentukan dosis obat (kemoterapi, imunosupresan) dan menghitung indeks kardiak — output jantung per meter persegi luas tubuh. Orang dewasa rata-rata memiliki BSA sekitar 1,7–1,9 m².`};
         },'Body Surface Area (DuBois 1916): standar klinis global untuk perhitungan dosis kemoterapi, imunosupresan, dan indeks kardiak.');
 
         // ══════════════════════════════════════════════════════════
@@ -1533,7 +1865,7 @@ function calc() {
             // NEAT: Non-Exercise Activity Thermogenesis
             const neat = tdee - bmr - tef - eat;
             return {nilai:Math.round(tdee),satuan:'kcal',status:'',warna:'',
-                deskripsi:`BMR: ${Math.round(bmr)} | NEAT: ${Math.round(neat)} | EAT: ${Math.round(eat)} | TEF: ${Math.round(tef)} kcal. (Levine, Science 2005)`};
+                deskripsi:`BMR ${Math.round(bmr)} kkal (metabolisme sel saat tidur) + NEAT ${Math.round(neat)} kkal (gerak harian non-olahraga) + EAT ${Math.round(eat)} kkal (olahraga terstruktur) + TEF ${Math.round(tef)} kkal (mencerna makanan) = total ${Math.round(tdee)} kkal. NEAT adalah komponen yang paling mudah ditingkatkan tanpa olahraga formal.`};
         },'Komponen TDEE: BMR (metabolisme basal) + NEAT (aktivitas non-olahraga) + EAT (olahraga) + TEF (efek termal makanan).');
 
         // 12. Kebutuhan Protein Berbasis LBM — ISSN 2017
@@ -1551,7 +1883,7 @@ function calc() {
             const loG = (lbm*lo).toFixed(0), hiG = (lbm*hi).toFixed(0);
             return {nilai:`${loG}–${hiG}`,satuan:'g/hari',
                 status:`${lo}–${hi} g/kg LBM`,warna:'c-brand',
-                deskripsi:`Berbasis LBM ${lbm.toFixed(1)} kg. Rentang ${note}. (Morton et al., Br J Sports Med 2018; ISSN Position Stand 2017)`};
+                deskripsi:`Kebutuhan protein ${loG}–${hiG} g/hari dihitung dari massa bebas lemak Anda ${lbm.toFixed(1)} kg. Berbasis massa otot lebih akurat dari berat total karena jaringan lemak tidak membutuhkan protein. Asupan di batas bawah range sudah cukup untuk mempertahankan otot; batas atas optimal untuk membangun.`};
         },'Kebutuhan protein evidence-based dari ISSN berdasarkan LBM dan level aktivitas, bukan sekadar berat badan total.');
 
         // 13. Target Kalori per Tujuan
@@ -1565,7 +1897,7 @@ function calc() {
             };
             const lines = Object.entries(goals).map(([g,k])=>`${g}: ${k}`).join(' | ');
             return {nilai:Math.round(tdee),satuan:'kcal',status:'',warna:'',
-                deskripsi:lines+' kcal. Deficit 500 kcal ≈ kehilangan 0.5 kg/minggu.'};
+                deskripsi:Object.entries(goals).map(([g,k])=>`${g}: ${k} kkal`).join(' · ')+'. Defisit 500 kkal/hari setara penurunan ±0,5 kg/minggu; surplus 250 kkal/hari ideal untuk pembentukan otot tanpa kenaikan lemak berlebih.'};
         },'Target kalori per tujuan. 1 kg lemak ≈ 7.700 kcal. Deficit aman: max 500 kcal/hari untuk preservasi otot.');
 
         // ══════════════════════════════════════════════════════════
@@ -1587,7 +1919,7 @@ function calc() {
             else if(bri<5.5){st='Adipositas Tinggi';w='c-warn';}
             else{st='Adipositas Sangat Tinggi';w='c-danger';}
             return {nilai:bri.toFixed(2),satuan:'BRI',status:st,warna:w,
-                deskripsi:'Body Roundness Index (Thomas et al., PLoS ONE 2013). Lebih akurat dari BMI untuk memprediksi % lemak dan lemak viseral.'};
+                deskripsi:'Indeks Kebulatan Tubuh mengukur seberapa "bulat" penampang tubuh secara geometris. BRI di bawah 3,4 menandakan adipositas rendah; 4,5–5,5 menandakan adipositas tinggi dengan risiko metabolik yang bermakna. Berbeda dari IMT, BRI secara langsung mencerminkan distribusi lemak viseral.'};
         },'BRI mengukur "kebulatan" tubuh secara geometris. Berkorelasi lebih kuat dengan lemak viseral dan risiko metabolik daripada BMI.');
 
         // 15. Conicity Index — Valdez 1991
@@ -1601,7 +1933,7 @@ function calc() {
             return {nilai:ci.toFixed(3),satuan:'CI',
                 status:risky?'Risiko Kardiovaskular':'Profil Aman',
                 warna:risky?'c-danger':'c-good',
-                deskripsi:`Batas: ${cut} (${d.gender==='male'?'Pria':'Wanita'}). CI mengukur redistribusi lemak sentral secara independen dari IMT. (Valdez, Int J Obes 1991)`};
+                deskripsi:`Indeks Konisitas membandingkan bentuk tubuh Anda dengan silinder sempurna (CI=1) — semakin mendekati kerucut (CI tinggi), semakin besar akumulasi lemak di perut. Batas risiko ${d.gender==='male'?'pria: >1,25':'wanita: >1,18'}. Lebih dari IMT, CI menangkap lemak sentral yang aktif secara metabolik.`};
         },'Conicity Index (Valdez 1991): bentuk tubuh ideal seperti kerucut (CI=1). Semakin bulat di tengah, semakin tinggi risiko CVD.');
 
         // 16. Rasio Pinggul/Tinggi
@@ -1614,7 +1946,7 @@ function calc() {
             return {nilai:hhr.toFixed(3),satuan:'rasio',
                 status:risky?'Pinggul Berlebih':'Proporsional',
                 warna:risky?'c-warn':'c-good',
-                deskripsi:`Batas aman: <${cut}. Berbeda dari WHR — mengukur distribusi lemak tubuh bawah secara independen. (Lin et al., 2002)`};
+                deskripsi:`Rasio pinggul terhadap tinggi mengukur proporsionalitas tubuh bagian bawah. Nilai di atas ${cut} mengindikasikan akumulasi lemak berlebih di area pinggul dan paha. Berbeda dari WHR, rasio ini tidak membandingkan dua lingkar tubuh melainkan menghubungkan pinggul langsung dengan tinggi badan.`};
         },'Hip-to-Height Ratio: proksi lemak tubuh bawah (pear shape). Bermanfaat untuk profil risiko yang lebih lengkap dari WHR saja.');
 
         // 17. Waist-to-Neck Ratio — Ben-Noun et al. 2006
@@ -1627,12 +1959,13 @@ function calc() {
             return {nilai:wnr.toFixed(2),satuan:'rasio',
                 status:risky?'Risiko Hipertensi':'Di Bawah Batas',
                 warna:risky?'c-danger':'c-good',
-                deskripsi:`Batas risiko hipertensi: >${cut}. Prediktor tekanan darah tinggi yang tidak memerlukan alat ukur BP. (Ben-Noun & Laor, Am J Hypertens 2006)`};
+                deskripsi:`Rasio pinggang terhadap leher memprediksi hipertensi karena leher yang lebih besar mencerminkan penimbunan lemak di area torso atas yang erat kaitannya dengan tekanan darah tinggi. Batas risiko ${d.gender==='male'?'pria: >4,5':'wanita: >4,7'} — di atas nilai ini risiko hipertensi naik signifikan.`};
         },'Waist-to-Neck Ratio memprediksi hipertensi dan sindrom metabolik. Mudah diukur tanpa peralatan medis.');
 
 
                 ['umum','komposisi','kardio','metabolisme','risiko','komposisi2','kardio2','metabolisme2','risiko2'].forEach(c =>
             document.getElementById('cat-'+c).innerHTML = (cats[c]||[]).join(''));
+        buildSummary(d);
     }
 
 /* old-calc init removed */
@@ -1763,6 +2096,489 @@ function initTooltips(){
   window.addEventListener('resize',   hideTip, { passive: true, ...sig });
 }
 
+
+/* ════════════════════════════════════════════════════════════════
+   SUMMARY ENGINE
+   Scores each domain 0–100, aggregates into composite score,
+   generates alert banners and recommendation cards.
+════════════════════════════════════════════════════════════════ */
+
+function buildSummary(d) {
+  // Guard: need at least height+weight+waist+neck to be meaningful
+  const hasBasic = !isNaN(d.height) && d.height>0 &&
+                   !isNaN(d.weight) && d.weight>0;
+  const hasBody  = hasBasic && !isNaN(d.waist) && d.waist>0 &&
+                   !isNaN(d.neck)  && d.neck>0;
+  const hasCardio= hasBasic && !isNaN(d.age)   && d.age>0  &&
+                   !isNaN(d.rhr)  && d.rhr>0;
+
+  if (!hasBasic) {
+    document.getElementById('summary-wrap').style.display = 'none';
+    document.getElementById('reco-wrap').style.display    = 'none';
+    return;
+  }
+
+  const hM   = d.height / 100;
+  const isMale = d.gender === 'male';
+
+  // ── SCORE DOMAINS (each 0–100, higher = better) ────────────────
+
+  // 1. Weight composition (BMI proxy, continuous)
+  const bmi  = d.weight / (hM * hM);
+  const sBmi = bmi < 18.5 ? Math.max(0, 60 - (18.5 - bmi) * 8)
+             : bmi < 25   ? 100
+             : bmi < 30   ? Math.max(0, 100 - (bmi - 25) * 10)
+             :              Math.max(0, 50 - (bmi - 30) * 8);
+
+  // 2. Body fat (WHtR proxy — always available if waist+height)
+  let sWhtr = 100;
+  if (!isNaN(d.waist) && d.waist > 0) {
+    const whtr = d.waist / d.height;
+    sWhtr = whtr <= 0.40 ? 90
+          : whtr <= 0.50 ? 100
+          : whtr <= 0.55 ? 75
+          : whtr <= 0.60 ? 55
+          : whtr <= 0.65 ? 35
+          :                15;
+  }
+
+  // 3. Body fat % (Navy if available)
+  let sFat = null;
+  let bf   = null;
+  if (hasBody && (!isNaN(d.hip) || isMale)) {
+    try {
+      const waistNeck = d.waist - d.neck;
+      if (isMale && waistNeck > 0) {
+        bf = 495 / (1.0324 - 0.19077 * Math.log10(waistNeck) + 0.15456 * Math.log10(d.height)) - 450;
+      } else if (!isMale && !isNaN(d.hip) && d.hip > 0) {
+        const combo = d.waist + d.hip - d.neck;
+        if (combo > 0)
+          bf = 495 / (1.29579 - 0.35004 * Math.log10(combo) + 0.22100 * Math.log10(d.height)) - 450;
+      }
+      if (bf !== null && bf >= 2 && bf <= 60) {
+        // Optimal: M 10–18%, F 20–28%
+        const lo = isMale ? 10 : 20, hi = isMale ? 18 : 28;
+        const danger = isMale ? 25 : 35;
+        sFat = bf < lo    ? Math.max(20, 80 - (lo - bf) * 4)
+             : bf <= hi   ? 100
+             : bf <= danger ? Math.max(30, 100 - (bf - hi) * 5)
+             :               Math.max(0,  30  - (bf - danger) * 4);
+      }
+    } catch(e) {}
+  }
+
+  // 4. Cardiovascular fitness (RHR-based VO2Max proxy)
+  let sCardio = null;
+  if (hasCardio) {
+    const maxHr = 208 - 0.7 * d.age;
+    const vo2   = 15.3 * (maxHr / d.rhr);
+    // ACSM norms 30–39yr as reference
+    const excellent = isMale ? 48 : 43;
+    const good      = isMale ? 43 : 38;
+    const avg       = isMale ? 36 : 32;
+    const poor      = isMale ? 30 : 26;
+    sCardio = vo2 >= excellent ? 100
+            : vo2 >= good      ? Math.round(70 + (vo2-good)/(excellent-good)*30)
+            : vo2 >= avg       ? Math.round(45 + (vo2-avg)/(good-avg)*25)
+            : vo2 >= poor      ? Math.round(20 + (vo2-poor)/(avg-poor)*25)
+            :                    Math.max(0, Math.round(vo2/poor*20));
+  }
+
+  // 5. Central adiposity risk (WHR)
+  let sWhr = null;
+  if (!isNaN(d.waist) && d.waist > 0 && !isNaN(d.hip) && d.hip > 0) {
+    const whr  = d.waist / d.hip;
+    const safe = isMale ? 0.90 : 0.85;
+    const risky= isMale ? 1.00 : 0.95;
+    sWhr = whr <= safe  ? 100
+         : whr <= risky ? Math.round(100 - (whr - safe) / (risky - safe) * 60)
+         :                Math.max(10, 40 - (whr - risky) * 80);
+  }
+
+  // ── COMPOSITE SCORE ────────────────────────────────────────────
+  const scores = [sBmi * 0.25, sWhtr * 0.25];
+  let   wTotal = 0.50;
+  if (sFat !== null)    { scores.push(sFat    * 0.20); wTotal += 0.20; }
+  if (sCardio !== null) { scores.push(sCardio * 0.30); wTotal += 0.30; }
+  if (sWhr !== null)    { scores.push(sWhr    * 0.15); wTotal += 0.15; }
+
+  const raw      = scores.reduce((a,b) => a+b, 0);
+  const score    = Math.round(raw / wTotal * (wTotal / (wTotal)));
+  const scoreFin = Math.min(100, Math.max(0, Math.round(raw)));
+
+  // Score tier
+  const tier = scoreFin >= 85 ? {label:'Sangat Baik',  cls:'c-good',   col:'var(--good)'}
+             : scoreFin >= 70 ? {label:'Baik',          cls:'c-good',   col:'var(--good)'}
+             : scoreFin >= 55 ? {label:'Cukup',         cls:'c-warn',   col:'var(--warn)'}
+             : scoreFin >= 40 ? {label:'Perlu Perbaikan',cls:'c-warn',  col:'var(--warn)'}
+             :                  {label:'Perlu Perhatian',cls:'c-danger', col:'var(--danger)'};
+
+  // ── RENDER SCORE RING ─────────────────────────────────────────
+  const ring = document.getElementById('ring-fill');
+  const circ = 2 * Math.PI * 50;  // r=50
+  ring.style.strokeDashoffset = circ - (circ * scoreFin / 100);
+  ring.style.stroke = tier.col;
+
+  document.getElementById('ring-num').textContent = scoreFin;
+  const ringTag = document.getElementById('ring-tag');
+  ringTag.textContent  = tier.label;
+  ringTag.className    = 'ring-tag ' + tier.cls;
+  ringTag.style.color  = tier.col;
+
+  const badge = document.getElementById('summary-score-badge');
+  badge.textContent = tier.label;
+  badge.className   = 'score-badge ' + tier.cls;
+  badge.style.color = tier.col;
+  badge.style.display = 'inline-flex';
+
+  // ── METRIC PILLS ──────────────────────────────────────────────
+  const pills = [];
+
+  // BMI pill
+  const bmiLbl = bmi < 18.5 ? {t:'Kurang', c:'c-info'}
+               : bmi < 25   ? {t:'Normal', c:'c-good'}
+               : bmi < 30   ? {t:'Lebih',  c:'c-warn'}
+               :              {t:'Obesitas',c:'c-danger'};
+  pills.push({label:'IMT', val:bmi.toFixed(1), unit:'kg/m²', status:bmiLbl.t, cls:bmiLbl.c});
+
+  // WHtR pill
+  if (!isNaN(d.waist) && d.waist > 0) {
+    const whtr = d.waist / d.height;
+    const wLbl = whtr <= 0.50 ? {t:'Aman', c:'c-good'} : whtr <= 0.60 ? {t:'Batas', c:'c-warn'} : {t:'Risiko', c:'c-danger'};
+    pills.push({label:'Pinggang/Tinggi', val:whtr.toFixed(2), unit:'rasio', status:wLbl.t, cls:wLbl.c});
+  }
+
+  // Body fat pill
+  if (bf !== null) {
+    const bfLo = isMale ? 8 : 20, bfHi = isMale ? 19 : 30;
+    const bfLbl = bf < bfLo ? {t:'Terlalu Rendah', c:'c-info'}
+                : bf <= bfHi? {t:'Normal', c:'c-good'}
+                : bf <= (isMale?25:35) ? {t:'Tinggi', c:'c-warn'}
+                : {t:'Sangat Tinggi', c:'c-danger'};
+    pills.push({label:'Lemak Tubuh', val:bf.toFixed(1), unit:'%', status:bfLbl.t, cls:bfLbl.c});
+  }
+
+  // VO2Max pill
+  if (hasCardio) {
+    const maxHr = 208 - 0.7 * d.age;
+    const vo2   = (15.3 * maxHr / d.rhr).toFixed(1);
+    const vLbl  = parseFloat(vo2) >= 45 ? {t:'Sangat Baik', c:'c-good'}
+                : parseFloat(vo2) >= 38  ? {t:'Baik',        c:'c-good'}
+                : parseFloat(vo2) >= 30  ? {t:'Cukup',       c:'c-warn'}
+                :                          {t:'Rendah',       c:'c-danger'};
+    pills.push({label:'VO₂ Maks', val:vo2, unit:'ml/kg/min', status:vLbl.t, cls:vLbl.c});
+  }
+
+  // WHR pill
+  if (!isNaN(d.waist) && d.waist>0 && !isNaN(d.hip) && d.hip>0) {
+    const whr  = (d.waist/d.hip).toFixed(2);
+    const safe = isMale ? 0.90 : 0.85;
+    const wLbl = parseFloat(whr) <= safe ? {t:'Aman', c:'c-good'} : {t:'Risiko', c:'c-danger'};
+    pills.push({label:'Pinggang/Pinggul', val:whr, unit:'rasio', status:wLbl.t, cls:wLbl.c});
+  }
+
+  // RHR pill
+  if (!isNaN(d.rhr) && d.rhr > 0) {
+    const rhrCut = isMale ? [55,65,75] : [60,70,80];
+    const rhrLbl = d.rhr<=rhrCut[0] ? {t:'Atlet',  c:'c-info'}
+                 : d.rhr<=rhrCut[1] ? {t:'Baik',   c:'c-good'}
+                 : d.rhr<=rhrCut[2] ? {t:'Rata-rata',c:'c-warn'}
+                 :                    {t:'Tinggi',  c:'c-danger'};
+    pills.push({label:'Nadi Istirahat', val:d.rhr, unit:'bpm', status:rhrLbl.t, cls:rhrLbl.c});
+  }
+
+  // BMR pill
+  if (hasBasic && !isNaN(d.age) && d.age>0) {
+    const bmr = Math.round(10*d.weight + 6.25*d.height - 5*d.age + (isMale?5:-161));
+    const tdee = Math.round(bmr * d.activity);
+    pills.push({label:'TDEE', val:tdee.toLocaleString('id'), unit:'kkal/hari', status:'Estimasi', cls:'c-brand'});
+  }
+
+  const pillsEl = document.getElementById('sum-metrics');
+  pillsEl.innerHTML = pills.map(p => `
+    <div class="mpill">
+      <span class="mpill-label">${p.label}</span>
+      <span class="mpill-val">${p.val} <small style="font-size:.6rem;font-weight:600;color:var(--tx3)">${p.unit}</small></span>
+      <span class="mpill-status ${p.cls}">${p.status}</span>
+    </div>`).join('');
+
+  // ── ALERT BANNERS ─────────────────────────────────────────────
+  const alerts = [];
+
+  const SVG_W = `<svg class="alert-ico" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>`;
+  const SVG_C = `<svg class="alert-ico" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`;
+  const SVG_I = `<svg class="alert-ico" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`;
+
+  if (bmi >= 30)
+    alerts.push({lvl:'danger', ico:SVG_W, title:'IMT masuk zona obesitas',
+      desc:`IMT ${bmi.toFixed(1)} kg/m² berada di zona yang dikaitkan dengan peningkatan risiko diabetes tipe 2, hipertensi, dan gangguan jantung. Penurunan 5–10% berat badan sudah terbukti menurunkan risiko secara bermakna.`});
+  else if (bmi >= 25)
+    alerts.push({lvl:'warn', ico:SVG_W, title:'Berat badan di atas rentang ideal',
+      desc:`IMT ${bmi.toFixed(1)} kg/m² masuk zona kelebihan berat. Penurunan ringan 5–8 kg sudah cukup untuk mengembalikan ke zona normal dan menurunkan tekanan pada sendi serta sistem kardiovaskular.`});
+  else if (bmi < 18.5)
+    alerts.push({lvl:'info', ico:SVG_I, title:'Berat badan di bawah rentang ideal',
+      desc:`IMT ${bmi.toFixed(1)} kg/m² menandakan kekurangan berat badan. Kondisi ini bisa menurunkan imunitas, kepadatan tulang, dan energi harian. Konsultasikan dengan ahli gizi untuk rencana peningkatan berat yang sehat.`});
+
+  if (!isNaN(d.waist) && d.waist>0) {
+    const whtr = d.waist/d.height;
+    if (whtr > 0.60)
+      alerts.push({lvl:'danger', ico:SVG_W, title:'Lemak sentral sangat tinggi',
+        desc:`Rasio pinggang/tinggi ${whtr.toFixed(2)} jauh di atas batas aman 0,50. Lemak di area perut ini bersifat metabolik aktif dan langsung meningkatkan risiko penyakit jantung, stroke, dan diabetes.`});
+    else if (whtr > 0.50)
+      alerts.push({lvl:'warn', ico:SVG_W, title:'Lemak sentral perlu diperhatikan',
+        desc:`Rasio pinggang/tinggi ${whtr.toFixed(2)} melewati batas 0,50. Lingkar pinggang yang lebih besar dari setengah tinggi badan adalah tanda awal akumulasi lemak visceral.`});
+  }
+
+  if (sCardio !== null && sCardio < 45)
+    alerts.push({lvl:'warn', ico:SVG_W, title:'Kapasitas aerobik di bawah optimal',
+      desc:`Estimasi VO₂ Maks Anda mengindikasikan kebugaran aerobik yang perlu ditingkatkan. Kardio rutin 150 menit/minggu intensitas sedang terbukti meningkatkan VO₂ Maks 10–15% dalam 8–12 minggu.`});
+
+  if (!isNaN(d.rhr) && d.rhr > (isMale?80:85))
+    alerts.push({lvl:'warn', ico:SVG_W, title:'Denyut nadi istirahat tinggi',
+      desc:`RHR ${d.rhr} bpm di atas rentang yang direkomendasikan. Denyut nadi istirahat tinggi bisa menandakan stres kronis, kurang tidur, atau kondisi kardiovaskular yang perlu evaluasi lebih lanjut.`});
+
+  if (bf !== null && bf > (isMale?25:35))
+    alerts.push({lvl:'danger', ico:SVG_W, title:'Persentase lemak tubuh tinggi',
+      desc:`Lemak tubuh ${bf.toFixed(1)}% masuk zona berisiko. Pada level ini, risiko resistensi insulin dan inflamasi kronis meningkat. Kombinasi latihan beban dan defisit kalori moderat adalah strategi paling efektif.`});
+
+  if (scoreFin >= 80)
+    alerts.push({lvl:'good', ico:SVG_C, title:'Kondisi tubuh Anda secara keseluruhan baik',
+      desc:`Skor ${scoreFin}/100 menunjukkan profil kesehatan yang kuat. Fokuslah pada mempertahankan kebiasaan yang sudah ada dan lakukan pemeriksaan berkala untuk memastikan tren ini terjaga.`});
+
+  const alertsEl = document.getElementById('sum-alerts');
+  alertsEl.innerHTML = alerts.map(a => `
+    <div class="alert-banner lvl-${a.lvl}" role="alert">
+      ${a.ico}
+      <div class="alert-text">
+        <p class="alert-title">${a.title}</p>
+        <p class="alert-desc">${a.desc}</p>
+      </div>
+    </div>`).join('');
+
+  document.getElementById('summary-wrap').style.display = '';
+
+  // ── RECOMMENDATIONS ───────────────────────────────────────────
+  buildReco(d, {scoreFin, bmi, bf, sCardio, sWhtr, isMale, hasCardio, hasBody});
+}
+
+/* ────────────────────────────────────────────────────────────────
+   RECOMMENDATION ENGINE
+   Generates prioritised, actionable recommendation cards.
+──────────────────────────────────────────────────────────────── */
+function buildReco(d, ctx) {
+  const {scoreFin, bmi, bf, sCardio, sWhtr, isMale, hasCardio} = ctx;
+
+  // Each rec: {priority:'high'|'med'|'low', color, ico (SVG path), title, why, steps:[], target}
+  const recs = [];
+
+  // ── Priority colours ─────────────────────────────────────────
+  const COL = {
+    high: 'var(--danger)', med: 'var(--warn)', low: 'var(--good)', main: 'var(--color-brand-500)'
+  };
+
+  // SVG paths (24×24 viewBox, stroke-based)
+  const ICOS = {
+    run:    '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>',
+    food:   '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>',
+    heart:  '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>',
+    sleep:  '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>',
+    water:  '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>',
+    muscle: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>',
+    steps:  '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>',
+    scale:  '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>',
+    check:  '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>',
+    yoga:   '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.5 12.75l6 6 9-13.5"/>',
+  };
+
+  const ico = (key, col) =>
+    `<div class="reco-ico-wrap" style="color:${col}"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">${ICOS[key]||ICOS.check}</svg></div>`;
+
+  const steps = (...s) => s.map((t,i) =>
+    `<li class="reco-step" data-n="${i+1}" style="color:var(--tx2)">${t}</li>`).join('');
+
+  const target = (label, col) =>
+    `<div class="reco-target" style="color:${col}">🎯 ${label}</div>`;
+
+  // ── Determine needs ────────────────────────────────────────────
+  const overweight  = bmi >= 25;
+  const obese       = bmi >= 30;
+  const underweight = bmi < 18.5;
+  const highWhtr    = !isNaN(d.waist) && d.waist>0 && (d.waist/d.height) > 0.50;
+  const highFat     = bf !== null && bf > (isMale?20:30);
+  const lowCardio   = sCardio !== null && sCardio < 60;
+  const highRhr     = !isNaN(d.rhr) && d.rhr>(isMale?70:75);
+  const tdee        = !isNaN(d.weight)&&!isNaN(d.age) ?
+      Math.round((10*d.weight+6.25*d.height-5*d.age+(isMale?5:-161))*d.activity) : null;
+
+  // ── BUILD RECS ─────────────────────────────────────────────────
+
+  // 1. Deficit caloric (if overweight/obese + high body fat)
+  if (obese || (overweight && highFat)) {
+    const deficit = obese ? 500 : 300;
+    const target_kg = obese ? '0.5 kg/minggu' : '0.3 kg/minggu';
+    const tdeeTarget = tdee ? tdee - deficit : null;
+    recs.push({
+      priority:'high', col:COL.high, key:'food',
+      title:'Kurangi asupan kalori secara moderat',
+      why:`IMT ${bmi.toFixed(1)} dan lemak tubuh ${bf?.toFixed(1)||'-'}% di atas rentang ideal. Defisit ${deficit} kkal/hari adalah pendekatan aman yang mempertahankan massa otot.`,
+      steps_html: steps(
+        tdeeTarget ? `Targetkan total kalori harian <strong>${tdeeTarget.toLocaleString('id')} kkal</strong> (defisit ${deficit} kkal dari TDEE Anda).` : 'Kurangi 300–500 kkal dari asupan harian saat ini.',
+        'Prioritaskan protein 1,6–2,0 g per kg massa bebas lemak agar otot terjaga.',
+        'Hindari minuman manis, makanan ultra-proses, dan gorengan berlebih.',
+        'Makan perlahan — butuh ~20 menit otak menyadari rasa kenyang.'
+      ),
+      target: target(`Turun ${target_kg} hingga IMT < 25`, COL.high)
+    });
+  }
+
+  // 2. Weight gain (underweight)
+  if (underweight) {
+    const surplus = 300;
+    const tdeeTarget = tdee ? tdee + surplus : null;
+    recs.push({
+      priority:'high', col:COL.med, key:'food',
+      title:'Tingkatkan asupan kalori dan protein',
+      why:`IMT ${bmi.toFixed(1)} di bawah 18,5 — kondisi ini berisiko menurunkan imunitas, kepadatan tulang, dan energi.`,
+      steps_html: steps(
+        tdeeTarget ? `Targetkan asupan <strong>${tdeeTarget.toLocaleString('id')} kkal/hari</strong> (surplus ${surplus} kkal dari TDEE Anda).` : 'Tambahkan 300 kkal/hari dari makanan padat nutrisi.',
+        'Pilih sumber kalori berkualitas: kacang-kacangan, alpukat, nasi merah, telur, ikan.',
+        'Makan 4–5 kali sehari dalam porsi kecil daripada 2–3 porsi besar.',
+        'Latihan beban ringan 2–3×/minggu untuk memastikan kenaikan berat berupa otot.'
+      ),
+      target: target('IMT 18,5–24,9 dalam 2–3 bulan', COL.med)
+    });
+  }
+
+  // 3. Cardio improvement
+  if (lowCardio || highRhr) {
+    const vo2val = hasCardio ? (15.3*(208-0.7*d.age)/d.rhr).toFixed(1) : null;
+    recs.push({
+      priority: lowCardio && sCardio < 40 ? 'high' : 'med',
+      col: lowCardio && sCardio<40 ? COL.high : COL.med,
+      key:'heart',
+      title:'Tingkatkan kebugaran kardiovaskular',
+      why: vo2val
+        ? `Estimasi VO₂ Maks ${vo2val} ml/kg/min dan RHR ${d.rhr||'-'} bpm mengindikasikan jantung perlu lebih banyak latihan aerobik.`
+        : 'Denyut nadi istirahat yang tinggi menandakan kondisi kardiovaskular yang perlu dilatih.',
+      steps_html: steps(
+        'Mulai dengan <strong>150 menit/minggu kardio intensitas sedang</strong> — jalan cepat, bersepeda, atau berenang.',
+        'Pertahankan detak jantung di zona 2 (60–70% detak maks) untuk membangun fondasi aerobik.',
+        'Tambahkan 1–2 sesi HIIT per minggu (2 menit intens : 1 menit istirahat, 15–20 menit) setelah 4 minggu rutin.',
+        'Ukur RHR tiap pagi setelah bangun tidur — penurunan 5 bpm pertanda kemajuan signifikan.'
+      ),
+      target: target('VO₂ Maks naik ≥3 ml/kg/min dalam 8 minggu', COL.high)
+    });
+  }
+
+  // 4. Waist reduction (central fat)
+  if (highWhtr && !obese) {
+    recs.push({
+      priority:'med', col:COL.med, key:'steps',
+      title:'Kurangi lemak perut dengan gerakan harian',
+      why:`Rasio pinggang/tinggi ${(d.waist/d.height).toFixed(2)} di atas 0,50 — lemak di area ini lebih berbahaya dari lemak bawah kulit.`,
+      steps_html: steps(
+        'Capai <strong>8.000–10.000 langkah/hari</strong> — gunakan tangga, parkir lebih jauh, jalan saat istirahat makan.',
+        'Kurangi waktu duduk terus-menerus — berdiri atau berjalan singkat setiap 45–60 menit.',
+        'Hindari karbohidrat olahan malam hari; pilih sayuran, protein tanpa lemak, dan lemak sehat.',
+        'Tidur cukup 7–9 jam — kurang tidur meningkatkan kortisol yang mendorong akumulasi lemak perut.'
+      ),
+      target: target(`Lingkar pinggang < ${Math.round(d.height*0.5)} cm`, COL.med)
+    });
+  }
+
+  // 5. Strength training (low lean mass or muscle-building goal)
+  const needsMuscle = !isNaN(d.weight) && !isNaN(d.height) && (
+    (isMale && bmi < 22) || (!isMale && bmi < 20) || (bf !== null && bf > (isMale?22:30))
+  );
+  if (needsMuscle || scoreFin >= 65) {
+    recs.push({
+      priority:'med', col:COL.main, key:'muscle',
+      title:'Bangun massa otot dengan latihan beban',
+      why:'Otot yang lebih banyak meningkatkan metabolisme basal, memperbaiki sensitivitas insulin, dan melindungi sendi serta kepadatan tulang.',
+      steps_html: steps(
+        'Mulai <strong>latihan beban 2–3× per minggu</strong> — fokus gerakan compound: squat, deadlift, push-up, row.',
+        'Pastikan asupan protein cukup: 1,6 g/kg massa bebas lemak/hari minimal.',
+        'Istirahat 48 jam antar sesi otot yang sama — otot tumbuh saat istirahat, bukan saat latihan.',
+        'Progressif overload: naikkan beban atau repetisi secara bertahap setiap 1–2 minggu.'
+      ),
+      target: target('Latihan konsisten 8–12 minggu untuk perubahan terukur', COL.main)
+    });
+  }
+
+  // 6. Hydration
+  if (!isNaN(d.weight) && d.weight > 0) {
+    const waterL = ((d.weight * 35) / 1000 + (d.activity >= 1.55 ? 0.5 : 0)).toFixed(1);
+    recs.push({
+      priority:'low', col:COL.good, key:'water',
+      title:`Penuhi kebutuhan cairan ${waterL} L/hari`,
+      why:'Dehidrasi ringan (1–2% berat badan) sudah cukup menurunkan performa fisik dan kognitif serta meningkatkan nafsu makan palsu.',
+      steps_html: steps(
+        `Sebar asupan — minum <strong>1 gelas (250 ml) setiap jam</strong> selama 8 jam aktif.`,
+        'Minum 500 ml air 30 menit sebelum makan — membantu mengontrol porsi makan.',
+        'Pantau warna urin: kuning pucat = cukup hidrasi; kuning pekat = perlu minum lebih.',
+        'Tambahkan buah-buahan tinggi air (semangka, mentimun, jeruk) sebagai sumber cairan alami.'
+      ),
+      target: target(`${waterL} L air per hari`, COL.good)
+    });
+  }
+
+  // 7. Sleep & recovery (if high RHR)
+  if (highRhr) {
+    recs.push({
+      priority:'med', col:COL.med, key:'sleep',
+      title:'Perbaiki kualitas tidur dan pemulihan',
+      why:`RHR ${d.rhr||'-'} bpm bisa dipengaruhi kualitas tidur yang buruk dan stres kronis — keduanya meningkatkan kortisol dan menekan sistem imun.`,
+      steps_html: steps(
+        'Targetkan <strong>7–9 jam tidur</strong> dengan waktu tidur dan bangun yang konsisten setiap hari.',
+        'Hindari layar (HP/TV) minimal 1 jam sebelum tidur — cahaya biru menekan melatonin.',
+        'Ruangan tidur sejuk (18–22°C), gelap, dan tenang meningkatkan kualitas tidur dalam.',
+        'Coba teknik relaksasi 4-7-8: hirup 4 detik, tahan 7 detik, hembuskan 8 detik.'
+      ),
+      target: target('RHR turun 5–10 bpm dalam 4–8 minggu', COL.med)
+    });
+  }
+
+  // 8. Maintenance (if score is high)
+  if (scoreFin >= 75 && recs.filter(r=>r.priority==='high').length === 0) {
+    recs.push({
+      priority:'low', col:COL.good, key:'check',
+      title:'Pertahankan gaya hidup aktif Anda',
+      why:'Kondisi tubuh Anda sudah baik. Konsistensi adalah kunci — hasil ini adalah akibat kebiasaan yang terjaga, bukan usaha sesaat.',
+      steps_html: steps(
+        'Pertahankan rutinitas olahraga yang sudah ada — variasikan jenis latihan tiap 6–8 minggu untuk mencegah plateau.',
+        'Lakukan pemeriksaan komposisi tubuh setiap 4–8 minggu untuk memantau tren.',
+        'Tambahkan latihan fleksibilitas dan mobilitas (yoga/stretching) 2×/minggu untuk longevitas.',
+        'Jaga pola makan seimbang; 80% makanan utuh, 20% fleksibilitas untuk keberlanjutan jangka panjang.'
+      ),
+      target: target('Jaga skor di atas 75 secara konsisten', COL.good)
+    });
+  }
+
+  // Sort by priority
+  const order = {high:0, med:1, low:2};
+  recs.sort((a,b) => order[a.priority] - order[b.priority]);
+
+  // ── RENDER ─────────────────────────────────────────────────────
+  if (recs.length === 0) {
+    document.getElementById('reco-wrap').style.display = 'none';
+    return;
+  }
+
+  const recoEl = document.getElementById('reco-body');
+  recoEl.innerHTML = recs.map((r, i) => `
+    <div class="reco-card" style="animation-delay:${i*0.06}s">
+      ${ico(r.key, r.col)}
+      <div class="reco-content">
+        <p class="reco-title">${r.title}</p>
+        <p class="reco-why">${r.why}</p>
+        <ul class="reco-steps">${r.steps_html}</ul>
+        ${r.target}
+      </div>
+    </div>`).join('');
+
+  document.getElementById('reco-wrap').style.display = '';
+}
+
 /* ── Init ─────────────────────────────────────────────────── */
 let dbT;
 document.addEventListener('DOMContentLoaded',()=>{
@@ -1772,6 +2588,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   calc();
   initTooltips();
 });
+
 </script>
 </body>
 </html>
