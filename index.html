@@ -5070,23 +5070,56 @@ function buildQR(d, s) {
   var isMale = d.gender === 'male';
   var lines  = [];
 
+  // ── Header ──────────────────────────────────────────────────
   lines.push('BIOMETRICS PRO');
-  lines.push('==============');
-  lines.push('Profil : ' + (isMale?'Pria':'Wanita') + ', ' + Math.round(d.age) + ' thn, ' + Math.round(d.height) + ' cm, ' + toComma(parseFloat(d.weight),1) + ' kg');
-  lines.push('Skor   : ' + s.scoreFin + '/100 — ' + s.tierLabel);
+
+  // ── Profil ──────────────────────────────────────────────────
+  var gend  = isMale ? 'Pria' : 'Wanita';
+  var ageR  = Math.round(d.age);
+  var htR   = Math.round(d.height);
+  var wtStr = toComma(parseFloat(d.weight), 1);
+  lines.push('Profil: ' + gend + ', ' + ageR + ' tahun, ' + htR + ' cm, ' + wtStr + ' kg');
+
+  // ── Skor ────────────────────────────────────────────────────
+  lines.push('Skor: ' + s.scoreFin + '/100 ' + s.tierLabel);
+
+  // ── Parameter Utama ─────────────────────────────────────────
   lines.push('');
   lines.push('Parameter Utama');
-  if (!isNaN(s.bmi))   lines.push('IMT            : ' + toComma(s.bmi,1) + ' kg/m2  [' + s.bmiStatus + ']');
-  if (s.bf !== null)   lines.push('Lemak Tubuh    : ' + toComma(s.bf,1) + '%       [' + s.bfStatus + ']');
-  if (!isNaN(s.whtr))  lines.push('Pinggang/Tinggi: ' + toComma(s.whtr,2) + '      [' + s.whtrStatus + ']');
-  if (!isNaN(s.vo2))   lines.push('VO2 Maks       : ' + toComma(s.vo2,1) + ' ml/kg/min [' + s.vo2Status + ']');
-  if (!isNaN(d.rhr)&&d.rhr>0) lines.push('Nadi Istirahat : ' + Math.round(d.rhr) + ' bpm');
-  if (s.tdee)          lines.push('TDEE           : ' + s.tdee + ' kkal/hari');
-  lines.push('');
+
+  // Indeks Massa Tubuh
+  if (!isNaN(s.bmi))
+    lines.push('Indeks massa tubuh: ' + toComma(s.bmi, 1) + ' kg/m2 (' + s.bmiStatus.toLowerCase() + ')');
+
+  // Lemak Tubuh
+  if (s.bf !== null)
+    lines.push('Lemak tubuh: ' + toComma(s.bf, 1) + '% (' + s.bfStatus.toLowerCase() + ')');
+
+  // Pinggang/Tinggi
+  if (!isNaN(s.whtr))
+    lines.push('Pinggang/Tinggi: ' + toComma(s.whtr, 2) + ' (' + s.whtrStatus.toLowerCase() + ')');
+
+  // VO2 Maks
+  if (!isNaN(s.vo2))
+    lines.push('VO2 maksimal: ' + toComma(s.vo2, 1) + ' ml/kg/menit (' + s.vo2Status.toLowerCase() + ')');
+
+  // Nadi Istirahat
+  if (!isNaN(d.rhr) && d.rhr > 0)
+    lines.push('Nadi istirahat: ' + Math.round(d.rhr) + ' denyut/menit');
+
+  // TDEE
+  if (s.tdee)
+    lines.push('TDEE: ' + s.tdee.toLocaleString('id-ID') + ' kkal/hari');
+
+  // ── Rekomendasi ─────────────────────────────────────────────
   if (s.recoTitles && s.recoTitles.length > 0) {
+    lines.push('');
     lines.push('Rekomendasi');
     s.recoTitles.slice(0, 3).forEach(function(t, i) {
-      lines.push((i+1) + '. ' + t);
+      // Ensure each title ends with a period
+      var title = t.trim();
+      if (title && title[title.length - 1] !== '.') title += '.';
+      lines.push((i + 1) + '. ' + title);
     });
   }
 
