@@ -611,82 +611,120 @@ html.dark .wtag{background:rgba(255,255,255,.04);}
 /* ═══════════════════════════════════════════════════════════════
    TOOLTIP
 ═══════════════════════════════════════════════════════════════ */
-.tico{
-  box-sizing:border-box;
-  min-width:44px;min-height:44px;
-  padding:14px 20px;margin:-14px -20px -14px 0;
-  display:inline-flex;align-items:center;justify-content:center;
-  background:none;border:none;
-  cursor:help;color:var(--tx3);flex-shrink:0;
-  touch-action:manipulation;
-  -webkit-tap-highlight-color:transparent;
-  user-select:none;-webkit-user-select:none;
-  transition:color var(--t1),transform var(--t1) var(--spring);
-}
-.tico:hover,.tico:focus-visible,.tico:active{
-  color:var(--color-brand-500);transform:scale(1.2);outline:none;
-}
-html.dark .tico:hover,html.dark .tico:focus-visible{color:var(--color-brand-400);}
-
-#__tt{
-  position:fixed;top:0;left:0;z-index:9999;display:none;pointer-events:none;
-  width:max-content;max-width:220px;
-  padding:9px 13px;border-radius:var(--r-m);
-  font-size:.75rem;font-weight:500;line-height:1.6;letter-spacing:.005em;
-  text-align:left;white-space:normal;
-  background:var(--s0);color:var(--tx1);
-  border:1px solid var(--b2);
-  border-left:3px solid var(--color-brand-500);
-  box-shadow:var(--sh3);
-  opacity:0;
-  transform:translate(var(--tt-x,-9999px),var(--tt-y,-9999px)) scale(.93);
-  transform-origin:center bottom;
-  will-change:transform,opacity;
-  transition:opacity 120ms var(--out),transform 140ms var(--spring);
-}
-html.dark #__tt{background:#202028;color:var(--tx1);border-color:var(--b2);}
-#__tt::after{content:'';position:absolute;left:50%;margin-left:-5px;border:5px solid transparent;}
-#__tt:not([data-arrow="down"])::after{top:100%;border-top-color:var(--s0);}
-html.dark #__tt:not([data-arrow="down"])::after{border-top-color:#202028;}
-#__tt[data-arrow="down"]::after{bottom:100%;top:auto;border-bottom-color:var(--s0);}
-html.dark #__tt[data-arrow="down"]::after{border-bottom-color:#202028;}
-#__tt.tin{opacity:1;transform:translate(var(--tt-x,0px),var(--tt-y,0px)) scale(1);}
-@media(max-width:640px){#__tt{max-width:195px;}}
-
 /* ═══════════════════════════════════════════════════════════════
-   PAGE ANIMATIONS
+   TOOLTIP — rewritten for clean mobile + desktop behaviour
 ═══════════════════════════════════════════════════════════════ */
-@keyframes hdrIn{from{opacity:0;transform:translateY(-12px);}to{opacity:1;transform:translateY(0);}}
-.hdr{animation:hdrIn .38s var(--out) both;}
 
-@keyframes pgIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
-.page{animation:pgIn .5s .05s var(--out) both;}
-.inp-panel{animation:pgIn .42s .10s var(--out) both;}
-.rsec:nth-child(1){animation:pgIn .38s .15s var(--out) both;}
-.rsec:nth-child(2){animation:pgIn .38s .20s var(--out) both;}
-.rsec:nth-child(3){animation:pgIn .38s .25s var(--out) both;}
-.rsec:nth-child(4){animation:pgIn .38s .30s var(--out) both;}
-.rsec:nth-child(5){animation:pgIn .38s .35s var(--out) both;}
-.rsec:nth-child(6){animation:pgIn .38s .38s var(--out) both;}
-.rsec:nth-child(7){animation:pgIn .38s .41s var(--out) both;}
-.rsec:nth-child(8){animation:pgIn .38s .44s var(--out) both;}
-.rsec:nth-child(9){animation:pgIn .38s .47s var(--out) both;}
+/* Trigger button: 44×44px tap target via padding+negative-margin */
+.tico {
+  box-sizing: border-box;
+  /* Large tap target */
+  min-width: 44px; min-height: 44px;
+  padding: 14px 20px;
+  margin: -14px -20px -14px 0;
+  /* Layout */
+  display: inline-flex; align-items: center; justify-content: center;
+  background: none; border: none;
+  /* Style */
+  cursor: help;
+  color: var(--tx3);
+  flex-shrink: 0;
+  /* Mobile */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none; -webkit-user-select: none;
+  /* Animation */
+  transition: color var(--t1), transform var(--t1) var(--spring);
+}
+.tico:hover,
+.tico:focus-visible,
+.tico:active {
+  color: var(--color-brand-500);
+  transform: scale(1.2);
+  outline: none;
+}
+html.dark .tico:hover,
+html.dark .tico:focus-visible {
+  color: var(--color-brand-400);
+}
 
-/* Theme dot pop */
-@keyframes dotPop{0%{transform:scale(1);}45%{transform:scale(1.4);}100%{transform:scale(1);}}
-.tdot.pop{animation:dotPop .3s var(--spring);}
+/* ── Floating tooltip bubble ─────────────────────────────────── */
+#__tt {
+  /* Detached from DOM flow — always on top */
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
 
-/* Dark mode icon swap */
-@keyframes sunSpin{from{transform:rotate(-80deg) scale(.4);opacity:0;}to{transform:rotate(0) scale(1);opacity:1;}}
-@keyframes moonIn {from{transform:translateX(10px);opacity:0;}         to{transform:translateX(0);opacity:1;}}
-.ico-spin{animation:sunSpin .3s var(--spring);}
-.ico-slide{animation:moonIn .25s var(--out);}
+  /* Sizing */
+  width: max-content;
+  max-width: 230px;
 
-/* Focus ring */
-:focus-visible{
-  outline:2.5px solid var(--color-brand-500);
-  outline-offset:2px;
-  border-radius:var(--r-xs);
+  /* Appearance */
+  padding: 9px 13px;
+  border-radius: var(--r-m);
+  font-size: .75rem;
+  font-weight: 500;
+  line-height: 1.65;
+  letter-spacing: .01em;
+  text-align: left;
+  white-space: normal;
+  background: var(--s0);
+  color: var(--tx1);
+  border: 1px solid var(--b2);
+  border-left: 3px solid var(--color-brand-500);
+  box-shadow: var(--sh3);
+
+  /* Start hidden and off-screen */
+  display: none;
+  opacity: 0;
+
+  /* GPU-composited animation — no layout involved */
+  will-change: opacity, transform;
+  transform-origin: center bottom;
+  transition:
+    opacity  140ms cubic-bezier(0, 0, .2, 1),
+    transform 160ms cubic-bezier(.34, 1.56, .64, 1);
+}
+html.dark #__tt {
+  background: #202028;
+  border-color: var(--b2);
+  border-left-color: var(--color-brand-500);
+}
+
+/* Arrow caret */
+#__tt::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+}
+/* Tooltip ABOVE element: caret points down */
+#__tt[data-dir="up"]::after {
+  top: 100%;
+  border-top-color: var(--s0);
+  filter: drop-shadow(0 1px 0 var(--b2));
+}
+html.dark #__tt[data-dir="up"]::after {
+  border-top-color: #202028;
+}
+/* Tooltip BELOW element: caret points up */
+#__tt[data-dir="down"]::after {
+  bottom: 100%;
+  border-bottom-color: var(--s0);
+  filter: drop-shadow(0 -1px 0 var(--b2));
+}
+html.dark #__tt[data-dir="down"]::after {
+  border-bottom-color: #202028;
+}
+
+/* Shown state — JS adds/removes .tt-on */
+#__tt.tt-on {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  #__tt { max-width: 190px; font-size: .7rem; }
 }
 
 /* Reduced motion */
@@ -4418,129 +4456,185 @@ function calc() {
 /* old-calc init removed */
 
 /* ── Tooltip ─────────────────────────────────────────────── */
-function initTooltips(){
-  // Singleton TT element
+function initTooltips() {
+  /* ── Singleton tooltip element ──────────────────────────────── */
   let TT = document.getElementById('__tt');
-  if(!TT){
+  if (!TT) {
     TT = document.createElement('div');
     TT.id = '__tt';
     document.body.appendChild(TT);
   }
 
-  // State
-  let hideTimer     = null;
-  let activeIco     = null;
-  let lastPtrType   = 'mouse'; // 'mouse' | 'touch' | 'pen'
+  /* ── State ──────────────────────────────────────────────────── */
+  let activeIco    = null;   // currently shown [data-tip] element
+  let hideRaf      = null;   // requestAnimationFrame for hide
+  let showRaf      = null;   // requestAnimationFrame for show
+  let hideTimer    = null;   // setTimeout for display:none after fade
+  let ptrType      = 'mouse';// last pointer type seen
 
-  // AbortController: one signal removes ALL listeners at once (memory-safe)
+  /* AbortController: removes ALL listeners in one call (memory-safe) */
   const ac  = new AbortController();
   const sig = { signal: ac.signal };
 
-  // ── B. GPU positioning — transform only, zero layout reflow ───
-  function positionTip(ico){
-    TT.textContent = ico.dataset.tip;
+  /* ── Position + show ────────────────────────────────────────── */
+  function place(ico) {
+    const txt = ico.dataset.tip;
+    if (!txt) return;
 
-    // Step 1: show off-screen for measurement (visibility:hidden keeps layout)
-    TT.style.display     = 'block';
-    TT.style.visibility  = 'hidden';
-    TT.style.setProperty('--tt-x', '-9999px');
-    TT.style.setProperty('--tt-y', '-9999px');
+    /* Set text content FIRST so TT has correct size when measured */
+    TT.textContent = txt;
 
-    // Step 2: one forced reflow READ — unavoidable for size measurement
+    /* Move off-screen but keep display:block so getBoundingClientRect works */
+    TT.style.top     = '-9999px';
+    TT.style.left    = '-9999px';
+    TT.style.display = 'block';
+    TT.classList.remove('tt-on');  // reset animation state
+
+    /* Force ONE reflow read — necessary to measure real rendered size */
     const ir  = ico.getBoundingClientRect();
     const tr  = TT.getBoundingClientRect();
     const vw  = window.innerWidth;
-    const GAP = 8;
+    const vh  = window.innerHeight;
+    const GAP = 10;
 
-    // Prefer above; fall below if not enough room
-    let ty, arrow;
-    if(ir.top - tr.height - GAP >= 4){
-      ty = ir.top - tr.height - GAP; arrow = 'up';
+    /* Decide direction: prefer above, fall to below */
+    let top, dir;
+    const spaceAbove = ir.top - GAP;
+    const spaceBelow = vh - ir.bottom - GAP;
+
+    if (spaceAbove >= tr.height + GAP || spaceAbove >= spaceBelow) {
+      top = ir.top - tr.height - GAP;
+      dir = 'up';
     } else {
-      ty = ir.bottom + GAP;           arrow = 'down';
+      top = ir.bottom + GAP;
+      dir = 'down';
     }
 
-    // Centre horizontally, clamp to viewport edges
-    let tx = ir.left + ir.width / 2 - tr.width / 2;
-    tx = Math.max(GAP, Math.min(tx, vw - tr.width - GAP));
+    /* Horizontally centred on icon, clamped to viewport */
+    let left = ir.left + ir.width / 2 - tr.width / 2;
+    left = Math.max(GAP, Math.min(left, vw - tr.width - GAP));
 
-    // Step 3: batch ALL writes together → ONE paint (no interleaved read/write)
-    TT.style.visibility = 'visible';
-    TT.style.setProperty('--tt-x', tx + 'px');
-    TT.style.setProperty('--tt-y', ty + 'px');
-    TT.dataset.arrow = arrow;
-    // NOTE: display stays 'block' from Step 1 — NOT set again (FIX D1)
+    /* Write all position + direction in one batch */
+    TT.style.top      = top  + 'px';
+    TT.style.left     = left + 'px';
+    TT.dataset.dir    = dir;
+
+    /* Animate in on next frame — after position is applied */
+    cancelAnimationFrame(showRaf);
+    showRaf = requestAnimationFrame(() => {
+      TT.classList.add('tt-on');
+    });
   }
 
-  function showTip(ico){
+  function show(ico) {
+    if (!ico || !ico.dataset.tip) return;
+
+    /* Cancel any pending hide */
     clearTimeout(hideTimer);
-    if(!ico.dataset.tip) return;
+    cancelAnimationFrame(hideRaf);
+    hideTimer = null;
+
     activeIco = ico;
-    positionTip(ico);
-    requestAnimationFrame(() => TT.classList.add('tin'));
+    place(ico);
   }
 
-  function hideTip(){
-    clearTimeout(hideTimer);
-    TT.classList.remove('tin');
+  function hide() {
+    cancelAnimationFrame(showRaf);
+    TT.classList.remove('tt-on');
     activeIco = null;
+
+    /* Wait for fade-out transition, then set display:none */
+    clearTimeout(hideTimer);
     hideTimer = setTimeout(() => {
       TT.style.display = 'none';
-      hideTimer = null; // FIX C: explicit null for GC
-    }, 160);
+      hideTimer = null;
+    }, 180);
   }
 
-  // Cleanup — removes all listeners + cancels pending timer
-  function destroy(){
-    ac.abort();
+  function hideDeferred() {
+    /* Tiny delay before hiding — prevents flicker when cursor
+       moves quickly from icon to tooltip edge and back */
     clearTimeout(hideTimer);
-    hideTimer = null;
-    activeIco = null;
+    hideTimer = setTimeout(() => {
+      if (activeIco) hide();
+    }, 80);
   }
-  initTooltips.destroy = destroy;
 
-  // ── A. Pointer Events API — no mouse/touch double-fire ─────────
-  // FIX A1: update lastPtrType on EVERY pointerenter, not just tip ones
+  /* ── Desktop: hover via Pointer Events ──────────────────────── */
   document.addEventListener('pointerenter', e => {
-    lastPtrType = e.pointerType; // always update ('mouse'|'touch'|'pen')
+    ptrType = e.pointerType;
+    if (e.pointerType === 'touch') return;  // handled by click
     const ico = e.target.closest('[data-tip]');
-    if(!ico) return;
-    // Mouse/pen: show on hover; touch: wait for tap (click)
-    if(e.pointerType !== 'touch') showTip(ico);
+    if (ico) show(ico);
   }, { capture: true, ...sig });
 
   document.addEventListener('pointerleave', e => {
+    if (e.pointerType === 'touch') return;
     const ico = e.target.closest('[data-tip]');
-    if(!ico) return;
-    if(e.pointerType !== 'touch') hideTip();
+    if (ico) hideDeferred();
   }, { capture: true, ...sig });
 
-  // Touch tap: click fires after touch sequence, no mouse double-fire
+  /* ── Mobile: tap to toggle ───────────────────────────────────── */
+  /* 'click' fires reliably after any tap on all mobile browsers  */
   document.addEventListener('click', e => {
-    const ico = e.target.closest('[data-tip]');
-    if(ico){
-      if(lastPtrType === 'touch'){
-        e.stopPropagation();
-        activeIco === ico ? hideTip() : showTip(ico);
-      }
+    /* Only intercept touch taps — mouse clicks are handled by hover */
+    if (ptrType !== 'touch') {
+      /* Desktop: clicking outside dismisses the tooltip */
+      if (!e.target.closest('[data-tip]') && activeIco) hide();
       return;
     }
-    if(activeIco) hideTip();
-  }, sig);
 
-  // Keyboard navigation
+    const ico = e.target.closest('[data-tip]');
+    if (ico) {
+      e.stopPropagation();
+      /* Toggle: tap same icon → hide; tap new icon → switch */
+      if (activeIco === ico) {
+        hide();
+      } else {
+        show(ico);
+      }
+    } else if (activeIco) {
+      hide();
+    }
+  }, { ...sig });
+
+  /* ── Keyboard navigation ─────────────────────────────────────── */
   document.addEventListener('focusin', e => {
     const ico = e.target.closest('[data-tip]');
-    if(ico) showTip(ico);
-  }, sig);
+    if (ico) show(ico);
+  }, { ...sig });
+
   document.addEventListener('focusout', e => {
     const ico = e.target.closest('[data-tip]');
-    if(ico) hideTip();
-  }, sig);
+    if (ico) hide();
+  }, { ...sig });
 
-  // Auto-hide on scroll / resize
-  document.addEventListener('scroll', hideTip, { passive: true, capture: true, ...sig });
-  window.addEventListener('resize',   hideTip, { passive: true, ...sig });
+  /* ── Auto-hide on scroll / resize ───────────────────────────── */
+  document.addEventListener('scroll', () => {
+    if (activeIco) hide();
+  }, { passive: true, capture: true, ...sig });
+
+  window.addEventListener('resize', () => {
+    /* On resize: reposition if visible, or just hide */
+    if (activeIco) {
+      /* Debounce reposition */
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(() => {
+        if (activeIco) place(activeIco);
+      }, 50);
+    }
+  }, { passive: true, ...sig });
+
+  /* ── Cleanup (call initTooltips.destroy() to remove all) ─────── */
+  initTooltips.destroy = function () {
+    ac.abort();
+    clearTimeout(hideTimer);
+    cancelAnimationFrame(showRaf);
+    cancelAnimationFrame(hideRaf);
+    hideTimer = showRaf = hideRaf = activeIco = null;
+    TT.style.display = 'none';
+    TT.classList.remove('tt-on');
+  };
 }
 
 
