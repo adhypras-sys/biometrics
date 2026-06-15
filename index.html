@@ -3848,11 +3848,11 @@ function toggleUnit(){
   lenIds.forEach(id=>{
     const el=document.getElementById(id),v=parseFloat(String(el.value).replace(',','.'));
     const cv=(toImp?v*CM2IN:v/CM2IN);
-    if(!isNaN(cv))el.value=cv.toFixed(1).replace('.',',');
+    if(!isNaN(cv))el.value=cv.toFixed(2).replace('.',',');
   });
   const we=document.getElementById('weight'),wv=parseFloat(String(we.value).replace(',','.'));
   const wc=(toImp?wv*KG2LB:wv/KG2LB);
-  if(!isNaN(wc))we.value=wc.toFixed(1).replace('.',',');
+  if(!isNaN(wc))we.value=wc.toFixed(2).replace('.',',');
   const m=curUnit==='metric';
   const sw=document.getElementById('sw');
   sw.classList.toggle('on',!m);
@@ -4041,26 +4041,26 @@ function calc() {
             if(bmi<18.5){s='Kekurangan Berat';w='c-info';}
             else if(bmi>=25&&bmi<30){s='Kelebihan Berat';w='c-warn';}
             else if(bmi>=30){s='Obesitas';w='c-danger';}
-            return {nilai:toComma(bmi,1),satuan:'kg/m²',status:s,warna:w,deskripsi:'Mengukur proporsi berat badan terhadap kuadrat tinggi badan. Nilai di bawah 18,5 menandakan kekurangan berat, 18,5–24,9 normal, 25–29,9 kelebihan berat, dan ≥30 masuk kategori obesitas dengan risiko penyakit metabolik meningkat.'};
+            return {nilai:toComma(bmi, 2),satuan:'kg/m²',status:s,warna:w,deskripsi:'Mengukur proporsi berat badan terhadap kuadrat tinggi badan. Nilai di bawah 18,5 menandakan kekurangan berat, 18,5–24,9 normal, 25–29,9 kelebihan berat, dan ≥30 masuk kategori obesitas dengan risiko penyakit metabolik meningkat.'};
         },'Indeks Massa Tubuh (Body Mass Index).');
 
         K('umum','Indeks Ponderal',['height','weight'],()=>{
             const pi=d.weight/(hM**3);
             let s='Volume Normal',w='c-good';
             if(pi<11){s='Volume Kurang';w='c-info';}else if(pi>15){s='Volume Berlebih';w='c-danger';}
-            return {nilai:toComma(pi,1),satuan:'kg/m³',status:s,warna:w,deskripsi:'Mengukur kepadatan massa tubuh terhadap volume (tinggi pangkat tiga), sehingga lebih adil untuk individu sangat tinggi atau pendek dibanding IMT. Nilai normal 11–15 kg/m³; di bawah 11 menandakan tubuh sangat kurus, di atas 15 menandakan kelebihan massa relatif terhadap tinggi badan.'};
+            return {nilai:toComma(pi, 2),satuan:'kg/m³',status:s,warna:w,deskripsi:'Mengukur kepadatan massa tubuh terhadap volume (tinggi pangkat tiga), sehingga lebih adil untuk individu sangat tinggi atau pendek dibanding IMT. Nilai normal 11–15 kg/m³; di bawah 11 menandakan tubuh sangat kurus, di atas 15 menandakan kelebihan massa relatif terhadap tinggi badan.'};
         },'Alternatif BMI lebih akurat untuk individu sangat tinggi/pendek.');
 
         K('umum','Rentang Sehat',['height'],()=>{
             const lo=fmtW(18.5*(hM**2)), hi=fmtW(24.9*(hM**2));
-            return {nilai:`${toComma(lo.v,1)} – ${toComma(hi.v,1)}`,satuan:lo.u,status:'',warna:'',deskripsi:'Rentang berat badan di mana nilai IMT Anda berada pada 18,5–24,9 — zona tanpa peningkatan risiko penyakit terkait berat badan. Di luar rentang ini, risiko hipertensi, diabetes tipe 2, dan penyakit jantung mulai naik secara bermakna.'};
+            return {nilai:`${toComma(lo.v, 2)} – ${toComma(hi.v, 2)}`,satuan:lo.u,status:'',warna:'',deskripsi:'Rentang berat badan di mana nilai IMT Anda berada pada 18,5–24,9 — zona tanpa peningkatan risiko penyakit terkait berat badan. Di luar rentang ini, risiko hipertensi, diabetes tipe 2, dan penyakit jantung mulai naik secara bermakna.'};
         },'Rentang berat minimum dan maksimum agar IMT tetap sehat.');
 
         K('umum','Berat Ideal',['height'],()=>{
             const hIn=d.height/2.54;
             const bKg=d.gender==='male'?50+2.3*(hIn-60):45.5+2.3*(hIn-60);
             const o=fmtW(bKg);
-            return {nilai:toComma(o.v,1),satuan:o.u,status:'',warna:'',deskripsi:'Berat badan target yang dihitung dari tinggi badan menggunakan formula Devine — standar yang dipakai klinisi untuk menentukan dosis obat dan target rehabilitasi. Nilai ini bukan tujuan absolut, melainkan acuan klinis; komposisi tubuh dan kerangka lebih menentukan daripada angka tunggal ini.'};
+            return {nilai:toComma(o.v, 2),satuan:o.u,status:'',warna:'',deskripsi:'Berat badan target yang dihitung dari tinggi badan menggunakan formula Devine — standar yang dipakai klinisi untuk menentukan dosis obat dan target rehabilitasi. Nilai ini bukan tujuan absolut, melainkan acuan klinis; komposisi tubuh dan kerangka lebih menentukan daripada angka tunggal ini.'};
         },'Target berat badan paling optimal yang direkomendasikan secara klinis.');
 
         K('umum','Ukuran Kerangka',['height','wrist'],()=>{
@@ -4075,7 +4075,7 @@ function calc() {
         const nDeps=d.gender==='male'?['height','waist','neck']:['height','waist','neck','hip'];
         K('komposisi','Lemak Tubuh (US Navy)',nDeps,()=>{
             const f=calcNavy(d);
-            return {nilai:toComma(f,1),satuan:'%',status:'',warna:'',deskripsi:'Persentase lemak tubuh diestimasi dari lingkar tubuh menggunakan metode Angkatan Laut AS. Untuk pria, normal 8–19%; wanita 21–32%. Di atas ambang ini risiko sindrom metabolik meningkat, sedangkan terlalu rendah mengganggu fungsi hormonal dan imun.'};
+            return {nilai:toComma(f, 2),satuan:'%',status:'',warna:'',deskripsi:'Persentase lemak tubuh diestimasi dari lingkar tubuh menggunakan metode Angkatan Laut AS. Untuk pria, normal 8–19%; wanita 21–32%. Di atas ambang ini risiko sindrom metabolik meningkat, sedangkan terlalu rendah mengganggu fungsi hormonal dan imun.'};
         },'Tingkat akurasi tinggi menggunakan metode antropometri angkatan laut.');
 
         K('komposisi','Adipositas (BAI)',['height','hip'],()=>{
@@ -4085,12 +4085,12 @@ function calc() {
 
         K('komposisi','Lemak Relatif (RFM)',['height','waist'],()=>{
             const rfm=d.gender==='male'?64-(20*(d.height/d.waist)):76-(20*(d.height/d.waist));
-            return {nilai:toComma(rfm,1),satuan:'%',status:'',warna:'',deskripsi:'Relative Fat Mass menggunakan rasio tinggi terhadap lingkar pinggang untuk mengestimasi lemak tubuh secara lebih akurat dari IMT, karena menangkap distribusi lemak sentral. Nilai lebih tinggi mencerminkan proporsi lemak yang lebih besar terhadap massa total tubuh.'};
+            return {nilai:toComma(rfm, 2),satuan:'%',status:'',warna:'',deskripsi:'Relative Fat Mass menggunakan rasio tinggi terhadap lingkar pinggang untuk mengestimasi lemak tubuh secara lebih akurat dari IMT, karena menangkap distribusi lemak sentral. Nilai lebih tinggi mencerminkan proporsi lemak yang lebih besar terhadap massa total tubuh.'};
         },'Metode estimasi jaringan lemak yang dianggap jauh lebih akurat daripada IMT.');
 
         K('komposisi','Massa Tanpa Lemak',['weight',...nDeps],()=>{
             const f=calcNavy(d), lbm=d.weight*(1-f/100), o=fmtW(lbm);
-            return {nilai:toComma(o.v,1),satuan:o.u,status:'',warna:'',deskripsi:'Massa tubuh setelah seluruh lemak dikurangi — mencakup otot, tulang, organ, dan air tubuh. Nilai ini adalah dasar untuk menghitung kebutuhan protein, dosis obat berbasis berat, dan menilai kebugaran tanpa bias dari kadar lemak.'};
+            return {nilai:toComma(o.v, 2),satuan:o.u,status:'',warna:'',deskripsi:'Massa tubuh setelah seluruh lemak dikurangi — mencakup otot, tulang, organ, dan air tubuh. Nilai ini adalah dasar untuk menghitung kebutuhan protein, dosis obat berbasis berat, dan menilai kebugaran tanpa bias dari kadar lemak.'};
         },'Berat Anda jika seluruh sel lemak dihilangkan.');
 
         K('komposisi','Indeks Bebas Lemak',['weight',...nDeps],()=>{
@@ -4098,7 +4098,7 @@ function calc() {
             let s='Kepadatan Otot Normal',w='c-brand';
             if(d.gender==='male'){if(ffmi>=22){s='Superior / Atletis';w='c-good';}else if(ffmi<18)s='Sub-Standar';}
             else{if(ffmi>=18){s='Superior / Atletis';w='c-good';}else if(ffmi<15)s='Sub-Standar';}
-            return {nilai:toComma(ffmi,1),satuan:'skala',status:s,warna:w,deskripsi:'Fat-Free Mass Index mengukur kepadatan massa bebas lemak relatif terhadap tinggi badan. Pria dengan FFMI di atas 22 dan wanita di atas 18 tergolong atletis; batas natural tanpa doping sekitar 25 (pria) dan 21 (wanita) — melampaui batas ini sangat tidak mungkin tanpa suplemen hormonal.'};
+            return {nilai:toComma(ffmi, 2),satuan:'skala',status:s,warna:w,deskripsi:'Fat-Free Mass Index mengukur kepadatan massa bebas lemak relatif terhadap tinggi badan. Pria dengan FFMI di atas 22 dan wanita di atas 18 tergolong atletis; batas natural tanpa doping sekitar 25 (pria) dan 21 (wanita) — melampaui batas ini sangat tidak mungkin tanpa suplemen hormonal.'};
         },'Fat-Free Mass Index: Standar untuk mengukur ketebalan perkembangan serabut otot rangka.');
 
         // ── KARDIO ──
@@ -4106,7 +4106,7 @@ function calc() {
             const maxHr=208-0.7*d.age, vo2=15.3*(maxHr/d.rhr);
             let s='Standar',w='c-brand';
             if(vo2>=45){s='Eksepsional';w='c-info';}else if(vo2<30){s='Lemah';w='c-danger';}
-            return {nilai:toComma(vo2,1),satuan:'ml/kg/min',status:s,warna:w,deskripsi:'Kapasitas aerobik maksimum — volume oksigen yang dapat diproses tubuh per menit per kilogram berat. Nilai di bawah 30 ml/kg/min menandakan kebugaran rendah dengan risiko kardiovaskular lebih tinggi; di atas 45 dikategorikan sangat baik; atlet elit sering mencapai 55–80.'};
+            return {nilai:toComma(vo2, 2),satuan:'ml/kg/min',status:s,warna:w,deskripsi:'Kapasitas aerobik maksimum — volume oksigen yang dapat diproses tubuh per menit per kilogram berat. Nilai di bawah 30 ml/kg/min menandakan kebugaran rendah dengan risiko kardiovaskular lebih tinggi; di atas 45 dikategorikan sangat baik; atlet elit sering mencapai 55–80.'};
         },'Kapasitas maksimum suplai oksigen yang diproses jantung Anda per menit.');
 
         K('kardio','Batas Max HR',['age'],()=>{
@@ -4122,7 +4122,7 @@ function calc() {
         K('kardio','Kebutuhan Hidrasi',['weight'],()=>{
             let v=(d.weight*35)/1000; if(d.activity>=1.55)v+=0.5;
             const o=fmtV(v);
-            return {nilai:toComma(o.v,1),satuan:o.u,status:'',warna:'',deskripsi:'Kebutuhan cairan harian dihitung dari berat badan dengan penambahan untuk aktivitas fisik. Dehidrasi 1–2% berat badan sudah menurunkan performa fisik dan kognitif; di atas 2% mulai memicu kram dan pusing. Termasuk semua minuman, bukan hanya air putih.'};
+            return {nilai:toComma(o.v, 2),satuan:o.u,status:'',warna:'',deskripsi:'Kebutuhan cairan harian dihitung dari berat badan dengan penambahan untuk aktivitas fisik. Dehidrasi 1–2% berat badan sudah menurunkan performa fisik dan kognitif; di atas 2% mulai memicu kram dan pusing. Termasuk semua minuman, bukan hanya air putih.'};
         },'Target pemenuhan cairan harian Anda.');
 
         // ── METABOLISME ──
@@ -4142,7 +4142,7 @@ function calc() {
         // ── RISIKO ──
         K('risiko','ABSI (Mortalitas)',['waist','height','weight'],()=>{
             const bmi=d.weight/(hM**2), absi=(d.waist/100)/(Math.pow(bmi,2/3)*Math.sqrt(hM));
-            return {nilai:toComma(absi,4),satuan:'indeks',status:'',warna:'',deskripsi:'Indeks bentuk tubuh yang menghubungkan lingkar pinggang dengan IMT dan tinggi badan untuk memprediksi risiko mortalitas. Nilai lebih tinggi dari rata-rata populasi menandakan akumulasi lemak viseral berlebih — jenis lemak yang paling berbahaya karena melingkupi organ dalam.'};
+            return {nilai:toComma(absi, 2),satuan:'indeks',status:'',warna:'',deskripsi:'Indeks bentuk tubuh yang menghubungkan lingkar pinggang dengan IMT dan tinggi badan untuk memprediksi risiko mortalitas. Nilai lebih tinggi dari rata-rata populasi menandakan akumulasi lemak viseral berlebih — jenis lemak yang paling berbahaya karena melingkupi organ dalam.'};
         },'Prediktor spesifik ancaman penyakit akibat lipatan lemak viseral.');
 
         K('risiko','Rasio Pinggang/Tinggi',['waist','height'],()=>{
@@ -4181,7 +4181,7 @@ function calc() {
             // Normal: male 60%, female 55%
             const norm = d.gender==='male'?60:55;
             const st = pct>=norm-5&&pct<=norm+10?'Hidrasi Normal':'Perlu Perhatian';
-            return {nilai:toComma(tbw,1),satuan:'L',
+            return {nilai:toComma(tbw, 2),satuan:'L',
                 status:st,warna:st==='Hidrasi Normal'?'c-good':'c-warn',
                 deskripsi:`Air menyusun ${toComma(pct,0)}% berat badan Anda. Total air tubuh mencakup cairan intrasel (dalam sel) dan ekstrasel (darah, limfa, cairan antar sel). Nilai di bawah 50% (pria) atau 45% (wanita) mengisyaratkan dehidrasi kronis atau rasio lemak yang tinggi karena jaringan lemak mengandung sangat sedikit air.`};
         },'Total Body Water (Watson 1980): digunakan luas di dunia medis untuk menghitung dosis obat berbasis cairan tubuh.');
@@ -4197,9 +4197,9 @@ function calc() {
             // AHA/ACSM norms: male >34%, female >27%
             const threshold = d.gender==='male'?34:27;
             const st = smmPct>=threshold?'Massa Otot Baik':'Massa Otot Rendah';
-            return {nilai:toComma(o.v,1),satuan:o.u,
+            return {nilai:toComma(o.v, 2),satuan:o.u,
                 status:st,warna:st==='Massa Otot Baik'?'c-good':'c-warn',
-                deskripsi:`Otot rangka menyusun ${toComma(smmPct,1)}% berat badan Anda. Massa otot yang tinggi meningkatkan laju metabolisme basal, memperbaiki sensitivitas insulin, dan melindungi sendi. Pria dengan SMM di bawah 34% dan wanita di bawah 27% berat badan berisiko mengalami sarkopenia seiring usia.`};
+                deskripsi:`Otot rangka menyusun ${toComma(smmPct, 2)}% berat badan Anda. Massa otot yang tinggi meningkatkan laju metabolisme basal, memperbaiki sensitivitas insulin, dan melindungi sendi. Pria dengan SMM di bawah 34% dan wanita di bawah 27% berat badan berisiko mengalami sarkopenia seiring usia.`};
         },'Skeletal Muscle Mass: otot yang dapat dikontraksikan secara sadar. Kunci metabolisme, mobilitas, dan longevitas.');
 
         // 4. Massa Tulang Estimasi — Doupe et al. 1997
@@ -4213,7 +4213,7 @@ function calc() {
             const bmPct = bmAdj/d.weight*100;
             const o = fmtW(bmAdj);
             return {nilai:toComma(o.v,2),satuan:o.u,status:'',warna:'',
-                deskripsi:`Tulang menyusun sekitar ${toComma(bmPct,1)}% berat badan Anda. Massa tulang mencapai puncaknya di usia 25–35 lalu menurun perlahan — terutama pada wanita pascamenopause. Nilai rendah untuk usia Anda dapat mengindikasikan risiko osteopenia; latihan beban dan kalsium terbukti memperlambat penurunan ini.`};
+                deskripsi:`Tulang menyusun sekitar ${toComma(bmPct, 2)}% berat badan Anda. Massa tulang mencapai puncaknya di usia 25–35 lalu menurun perlahan — terutama pada wanita pascamenopause. Nilai rendah untuk usia Anda dapat mengindikasikan risiko osteopenia; latihan beban dan kalsium terbukti memperlambat penurunan ini.`};
         },'Estimasi massa tulang dari tinggi badan. Menurun seiring usia — relevan untuk risiko osteoporosis.');
 
         // 5. Persentase Lean Mass (kebalikan body fat, lebih intuitif)
@@ -4235,7 +4235,7 @@ function calc() {
                 else if(lean>=58){st='Rata-rata';w='c-brand';}
                 else{st='Di Bawah Rata-rata';w='c-warn';}
             }
-            return {nilai:toComma(lean,1),satuan:'%',status:st,warna:w,
+            return {nilai:toComma(lean, 2),satuan:'%',status:st,warna:w,
                 deskripsi:'Persentase seluruh massa tubuh yang bukan lemak — meliputi otot, tulang, organ, dan air. Semakin tinggi nilai ini, semakin efisien metabolisme tubuh karena jaringan aktif membakar lebih banyak kalori bahkan saat istirahat.'};
         },'Lean Mass %: persentase massa tubuh yang berfungsi secara metabolis aktif. Semakin tinggi, semakin baik.');
 
@@ -4247,7 +4247,7 @@ function calc() {
             const ffmi    = lbmKg/(hM**2);
             // Kouri et al. 1995 NEJM: 99th percentile drug-free athletes
             const ceiling = d.gender==='male'?25.0:21.0;
-            const used    = toComma(Math.min(ffmi/ceiling*100,100), 1);
+            const used    = toComma(Math.min(ffmi/ceiling*100, 2), 1);
             const remain  = toComma(Math.max(ceiling-ffmi,0), 1);
             let st,w;
             const pct = parseFloat(used);
@@ -4256,7 +4256,7 @@ function calc() {
             else if(pct>=60){st='Berkembang';w='c-brand';}
             else{st='Potensi Besar';w='c-warn';}
             return {nilai:used,satuan:'%',status:st,warna:w,
-                deskripsi:`FFMI Anda ${toComma(ffmi,1)} dari batas genetik natural ${ceiling}. Sisa ruang perkembangan otot sebesar ${remain} poin FFMI dapat dicapai melalui latihan beban konsisten dan nutrisi optimal — tanpa bantuan hormon eksogen.`};
+                deskripsi:`FFMI Anda ${toComma(ffmi, 2)} dari batas genetik natural ${ceiling}. Sisa ruang perkembangan otot sebesar ${remain} poin FFMI dapat dicapai melalui latihan beban konsisten dan nutrisi optimal — tanpa bantuan hormon eksogen.`};
         },'Persentase potensi otot alami yang telah dicapai. Mengacu batas FFMI atlet drug-free (Kouri 1995, NEJM).');
 
         // ══════════════════════════════════════════════════════════
@@ -4311,7 +4311,7 @@ function calc() {
                 else{st='Buruk';w='c-danger';}
             }
             return {nilai:d.rhr,satuan:'bpm',status:st,warna:w,
-                deskripsi:`Denyut nadi Anda saat istirahat setara ${toComma(rhrPct,1)}% dari kapasitas maksimum jantung. Jantung yang terlatih memompa lebih banyak darah per detak sehingga butuh detak lebih sedikit. Penurunan 10 detak/menit dikaitkan dengan pengurangan risiko kematian kardiovaskular sekitar 30%.`};
+                deskripsi:`Denyut nadi Anda saat istirahat setara ${toComma(rhrPct, 2)}% dari kapasitas maksimum jantung. Jantung yang terlatih memompa lebih banyak darah per detak sehingga butuh detak lebih sedikit. Penurunan 10 detak/menit dikaitkan dengan pengurangan risiko kematian kardiovaskular sekitar 30%.`};
         },'Denyut nadi istirahat adalah biomarker kebugaran kardiovaskular paling mudah diukur. Atlet dunia rata-rata 40-55 bpm.');
 
         // 9. Zona Latihan Lengkap 5 Zona — Karvonen 1957
@@ -4329,8 +4329,8 @@ function calc() {
             const bsa = 0.007184 * Math.pow(d.height,0.725) * Math.pow(d.weight,0.425);
             // Mosteller formula (1987) — alternative, commonly used in pharmacy
             const mosteller = Math.sqrt((d.height*d.weight)/3600);
-            return {nilai:toComma(bsa,3),satuan:'m²',status:'',warna:'',
-                deskripsi:`Luas permukaan tubuh Anda ${toComma(bsa,3)} m². Nilai ini digunakan klinisi untuk menentukan dosis obat (kemoterapi, imunosupresan) dan menghitung indeks kardiak — output jantung per meter persegi luas tubuh. Orang dewasa rata-rata memiliki BSA sekitar 1,7–1,9 m².`};
+            return {nilai:toComma(bsa, 2),satuan:'m²',status:'',warna:'',
+                deskripsi:`Luas permukaan tubuh Anda ${toComma(bsa, 2)} m². Nilai ini digunakan klinisi untuk menentukan dosis obat (kemoterapi, imunosupresan) dan menghitung indeks kardiak — output jantung per meter persegi luas tubuh. Orang dewasa rata-rata memiliki BSA sekitar 1,7–1,9 m².`};
         },'Body Surface Area (DuBois 1916): standar klinis global untuk perhitungan dosis kemoterapi, imunosupresan, dan indeks kardiak.');
 
         // ══════════════════════════════════════════════════════════
@@ -4368,7 +4368,7 @@ function calc() {
             const loG = toComma((lbm*lo),0), hiG = toComma((lbm*hi),0);
             return {nilai:`${loG}–${hiG}`,satuan:'g/hari',
                 status:`${lo}–${hi} g/kg LBM`,warna:'c-brand',
-                deskripsi:`Kebutuhan protein ${loG}–${hiG} g/hari dihitung dari massa bebas lemak Anda ${toComma(lbm,1)} kg. Berbasis massa otot lebih akurat dari berat total karena jaringan lemak tidak membutuhkan protein. Asupan di batas bawah range sudah cukup untuk mempertahankan otot; batas atas optimal untuk membangun.`};
+                deskripsi:`Kebutuhan protein ${loG}–${hiG} g/hari dihitung dari massa bebas lemak Anda ${toComma(lbm, 2)} kg. Berbasis massa otot lebih akurat dari berat total karena jaringan lemak tidak membutuhkan protein. Asupan di batas bawah range sudah cukup untuk mempertahankan otot; batas atas optimal untuk membangun.`};
         },'Kebutuhan protein evidence-based dari ISSN berdasarkan LBM dan level aktivitas, bukan sekadar berat badan total.');
 
         // 13. Target Kalori per Tujuan
@@ -4415,7 +4415,7 @@ function calc() {
             const cutM = 1.25, cutF = 1.18;
             const cut  = d.gender==='male'?cutM:cutF;
             const risky= ci>cut;
-            return {nilai:toComma(ci,3),satuan:'CI',
+            return {nilai:toComma(ci, 2),satuan:'CI',
                 status:risky?'Risiko Kardiovaskular':'Profil Aman',
                 warna:risky?'c-danger':'c-good',
                 deskripsi:`Indeks Konisitas membandingkan bentuk tubuh Anda dengan silinder sempurna (CI=1) — semakin mendekati kerucut (CI tinggi), semakin besar akumulasi lemak di perut. Batas risiko ${d.gender==='male'?'pria: >1,25':'wanita: >1,18'}. Lebih dari IMT, CI menangkap lemak sentral yang aktif secara metabolik.`};
@@ -4428,7 +4428,7 @@ function calc() {
             const cutM = 0.58, cutF = 0.61;
             const cut  = d.gender==='male'?cutM:cutF;
             const risky= hhr>cut;
-            return {nilai:toComma(hhr,3),satuan:'rasio',
+            return {nilai:toComma(hhr, 2),satuan:'rasio',
                 status:risky?'Pinggul Berlebih':'Proporsional',
                 warna:risky?'c-warn':'c-good',
                 deskripsi:`Rasio pinggul terhadap tinggi mengukur proporsionalitas tubuh bagian bawah. Nilai di atas ${cut} mengindikasikan akumulasi lemak berlebih di area pinggul dan paha. Berbeda dari WHR, rasio ini tidak membandingkan dua lingkar tubuh melainkan menghubungkan pinggul langsung dengan tinggi badan.`};
@@ -4781,7 +4781,7 @@ function buildSummary(d) {
                : bmi < 25   ? {t:'Normal', c:'c-good'}
                : bmi < 30   ? {t:'Lebih',  c:'c-warn'}
                :              {t:'Obesitas',c:'c-danger'};
-  pills.push({label:'IMT', val:toComma(bmi,1), unit:'kg/m²', status:bmiLbl.t, cls:bmiLbl.c});
+  pills.push({label:'IMT', val:toComma(bmi, 2), unit:'kg/m²', status:bmiLbl.t, cls:bmiLbl.c});
 
   // WHtR pill
   if (!isNaN(d.waist) && d.waist > 0) {
@@ -4797,14 +4797,14 @@ function buildSummary(d) {
                 : bf <= bfHi? {t:'Normal', c:'c-good'}
                 : bf <= (isMale?25:35) ? {t:'Tinggi', c:'c-warn'}
                 : {t:'Sangat Tinggi', c:'c-danger'};
-    pills.push({label:'Lemak Tubuh', val:toComma(bf,1), unit:'%', status:bfLbl.t, cls:bfLbl.c});
+    pills.push({label:'Lemak Tubuh', val:toComma(bf, 2), unit:'%', status:bfLbl.t, cls:bfLbl.c});
   }
 
   // VO2Max pill
   if (hasCardio) {
     const maxHr = 208 - 0.7 * d.age;
     const vo2   = 15.3 * maxHr / d.rhr;
-    const vo2Str = toComma(vo2, 1);
+    const vo2Str = toComma(vo2, 2);
     const vLbl  = vo2 >= 45 ? {t:'Sangat Baik', c:'c-good'}
                 : vo2 >= 38  ? {t:'Baik',        c:'c-good'}
                 : vo2 >= 30  ? {t:'Cukup',       c:'c-warn'}
@@ -4855,13 +4855,13 @@ function buildSummary(d) {
 
   if (bmi >= 30)
     alerts.push({lvl:'danger', ico:SVG_W, title:'IMT masuk zona obesitas',
-      desc:`IMT ${toComma(bmi,1)} kg/m² berada di zona yang dikaitkan dengan peningkatan risiko diabetes tipe 2, hipertensi, dan gangguan jantung. Penurunan 5–10% berat badan sudah terbukti menurunkan risiko secara bermakna.`});
+      desc:`IMT ${toComma(bmi, 2)} kg/m² berada di zona yang dikaitkan dengan peningkatan risiko diabetes tipe 2, hipertensi, dan gangguan jantung. Penurunan 5–10% berat badan sudah terbukti menurunkan risiko secara bermakna.`});
   else if (bmi >= 25)
     alerts.push({lvl:'warn', ico:SVG_W, title:'Berat badan di atas rentang ideal',
-      desc:`IMT ${toComma(bmi,1)} kg/m² masuk zona kelebihan berat. Penurunan ringan 5–8 kg sudah cukup untuk mengembalikan ke zona normal dan menurunkan tekanan pada sendi serta sistem kardiovaskular.`});
+      desc:`IMT ${toComma(bmi, 2)} kg/m² masuk zona kelebihan berat. Penurunan ringan 5–8 kg sudah cukup untuk mengembalikan ke zona normal dan menurunkan tekanan pada sendi serta sistem kardiovaskular.`});
   else if (bmi < 18.5)
     alerts.push({lvl:'info', ico:SVG_I, title:'Berat badan di bawah rentang ideal',
-      desc:`IMT ${toComma(bmi,1)} kg/m² menandakan kekurangan berat badan. Kondisi ini bisa menurunkan imunitas, kepadatan tulang, dan energi harian. Konsultasikan dengan ahli gizi untuk rencana peningkatan berat yang sehat.`});
+      desc:`IMT ${toComma(bmi, 2)} kg/m² menandakan kekurangan berat badan. Kondisi ini bisa menurunkan imunitas, kepadatan tulang, dan energi harian. Konsultasikan dengan ahli gizi untuk rencana peningkatan berat yang sehat.`});
 
   if (!isNaN(d.waist) && d.waist>0) {
     const whtr = d.waist/d.height;
@@ -4883,7 +4883,7 @@ function buildSummary(d) {
 
   if (bf !== null && bf > (isMale?25:35))
     alerts.push({lvl:'danger', ico:SVG_W, title:'Persentase lemak tubuh tinggi',
-      desc:`Lemak tubuh ${toComma(bf,1)}% masuk zona berisiko. Pada level ini, risiko resistensi insulin dan inflamasi kronis meningkat. Kombinasi latihan beban dan defisit kalori moderat adalah strategi paling efektif.`});
+      desc:`Lemak tubuh ${toComma(bf, 2)}% masuk zona berisiko. Pada level ini, risiko resistensi insulin dan inflamasi kronis meningkat. Kombinasi latihan beban dan defisit kalori moderat adalah strategi paling efektif.`});
 
   if (scoreFin >= 80)
     alerts.push({lvl:'good', ico:SVG_C, title:'Kondisi tubuh Anda secara keseluruhan baik',
@@ -4990,7 +4990,7 @@ function buildReco(d, ctx) {
     recs.push({
       priority:'high', col:COL.high, key:'food',
       title:'Kurangi asupan kalori secara moderat',
-      why:`IMT ${toComma(bmi,1)} dan lemak tubuh ${bf!=null?toComma(bf,1):'-'}% di atas rentang ideal. Defisit ${deficit} kkal/hari adalah pendekatan aman yang mempertahankan massa otot.`,
+      why:`IMT ${toComma(bmi, 2)} dan lemak tubuh ${bf!=null?toComma(bf, 2):'-'}% di atas rentang ideal. Defisit ${deficit} kkal/hari adalah pendekatan aman yang mempertahankan massa otot.`,
       steps_html: steps(
         tdeeTarget ? `Targetkan total kalori harian <span class="reco-em">${tdeeTarget.toLocaleString('id-ID')} kkal</span> (defisit ${deficit} kkal dari TDEE Anda).` : 'Kurangi 300–500 kkal dari asupan harian saat ini.',
         'Prioritaskan protein 1,6–2,0 g per kg massa bebas lemak agar otot terjaga.',
@@ -5008,7 +5008,7 @@ function buildReco(d, ctx) {
     recs.push({
       priority:'high', col:COL.med, key:'food',
       title:'Tingkatkan asupan kalori dan protein',
-      why:`IMT ${toComma(bmi,1)} di bawah 18,5 — kondisi ini berisiko menurunkan imunitas, kepadatan tulang, dan energi.`,
+      why:`IMT ${toComma(bmi, 2)} di bawah 18,5 — kondisi ini berisiko menurunkan imunitas, kepadatan tulang, dan energi.`,
       steps_html: steps(
         tdeeTarget ? `Targetkan asupan <span class="reco-em">${tdeeTarget.toLocaleString('id-ID')} kkal/hari</span> (surplus ${surplus} kkal dari TDEE Anda).` : 'Tambahkan 300 kkal/hari dari makanan padat nutrisi.',
         'Pilih sumber kalori berkualitas: kacang-kacangan, alpukat, nasi merah, telur, ikan.',
@@ -5028,7 +5028,7 @@ function buildReco(d, ctx) {
       key:'heart',
       title:'Tingkatkan kebugaran kardiovaskular',
       why: vo2val !== null
-        ? `Estimasi VO₂ Maks ${toComma(vo2val,1)} ml/kg/min dan RHR ${d.rhr||'-'} bpm mengindikasikan jantung perlu lebih banyak latihan aerobik.`
+        ? `Estimasi VO₂ Maks ${toComma(vo2val, 2)} ml/kg/min dan RHR ${d.rhr||'-'} bpm mengindikasikan jantung perlu lebih banyak latihan aerobik.`
         : 'Denyut nadi istirahat yang tinggi menandakan kondisi kardiovaskular yang perlu dilatih.',
       steps_html: steps(
         'Mulai dengan <span class="reco-em">150 menit/minggu kardio intensitas sedang</span> — jalan cepat, bersepeda, atau berenang.',
@@ -5183,11 +5183,11 @@ function buildQR(d, s) {
 
   // Indeks Massa Tubuh
   if (!isNaN(s.bmi))
-    lines.push('Indeks massa tubuh: ' + toComma(s.bmi, 1) + ' kg/m2 (' + s.bmiStatus.toLowerCase() + ')');
+    lines.push('Indeks massa tubuh: ' + toComma(s.bmi, 2) + ' kg/m2 (' + s.bmiStatus.toLowerCase() + ')');
 
   // Lemak Tubuh
   if (s.bf !== null)
-    lines.push('Lemak tubuh: ' + toComma(s.bf, 1) + '% (' + s.bfStatus.toLowerCase() + ')');
+    lines.push('Lemak tubuh: ' + toComma(s.bf, 2) + '% (' + s.bfStatus.toLowerCase() + ')');
 
   // Pinggang/Tinggi
   if (!isNaN(s.whtr))
@@ -5195,7 +5195,7 @@ function buildQR(d, s) {
 
   // VO2 Maks
   if (!isNaN(s.vo2))
-    lines.push('VO2 maksimal: ' + toComma(s.vo2, 1) + ' ml/kg/menit (' + s.vo2Status.toLowerCase() + ')');
+    lines.push('VO2 maksimal: ' + toComma(s.vo2, 2) + ' ml/kg/menit (' + s.vo2Status.toLowerCase() + ')');
 
   // Nadi Istirahat
   if (!isNaN(d.rhr) && d.rhr > 0)
