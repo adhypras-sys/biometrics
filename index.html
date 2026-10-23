@@ -251,51 +251,44 @@ html.dark .hdr{
 .logo-name{font-size:.96rem;font-weight:800;letter-spacing:-.03em;color:var(--tx1);}
 .logo-sub{font-size:.6rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--tx3);margin-top:1px;}
 
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0;
+}
+
 .ctrl{
-  display:flex;align-items:center;gap:var(--sp-3);
+  display:flex;align-items:center;gap:6px;
   background:var(--s0);
-  border:1px solid var(--b1);border-radius:9999px;
-  padding:5px var(--sp-4);
+  border:none;border-radius:9999px;
+  padding:5px 6px;
   box-shadow:var(--sh0);
-  transition:background var(--t3),border-color var(--t3),box-shadow var(--t2);
+  transition:background var(--t3),box-shadow var(--t2);
 }
 .ctrl:hover{box-shadow:var(--sh1);}
 html.dark .ctrl{background:var(--s0);}
-.psep{width:1px;height:1.125rem;background:var(--b2);flex-shrink:0;}
+.psep{width:1px;height:1.125rem;background:var(--b1);flex-shrink:0;}
 
-.urow{display:flex;align-items:center;gap:var(--sp-2);}
-.ulbl{
-  font-size:.75rem;font-weight:700;letter-spacing:.01em;
-  color:var(--tx3);cursor:pointer;user-select:none;
-  padding:2px 7px;border-radius:var(--r-xs);
-  transition:color var(--t1),background var(--t1),transform var(--t2) var(--bounce);
+.hdr-btn{
+  height:2.1rem;padding:0 10px;border-radius:9999px;
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  background:var(--s1);border:none;
+  color:var(--tx2);font-size:.75rem;font-weight:700;letter-spacing:.01em;
+  cursor:pointer;flex-shrink:0;user-select:none;touch-action:manipulation;
+  transition:background var(--t2) var(--smooth),color var(--t2) var(--smooth),transform var(--t2) var(--spring),box-shadow var(--t2) var(--smooth);
 }
-.ulbl:hover{color:var(--tx1);}
-.ulbl.on{color:var(--tx1);background:var(--s2);transform:scale(1.04);}
-.sw{
-  width:2.5rem;height:1.375rem;border-radius:9999px;padding:2px;
-  background:var(--b2);cursor:pointer;
-  display:flex;align-items:center;
-  transition:background var(--t2) var(--smooth),transform var(--t1) var(--bounce);
+html.dark .hdr-btn{background:var(--s2);color:var(--tx2);}
+.hdr-btn:hover{background:var(--s2);color:var(--tx1);transform:translateY(-1px);box-shadow:var(--sh0);}
+html.dark .hdr-btn:hover{background:var(--s1);color:var(--tx1);}
+.hdr-btn:active{transform:scale(.95);}
+.hdr-btn.is-active{background:var(--tx1);color:var(--s0);}
+html.dark .hdr-btn.is-active{background:var(--tx1);color:var(--s0);}
+.hdr-btn.danger:hover{color:var(--danger);background:var(--danger-bg);}
+
+.hdr-btn-lbl{display:none;}
+@media(min-width:640px){
+  .hdr-btn{padding:0 12px;}
+  .hdr-btn-lbl{display:inline;}
 }
-.sw:active{transform:scale(.92);}
-.sw.on{background:var(--tx1);}
-.swk{
-  width:1rem;height:1rem;border-radius:50%;
-  background:var(--s0);box-shadow:0 1px 4px rgba(0,0,0,.28);
-  transition:transform var(--t2) var(--bounce),background var(--t2);flex-shrink:0;
-}
-.sw.on .swk{transform:translateX(1.125rem);}
-.dbtn{
-  width:1.95rem;height:1.95rem;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  background:var(--s1);border:1px solid var(--b0);
-  color:var(--tx2);cursor:pointer;flex-shrink:0;
-  transition:background var(--t1),color var(--t1),border-color var(--t1),transform var(--t2) var(--bounce);
-}
-.dbtn:hover{background:var(--s2);color:var(--tx1);border-color:var(--b2);transform:rotate(18deg) scale(1.12);}
-.dbtn:active{transform:scale(.88);}
-html.dark .dbtn:hover{transform:rotate(-18deg) scale(1.12);}
 
 /* ═══════════════════════════════════════════════════════════════
    PAGE LAYOUT & INPUT PANEL
@@ -588,7 +581,7 @@ html.dark .card.is-selected{
   background:color-mix(in oklab, var(--s0) 76%, var(--cat-soft))!important;
   box-shadow:var(--sh2)!important;
 }
-.card.card-bounce{animation:springBounce 340ms var(--spring) both!important;}
+.card.card-bounce{transform:translateY(-1px);}
 
 .card::before{
   content:'';position:absolute;left:0;top:var(--sp-3);bottom:var(--sp-3);
@@ -1118,31 +1111,43 @@ html.dark .step-btn { background: var(--s2); }
       </div>
     </div>
 
-    <div class="ctrl">
-      <div class="urow">
-        <span class="ulbl on" id="lbl-m" onclick="if(curUnit!=='metric')toggleUnit()">Metrik</span>
-        <div class="sw" id="sw" role="switch" aria-checked="false" tabindex="0"
-             onclick="toggleUnit()"
-             onkeydown="if(event.key==='Enter'||event.key===' ')toggleUnit()">
-          <div class="swk"></div>
-        </div>
-        <span class="ulbl" id="lbl-i" onclick="if(curUnit!=='imperial')toggleUnit()">Imperial</span>
-      </div>
+    <div class="ctrl" role="toolbar" aria-label="Kontrol Utama">
+      <button type="button" class="hdr-btn" id="btn-toggle-all" onclick="bounceBtn(this);toggleAllSecs()" title="Ringkas atau buka semua kategori" aria-label="Kategori">
+        <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <span class="hdr-btn-lbl" id="lbl-toggle-all">Kategori</span>
+      </button>
+
+      <button type="button" class="hdr-btn danger" id="btn-reset" onclick="bounceBtn(this);resetAllData()" title="Kosongkan semua input" aria-label="Reset">
+        <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+        </svg>
+        <span class="hdr-btn-lbl">Reset</span>
+      </button>
 
       <div class="psep"></div>
 
-      <button type="button" class="dbtn" id="btn-dark" onclick="toggleDarkMode()" title="Ganti mode gelap / terang" aria-label="Ganti mode gelap/terang">
-        <svg id="ico-sun"  style="display:none;" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <button type="button" class="hdr-btn" id="btn-unit" onclick="bounceBtn(this);toggleUnit()" title="Ganti satuan Metrik / Imperial" aria-label="Satuan Metrik atau Imperial">
+        <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+        </svg>
+        <span class="hdr-btn-lbl" id="lbl-unit">Metrik</span>
+      </button>
+
+      <button type="button" class="hdr-btn" id="btn-dark" onclick="toggleDarkMode()" title="Ganti mode gelap / terang" aria-label="Ganti mode gelap/terang">
+        <svg id="ico-sun" style="display:none;" width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
             d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707
                M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707
                M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
         </svg>
-        <svg id="ico-moon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <svg id="ico-moon" width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
             d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21
                a9.003 9.003 0 008.354-5.646z"/>
         </svg>
+        <span class="hdr-btn-lbl" id="lbl-dark">Tema</span>
       </button>
     </div>
   </div>
@@ -1177,14 +1182,6 @@ html.dark .step-btn { background: var(--s2); }
             <button type="button" class="act-btn" id="btn-sample" onclick="bounceBtn(this);fillSampleData()" title="Isi dengan contoh data">
               <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
               Isi Contoh
-            </button>
-            <button type="button" class="act-btn" id="btn-toggle-all" onclick="bounceBtn(this);toggleAllSecs()" title="Buka atau tutup semua kategori">
-              <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-              <span id="lbl-toggle-all">Ringkas Kategori</span>
-            </button>
-            <button type="button" class="act-btn danger" id="btn-reset" onclick="bounceBtn(this);resetAllData()" title="Kosongkan semua input">
-              <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-              Reset
             </button>
           </div>
         </div>
@@ -2040,7 +2037,7 @@ function bounceBtn(el) {
 }
 
 function bounceElement(el) {
-  if (!el) return;
+  if (!el || el.classList.contains('card')) return;
   el.classList.remove('card-bounce');
   requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('card-bounce')));
   el.addEventListener('animationend', () => el.classList.remove('card-bounce'), { once: true });
@@ -2066,7 +2063,6 @@ function toggleCardSelect(el, title, ev) {
   if (el.classList.contains('card-w') || el.classList.contains('card-e')) {
     const foldBtn = el.querySelector('.card-fold-btn');
     if (foldBtn) toggleCardFold(foldBtn, title, ev);
-    bounceElement(el);
     return;
   }
   if (selectedCards.has(title)) {
@@ -2078,7 +2074,6 @@ function toggleCardSelect(el, title, ev) {
     el.classList.add('is-selected');
     showToast(`★ Disorot: ${title}`, 'var(--cat-accent)');
   }
-  bounceElement(el);
   updatePinnedCount();
   if (activeFilter === 'pinned') applyPinnedFilter();
 }
@@ -2263,10 +2258,8 @@ function loadState() {
     const parsed = JSON.parse(raw);
     if (parsed && parsed.unit === 'imperial' && curUnit === 'metric') {
       curUnit = 'imperial';
-      const sw = document.getElementById('sw');
-      sw.classList.add('on'); sw.setAttribute('aria-checked', 'true');
-      document.getElementById('lbl-m').classList.remove('on');
-      document.getElementById('lbl-i').classList.add('on');
+      const lblUnit = document.getElementById('lbl-unit');
+      if (lblUnit) lblUnit.textContent = 'Imperial';
       document.querySelectorAll('.unit-len').forEach(e => e.textContent = 'in');
       document.querySelectorAll('.unit-weight').forEach(e => e.textContent = 'lbs');
     }
@@ -2295,10 +2288,8 @@ function toggleUnit(){
   const wc=(toImp?wv*KG2LB:wv/KG2LB);
   if(!isNaN(wc)&&wv>0)we.value=wc.toFixed(2).replace('.',',');
   const m=curUnit==='metric';
-  const sw=document.getElementById('sw');
-  sw.classList.toggle('on',!m); sw.setAttribute('aria-checked',(!m).toString());
-  document.getElementById('lbl-m').classList.toggle('on',m);
-  document.getElementById('lbl-i').classList.toggle('on',!m);
+  const lblUnit=document.getElementById('lbl-unit');
+  if(lblUnit)lblUnit.textContent=m?'Metrik':'Imperial';
   document.querySelectorAll('.unit-len').forEach(e=>e.textContent=m?'cm':'in');
   document.querySelectorAll('.unit-weight').forEach(e=>e.textContent=m?'kg':'lbs');
   showToast(`Satuan diubah ke ${m ? 'Metrik (cm, kg)' : 'Imperial (in, lbs)'}`, 'var(--cat-accent)');
@@ -2337,6 +2328,16 @@ function resetAllData() {
     const fitem = document.getElementById('fitem-' + id);
     if (fitem) fitem.classList.remove('is-filled', 'is-invalid-wrap');
   });
+  const actSel = document.getElementById('activity');
+  if (actSel) {
+    actSel.value = '1.2';
+    syncActivityUI('1.2');
+  }
+  const genSel = document.getElementById('gender');
+  if (genSel) {
+    genSel.value = 'male';
+    syncGenderUI('male');
+  }
   selectedCards.clear(); updatePinnedCount();
   if (activeFilter === 'pinned') filterCategory('all', document.querySelector('.cat-pill[data-filter="all"]'));
   showToast('Semua input telah direset', 'var(--tx3)');
@@ -2355,8 +2356,8 @@ function toggleAllSecs() {
     ch.classList.toggle('open', !allSecsCollapsed);
     const btn = ch.closest('button'); if (btn) btn.setAttribute('aria-expanded', (!allSecsCollapsed).toString());
   });
-  const lbl = document.getElementById('lbl-toggle-all');
-  if (lbl) lbl.textContent = allSecsCollapsed ? 'Buka Kategori' : 'Ringkas Kategori';
+  const btnAll = document.getElementById('btn-toggle-all');
+  if (btnAll) btnAll.classList.toggle('is-active', allSecsCollapsed);
 }
 
 const DEP={ age:'Usia',height:'Tinggi',weight:'Berat',waist:'Lingkar Pinggang',neck:'Lingkar Leher',hip:'Lingkar Pinggul',wrist:'Lingkar Pergelangan',rhr:'Denyut Nadi' };
