@@ -2,8 +2,16 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BioMetrics Pro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#eff0f4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#09090c" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="description" content="Kalkulator Komposisi Tubuh & Analisis Biometrik Klinis 100% Offline Single-File PWA dengan 37 Parameter Medis.">
+<title>BioMetrics Pro — Kalkulator Komposisi Tubuh Offline</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111113' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='24' height='24' rx='6' fill='%23ffffff' stroke='none'/%3E%3Cpath d='M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4'/%3E%3C/svg%3E">
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22BioMetrics%20Pro%22%2C%22short_name%22%3A%22BioMetrics%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23eff0f4%22%2C%22theme_color%22%3A%22%23111113%22%7D">
 <script>
 (function(){
   try{
@@ -13,14 +21,12 @@
   }catch(e){}
 })();
 </script>
-<style id="tw">/*! tailwindcss v4.3.0 | MIT License | https://tailwindcss.com */
-@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-pan-x:initial;--tw-pan-y:initial;--tw-pinch-zoom:initial;--tw-scroll-snap-strictness:proximity;--tw-space-y-reverse:0;--tw-space-x-reverse:0;--tw-divide-x-reverse:0;--tw-border-style:solid;--tw-divide-y-reverse:0;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-ordinal:initial;--tw-slashed-zero:initial;--tw-numeric-figure:initial;--tw-numeric-spacing:initial;--tw-numeric-fraction:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw-backdrop-contrast:initial;--tw-backdrop-grayscale:initial;--tw-backdrop-hue-rotate:initial;--tw-backdrop-invert:initial;--tw-backdrop-opacity:initial;--tw-backdrop-saturate:initial;--tw-backdrop-sepia:initial;--tw-duration:initial;--tw-ease:initial;--tw-contain-size:initial;--tw-contain-layout:initial;--tw-contain-paint:initial;--tw-contain-style:initial;--tw-content:"";--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1}}}@layer base{*,:after,:before,::backdrop{box-sizing:border-box;border:0 solid;margin:0;padding:0}::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;tab-size:4;line-height:1.5;font-family:var(--default-font-family,ui-sans-serif, system-ui, sans-serif);font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:var(--default-mono-font-family,ui-monospace, monospace);font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}:-moz-focusring{outline:auto}progress{vertical-align:baseline}summary{display:list-item}ol,ul,menu{list-style:none}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}button,input,select,optgroup,textarea{font:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}::file-selector-button{font:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}:where(select:is([multiple],[size])) optgroup{font-weight:bolder}:where(select:is([multiple],[size])) optgroup option{padding-inline-start:20px}::file-selector-button{margin-inline-end:4px}::placeholder{opacity:1}@supports (not ((-webkit-appearance:-apple-pay-button))) or (contain-intrinsic-size:1px){::placeholder{color:currentColor}@supports (color:color-mix(in lab, red, red)){::placeholder{color:color-mix(in oklab, currentcolor 50%, transparent)}}}textarea{resize:vertical}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-date-and-time-value{min-height:1lh;text-align:inherit}::-webkit-datetime-edit{display:inline-flex}::-webkit-datetime-edit-fields-wrapper{padding:0}::-webkit-datetime-edit{padding-block:0}::-webkit-calendar-picker-indicator{line-height:1}:-moz-ui-invalid{box-shadow:none}button,input:where([type=button],[type=reset],[type=submit]){appearance:button}::file-selector-button{appearance:button}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[hidden]:where(:not([hidden=until-found])){display:none!important}}@layer components;@layer utilities{.absolute{position:absolute}.fixed{position:fixed}.relative{position:relative}.sticky{position:sticky}.top-0{top:0}.z-10{z-index:10}.z-100{z-index:100}.mx-auto{margin-auto:auto}.flex{display:flex}.grid{display:grid}.hidden{display:none}.inline-flex{display:inline-flex}.w-full{width:100%}.max-w-72{max-width:72rem}.items-center{align-items:center}.justify-between{justify-content:space-between}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-4{padding-left:1rem;padding-right:1rem}.rounded-xl{border-radius:.75rem}.rounded-2xl{border-radius:1rem}.border{border-width:1px}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.06)}.transition{transition-property:all;transition-timing-function:cubic-bezier(0.4,0,0.2,1);transition-duration:150ms}}</style>
 <style>
 /* ═══════════════════════════════════════════════════════════════
    DESIGN TOKENS — GREYSCALE MAJOR & PASTEL CATEGORY HIGHLIGHTS
 ═══════════════════════════════════════════════════════════════ */
 :root {
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   --sp-1:.25rem; --sp-2:.5rem;  --sp-3:.75rem; --sp-4:1rem;
@@ -179,7 +185,7 @@ html.dark [data-filter="pinned"] {
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;}
 body{
   font-family:var(--font-sans);
   background:var(--pg);
@@ -216,26 +222,31 @@ html.dark body::before{
 ═══════════════════════════════════════════════════════════════ */
 .hdr{
   position:sticky;top:0;z-index:100;width:100%;
-  background:color-mix(in oklab,var(--s0) 86%,transparent);
-  backdrop-filter:blur(28px) saturate(160%);
-  -webkit-backdrop-filter:blur(28px) saturate(160%);
+  background:color-mix(in oklab,var(--s0) 88%,transparent);
+  backdrop-filter:blur(24px) saturate(160%);
+  -webkit-backdrop-filter:blur(24px) saturate(160%);
   border-bottom:1px solid var(--b0);
   transition:background var(--t3) var(--smooth),border-color var(--t3) var(--smooth);
 }
 html.dark .hdr{
-  background:color-mix(in oklab,var(--s1) 84%,transparent);
+  background:color-mix(in oklab,var(--s1) 86%,transparent);
   border-bottom-color:var(--b1);
 }
 .hdr-in{
   max-width:72rem;margin:0 auto;
-  padding:var(--sp-3) var(--sp-5);
+  padding:var(--sp-3) var(--sp-4);
   display:flex;align-items:center;justify-content:space-between;
-  gap:var(--sp-4);flex-wrap:wrap;
+  gap:var(--sp-3);flex-wrap:wrap;
 }
+@media(min-width:640px){.hdr-in{padding:var(--sp-3) var(--sp-5);gap:var(--sp-4);}}
 
-.logo-area{display:flex;align-items:center;gap:var(--sp-3);flex:1;min-width:0;cursor:pointer;}
+.logo-area{
+  display:flex;align-items:center;gap:var(--sp-3);min-width:0;cursor:pointer;
+  background:transparent;border:none;text-align:left;padding:2px 4px;border-radius:var(--r-m);
+}
+.logo-area:focus-visible{outline:2px solid var(--tx2);outline-offset:2px;}
 .logo-ico{
-  width:2.25rem;height:2.25rem;border-radius:var(--r-m);flex-shrink:0;
+  width:2.35rem;height:2.35rem;border-radius:var(--r-m);flex-shrink:0;
   display:flex;align-items:center;justify-content:center;
   background:var(--tx1);
   color:var(--s0);
@@ -243,13 +254,13 @@ html.dark .hdr{
   transition:transform var(--t2) var(--bounce),box-shadow var(--t2) var(--smooth);
 }
 .logo-area:hover .logo-ico{
-  transform:scale(1.1) rotate(-6deg);
+  transform:scale(1.08) rotate(-5deg);
   box-shadow:var(--sh2);
 }
 .logo-area:active .logo-ico{transform:scale(.94);}
 .logo-text{line-height:1.15;}
-.logo-name{font-size:.96rem;font-weight:800;letter-spacing:-.03em;color:var(--tx1);}
-.logo-sub{font-size:.6rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--tx3);margin-top:1px;}
+.logo-name{font-size:.98rem;font-weight:800;letter-spacing:-.03em;color:var(--tx1);white-space:nowrap;}
+.logo-sub{font-size:.6rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--tx3);margin-top:1px;white-space:nowrap;}
 
 .sr-only{
   position:absolute;width:1px;height:1px;padding:0;margin:-1px;
@@ -257,36 +268,37 @@ html.dark .hdr{
 }
 
 .ctrl{
-  display:flex;align-items:center;gap:6px;
+  display:flex;align-items:center;gap:5px;
   background:var(--s0);
   border:none;border-radius:9999px;
-  padding:5px 6px;
+  padding:4px 6px;
   box-shadow:var(--sh0);
   transition:background var(--t3),box-shadow var(--t2);
 }
 .ctrl:hover{box-shadow:var(--sh1);}
 html.dark .ctrl{background:var(--s0);}
-.psep{width:1px;height:1.125rem;background:var(--b1);flex-shrink:0;}
+.psep{width:1px;height:1.25rem;background:var(--b1);flex-shrink:0;}
 
 .hdr-btn{
-  height:2.1rem;padding:0 10px;border-radius:9999px;
+  min-height:2.35rem;min-width:2.35rem;padding:0 11px;border-radius:9999px;
   display:inline-flex;align-items:center;justify-content:center;gap:6px;
   background:var(--s1);border:none;
   color:var(--tx2);font-size:.75rem;font-weight:700;letter-spacing:.01em;
-  cursor:pointer;flex-shrink:0;user-select:none;touch-action:manipulation;
+  cursor:pointer;flex-shrink:0;user-select:none;touch-action:manipulation;text-decoration:none;
   transition:background var(--t2) var(--smooth),color var(--t2) var(--smooth),transform var(--t2) var(--spring),box-shadow var(--t2) var(--smooth);
 }
 html.dark .hdr-btn{background:var(--s2);color:var(--tx2);}
 .hdr-btn:hover{background:var(--s2);color:var(--tx1);transform:translateY(-1px);box-shadow:var(--sh0);}
 html.dark .hdr-btn:hover{background:var(--s1);color:var(--tx1);}
 .hdr-btn:active{transform:scale(.95);}
+.hdr-btn:focus-visible{outline:2px solid var(--tx2);outline-offset:2px;}
 .hdr-btn.is-active{background:var(--tx1);color:var(--s0);}
 html.dark .hdr-btn.is-active{background:var(--tx1);color:var(--s0);}
 .hdr-btn.danger:hover{color:var(--danger);background:var(--danger-bg);}
 
 .hdr-btn-lbl{display:none;}
-@media(min-width:640px){
-  .hdr-btn{padding:0 12px;}
+@media(min-width:680px){
+  .hdr-btn{padding:0 13px;}
   .hdr-btn-lbl{display:inline;}
 }
 
@@ -295,7 +307,7 @@ html.dark .hdr-btn.is-active{background:var(--tx1);color:var(--s0);}
 ═══════════════════════════════════════════════════════════════ */
 .page{
   max-width:72rem;margin:0 auto;
-  padding:var(--sp-5) var(--sp-4) var(--sp-8);
+  padding:var(--sp-4) var(--sp-3) var(--sp-8);
 }
 @media(min-width:640px){.page{padding:var(--sp-6) var(--sp-6) var(--sp-8);}}
 @media(min-width:1024px){.page{padding:var(--sp-8);}}
@@ -312,9 +324,9 @@ html.dark .inp-panel{background:var(--s1);box-shadow:var(--sh1);}
 .inp-panel:focus-within{box-shadow:var(--sh2);}
 
 .trig{
-  width:100%;display:flex;align-items:center;justify-content:space-between;
+  width:100%;min-height:3.25rem;display:flex;align-items:center;justify-content:space-between;
   padding:var(--sp-4) var(--sp-5);gap:var(--sp-3);
-  background:transparent;border:none;cursor:pointer;text-align:left;
+  background:transparent;border:none;cursor:pointer;text-align:left;touch-action:manipulation;
   transition:background var(--t2) var(--smooth),transform var(--t2) var(--smooth);
 }
 .trig:hover{background:var(--hov);}
@@ -335,22 +347,8 @@ html.dark .inp-panel{background:var(--s1);box-shadow:var(--sh1);}
 }
 .trig:hover .trig-bar{transform:scaleY(1.15);}
 
-.sec-ico{
-  width:1.75rem;height:1.75rem;border-radius:var(--r-s);
-  display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
-  background:var(--cat-soft);color:var(--cat-text);
-  border:none;
-  transition:transform var(--t2) var(--spring),background var(--t2) var(--smooth),color var(--t2) var(--smooth);
-}
-.sec-ico svg{stroke-width:2.4px;}
-.trig:hover .sec-ico{
-  transform:scale(1.04) rotate(-2deg);
-  background:color-mix(in oklab, var(--cat-accent) 22%, var(--cat-soft));
-  color:var(--cat-text);
-}
-
 .chev{
-  width:1.5rem;height:1.5rem;padding:3.5px;border-radius:50%;
+  width:1.65rem;height:1.65rem;padding:4px;border-radius:50%;
   background:var(--cat-soft, var(--s2));color:var(--cat-text, var(--tx1));
   border:none;flex-shrink:0;
   stroke-width:2.5px;
@@ -362,14 +360,15 @@ html.dark .inp-panel{background:var(--s1);box-shadow:var(--sh1);}
 .coll{display:grid;grid-template-rows:1fr;overflow:hidden;transition:grid-template-rows var(--t3) var(--spring);}
 .coll.shut{grid-template-rows:0fr;}
 .coll>div{min-height:0;overflow:hidden;}
-.cp{padding:var(--sp-1) var(--sp-5) var(--sp-6);}
+.cp{padding:var(--sp-1) var(--sp-4) var(--sp-5);}
+@media(min-width:640px){.cp{padding:var(--sp-1) var(--sp-5) var(--sp-6);}}
 
 .fgrid{display:grid;gap:var(--sp-3) var(--sp-4);grid-template-columns:1fr;}
-@media(min-width:500px){.fgrid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:520px){.fgrid{grid-template-columns:repeat(2,1fr);}}
 @media(min-width:1024px){.fgrid{grid-template-columns:repeat(4,1fr);}}
 .sp2{grid-column:span 2;}
 @media(min-width:1024px){.sp3{grid-column:span 3;}}
-@media(max-width:499px){.sp2,.sp3{grid-column:span 1;}}
+@media(max-width:519px){.sp2,.sp3{grid-column:span 1;}}
 
 .fitem{
   position:relative;
@@ -393,26 +392,29 @@ html.dark .fitem:focus-within{background:var(--s2);}
 .fitem.is-invalid-wrap{background:var(--danger-bg);box-shadow:0 0 0 2px color-mix(in oklab,var(--danger) 40%,transparent)!important;}
 
 .fcheck{
-  margin-left:auto;width:1.1rem;height:1.1rem;border-radius:50%;
+  margin-left:auto;width:1.15rem;height:1.15rem;border-radius:50%;
   display:inline-flex;align-items:center;justify-content:center;
   background:var(--good-bg);color:var(--good);
   opacity:0;transform:scale(.5);
   transition:opacity var(--t2) var(--smooth),transform var(--t2) var(--spring);
-  pointer-events:none;
+  pointer-events:none;flex-shrink:0;
 }
 .fitem.is-filled .fcheck{opacity:1;transform:scale(1);}
 
+.flbl-row{
+  display:flex;align-items:center;gap:6px;
+  margin-bottom:var(--sp-2);min-height:1.5rem;
+}
 .flbl{
-  display:flex;align-items:center;gap:4px;overflow:visible;
   font-size:.75rem;font-weight:700;letter-spacing:.005em;
-  color:var(--tx2);margin-bottom:var(--sp-2);
+  color:var(--tx2);cursor:pointer;
   transition:color var(--t2) var(--smooth);
 }
 .fitem:focus-within .flbl{color:var(--tx1);}
 
 .inp-wrap{position:relative;display:flex;align-items:center;}
 .finp{
-  width:100%;height:2.625rem;padding:0 3.1rem 0 var(--sp-3);
+  width:100%;height:2.75rem;padding:0 3.1rem 0 var(--sp-3);
   border-radius:var(--r-m);border:none;
   background:var(--s1);color:var(--tx1);
   font-size:1rem;font-weight:700;font-family:inherit;
@@ -421,7 +423,6 @@ html.dark .fitem:focus-within{background:var(--s2);}
   box-shadow:inset 0 1px 2px rgba(0,0,0,.04);
   transition:box-shadow var(--t2) var(--smooth),background var(--t2) var(--smooth),transform var(--t2) var(--spring);
 }
-select.finp{padding-right:2.25rem;font-weight:600;cursor:pointer;}
 html.dark .finp{background:var(--s1);color:var(--tx1);box-shadow:inset 0 1px 2px rgba(0,0,0,.25);}
 .finp::placeholder{color:var(--tx4);font-size:.9rem;font-weight:400;font-style:italic;}
 .finp:hover{background:color-mix(in oklab,var(--s1) 80%,var(--s2));}
@@ -429,7 +430,6 @@ html.dark .finp{background:var(--s1);color:var(--tx1);box-shadow:inset 0 1px 2px
 html.dark .finp:focus{background:var(--s1);}
 
 .inp-unit-badge{
-  position:absolute;right:8px;top:50%;transform:translateY(-50%);
   padding:2px 7px;border-radius:var(--r-xs);
   font-size:.6875rem;font-weight:700;
   color:var(--tx3);background:var(--s0);
@@ -446,7 +446,7 @@ html.dark .inp-unit-badge{background:var(--s2);}
 }
 html.dark .seg-group{background:var(--s1);}
 .seg-btn{
-  height:2.125rem;border-radius:calc(var(--r-m) - 3px);
+  height:2.25rem;border-radius:calc(var(--r-m) - 3px);
   display:inline-flex;align-items:center;justify-content:center;gap:6px;
   font-size:.8125rem;font-weight:700;color:var(--tx3);
   background:transparent;border:none;cursor:pointer;touch-action:manipulation;
@@ -454,19 +454,9 @@ html.dark .seg-group{background:var(--s1);}
 }
 .seg-btn:hover{color:var(--tx1);}
 .seg-btn:active{transform:scale(.97);}
+.seg-btn:focus-visible{outline:2px solid var(--tx2);outline-offset:1px;}
 .seg-btn.active{background:var(--s0);color:var(--tx1);box-shadow:var(--sh0);transform:scale(1);}
 html.dark .seg-btn.active{background:var(--s2);color:var(--tx1);}
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}
-.selw{position:relative;}
-.selw::after{
-  content:'';position:absolute;right:var(--sp-4);top:50%;transform:translateY(-50%);
-  width:.55rem;height:.55rem;background:var(--tx3);
-  clip-path:polygon(100% 18%,0 18%,50% 84%);
-  pointer-events:none;transition:background var(--t1),transform var(--t2) var(--bounce);
-}
-.selw:focus-within::after{background:var(--tx1);transform:translateY(-50%) scale(1.2);}
 
 /* ═══════════════════════════════════════════════════════════════
    QUICK CATEGORY BAR
@@ -480,6 +470,7 @@ input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;}
 .cat-nav-wrap::-webkit-scrollbar{display:none;}
 
 .cat-pill{
+  min-height:2.35rem;
   display:inline-flex;align-items:center;gap:7px;
   padding:7px 14px;border-radius:9999px;
   font-size:.75rem;font-weight:700;white-space:nowrap;
@@ -502,6 +493,7 @@ html.dark .cat-pill{background:var(--s0);}
 }
 .cat-pill:hover::before{transform:scale(1.15);}
 .cat-pill:active{transform:scale(.96);}
+.cat-pill:focus-visible{outline:2px solid var(--tx2);outline-offset:2px;}
 .cat-pill.active{
   background:var(--cat-soft, var(--tx1));
   color:var(--cat-text, var(--s0));
@@ -512,13 +504,13 @@ html.dark .cat-pill{background:var(--s0);}
 .cat-pill[data-filter="all"].active::before{background:var(--s0);}
 .cat-pill-count{
   font-size:.625rem;font-weight:800;padding:1px 6px;border-radius:999px;
-  background:rgba(0,0,0,.06);color:inherit;
+  background:rgba(0,0,0,.06);color:inherit;font-variant-numeric:tabular-nums;
 }
 html.dark .cat-pill-count{background:rgba(255,255,255,.1);}
 .cat-pill.active .cat-pill-count{background:color-mix(in oklab, currentColor 14%, transparent);}
 
 /* ═══════════════════════════════════════════════════════════════
-   RESULT SECTIONS & CARDS (BORDERLESS, DEPTH & SURFACE TONE)
+   RESULT SECTIONS & CARDS
 ═══════════════════════════════════════════════════════════════ */
 .rstack{display:flex;flex-direction:column;gap:var(--sp-4);}
 
@@ -536,18 +528,13 @@ html.dark .rsec{
 .rsec:hover{box-shadow:var(--sh2);}
 
 .cgrid{display:grid;gap:var(--sp-3);grid-template-columns:1fr;align-items:start;}
-@media(min-width:500px){.cgrid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:520px){.cgrid{grid-template-columns:repeat(2,1fr);}}
 @media(min-width:1024px){.cgrid{grid-template-columns:repeat(3,1fr);}}
 @media(min-width:1280px){.cgrid.w{grid-template-columns:repeat(4,1fr);}}
 
 @keyframes cardIn{
   from{opacity:0;transform:translateY(6px);}
   to  {opacity:1;transform:translateY(0);}
-}
-@keyframes springBounce{
-  0%  {transform:translateY(0) scale(1);}
-  45% {transform:translateY(-2px) scale(1.012);}
-  100%{transform:translateY(-1px) scale(1);}
 }
 @keyframes pillPop{
   0%  {transform:scale(1);}
@@ -571,6 +558,7 @@ html.dark .rsec{
 html.dark .card{background:var(--s0);box-shadow:var(--sh0);}
 .card:hover{transform:translateY(-2px);box-shadow:var(--sh2);background:color-mix(in oklab, var(--s0) 94%, var(--cat-soft));}
 .card:active{transform:translateY(0) scale(.992);}
+.card:focus-visible{outline:2px solid var(--cat-accent);outline-offset:2px;}
 
 .card.is-selected{
   background:color-mix(in oklab, var(--s0) 80%, var(--cat-soft))!important;
@@ -590,8 +578,6 @@ html.dark .card.is-selected{
   transition:opacity var(--t2) var(--smooth),transform var(--t2) var(--spring);
 }
 .card:hover::before,.card.is-selected::before{opacity:.9;transform:scaleY(1);}
-
-.card::after{display:none;}
 
 .card-w{
   border:none;
@@ -614,7 +600,7 @@ html.dark .card-e{background:var(--danger-bg);}
 /* ═══════════════════════════════════════════════════════════════
    CARD TYPOGRAPHY, COLLAPSIBLE BODY & REFINED ICONS
 ═══════════════════════════════════════════════════════════════ */
-.card-head{display:flex;align-items:center;gap:var(--sp-2);padding-right:2.2rem;min-height:2rem;}
+.card-head{display:flex;align-items:center;gap:var(--sp-2);padding-right:2.4rem;min-height:2.1rem;}
 .card-head .clbl{margin-bottom:0;flex:1;min-width:0;}
 
 .card-ico{
@@ -622,7 +608,6 @@ html.dark .card-e{background:var(--danger-bg);}
   border-radius:var(--r-s);
   background:var(--cat-soft);border:none;
   color:var(--cat-text);stroke-width:2.3px;
-  box-shadow:none;
   transition:color var(--t2) var(--smooth),background var(--t2) var(--smooth),transform var(--t2) var(--spring);
 }
 .card-ico path,.card-ico circle{stroke-width:2.3px;}
@@ -641,8 +626,8 @@ html.dark .card-e{background:var(--danger-bg);}
 }
 
 .card-fold-btn{
-  position:absolute;top:12px;right:12px;
-  width:1.65rem;height:1.65rem;border-radius:50%;
+  position:absolute;top:10px;right:10px;
+  width:2rem;height:2rem;border-radius:50%;
   display:inline-flex;align-items:center;justify-content:center;
   background:var(--s1);color:var(--tx2);
   border:none;
@@ -670,8 +655,8 @@ html.dark .card-fold-btn{background:var(--s2);color:var(--tx2);}
 .card.is-collapsed .card-detail-inner{padding-top:0;}
 
 .card-pin{
-  position:absolute;top:13px;right:3rem;
-  width:1.45rem;height:1.45rem;border-radius:50%;
+  position:absolute;top:12px;right:3.25rem;
+  width:1.55rem;height:1.55rem;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   background:var(--cat-soft);color:var(--cat-text);
   border:none;
@@ -696,9 +681,9 @@ html.dark .card-fold-btn{background:var(--s2);color:var(--tx2);}
 html.dark .clbl{color:var(--tx2);}
 html.dark .card:hover .clbl,html.dark .card.is-selected .clbl{color:var(--cat-text);}
 
-.cval{display:flex;align-items:baseline;gap:5px;margin:0;}
+.cval{display:flex;align-items:baseline;gap:5px;margin:0;flex-wrap:wrap;}
 .cnum{
-  font-size:2.15rem;font-weight:900;letter-spacing:-.04em;line-height:1.05;
+  font-size:2.1rem;font-weight:900;letter-spacing:-.04em;line-height:1.05;
   color:var(--tx1);font-variant-numeric:tabular-nums;
   transition:color var(--t2) var(--smooth);
 }
@@ -719,32 +704,31 @@ html.dark .cdesc{color:var(--tx2);}
 .card-ref{
   display:inline-flex;align-items:center;align-self:flex-start;gap:4px;margin-top:2px;
   font-size:.6875rem;font-weight:600;letter-spacing:.01em;color:var(--tx3);
-  text-decoration:none;
-  transition:color var(--t2) var(--smooth),opacity var(--t2) var(--smooth);opacity:.82;
+  text-decoration:none;background:transparent;border:none;padding:2px 0;cursor:pointer;
+  transition:color var(--t2) var(--smooth),opacity var(--t2) var(--smooth);opacity:.85;
 }
 .card-ref:hover{opacity:1;color:var(--cat-text);}
 .card-ref svg{flex-shrink:0;}
 
 .wtag{
-  display:inline-flex;align-items:center;align-self:flex-start;gap:var(--sp-1);
-  padding:4px var(--sp-3);border-radius:var(--r-s);
+  display:inline-flex;align-items:center;align-self:flex-start;gap:var(--sp-2);
+  padding:5px var(--sp-3);border-radius:var(--r-s);
   font-size:.75rem;font-weight:500;background:var(--s1);color:var(--tx2);
   border:none;box-shadow:none;
 }
 html.dark .wtag{background:rgba(255,255,255,.05);}
 .wdot{
   width:6px;height:6px;border-radius:50%;flex-shrink:0;
-  background:var(--cat-accent, var(--tx3));animation:wPulse 2s var(--smooth) infinite;
+  background:var(--cat-accent, var(--tx3));
 }
-@keyframes wPulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.3;transform:scale(.6);}}
 
 /* ═══════════════════════════════════════════════════════════════
    ENLARGED & CLICKABLE TOOLTIP AREA
 ═══════════════════════════════════════════════════════════════ */
 .tico {
   box-sizing: border-box;
-  min-width: 46px; min-height: 26px;
-  padding: 3px 9px; margin: -2px 0 -2px 4px;
+  min-width: 48px; min-height: 28px;
+  padding: 4px 10px; margin: -2px 0 -2px 4px;
   display: inline-flex; align-items: center; justify-content: center; gap: 4px;
   background: var(--cat-soft, var(--s2));
   border: none;
@@ -789,7 +773,7 @@ html.dark .tico.is-active {
 
 #__tt {
   position: fixed; z-index: 9999; pointer-events: auto;
-  width: max-content; min-width: 220px; max-width: min(330px, calc(100vw - 24px));
+  width: max-content; min-width: 220px; max-width: min(340px, calc(100vw - 24px));
   padding: 13px 16px; border-radius: var(--r-l);
   font-size: .8rem; font-weight: 500; line-height: 1.6; letter-spacing: .01em;
   text-align: left; white-space: normal;
@@ -815,7 +799,7 @@ html.dark #__tt { background: #1e1e26; }
   color: var(--cat-text, var(--tx2));
 }
 .tt-close {
-  width: 22px; height: 22px; border-radius: 50%;
+  width: 28px; height: 28px; border-radius: 50%;
   display: inline-flex; align-items: center; justify-content: center;
   background: var(--s1); color: var(--tx2); border: none;
   font-size: .75rem; font-weight: 800; cursor: pointer;
@@ -839,7 +823,8 @@ html.dark #__tt[data-dir="down"]::after { border-bottom-color: #1e1e26; }
    SUMMARY BLOCK & SCORE RING
 ═══════════════════════════════════════════════════════════════ */
 .summary-block { overflow: visible; }
-.sum-body { padding: var(--sp-3) var(--sp-5) var(--sp-5); display: flex; flex-direction: column; gap: var(--sp-4); }
+.sum-body { padding: var(--sp-3) var(--sp-4) var(--sp-5); display: flex; flex-direction: column; gap: var(--sp-4); }
+@media (min-width: 640px) { .sum-body { padding: var(--sp-3) var(--sp-5) var(--sp-5); } }
 .sum-top { display: flex; flex-direction: column; align-items: center; gap: var(--sp-4); }
 @media (min-width: 640px) { .sum-top { flex-direction: row; align-items: flex-start; } }
 
@@ -878,19 +863,21 @@ html.dark #__tt[data-dir="down"]::after { border-bottom-color: #1e1e26; }
 .mpill {
   display: flex; flex-direction: column; gap: 4px; padding: var(--sp-3);
   border-radius: var(--r-m); background: var(--s0); border: none; box-shadow: var(--sh0); min-width: 0; cursor: pointer; user-select: none; touch-action: manipulation;
+  text-align: left;
   transition: background var(--t2) var(--smooth), box-shadow var(--t2) var(--smooth), transform var(--t2) var(--spring);
 }
 html.dark .mpill { background: var(--s0); }
 .mpill:hover { transform: translateY(-2px); box-shadow: var(--sh1); background: color-mix(in oklab, var(--s0) 92%, var(--cat-soft)); }
 .mpill:active { transform: scale(.98); }
+.mpill:focus-visible { outline: 2px solid var(--cat-accent); outline-offset: 2px; }
 .mpill.pill-bounce { animation: pillPop 320ms var(--spring); }
 
-.mpill-label { font-size: .54rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; color: var(--tx3); line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mpill-label { font-size: .56rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; color: var(--tx3); line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mpill-val { font-size: 1.05rem; font-weight: 900; letter-spacing: -.025em; color: var(--tx1); line-height: 1.1; font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.mpill-status { font-size: .54rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mpill-status { font-size: .56rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 .sum-alerts-wrap { display: flex; flex-direction: column; gap: var(--sp-2); width: 100%; }
-.alert-banner { display: flex; align-items: flex-start; gap: var(--sp-3); padding: var(--sp-3) var(--sp-4); border-radius: var(--r-m); border-left: 3.5px solid currentColor; word-break: break-word; transition: transform var(--t2) var(--spring); }
+.alert-banner { display: flex; align-items: flex-start; gap: var(--sp-3); padding: var(--sp-3) var(--sp-4); border-radius: var(--r-m); word-break: break-word; transition: transform var(--t2) var(--spring); }
 .alert-banner:hover { transform: translateX(2px); }
 .alert-banner.lvl-danger { color:var(--danger); background:var(--danger-bg); }
 .alert-banner.lvl-warn   { color:var(--warn);   background:var(--warn-bg);   }
@@ -904,8 +891,8 @@ html.dark .mpill { background: var(--s0); }
 /* ═══════════════════════════════════════════════════════════════
    RECOMMENDATION BLOCK
 ═══════════════════════════════════════════════════════════════ */
-.reco-sub-label { display: none; }
-.reco-body { padding: var(--sp-1) var(--sp-5) var(--sp-5); display: flex; flex-direction: column; gap: var(--sp-3); }
+.reco-body { padding: var(--sp-1) var(--sp-4) var(--sp-5); display: flex; flex-direction: column; gap: var(--sp-3); }
+@media (min-width: 640px) { .reco-body { padding: var(--sp-1) var(--sp-5) var(--sp-5); } }
 
 .reco-card {
   display: flex; align-items: flex-start; gap: var(--sp-3);
@@ -934,9 +921,9 @@ html.dark .reco-card { background: var(--s0); }
 
 .reco-steps { display: flex; flex-direction: column; gap: 6px; list-style: none; padding: 0; margin: 0; }
 .reco-step {
-  display: grid; grid-template-columns: 1.375rem 1fr; gap: var(--sp-2);
+  display: grid; grid-template-columns: 1.5rem 1fr; gap: var(--sp-2);
   font-size: .75rem; line-height: 1.55; color: var(--tx2); align-items: start;
-  padding: 5px 8px; margin-left: -8px; border-radius: var(--r-s); cursor: pointer;
+  padding: 6px 8px; margin-left: -8px; border-radius: var(--r-s); cursor: pointer;
   transition: background var(--t1), transform var(--t2) var(--bounce), opacity var(--t2);
 }
 .reco-step:hover { background: var(--hov); transform: translateX(3px); }
@@ -947,12 +934,12 @@ html.dark .reco-card { background: var(--s0); }
 
 .reco-step::before {
   content: attr(data-n); display: flex; align-items: center; justify-content: center;
-  width: 1.375rem; height: 1.375rem; border-radius: 50%; font-size: .5625rem; font-weight: 800;
-  background: color-mix(in oklab, currentColor 12%, transparent); color: currentColor; flex-shrink: 0; margin-top: 2px;
+  width: 1.5rem; height: 1.5rem; border-radius: 50%; font-size: .6rem; font-weight: 800;
+  background: color-mix(in oklab, currentColor 12%, transparent); color: currentColor; flex-shrink: 0; margin-top: 1px;
 }
 
 .reco-target {
-  display: inline-flex; align-items: center; gap: 4px; margin-top: var(--sp-2);
+  display: inline-flex; align-items: center; gap: 5px; margin-top: var(--sp-2);
   padding: 4px 10px; border-radius: var(--r-s); font-size: .625rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase;
   background: color-mix(in oklab, currentColor 11%, transparent); border: none;
   word-break: break-word; white-space: normal; max-width: 100%;
@@ -972,6 +959,7 @@ html.dark .reco-card { background: var(--s0); }
 .qr-title { font-size: .8125rem; font-weight: 700; letter-spacing: -.01em; color: var(--tx1); }
 .qr-sub { font-size: .6875rem; color: var(--tx3); }
 .qr-btn {
+  min-height: 2.25rem;
   display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: var(--r-m);
   border: none; background: var(--s1); color: var(--tx1);
   font-size: .75rem; font-weight: 700; letter-spacing: .01em; cursor: pointer; flex-shrink: 0; font-family: inherit;
@@ -983,15 +971,15 @@ html.dark .qr-btn { background: var(--s2); color: var(--tx1); }
 .qr-btn:active { transform: scale(.97); }
 .qr-btn.open { background: var(--tx1); color: var(--s0); }
 .qr-body { display: flex; flex-direction: column; gap: var(--sp-4); margin-top: var(--sp-3); background: var(--s0); padding: var(--sp-4); border-radius: var(--r-l); box-shadow: var(--sh0); }
-@media (min-width: 500px) { .qr-body { flex-direction: row; align-items: flex-start; } }
+@media (min-width: 520px) { .qr-body { flex-direction: row; align-items: flex-start; } }
 .qr-canvas-wrap { display: flex; flex-direction: column; align-items: center; gap: var(--sp-2); flex-shrink: 0; }
-#qr-output { background: #fff; border-radius: var(--r-m); padding: 6px; box-shadow: var(--sh1); line-height: 0; display: inline-block; }
+#qr-output { background: #fff; border-radius: var(--r-m); padding: 8px; box-shadow: var(--sh1); line-height: 0; display: inline-block; }
 #qr-output svg { display: block; width: 176px; height: 176px; border-radius: 4px; }
 .qr-caption { font-size: .625rem; font-weight: 500; color: var(--tx3); text-align: center; letter-spacing: .02em; }
-.qr-payload-wrap { flex: 1; min-width: 0; }
+.qr-payload-wrap { flex: 1; min-width: 0; width: 100%; }
 .qr-payload-label { font-size: .625rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; color: var(--tx3); margin-bottom: var(--sp-2); }
 .qr-payload {
-  font-family: ui-monospace, monospace; font-size: .6875rem; line-height: 1.65; color: var(--tx2);
+  font-family: var(--font-mono); font-size: .6875rem; line-height: 1.65; color: var(--tx2);
   background: var(--s1); border: none; border-radius: var(--r-m);
   padding: var(--sp-3); white-space: pre-wrap; word-break: break-word; margin: 0; max-height: 210px; overflow-y: auto; scrollbar-width: thin;
 }
@@ -1013,15 +1001,15 @@ html.dark .inp-toolbar { background: var(--s0); }
 
 .inp-progress-box { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 200px; }
 .inp-progress { display: inline-flex; align-items: center; gap: 7px; font-size: .75rem; font-weight: 600; color: var(--tx2); }
-.inp-progress-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--tx3); transition: background var(--t2), transform var(--t2) var(--spring); }
+.inp-progress-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--tx3); transition: background var(--t2), transform var(--t2) var(--spring); flex-shrink: 0; }
 .inp-bar-track { width: 100%; max-width: 280px; height: 6px; border-radius: 999px; background: var(--s2); overflow: hidden; border: none; }
 .inp-bar-fill { height: 100%; width: 0%; border-radius: 999px; background: var(--tx2); transition: width 380ms var(--spring), background 300ms ease; }
 
 .inp-actions { display: flex; align-items: center; flex-wrap: wrap; gap: var(--sp-2); }
 .act-btn {
-  display: inline-flex; align-items: center; gap: 6px; min-height: 2.125rem; padding: 5px 12px;
+  display: inline-flex; align-items: center; gap: 6px; min-height: 2.25rem; padding: 6px 13px;
   border-radius: var(--r-s); border: none; background: var(--s1); color: var(--tx2);
-  font-size: .75rem; font-weight: 700; cursor: pointer; touch-action: manipulation;
+  font-size: .75rem; font-weight: 700; cursor: pointer; touch-action: manipulation; text-decoration: none;
   transition: background var(--t2) var(--smooth), color var(--t2) var(--smooth), box-shadow var(--t2) var(--smooth), transform var(--t2) var(--spring);
 }
 html.dark .act-btn { background: var(--s2); }
@@ -1037,6 +1025,7 @@ html.dark .act-btn:hover { color: var(--tx1); background: var(--s1); }
 .sec-badge {
   font-size: .625rem; font-weight: 800; padding: 3px 9px; border-radius: 999px;
   background: var(--cat-soft, var(--s1)); color: var(--cat-text, var(--tx3)); border: none;
+  font-variant-numeric: tabular-nums;
   transition: background var(--t2) var(--smooth), color var(--t2) var(--smooth), transform var(--t2) var(--spring);
 }
 .sec-badge.ready {
@@ -1054,27 +1043,28 @@ html.dark .act-btn:hover { color: var(--tx1); background: var(--s1); }
 .act-card {
   display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 4px;
   padding: 10px 12px; border-radius: var(--r-m); border: none; background: var(--s1); color: var(--tx2);
-  text-align: left; cursor: pointer; user-select: none; touch-action: manipulation;
+  text-align: left; cursor: pointer; user-select: none; touch-action: manipulation; min-height: 4rem;
   transition: transform var(--t2) var(--spring), background var(--t2) var(--smooth), box-shadow var(--t2) var(--smooth);
 }
 html.dark .act-card { background: var(--s1); }
 .act-card:hover { transform: translateY(-1.5px); background: var(--s2); box-shadow: var(--sh0); }
 .act-card:active { transform: scale(.97); }
+.act-card:focus-visible { outline: 2px solid var(--tx2); outline-offset: 2px; }
 .act-card.active { background: var(--s2); box-shadow: var(--sh1), inset 0 0 0 1.5px color-mix(in oklab, var(--tx1) 30%, transparent); transform: translateY(-1px); }
 html.dark .act-card.active { background: var(--s2); }
 .act-card-top { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 4px; }
 .act-card-title { font-size: .75rem; font-weight: 800; color: var(--tx1); letter-spacing: -.01em; }
-.act-card-mult { font-size: .625rem; font-weight: 800; padding: 1px 6px; border-radius: 999px; background: var(--s0); color: var(--tx3); }
+.act-card-mult { font-size: .625rem; font-weight: 800; padding: 1px 6px; border-radius: 999px; background: var(--s0); color: var(--tx3); font-variant-numeric: tabular-nums; }
 html.dark .act-card-mult { background: var(--s0); }
 .act-card.active .act-card-mult { background: var(--tx1); color: var(--s0); }
 .act-card-desc { font-size: .65rem; line-height: 1.35; color: var(--tx3); }
 
-.finp.has-step { padding-right: 6.4rem; }
+.finp.has-step { padding-right: 7.4rem; }
 .inp-ctrl-right { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; gap: 4px; }
 .inp-ctrl-right .inp-unit-badge { position: static; transform: none; margin-right: 2px; }
 .step-btn {
-  width: 1.55rem; height: 1.55rem; border-radius: var(--r-xs); border: none;
-  background: var(--s0); color: var(--tx2); font-size: .875rem; font-weight: 800; line-height: 1;
+  width: 1.9rem; height: 1.9rem; border-radius: var(--r-xs); border: none;
+  background: var(--s0); color: var(--tx2); font-size: .95rem; font-weight: 800; line-height: 1;
   box-shadow: var(--sh0);
   display: inline-flex; align-items: center; justify-content: center; cursor: pointer; user-select: none; touch-action: manipulation;
   transition: background var(--t2) var(--smooth), color var(--t2) var(--smooth), transform var(--t2) var(--spring);
@@ -1082,22 +1072,33 @@ html.dark .act-card-mult { background: var(--s0); }
 html.dark .step-btn { background: var(--s2); }
 .step-btn:hover { background: var(--tx1); color: var(--s0); transform: scale(1.06); }
 .step-btn:active { transform: scale(.92); }
+.step-btn:focus-visible { outline: 2px solid var(--tx2); outline-offset: 1px; }
 
 #bm-toast {
   position: fixed; bottom: 1.25rem; left: 50%; transform: translateX(-50%) translateY(20px) scale(.95);
   z-index: 9990; display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 9999px;
   background: var(--tx1); color: var(--s0); font-size: .78rem; font-weight: 700; letter-spacing: .01em; box-shadow: var(--sh3);
   opacity: 0; pointer-events: none; transition: opacity 220ms var(--out), transform 280ms var(--spring);
+  max-width: calc(100vw - 24px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 #bm-toast.show { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
 #bm-toast-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-brand-400); flex-shrink: 0; }
+
+.app-footer {
+  max-width: 72rem; margin: var(--sp-6) auto 0; padding: var(--sp-4);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--sp-3);
+  color: var(--tx3); font-size: .72rem; border-top: 1px solid var(--b0);
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
 </style>
-</head>
+<script src="/_aistudio-iframe.js?v=6634132a"></script></head>
 <body>
 
 <header class="hdr">
   <div class="hdr-in">
-    <div class="logo-area" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Kembali ke atas">
+    <button type="button" class="logo-area" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Kembali ke atas">
       <div class="logo-ico">
         <svg aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
@@ -1105,13 +1106,22 @@ html.dark .step-btn { background: var(--s2); }
                M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
         </svg>
       </div>
-      <div>
+      <div class="logo-text">
         <div class="logo-name">BioMetrics Pro</div>
         <div class="logo-sub">Kalkulator Komposisi Tubuh</div>
       </div>
-    </div>
+    </button>
 
     <div class="ctrl" role="toolbar" aria-label="Kontrol Utama">
+      <button type="button" class="hdr-btn" id="btn-download-html" onclick="bounceBtn(this);downloadSelfHTML()" title="Unduh aplikasi lengkap dalam 1 file HTML Offline" aria-label="Unduh HTML">
+        <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+        </svg>
+        <span class="hdr-btn-lbl">Unduh HTML</span>
+      </button>
+
+      <div class="psep"></div>
+
       <button type="button" class="hdr-btn" id="btn-toggle-all" onclick="bounceBtn(this);toggleAllSecs()" title="Ringkas atau buka semua kategori" aria-label="Kategori">
         <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -1183,26 +1193,31 @@ html.dark .step-btn { background: var(--s2); }
               <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
               Isi Contoh
             </button>
+            <button type="button" class="act-btn" id="btn-fold-cards" onclick="bounceBtn(this);toggleAllCardsFold()" title="Ringkas atau buka rincian semua 37 kartu">
+              <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
+              <span id="lbl-fold-cards">Ringkas Kartu</span>
+            </button>
           </div>
         </div>
 
         <div class="fgrid">
           <div class="fitem is-filled" id="fitem-gender">
-            <label class="flbl" for="gender">Jenis Kelamin
-              <button class="tico" type="button" data-tip="Pilih jenis kelamin biologis — formula medis bergantung pada perbedaan hormon dan komposisi tubuh." aria-label="Info">
+            <div class="flbl-row">
+              <label class="flbl" for="gender">Jenis Kelamin</label>
+              <button class="tico" type="button" data-tip="Pilih jenis kelamin biologis — formula medis bergantung pada perbedaan hormon dan komposisi tubuh." aria-label="Info Jenis Kelamin">
                 <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </button>
-            </label>
+            </div>
             <select id="gender" class="sr-only" tabindex="-1" aria-hidden="true">
               <option value="male">Pria</option>
               <option value="female">Wanita</option>
             </select>
             <div class="seg-group" role="radiogroup" aria-label="Jenis Kelamin">
-              <button type="button" class="seg-btn active" id="seg-male" onclick="setGender('male')">
+              <button type="button" class="seg-btn active" id="seg-male" role="radio" aria-checked="true" onclick="setGender('male')">
                 <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M16 3h5m0 0v5m0-5l-6.5 6.5M10 20a6 6 0 100-12 6 6 0 000 12z"/></svg>
                 Pria
               </button>
-              <button type="button" class="seg-btn" id="seg-female" onclick="setGender('female')">
+              <button type="button" class="seg-btn" id="seg-female" role="radio" aria-checked="false" onclick="setGender('female')">
                 <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M12 15a6 6 0 100-12 6 6 0 000 12zm0 0v6m-3-3h6"/></svg>
                 Wanita
               </button>
@@ -1210,11 +1225,12 @@ html.dark .step-btn { background: var(--s2); }
           </div>
 
           <div class="fitem" id="fitem-age">
-            <label class="flbl" for="age">Usia
+            <div class="flbl-row">
+              <label class="flbl" for="age">Usia</label>
               <span class="fcheck"><svg width="11" height="11" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
-            </label>
+            </div>
             <div class="inp-wrap">
-              <input type="text" pattern="[0-9]*[,.]?[0-9]*" autocomplete="off" inputmode="decimal" id="age" placeholder="25" min="1" max="120" class="finp has-step">
+              <input type="text" pattern="[0-9]*[,.]?[0-9]*" autocomplete="off" inputmode="decimal" id="age" data-ph-metric="25" data-ph-imperial="25" placeholder="25" min="5" max="120" class="finp has-step">
               <div class="inp-ctrl-right">
                 <span class="inp-unit-badge">thn</span>
                 <button type="button" class="step-btn" onclick="stepInput('age',-1,this)" aria-label="Kurangi usia">−</button>
@@ -1224,11 +1240,12 @@ html.dark .step-btn { background: var(--s2); }
           </div>
 
           <div class="fitem" id="fitem-height">
-            <label class="flbl" for="height">Tinggi Badan
+            <div class="flbl-row">
+              <label class="flbl" for="height">Tinggi Badan</label>
               <span class="fcheck"><svg width="11" height="11" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
-            </label>
+            </div>
             <div class="inp-wrap">
-              <input type="text" pattern="[0-9]*[,.]?[0-9]*" autocomplete="off" inputmode="decimal" id="height" placeholder="170" class="finp has-step">
+              <input type="text" pattern="[0-9]*[,.]?[0-9]*" autocomplete="off" inputmode="decimal" id="height" data-ph-metric="170" data-ph-imperial="67" placeholder="170" class="finp has-step">
               <div class="inp-ctrl-right">
                 <span class="inp-unit-badge unit-len">cm</span>
                 <button type="button" class="step-btn" onclick="stepInput('height',-1,this)" aria-label="Kurangi tinggi">−</button>
@@ -1238,11 +1255,12 @@ html.dark .step-btn { background: var(--s2); }
           </div>
 
           <div class="fitem" id="fitem-weight">
-            <label class="flbl" for="weight">Berat Badan
+            <div class="flbl-row">
+              <label class="flbl" for="weight">Berat Badan</label>
               <span class="fcheck"><svg width="11" height="11" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
-            </label>
+            </div>
             <div class="inp-wrap">
-              <input type="text" pattern="[0-9]*[,.]?[0-9]*" autocomplete="off" inputmode="decimal" id="weight" placeholder="70" class="finp has-step">
+              <input type="text" pattern="[0-9]*[,.]?[0-9]*" autocomplete="off" inputmode="decimal" id="weight" data-ph-metric="70" data-ph-imperial="154" placeholder="70" class="finp has-step">
               <div class="inp-ctrl-right">
                 <span class="inp-unit-badge unit-weight">kg</span>
                 <button type="button" class="step-btn" onclick="stepInput('weight',-0.5,this)" aria-label="Kurangi berat">−</button>
@@ -1252,14 +1270,15 @@ html.dark .step-btn { background: var(--s2); }
           </div>
 
           <div class="fitem" id="fitem-waist">
-            <label class="flbl" for="waist">Lingkar Pinggang
-              <button class="tico" type="button" data-tip="Diukur mendatar melingkar tepat di pusar, bukan di pinggang terkecil." aria-label="Info">
+            <div class="flbl-row">
+              <label class="flbl" for="waist">Lingkar Pinggang</label>
+              <button class="tico" type="button" data-tip="Diukur mendatar melingkar tepat di pusar, bukan di pinggang terkecil." aria-label="Info Lingkar Pinggang">
                 <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </button>
               <span class="fcheck"><svg width="11" height="11" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
-            </label>
+            </div>
             <div class="inp-wrap">
-              <input type="text" pattern="[0-9]*[,.]?[0-9]*" autocomplete="off" inputmode="decimal" id="waist" placeholder="82" class="finp has-step">
+              <input type="text" pattern="[0-9]*[,.]?[0-9]*" autocomplete="off" inputmode="decimal" id="waist" data-ph-metric="82" data-ph-imperial="32,3" placeholder="82" class="finp has-step">
               <div class="inp-ctrl-right">
                 <span class="inp-unit-badge unit-len">cm</span>
                 <button type="button" class="step-btn" onclick="stepInput('waist',-0.5,this)" aria-label="Kurangi pinggang">−</button>
@@ -1269,14 +1288,15 @@ html.dark .step-btn { background: var(--s2); }
           </div>
 
           <div class="fitem" id="fitem-neck">
-            <label class="flbl" for="neck">Lingkar Leher
-              <button class="tico" type="button" data-tip="Diukur melingkar di bawah jakun. Pastikan pita ukur rata dan tidak miring." aria-label="Info">
+            <div class="flbl-row">
+              <label class="flbl" for="neck">Lingkar Leher</label>
+              <button class="tico" type="button" data-tip="Diukur melingkar di bawah jakun. Pastikan pita ukur rata dan tidak miring." aria-label="Info Lingkar Leher">
                 <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </button>
               <span class="fcheck"><svg width="11" height="11" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
-            </label>
+            </div>
             <div class="inp-wrap">
-              <input type="text" pattern="[0-9]*[,.]?[0-9]*" autocomplete="off" inputmode="decimal" id="neck" placeholder="37" class="finp has-step">
+              <input type="text" pattern="[0-9]*[,.]?[0-9]*" autocomplete="off" inputmode="decimal" id="neck" data-ph-metric="37" data-ph-imperial="14,6" placeholder="37" class="finp has-step">
               <div class="inp-ctrl-right">
                 <span class="inp-unit-badge unit-len">cm</span>
                 <button type="button" class="step-btn" onclick="stepInput('neck',-0.5,this)" aria-label="Kurangi leher">−</button>
@@ -1286,14 +1306,15 @@ html.dark .step-btn { background: var(--s2); }
           </div>
 
           <div class="fitem" id="fitem-hip">
-            <label class="flbl" for="hip">Lingkar Pinggul
-              <button class="tico" type="button" data-tip="Diukur di bagian pantat terlebar, sekitar 20 cm di bawah pusar." aria-label="Info">
+            <div class="flbl-row">
+              <label class="flbl" for="hip">Lingkar Pinggul</label>
+              <button class="tico" type="button" data-tip="Diukur di bagian pantat terlebar, sekitar 20 cm di bawah pusar." aria-label="Info Lingkar Pinggul">
                 <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </button>
               <span class="fcheck"><svg width="11" height="11" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
-            </label>
+            </div>
             <div class="inp-wrap">
-              <input type="text" pattern="[0-9]*[,.]?[0-9]*" autocomplete="off" inputmode="decimal" id="hip" placeholder="95" class="finp has-step">
+              <input type="text" pattern="[0-9]*[,.]?[0-9]*" autocomplete="off" inputmode="decimal" id="hip" data-ph-metric="95" data-ph-imperial="37,4" placeholder="95" class="finp has-step">
               <div class="inp-ctrl-right">
                 <span class="inp-unit-badge unit-len">cm</span>
                 <button type="button" class="step-btn" onclick="stepInput('hip',-0.5,this)" aria-label="Kurangi pinggul">−</button>
@@ -1303,14 +1324,15 @@ html.dark .step-btn { background: var(--s2); }
           </div>
 
           <div class="fitem" id="fitem-wrist">
-            <label class="flbl" for="wrist">Lingkar Pergelangan
-              <button class="tico" type="button" data-tip="Diukur tepat di atas tonjolan tulang pergelangan tangan." aria-label="Info">
+            <div class="flbl-row">
+              <label class="flbl" for="wrist">Lingkar Pergelangan</label>
+              <button class="tico" type="button" data-tip="Diukur tepat di atas tonjolan tulang pergelangan tangan." aria-label="Info Lingkar Pergelangan">
                 <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </button>
               <span class="fcheck"><svg width="11" height="11" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
-            </label>
+            </div>
             <div class="inp-wrap">
-              <input type="text" pattern="[0-9]*[,.]?[0-9]*" autocomplete="off" inputmode="decimal" id="wrist" placeholder="17" class="finp has-step">
+              <input type="text" pattern="[0-9]*[,.]?[0-9]*" autocomplete="off" inputmode="decimal" id="wrist" data-ph-metric="17" data-ph-imperial="6,7" placeholder="17" class="finp has-step">
               <div class="inp-ctrl-right">
                 <span class="inp-unit-badge unit-len">cm</span>
                 <button type="button" class="step-btn" onclick="stepInput('wrist',-0.2,this)" aria-label="Kurangi pergelangan">−</button>
@@ -1320,14 +1342,15 @@ html.dark .step-btn { background: var(--s2); }
           </div>
 
           <div class="fitem" id="fitem-rhr">
-            <label class="flbl" for="rhr">Denyut Nadi Istirahat
-              <button class="tico" type="button" data-tip="Ukur saat baru bangun tidur sebelum bergerak. Hitung detak selama 60 detik penuh." aria-label="Info">
+            <div class="flbl-row">
+              <label class="flbl" for="rhr">Denyut Nadi Istirahat</label>
+              <button class="tico" type="button" data-tip="Ukur saat baru bangun tidur sebelum bergerak. Hitung detak selama 60 detik penuh." aria-label="Info Denyut Nadi Istirahat">
                 <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </button>
               <span class="fcheck"><svg width="11" height="11" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg></span>
-            </label>
+            </div>
             <div class="inp-wrap">
-              <input type="text" pattern="[0-9]*[,.]?[0-9]*" autocomplete="off" inputmode="decimal" id="rhr" placeholder="65" min="30" max="200" class="finp has-step">
+              <input type="text" pattern="[0-9]*[,.]?[0-9]*" autocomplete="off" inputmode="decimal" id="rhr" data-ph-metric="65" data-ph-imperial="65" placeholder="65" min="25" max="220" class="finp has-step">
               <div class="inp-ctrl-right">
                 <span class="inp-unit-badge">bpm</span>
                 <button type="button" class="step-btn" onclick="stepInput('rhr',-1,this)" aria-label="Kurangi denyut nadi">−</button>
@@ -1337,7 +1360,9 @@ html.dark .step-btn { background: var(--s2); }
           </div>
 
           <div class="fitem is-filled sp2 sp3" id="fitem-activity" style="grid-column: 1 / -1;">
-            <label class="flbl" for="activity">Level Aktivitas Fisik</label>
+            <div class="flbl-row">
+              <label class="flbl" for="activity">Level Aktivitas Fisik</label>
+            </div>
             <select id="activity" class="sr-only" tabindex="-1" aria-hidden="true">
               <option value="1.2">Sangat jarang — Duduk seharian</option>
               <option value="1.375">Ringan — Olahraga santai 1–3× seminggu</option>
@@ -1346,35 +1371,35 @@ html.dark .step-btn { background: var(--s2); }
               <option value="1.9">Ekstrem — Pekerjaan fisik berat / atlet</option>
             </select>
             <div class="act-grid" role="radiogroup" aria-label="Level Aktivitas Fisik">
-              <button type="button" class="act-card active" data-act="1.2" onclick="setActivity('1.2',this)">
+              <button type="button" class="act-card active" role="radio" aria-checked="true" data-act="1.2" onclick="setActivity('1.2',this)">
                 <div class="act-card-top">
                   <span class="act-card-title">Sangat Jarang</span>
                   <span class="act-card-mult">×1,2</span>
                 </div>
                 <span class="act-card-desc">Duduk seharian, minim gerak</span>
               </button>
-              <button type="button" class="act-card" data-act="1.375" onclick="setActivity('1.375',this)">
+              <button type="button" class="act-card" role="radio" aria-checked="false" data-act="1.375" onclick="setActivity('1.375',this)">
                 <div class="act-card-top">
                   <span class="act-card-title">Ringan</span>
                   <span class="act-card-mult">×1,375</span>
                 </div>
                 <span class="act-card-desc">Olahraga santai 1–3× / minggu</span>
               </button>
-              <button type="button" class="act-card" data-act="1.55" onclick="setActivity('1.55',this)">
+              <button type="button" class="act-card" role="radio" aria-checked="false" data-act="1.55" onclick="setActivity('1.55',this)">
                 <div class="act-card-top">
                   <span class="act-card-title">Sedang</span>
                   <span class="act-card-mult">×1,55</span>
                 </div>
                 <span class="act-card-desc">Olahraga rutin 3–5× / minggu</span>
               </button>
-              <button type="button" class="act-card" data-act="1.725" onclick="setActivity('1.725',this)">
+              <button type="button" class="act-card" role="radio" aria-checked="false" data-act="1.725" onclick="setActivity('1.725',this)">
                 <div class="act-card-top">
                   <span class="act-card-title">Aktif</span>
                   <span class="act-card-mult">×1,725</span>
                 </div>
                 <span class="act-card-desc">Latihan intens 6–7× / minggu</span>
               </button>
-              <button type="button" class="act-card" data-act="1.9" onclick="setActivity('1.9',this)">
+              <button type="button" class="act-card" role="radio" aria-checked="false" data-act="1.9" onclick="setActivity('1.9',this)">
                 <div class="act-card-top">
                   <span class="act-card-title">Ekstrem</span>
                   <span class="act-card-mult">×1,9</span>
@@ -1390,10 +1415,10 @@ html.dark .step-btn { background: var(--s2); }
 
   <nav class="cat-nav-wrap" aria-label="Filter Kategori Analisis">
     <button type="button" class="cat-pill active" data-filter="all" onclick="filterCategory('all',this)">
-      Semua Kategori <span class="cat-pill-count" id="nav-cnt-all">27</span>
+      Semua Kategori <span class="cat-pill-count" id="nav-cnt-all">0/37</span>
     </button>
     <button type="button" class="cat-pill" data-filter="pinned" id="pill-pinned" onclick="filterCategory('pinned',this)">
-      ★ Disorot <span class="cat-pill-count" id="nav-cnt-pinned">0</span>
+      <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" style="flex-shrink:0"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg> Disorot <span class="cat-pill-count" id="nav-cnt-pinned">0</span>
     </button>
     <button type="button" class="cat-pill" data-filter="umum" onclick="filterCategory('umum',this)">
       Fisik Umum <span class="cat-pill-count">5</span>
@@ -1402,7 +1427,7 @@ html.dark .step-btn { background: var(--s2); }
       Komposisi &amp; Otot <span class="cat-pill-count">11</span>
     </button>
     <button type="button" class="cat-pill" data-filter="kardio" onclick="filterCategory('kardio',this)">
-      Kardio &amp; VO₂ <span class="cat-pill-count">8</span>
+      Kardio &amp; VO2 <span class="cat-pill-count">8</span>
     </button>
     <button type="button" class="cat-pill" data-filter="metabolisme" onclick="filterCategory('metabolisme',this)">
       Metabolisme &amp; Gizi <span class="cat-pill-count">6</span>
@@ -1546,11 +1571,11 @@ html.dark .step-btn { background: var(--s2); }
       <div class="coll" id="sum-coll"><div>
       <div class="sum-body">
         <div id="sum-empty-notice" class="wtag" style="display:none;align-self:flex-start;">
-          <span class="wdot"></span>Menunggu input Tinggi &amp; Berat Badan untuk menghitung skor kesehatan komposit (atau klik tombol <strong>Isi Contoh</strong> di atas).
+          <span class="wdot"></span><span>Menunggu input Tinggi &amp; Berat Badan untuk menghitung skor kesehatan komposit (atau klik tombol <strong>Isi Contoh</strong> di atas).</span>
         </div>
         <div class="sum-top" id="sum-top-content">
           <div class="score-ring-wrap">
-            <div class="score-ring-svg" onclick="bounceElement(this)" title="Skor Komposit Kesehatan Anda">
+            <div class="score-ring-svg" tabindex="0" role="button" aria-label="Skor Komposit Kesehatan Anda" onclick="bounceElement(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();bounceElement(this);}" title="Skor Komposit Kesehatan Anda">
               <svg class="score-ring" viewBox="0 0 120 120" aria-hidden="true">
                 <circle class="ring-bg" cx="60" cy="60" r="50"/>
                 <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="50" stroke-dasharray="314" stroke-dashoffset="314"/>
@@ -1569,8 +1594,8 @@ html.dark .step-btn { background: var(--s2); }
         <div class="qr-panel" id="qr-panel" style="display:none;">
           <div class="qr-header">
             <div class="qr-header-text">
-              <span class="qr-title">QR Ringkasan</span>
-              <span class="qr-sub">Pindai atau salin teks untuk menyimpan hasil</span>
+              <span class="qr-title">QR Ringkasan Offline</span>
+              <span class="qr-sub">Pindai atau salin teks untuk menyimpan laporan hasil</span>
             </div>
             <div class="qr-actions">
               <button type="button" class="qr-btn" id="copy-btn" onclick="copySummaryText()" aria-label="Salin ringkasan teks">
@@ -1586,10 +1611,10 @@ html.dark .step-btn { background: var(--s2); }
           <div class="qr-body" id="qr-body" style="display:none;">
             <div class="qr-canvas-wrap">
               <div id="qr-output"></div>
-              <p class="qr-caption">Scan dengan kamera atau app QR</p>
+              <p class="qr-caption">Scan dengan kamera atau aplikasi QR</p>
             </div>
             <div class="qr-payload-wrap">
-              <p class="qr-payload-label">Isi QR Code</p>
+              <p class="qr-payload-label">Isi Laporan QR Code</p>
               <pre class="qr-payload" id="qr-payload-text"></pre>
             </div>
           </div>
@@ -1613,15 +1638,22 @@ html.dark .step-btn { background: var(--s2); }
       </div></div>
     </div>
   </div>
-</main>
 
+  <footer class="app-footer">
+    <span>BioMetrics Pro — 100% Offline Single-File HTML PWA · 37 Parameter Klinis</span>
+    <button type="button" class="act-btn" onclick="downloadSelfHTML()">
+      <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+      Unduh File HTML Lengkap (.html)
+    </button>
+  </footer>
+</main>
 <script id="qr-lib">
-/* QR Code Generator — Kazuhiko Arase v1.4.4 | MIT License (Full RS & GF256 Table) */
+/* QR Code Generator — Kazuhiko Arase v1.4.4 | MIT License (Full 40-Version RS_M & GF256 Table) */
 var qrcode = function() {
   var qrcode = function(typeNumber, errorCorrectionLevel) {
     var PAD0 = 0xEC, PAD1 = 0x11;
     var _typeNumber = typeNumber;
-    var _errorCorrectionLevel = QRErrorCorrectionLevel[errorCorrectionLevel];
+    var _errorCorrectionLevel = QRErrorCorrectionLevel[errorCorrectionLevel] !== undefined ? QRErrorCorrectionLevel[errorCorrectionLevel] : QRErrorCorrectionLevel.M;
     var _modules = null, _moduleCount = 0, _dataCache = null, _dataList = [];
     var _this = {};
     var makeImpl = function(test, maskPattern) {
@@ -1787,7 +1819,7 @@ var qrcode = function() {
     _this.getModuleCount = function() { return _moduleCount; };
     _this.make = function() {
       if (_typeNumber < 1) {
-        for (var tn = 1; tn < 40; tn++) {
+        for (var tn = 1; tn <= 40; tn++) {
           var rsBlocks = QRRSBlock.getRSBlocks(tn, _errorCorrectionLevel);
           var buffer = qrBitBuffer();
           for (var i = 0; i < _dataList.length; i++) {
@@ -1799,6 +1831,7 @@ var qrcode = function() {
           for (var i = 0; i < rsBlocks.length; i++) totalDataCount += rsBlocks[i].dataCount;
           if (buffer.getLengthInBits() <= totalDataCount * 8) { _typeNumber = tn; break; }
         }
+        if (_typeNumber < 1) _typeNumber = 40;
       }
       makeImpl(false, getBestMaskPattern());
     };
@@ -1807,7 +1840,7 @@ var qrcode = function() {
       var margin = (opts && typeof opts.margin !== 'undefined') ? opts.margin : cellSize * 2;
       var size = _this.getModuleCount() * cellSize + margin * 2;
       var rect = 'l' + cellSize + ',0 0,' + cellSize + ' -' + cellSize + ',0 0,-' + cellSize + 'z ';
-      var qrSvg = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + size + ' ' + size + '">';
+      var qrSvg = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + size + ' ' + size + '" role="img" aria-label="QR Code Ringkasan Biometrik">';
       qrSvg += '<rect width="100%" height="100%" fill="#ffffff"/>';
       qrSvg += '<path d="';
       for (var r = 0; r < _this.getModuleCount(); r += 1) {
@@ -1921,11 +1954,14 @@ var qrcode = function() {
     var RS_M = [
       [1,26,16],[1,44,28],[1,70,44],[2,50,32],[2,67,43],[4,43,27],[4,49,31],[2,60,38,2,61,39],[3,58,36,2,59,37],[4,69,43,1,70,44],
       [1,80,50,4,81,51],[6,58,36,2,59,37],[8,59,37,1,60,38],[4,64,40,5,65,41],[5,65,41,5,66,42],[7,73,45,3,74,46],[10,74,46,1,75,47],
-      [9,69,43,4,70,44],[3,70,44,11,71,45],[3,67,41,13,68,42],[17,68,42],[17,74,46],[4,75,47,14,76,48],[6,73,45,14,74,46],[8,75,47,13,76,48]
+      [9,69,43,4,70,44],[3,70,44,11,71,45],[3,67,41,13,68,42],[17,68,42],[17,74,46],[4,75,47,14,76,48],[6,73,45,14,74,46],[8,75,47,13,76,48],
+      [19,74,46,4,75,47],[22,73,45,3,74,46],[3,73,45,23,74,46],[21,73,45,7,74,46],[19,75,47,10,76,48],
+      [2,74,46,29,75,47],[10,74,46,23,75,47],[14,74,46,21,75,47],[14,74,46,23,75,47],[12,75,47,26,76,48],
+      [6,75,47,34,76,48],[29,74,46,14,75,47],[13,74,46,32,75,47],[40,75,47,7,76,48],[18,75,47,31,76,48]
     ];
     return {
       getRSBlocks: function(typeNumber) {
-        var rsBlock = RS_M[Math.min(typeNumber - 1, RS_M.length - 1)];
+        var rsBlock = RS_M[Math.max(0, Math.min(typeNumber - 1, RS_M.length - 1))];
         var list = [];
         for (var i = 0; i < rsBlock.length / 3; i += 1) {
           var count = rsBlock[i * 3], totalCount = rsBlock[i * 3 + 1], dataCount = rsBlock[i * 3 + 2];
@@ -2001,6 +2037,8 @@ function toggleDarkMode() {
 })();
 
 const selectedCards = new Set();
+const collapsedCards = new Set();
+const doneRecoSteps = new Set();
 let _toastTimer = null;
 
 function showToast(msg, color) {
@@ -2020,6 +2058,24 @@ function showToast(msg, color) {
   t.classList.add('show');
   clearTimeout(_toastTimer);
   _toastTimer = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+function downloadSelfHTML() {
+  try {
+    const htmlContent = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'BioMetrics-Pro-Offline-PWA.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1500);
+    showToast('File HTML Offline berhasil diunduh!', 'var(--good)');
+  } catch (e) {
+    showToast('Gagal mengunduh file HTML', 'var(--danger)');
+  }
 }
 
 function updatePinnedCount() {
@@ -2043,8 +2099,6 @@ function bounceElement(el) {
   el.addEventListener('animationend', () => el.classList.remove('card-bounce'), { once: true });
 }
 
-const collapsedCards = new Set();
-
 function toggleCardFold(btnEl, title, ev) {
   if (ev) ev.stopPropagation();
   const card = btnEl ? btnEl.closest('.card') : null;
@@ -2053,6 +2107,30 @@ function toggleCardFold(btnEl, title, ev) {
   btnEl.setAttribute('aria-expanded', (!isShut).toString());
   if (isShut) collapsedCards.add(title);
   else collapsedCards.delete(title);
+  saveState();
+}
+
+function toggleAllCardsFold() {
+  const allCards = document.querySelectorAll('.card');
+  if (!allCards.length) return;
+  const shouldCollapse = collapsedCards.size < Math.ceil(allCards.length / 2);
+  allCards.forEach(card => {
+    const title = card.getAttribute('data-card-title');
+    const foldBtn = card.querySelector('.card-fold-btn');
+    if (shouldCollapse) {
+      card.classList.add('is-collapsed');
+      if (title) collapsedCards.add(title);
+      if (foldBtn) foldBtn.setAttribute('aria-expanded', 'false');
+    } else {
+      card.classList.remove('is-collapsed');
+      if (title) collapsedCards.delete(title);
+      if (foldBtn) foldBtn.setAttribute('aria-expanded', 'true');
+    }
+  });
+  const lbl = document.getElementById('lbl-fold-cards');
+  if (lbl) lbl.textContent = shouldCollapse ? 'Buka Kartu' : 'Ringkas Kartu';
+  saveState();
+  showToast(shouldCollapse ? 'Semua kartu diringkas' : 'Semua rincian kartu dibuka', 'var(--cat-accent)');
 }
 
 function toggleCardSelect(el, title, ev) {
@@ -2075,7 +2153,25 @@ function toggleCardSelect(el, title, ev) {
     showToast(`★ Disorot: ${title}`, 'var(--cat-accent)');
   }
   updatePinnedCount();
+  saveState();
   if (activeFilter === 'pinned') applyPinnedFilter();
+}
+
+function toggleRecoStep(liEl, stepKey, ev) {
+  if (ev) ev.stopPropagation();
+  const isDone = liEl.classList.toggle('done');
+  if (isDone) doneRecoSteps.add(stepKey);
+  else doneRecoSteps.delete(stepKey);
+  saveState();
+}
+
+function cleanNumStr(num, maxDec) {
+  if (isNaN(num) || !isFinite(num)) return '';
+  const rounded = Number(num.toFixed(maxDec !== undefined ? maxDec : 2));
+  if (Math.abs(rounded - Math.round(rounded)) < 0.01) {
+    return String(Math.round(rounded));
+  }
+  return String(Number(rounded.toFixed(1))).replace('.', ',');
 }
 
 function stepInput(id, delta, btnEl) {
@@ -2084,11 +2180,8 @@ function stepInput(id, delta, btnEl) {
   if (!el) return;
   let val = parseFloat(String(el.value).replace(',', '.'));
   if (isNaN(val) || val <= 0) {
-    val = parseFloat(el.getAttribute('placeholder')) || 10;
-    if (curUnit === 'imperial') {
-      if (lenIds.includes(id)) val = +(val * CM2IN).toFixed(1);
-      else if (id === 'weight') val = +(val * KG2LB).toFixed(1);
-    }
+    const phAttr = curUnit === 'imperial' ? el.getAttribute('data-ph-imperial') : el.getAttribute('data-ph-metric');
+    val = parseFloat(String(phAttr || el.getAttribute('placeholder') || '10').replace(',', '.'));
   } else {
     val = +(val + delta).toFixed(2);
   }
@@ -2101,8 +2194,8 @@ function stepInput(id, delta, btnEl) {
     }
     val = Math.max(minB, Math.min(maxB, val));
   }
-  const isInt = Number.isInteger(delta) && Number.isInteger(val);
-  el.value = isInt ? String(Math.round(val)) : String(+(val.toFixed(1))).replace('.', ',');
+  const isInt = Number.isInteger(delta) && Math.abs(val - Math.round(val)) < 0.01;
+  el.value = isInt ? String(Math.round(val)) : cleanNumStr(val, 2);
   el.classList.remove('pop-val');
   requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('pop-val')));
   saveState();
@@ -2111,7 +2204,9 @@ function stepInput(id, delta, btnEl) {
 
 function syncActivityUI(val) {
   document.querySelectorAll('.act-card').forEach(card => {
-    card.classList.toggle('active', card.dataset.act === String(val));
+    const isAct = card.dataset.act === String(val);
+    card.classList.toggle('active', isAct);
+    card.setAttribute('aria-checked', isAct ? 'true' : 'false');
   });
 }
 
@@ -2129,10 +2224,14 @@ function syncGenderUI(val) {
   const mBtn = document.getElementById('seg-male');
   const fBtn = document.getElementById('seg-female');
   if (mBtn && fBtn) {
-    mBtn.classList.toggle('active', val === 'male');
-    fBtn.classList.toggle('active', val === 'female');
+    const isM = val === 'male';
+    mBtn.classList.toggle('active', isM);
+    mBtn.setAttribute('aria-checked', isM ? 'true' : 'false');
+    fBtn.classList.toggle('active', !isM);
+    fBtn.setAttribute('aria-checked', !isM ? 'true' : 'false');
   }
 }
+
 function setGender(val) {
   const sel = document.getElementById('gender');
   if (!sel) return;
@@ -2146,6 +2245,10 @@ function setGender(val) {
 let activeFilter = 'all';
 
 function applyPinnedFilter() {
+  if (selectedCards.size === 0 && activeFilter === 'pinned') {
+    filterCategory('all', document.querySelector('.cat-pill[data-filter="all"]'));
+    return;
+  }
   document.querySelectorAll('.rsec[data-group]').forEach(sec => {
     let hasPinnedInSec = false;
     sec.querySelectorAll('.card').forEach(card => {
@@ -2213,21 +2316,22 @@ function jumpToSummary(btnEl) {
   }
 }
 
-function toggleSec(id,chId){
-  const sec=document.getElementById(id);
-  const ch=document.getElementById(chId);
-  if(!sec||!ch)return;
+function toggleSec(id, chId) {
+  const sec = document.getElementById(id);
+  const ch = document.getElementById(chId);
+  if (!sec || !ch) return;
   sec.classList.toggle('shut');
-  const isOpen=!sec.classList.contains('shut');
-  ch.classList.toggle('open',isOpen);
-  const btn=ch.closest('button')||ch.parentElement;
-  if(btn)btn.setAttribute('aria-expanded',isOpen);
+  const isOpen = !sec.classList.contains('shut');
+  ch.classList.toggle('open', isOpen);
+  const btn = ch.closest('button') || ch.parentElement;
+  if (btn) btn.setAttribute('aria-expanded', isOpen);
 }
 
-let curUnit='metric';
-const CM2IN=1/2.54,KG2LB=2.20462;
-const lenIds=['height','waist','neck','hip','wrist'];
-const allFieldIds=['gender','age','height','weight','waist','neck','hip','wrist','rhr','activity'];
+let curUnit = 'metric';
+const CM2IN = 1 / 2.54, KG2LB = 2.20462;
+const lenIds = ['height','waist','neck','hip','wrist'];
+const allFieldIds = ['gender','age','height','weight','waist','neck','hip','wrist','rhr','activity'];
+const TOTAL_CARDS = 37;
 
 const BOUNDS = {
   age:    { min: 5,   max: 120, label: 'Usia harus antara 5–120 tahun' },
@@ -2240,9 +2344,23 @@ const BOUNDS = {
   rhr:    { min: 25,  max: 220, label: 'Denyut nadi istirahat harus 25–220 bpm' }
 };
 
+function syncUnitPlaceholders() {
+  const isM = curUnit === 'metric';
+  document.querySelectorAll('input[data-ph-metric]').forEach(el => {
+    const ph = el.getAttribute(isM ? 'data-ph-metric' : 'data-ph-imperial');
+    if (ph) el.setAttribute('placeholder', ph);
+  });
+}
+
 function saveState() {
   try {
-    const payload = { unit: curUnit, fields: {} };
+    const payload = {
+      unit: curUnit,
+      fields: {},
+      pinned: Array.from(selectedCards),
+      collapsed: Array.from(collapsedCards),
+      doneSteps: Array.from(doneRecoSteps)
+    };
     allFieldIds.forEach(id => {
       const el = document.getElementById(id);
       if (el) payload.fields[id] = el.value;
@@ -2262,6 +2380,17 @@ function loadState() {
       if (lblUnit) lblUnit.textContent = 'Imperial';
       document.querySelectorAll('.unit-len').forEach(e => e.textContent = 'in');
       document.querySelectorAll('.unit-weight').forEach(e => e.textContent = 'lbs');
+      syncUnitPlaceholders();
+    }
+    if (parsed && Array.isArray(parsed.pinned)) {
+      parsed.pinned.forEach(t => selectedCards.add(t));
+      updatePinnedCount();
+    }
+    if (parsed && Array.isArray(parsed.collapsed)) {
+      parsed.collapsed.forEach(t => collapsedCards.add(t));
+    }
+    if (parsed && Array.isArray(parsed.doneSteps)) {
+      parsed.doneSteps.forEach(s => doneRecoSteps.add(s));
     }
     if (parsed && parsed.fields) {
       allFieldIds.forEach(id => {
@@ -2276,24 +2405,28 @@ function loadState() {
   } catch (e) {}
 }
 
-function toggleUnit(){
-  const toImp=curUnit==='metric';
-  curUnit=toImp?'imperial':'metric';
-  lenIds.forEach(id=>{
-    const el=document.getElementById(id),v=parseFloat(String(el.value).replace(',','.'));
-    const cv=(toImp?v*CM2IN:v/CM2IN);
-    if(!isNaN(cv)&&v>0)el.value=cv.toFixed(2).replace('.',',');
+function toggleUnit() {
+  const toImp = curUnit === 'metric';
+  curUnit = toImp ? 'imperial' : 'metric';
+  lenIds.forEach(id => {
+    const el = document.getElementById(id);
+    const v = parseFloat(String(el.value).replace(',', '.'));
+    const cv = toImp ? v * CM2IN : v / CM2IN;
+    if (!isNaN(cv) && v > 0) el.value = cleanNumStr(cv, 2);
   });
-  const we=document.getElementById('weight'),wv=parseFloat(String(we.value).replace(',','.'));
-  const wc=(toImp?wv*KG2LB:wv/KG2LB);
-  if(!isNaN(wc)&&wv>0)we.value=wc.toFixed(2).replace('.',',');
-  const m=curUnit==='metric';
-  const lblUnit=document.getElementById('lbl-unit');
-  if(lblUnit)lblUnit.textContent=m?'Metrik':'Imperial';
-  document.querySelectorAll('.unit-len').forEach(e=>e.textContent=m?'cm':'in');
-  document.querySelectorAll('.unit-weight').forEach(e=>e.textContent=m?'kg':'lbs');
+  const we = document.getElementById('weight');
+  const wv = parseFloat(String(we.value).replace(',', '.'));
+  const wc = toImp ? wv * KG2LB : wv / KG2LB;
+  if (!isNaN(wc) && wv > 0) we.value = cleanNumStr(wc, 2);
+  const m = curUnit === 'metric';
+  const lblUnit = document.getElementById('lbl-unit');
+  if (lblUnit) lblUnit.textContent = m ? 'Metrik' : 'Imperial';
+  document.querySelectorAll('.unit-len').forEach(e => e.textContent = m ? 'cm' : 'in');
+  document.querySelectorAll('.unit-weight').forEach(e => e.textContent = m ? 'kg' : 'lbs');
+  syncUnitPlaceholders();
   showToast(`Satuan diubah ke ${m ? 'Metrik (cm, kg)' : 'Imperial (in, lbs)'}`, 'var(--cat-accent)');
-  saveState(); calc();
+  saveState();
+  calc();
 }
 
 function fillSampleData() {
@@ -2310,15 +2443,16 @@ function fillSampleData() {
     if (curUnit === 'imperial') {
       if (lenIds.includes(k)) num = num * CM2IN;
       else if (k === 'weight') num = num * KG2LB;
-      el.value = (k === 'age' || k === 'rhr') ? String(num) : num.toFixed(1).replace('.', ',');
+      el.value = (k === 'age' || k === 'rhr') ? String(num) : cleanNumStr(num, 1);
     } else {
       el.value = val;
     }
     const fitem = document.getElementById('fitem-' + k);
     if (fitem) setTimeout(() => bounceElement(fitem), idx * 35);
   });
-  showToast('Data simulasi berhasil dimuat — 27 analisis aktif!', 'var(--good)');
-  saveState(); calc();
+  showToast(`Data simulasi berhasil dimuat — ${TOTAL_CARDS} analisis aktif!`, 'var(--good)');
+  saveState();
+  calc();
 }
 
 function resetAllData() {
@@ -2338,86 +2472,121 @@ function resetAllData() {
     genSel.value = 'male';
     syncGenderUI('male');
   }
-  selectedCards.clear(); updatePinnedCount();
+  selectedCards.clear();
+  collapsedCards.clear();
+  doneRecoSteps.clear();
+  updatePinnedCount();
+  const lblFold = document.getElementById('lbl-fold-cards');
+  if (lblFold) lblFold.textContent = 'Ringkas Kartu';
   if (activeFilter === 'pinned') filterCategory('all', document.querySelector('.cat-pill[data-filter="all"]'));
   showToast('Semua input telah direset', 'var(--tx3)');
   try { localStorage.removeItem('bm-state-v1'); } catch (e) {}
   calc();
 }
 
-let allSecsCollapsed = false;
 function toggleAllSecs() {
-  allSecsCollapsed = !allSecsCollapsed;
   const pairs = [['ru','ch-ru'],['rk','ch-rk'],['rkd','ch-rkd'],['rm','ch-rm'],['rr','ch-rr'],['rkb','ch-rkb'],['rkd2','ch-rkd2'],['rmt2','ch-rmt2'],['rrs2','ch-rrs2'],['sum-coll','ch-sum'],['reco-coll','ch-reco']];
+  const openCount = pairs.filter(([secId]) => {
+    const el = document.getElementById(secId);
+    return el && !el.classList.contains('shut');
+  }).length;
+  const shouldShut = openCount > 0;
   pairs.forEach(([secId, chId]) => {
-    const sec = document.getElementById(secId); const ch = document.getElementById(chId);
+    const sec = document.getElementById(secId);
+    const ch = document.getElementById(chId);
     if (!sec || !ch) return;
-    sec.classList.toggle('shut', allSecsCollapsed);
-    ch.classList.toggle('open', !allSecsCollapsed);
-    const btn = ch.closest('button'); if (btn) btn.setAttribute('aria-expanded', (!allSecsCollapsed).toString());
+    sec.classList.toggle('shut', shouldShut);
+    ch.classList.toggle('open', !shouldShut);
+    const btn = ch.closest('button');
+    if (btn) btn.setAttribute('aria-expanded', (!shouldShut).toString());
   });
   const btnAll = document.getElementById('btn-toggle-all');
-  if (btnAll) btnAll.classList.toggle('is-active', allSecsCollapsed);
+  if (btnAll) btnAll.classList.toggle('is-active', shouldShut);
 }
 
-const DEP={ age:'Usia',height:'Tinggi',weight:'Berat',waist:'Lingkar Pinggang',neck:'Lingkar Leher',hip:'Lingkar Pinggul',wrist:'Lingkar Pergelangan',rhr:'Denyut Nadi' };
+const DEP = { age:'Usia', height:'Tinggi', weight:'Berat', waist:'Lingkar Pinggang', neck:'Lingkar Leher', hip:'Lingkar Pinggul', wrist:'Lingkar Pergelangan', rhr:'Denyut Nadi' };
 
-function tipHTML(txt){
+function tipHTML(txt) {
   return `<button class="tico" type="button" data-tip="${txt.replace(/"/g,'&quot;')}" aria-label="Klik untuk info penjelasan">
     <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
   </button>`;
 }
 
-function buildCard(title,deps,data,fn,tip,icoSvg,refHtml){
-  const miss=deps.filter(k=>isNaN(data[k])||data[k]<=0);
-  const tipIco=tipHTML(tip);
-  const headIco=icoSvg||'';
-  const safeTitle=title.replace(/'/g,"\\'");
-  const isSel=selectedCards.has(title);
-  const isCollapsed=collapsedCards.has(title);
-  const foldBtn=`<button type="button" class="card-fold-btn" aria-expanded="${!isCollapsed}" onclick="toggleCardFold(this,'${safeTitle}',event)" title="Buka / tutup rincian kartu"><svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></button>`;
-  const pinIco=`<span class="card-pin" aria-hidden="true"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>`;
-  const refEl=refHtml?`<a class="card-ref" href="${refHtml.url}" target="_blank" rel="noopener noreferrer"><svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>${refHtml.label}</a>`:'';
-  if(miss.length)return {
-    active: false,
-    html: `<div class="card card-w ${isCollapsed?'is-collapsed':''}" data-card-title="${title}" onclick="toggleCardSelect(this,'${safeTitle}',event)" title="Klik untuk membuka/menutup kartu">
-      ${foldBtn}
-      <div class="card-head">${headIco}<p class="clbl"><span>${title}</span> ${tipIco}</p></div>
-      <div class="card-detail"><div class="card-detail-inner">
-        <div class="wtag"><span class="wdot"></span>Menunggu: ${miss.map(m=>DEP[m]).join(', ')}</div>
-        <p class="cdesc">${tip}</p>
-        ${refEl}
-      </div></div>
-    </div>`
-  };
-  try{
+function buildCard(title, deps, data, fn, tip, icoSvg, refHtml) {
+  const nonEmptyInvalidDep = deps.find(k => {
+    const inp = document.getElementById(k);
+    const hasRawText = inp && inp.value.trim() !== '';
+    return hasRawText && (isNaN(data[k]) || data[k] <= 0 || (BOUNDS[k] && (data[k] < BOUNDS[k].min || data[k] > BOUNDS[k].max)));
+  });
+  const miss = deps.filter(k => isNaN(data[k]) || data[k] <= 0);
+  const tipIco = tipHTML(tip);
+  const headIco = icoSvg || '';
+  const safeTitle = title.replace(/'/g, "\\'");
+  const isSel = selectedCards.has(title);
+  const isCollapsed = collapsedCards.has(title);
+  const foldBtn = `<button type="button" class="card-fold-btn" aria-expanded="${!isCollapsed}" aria-label="Buka atau tutup rincian ${title}" onclick="toggleCardFold(this,'${safeTitle}',event)" title="Buka / tutup rincian kartu"><svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></button>`;
+  const pinIco = `<span class="card-pin" aria-hidden="true"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>`;
+  const refEl = refHtml
+    ? `<button type="button" class="card-ref" data-tip="Referensi Ilmiah: ${refHtml.label} (${refHtml.url})" aria-label="Referensi ${refHtml.label}"><svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>Ref: ${refHtml.label}</button>`
+    : '';
+
+  if (nonEmptyInvalidDep) {
+    const errMsg = BOUNDS[nonEmptyInvalidDep] ? BOUNDS[nonEmptyInvalidDep].label + '.' : 'Input tidak valid.';
+    return {
+      active: false,
+      html: `<div class="card card-e ${isCollapsed ? 'is-collapsed' : ''}" data-card-title="${title}" onclick="toggleCardSelect(this,'${safeTitle}',event)">
+        ${foldBtn}
+        <div class="card-head">${headIco}<div class="clbl c-danger"><span>${title}</span> ${tipIco}</div></div>
+        <div class="card-detail"><div class="card-detail-inner"><p class="cdesc c-danger">${errMsg}</p></div></div>
+      </div>`
+    };
+  }
+
+  if (miss.length) {
+    return {
+      active: false,
+      html: `<div class="card card-w ${isCollapsed ? 'is-collapsed' : ''}" data-card-title="${title}" onclick="toggleCardSelect(this,'${safeTitle}',event)" title="Klik untuk membuka/menutup kartu">
+        ${foldBtn}
+        <div class="card-head">${headIco}<div class="clbl"><span>${title}</span> ${tipIco}</div></div>
+        <div class="card-detail"><div class="card-detail-inner">
+          <div class="wtag"><span class="wdot"></span><span>Menunggu: ${miss.map(m => DEP[m]).join(', ')}</span></div>
+          <p class="cdesc">${tip}</p>
+          ${refEl}
+        </div></div>
+      </div>`
+    };
+  }
+
+  try {
     const invalidDep = deps.find(k => BOUNDS[k] && (data[k] < BOUNDS[k].min || data[k] > BOUNDS[k].max));
     if (invalidDep) throw new Error(BOUNDS[invalidDep].label + '.');
-    const r=fn(data); if(r.error)throw new Error(r.error);
+    const r = fn(data);
+    if (r.error) throw new Error(r.error);
     return {
       active: true,
-      html: `<div class="card ${isSel?'is-selected':''} ${isCollapsed?'is-collapsed':''}" data-card-title="${title}" onclick="toggleCardSelect(this,'${safeTitle}',event)" title="Klik untuk menyorot kartu ini">
+      html: `<div class="card ${isSel ? 'is-selected' : ''} ${isCollapsed ? 'is-collapsed' : ''}" tabindex="0" role="button" aria-pressed="${isSel}" data-card-title="${title}" onclick="toggleCardSelect(this,'${safeTitle}',event)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCardSelect(this,'${safeTitle}',event);}" title="Klik untuk menyorot kartu ini">
         ${pinIco}${foldBtn}
-        <div class="card-head">${headIco}<p class="clbl"><span>${title}</span> ${tipIco}</p></div>
+        <div class="card-head">${headIco}<div class="clbl"><span>${title}</span> ${tipIco}</div></div>
         <div class="card-detail"><div class="card-detail-inner">
           <div class="cval"><span class="cnum">${r.nilai}</span><span class="cunit">${r.satuan}</span></div>
-          ${r.status?`<div class="cbadge ${r.warna}">${r.status}</div>`:''}
+          ${r.status ? `<div class="cbadge ${r.warna}">${r.status}</div>` : ''}
           <p class="cdesc">${r.deskripsi}</p>
           ${refEl}
         </div></div>
       </div>`
     };
-  }catch(e){
+  } catch (e) {
     return {
       active: false,
-      html: `<div class="card card-e ${isCollapsed?'is-collapsed':''}" data-card-title="${title}" onclick="toggleCardSelect(this,'${safeTitle}',event)">
+      html: `<div class="card card-e ${isCollapsed ? 'is-collapsed' : ''}" data-card-title="${title}" onclick="toggleCardSelect(this,'${safeTitle}',event)">
         ${foldBtn}
-        <div class="card-head">${headIco}<p class="clbl c-danger"><span>${title}</span> ${tipIco}</p></div>
+        <div class="card-head">${headIco}<div class="clbl c-danger"><span>${title}</span> ${tipIco}</div></div>
         <div class="card-detail"><div class="card-detail-inner"><p class="cdesc c-danger">${e.message}</p></div></div>
       </div>`
     };
   }
 }
+
 /* ── Tooltip Enhancements (Click / Tap to Select & Lock + Hover Preview) ── */
 function initTooltips() {
   let TT = document.getElementById('__tt');
@@ -2565,45 +2734,51 @@ function initTooltips() {
     if (activeIco) place(activeIco);
   }, { passive: true });
 }
+
 function toComma(x, n) {
   if (x === null || x === undefined || isNaN(x)) return '–';
   var s = (n !== undefined) ? Number(x).toFixed(n) : Number(x).toFixed(0);
   return s.replace('.', ',');
 }
-function fmtW(v){return curUnit==='metric'?{v,u:'kg'}:{v:v*KG2LB,u:'lbs'};}
-function fmtV(v){return curUnit==='metric'?{v,u:'L'}:{v:v*33.814,u:'fl oz'};}
-function calcBmr(d){const b=10*d.weight+6.25*d.height-5*d.age;return d.gender==='male'?b+5:b-161;}
-function calcNavy(d){
-  if(d.waist<=d.neck)throw new Error('Pinggang tidak boleh lebih kecil atau sama dengan leher.');
-  if(d.gender!=='male'&&(d.waist+d.hip<=d.neck))throw new Error('Kombinasi pinggang dan pinggul tidak valid terhadap leher.');
-  const f=d.gender==='male'
-    ?495/(1.0324-0.19077*Math.log10(d.waist-d.neck)+0.15456*Math.log10(d.height))-450
-    :495/(1.29579-0.35004*Math.log10(d.waist+d.hip-d.neck)+0.22100*Math.log10(d.height))-450;
-  if(isNaN(f)||f<2||f>65)throw new Error('Hasil anomali — periksa kembali proporsi pengukuran.');
+function fmtW(v) { return curUnit === 'metric' ? { v, u: 'kg' } : { v: v * KG2LB, u: 'lbs' }; }
+function fmtV(v) { return curUnit === 'metric' ? { v, u: 'L' } : { v: v * 33.814, u: 'fl oz' }; }
+function calcBmr(d) {
+  const b = 10 * d.weight + 6.25 * d.height - 5 * d.age;
+  const res = d.gender === 'male' ? b + 5 : b - 161;
+  if (isNaN(res) || res <= 0) throw new Error('Kombinasi usia, berat, dan tinggi menghasilkan nilai BMR tidak valid.');
+  return res;
+}
+function calcNavy(d) {
+  if (d.waist <= d.neck) throw new Error('Pinggang tidak boleh lebih kecil atau sama dengan leher.');
+  if (d.gender !== 'male' && (d.waist + d.hip <= d.neck)) throw new Error('Kombinasi pinggang dan pinggul tidak valid terhadap leher.');
+  const f = d.gender === 'male'
+    ? 495 / (1.0324 - 0.19077 * Math.log10(d.waist - d.neck) + 0.15456 * Math.log10(d.height)) - 450
+    : 495 / (1.29579 - 0.35004 * Math.log10(d.waist + d.hip - d.neck) + 0.22100 * Math.log10(d.height)) - 450;
+  if (isNaN(f) || f < 2 || f > 65) throw new Error('Hasil anomali — periksa kembali proporsi pengukuran.');
   return f;
 }
 
 function calc() {
   const raw = {
     gender:   document.getElementById('gender').value,
-    age:      parseFloat(document.getElementById('age').value.replace(',','.')),
-    height:   parseFloat(document.getElementById('height').value.replace(',','.')),
-    weight:   parseFloat(document.getElementById('weight').value.replace(',','.')),
-    waist:    parseFloat(document.getElementById('waist').value.replace(',','.')),
-    neck:     parseFloat(document.getElementById('neck').value.replace(',','.')),
-    hip:      parseFloat(document.getElementById('hip').value.replace(',','.')),
-    wrist:    parseFloat(document.getElementById('wrist').value.replace(',','.')),
-    rhr:      parseFloat(document.getElementById('rhr').value.replace(',','.')),
+    age:      parseFloat(document.getElementById('age').value.replace(',', '.')),
+    height:   parseFloat(document.getElementById('height').value.replace(',', '.')),
+    weight:   parseFloat(document.getElementById('weight').value.replace(',', '.')),
+    waist:    parseFloat(document.getElementById('waist').value.replace(',', '.')),
+    neck:     parseFloat(document.getElementById('neck').value.replace(',', '.')),
+    hip:      parseFloat(document.getElementById('hip').value.replace(',', '.')),
+    wrist:    parseFloat(document.getElementById('wrist').value.replace(',', '.')),
+    rhr:      parseFloat(document.getElementById('rhr').value.replace(',', '.')),
     activity: parseFloat(document.getElementById('activity').value),
   };
-  const d = {...raw};
-  if (curUnit==='imperial') {
-    lenIds.forEach(k => { if(!isNaN(d[k])) d[k] = d[k]*2.54; });
-    if (!isNaN(d.weight)) d.weight = d.weight/KG2LB;
+  const d = { ...raw };
+  if (curUnit === 'imperial') {
+    lenIds.forEach(k => { if (!isNaN(d[k])) d[k] = d[k] * 2.54; });
+    if (!isNaN(d.weight)) d.weight = d.weight / KG2LB;
   }
-  const hM = d.height/100;
-  const cats = {umum:[],komposisi:[],kardio:[],metabolisme:[],risiko:[],komposisi2:[],kardio2:[],metabolisme2:[],risiko2:[]};
-  
+  const hM = d.height / 100;
+  const cats = { umum:[], komposisi:[], kardio:[], metabolisme:[], risiko:[], komposisi2:[], kardio2:[], metabolisme2:[], risiko2:[] };
+
   const _ICOS = {
     "Indeks Massa Tubuh": '<svg class="card-ico" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M3 6h18M3 12h18M3 18h18"/></svg>',
     "Indeks Ponderal": '<svg class="card-ico" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>',
@@ -2645,310 +2820,337 @@ function calc() {
   };
 
   const _REFS = {
-    "Indeks Massa Tubuh": {label:"WHO, 2000", url:"https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight"},
-    "Indeks Ponderal": {label:"Slaughter 1988", url:"https://doi.org/10.1203/00006450-198804000-00010"},
-    "Rentang Sehat": {label:"WHO BMI Classification", url:"https://www.who.int/europe/news-room/fact-sheets/item/a-healthy-lifestyle---who-recommendations"},
-    "Berat Ideal": {label:"Devine 1974", url:"https://doi.org/10.1097/00000441-197408000-00005"},
-    "Ukuran Kerangka": {label:"Frisancho & Flegel 1983", url:"https://doi.org/10.1093/ajcn/37.2.311"},
-    "Lemak Tubuh (US Navy)": {label:"Hodgdon & Beckett 1984", url:"https://apps.dtic.mil/sti/citations/ADA148798"},
-    "Adipositas (BAI)": {label:"Bergman et al. 2011", url:"https://doi.org/10.1038/oby.2010.338"},
-    "Lemak Relatif (RFM)": {label:"Woolcott & Bergman 2018", url:"https://doi.org/10.1038/s41598-018-32706-4"},
-    "Massa Tanpa Lemak": {label:"Wang et al. 2000", url:"https://doi.org/10.1093/ajcn/72.4.929"},
-    "Indeks Bebas Lemak": {label:"Kouri et al. 1995", url:"https://doi.org/10.1056/NEJM199507273330404"},
-    "Estimasi VO2 Max": {label:"Nes et al. 2013", url:"https://doi.org/10.1161/CIRCULATIONAHA.113.001058"},
-    "Batas Max HR": {label:"Tanaka et al. 2001", url:"https://doi.org/10.1016/S0735-1097(00)01054-8"},
-    "Zona Pembakaran Lemak": {label:"Karvonen et al. 1957", url:"https://doi.org/10.1152/jappl.1957.10.1.31"},
-    "Kebutuhan Hidrasi": {label:"EFSA, 2010", url:"https://doi.org/10.2903/j.efsa.2010.1459"},
-    "Total Kalori (TDEE)": {label:"Mifflin et al. 1990", url:"https://doi.org/10.1093/ajcn/51.2.241"},
-    "Target Protein": {label:"ISSN 2017", url:"https://doi.org/10.1186/s12970-017-0177-8"},
-    "Karbo & Lemak": {label:"AMDR — IOM 2005", url:"https://www.ncbi.nlm.nih.gov/books/NBK56068/"},
-    "ABSI (Mortalitas)": {label:"Krakauer & Krakauer 2012", url:"https://doi.org/10.1371/journal.pone.0039504"},
-    "Rasio Pinggang/Tinggi": {label:"Ashwell & Hsieh 2005", url:"https://doi.org/10.1093/nutrit/63.11.408"},
-    "Rasio Pinggang/Pinggul": {label:"WHO, 2008", url:"https://apps.who.int/iris/handle/10665/43936"},
-    "RMR Katch-McArdle": {label:"McArdle et al. 2010", url:"https://doi.org/10.1249/00005768-198204001-00005"},
-    "Total Air Tubuh": {label:"Watson et al. 1980", url:"https://doi.org/10.1152/jappl.1980.49.6.1079"},
-    "Massa Otot Rangka": {label:"Wang et al. 2000", url:"https://doi.org/10.1093/ajcn/72.4.929"},
-    "Estimasi Massa Tulang": {label:"Doupe et al. 1997", url:"https://doi.org/10.1007/BF03168624"},
-    "Persentase Lean Mass": {label:"ACSM Guidelines 2018", url:"https://www.acsm.org/education-resources/books/guidelines-exercise-testing-prescription"},
-    "Potensi Otot Alami": {label:"Kouri et al. 1995", url:"https://doi.org/10.1056/NEJM199507273330404"},
-    "Usia Kebugaran": {label:"Nes et al. 2013", url:"https://doi.org/10.1161/CIRCULATIONAHA.113.001058"},
-    "Klasifikasi Denyut Nadi": {label:"AHA 2023", url:"https://www.heart.org/en/health-topics/high-blood-pressure/the-facts-about-high-blood-pressure/all-about-heart-rate-pulse"},
-    "5 Zona Latihan": {label:"Karvonen et al. 1957", url:"https://doi.org/10.1152/jappl.1957.10.1.31"},
-    "Luas Permukaan Tubuh": {label:"DuBois & DuBois 1916", url:"https://doi.org/10.1001/archinte.1916.00080140462008"},
-    "Rincian Energi Harian": {label:"Levine 2005", url:"https://doi.org/10.1126/science.1108362"},
-    "Protein Berbasis Riset": {label:"Morton et al. 2018", url:"https://doi.org/10.1136/bjsports-2017-097608"},
-    "Kalori per Tujuan": {label:"Hall et al. 2012", url:"https://doi.org/10.1016/j.lfs.2012.08.012"},
-    "Indeks Kebulatan Tubuh": {label:"Thomas et al. 2013", url:"https://doi.org/10.1371/journal.pone.0054385"},
-    "Indeks Konisitas": {label:"Valdez 1991", url:"https://doi.org/10.1038/oby.2012.57"},
-    "Rasio Pinggul/Tinggi": {label:"Lin et al. 2002", url:"https://pubmed.ncbi.nlm.nih.gov/12228736/"},
-    "Rasio Pinggang/Leher": {label:"Ben-Noun & Laor 2006", url:"https://doi.org/10.1038/ajh.2006.7"}
+    "Indeks Massa Tubuh": {label:"WHO, 2000", url:"WHO Obesity & Overweight Guidelines"},
+    "Indeks Ponderal": {label:"Slaughter 1988", url:"Pediatric Research 1988; 23(4)"},
+    "Rentang Sehat": {label:"WHO BMI Classification", url:"WHO Healthy Lifestyle Recommendations"},
+    "Berat Ideal": {label:"Devine 1974", url:"Drug Intell Clin Pharm 1974; 8:650"},
+    "Ukuran Kerangka": {label:"Frisancho & Flegel 1983", url:"Am J Clin Nutr 1983; 37(2):311"},
+    "Lemak Tubuh (US Navy)": {label:"Hodgdon & Beckett 1984", url:"Naval Health Research Center Report 84-29"},
+    "Adipositas (BAI)": {label:"Bergman et al. 2011", url:"Obesity 2011; 19(5):1083"},
+    "Lemak Relatif (RFM)": {label:"Woolcott & Bergman 2018", url:"Scientific Reports 2018; 8:10980"},
+    "Massa Tanpa Lemak": {label:"Wang et al. 2000", url:"Am J Clin Nutr 2000; 72(4):929"},
+    "Indeks Bebas Lemak": {label:"Kouri et al. 1995", url:"Clin J Sport Med 1995; 5(4):223"},
+    "Estimasi VO2 Max": {label:"Uth et al. 2004", url:"Eur J Appl Physiol 2004; 91(1):111"},
+    "Batas Max HR": {label:"Tanaka et al. 2001", url:"J Am Coll Cardiol 2001; 37(1):153"},
+    "Zona Pembakaran Lemak": {label:"Karvonen et al. 1957", url:"Ann Med Exp Biol Fenn 1957; 35(3):307"},
+    "Kebutuhan Hidrasi": {label:"EFSA, 2010", url:"EFSA Journal 2010; 8(3):1459"},
+    "Total Kalori (TDEE)": {label:"Mifflin et al. 1990", url:"Am J Clin Nutr 1990; 51(2):241"},
+    "Target Protein": {label:"ISSN 2017", url:"J Int Soc Sports Nutr 2017; 14:20"},
+    "Karbo & Lemak": {label:"AMDR — IOM 2005", url:"Dietary Reference Intakes, IOM 2005"},
+    "ABSI (Mortalitas)": {label:"Krakauer & Krakauer 2012", url:"PLoS ONE 2012; 7(7):e39504"},
+    "Rasio Pinggang/Tinggi": {label:"Ashwell & Hsieh 2005", url:"Nutr Res Rev 2005; 18(1):118"},
+    "Rasio Pinggang/Pinggul": {label:"WHO, 2008", url:"WHO Waist Circumference & WHR Report 2008"},
+    "RMR Katch-McArdle": {label:"McArdle et al. 2010", url:"Exercise Physiology, 7th Ed."},
+    "Total Air Tubuh": {label:"Watson et al. 1980", url:"Am J Clin Nutr 1980; 33(1):27"},
+    "Massa Otot Rangka": {label:"Wang et al. 2000", url:"Am J Clin Nutr 2000; 72(4):929"},
+    "Estimasi Massa Tulang": {label:"Doupe et al. 1997", url:"Am J Hum Biol 1997; 9(6):709"},
+    "Persentase Lean Mass": {label:"ACSM Guidelines 2018", url:"ACSM Guidelines for Exercise Testing"},
+    "Potensi Otot Alami": {label:"Kouri et al. 1995", url:"Clin J Sport Med 1995; 5(4):223"},
+    "Usia Kebugaran": {label:"Nes et al. 2013", url:"Med Sci Sports Exerc 2013; 45(6):1150"},
+    "Klasifikasi Denyut Nadi": {label:"AHA 2023", url:"American Heart Association Target HR"},
+    "5 Zona Latihan": {label:"Karvonen et al. 1957", url:"Ann Med Exp Biol Fenn 1957; 35(3):307"},
+    "Luas Permukaan Tubuh": {label:"DuBois & DuBois 1916", url:"Arch Intern Med 1916; 17(6):863"},
+    "Rincian Energi Harian": {label:"Levine 2005", url:"Science 2005; 307(5709):584"},
+    "Protein Berbasis Riset": {label:"Morton et al. 2018", url:"Br J Sports Med 2018; 52(6):376"},
+    "Kalori per Tujuan": {label:"Hall et al. 2012", url:"Lancet 2011; 378(9793):826"},
+    "Indeks Kebulatan Tubuh": {label:"Thomas et al. 2013", url:"Obesity 2013; 21(11):2264"},
+    "Indeks Konisitas": {label:"Valdez 1991", url:"J Clin Epidemiol 1991; 44(9):955"},
+    "Rasio Pinggul/Tinggi": {label:"Lin et al. 2002", url:"Int J Obes Relat Metab Disord 2002"},
+    "Rasio Pinggang/Leher": {label:"Ben-Noun & Laor 2006", url:"Am J Hypertens 2006; 19(5):470"}
   };
 
-  const K = (c,t,deps,fn,tip) => cats[c].push(buildCard(t,deps,d,fn,tip,_ICOS[t]||'',_REFS[t]||null));
+  const K = (c, t, deps, fn, tip) => cats[c].push(buildCard(t, deps, d, fn, tip, _ICOS[t] || '', _REFS[t] || null));
 
-  K('umum','Indeks Massa Tubuh',['height','weight'],()=>{
-    const bmi=d.weight/(hM**2);
-    let s='Normal',w='c-good';
-    if(bmi<18.5){s='Kekurangan Berat';w='c-info';}
-    else if(bmi>=25&&bmi<30){s='Kelebihan Berat';w='c-warn';}
-    else if(bmi>=30){s='Obesitas';w='c-danger';}
-    return {nilai:toComma(bmi, 2),satuan:'kg/m²',status:s,warna:w,deskripsi:'Mengukur proporsi berat badan terhadap kuadrat tinggi badan. Nilai di bawah 18,5 menandakan kekurangan berat, 18,5–24,9 normal, 25–29,9 kelebihan berat, dan ≥30 masuk kategori obesitas dengan risiko penyakit metabolik meningkat.'};
-  },'Indeks Massa Tubuh (Body Mass Index).');
+  K('umum', 'Indeks Massa Tubuh', ['height','weight'], () => {
+    const bmi = d.weight / (hM ** 2);
+    let s = 'Normal', w = 'c-good';
+    if (bmi < 18.5) { s = 'Kekurangan Berat'; w = 'c-info'; }
+    else if (bmi >= 25 && bmi < 30) { s = 'Kelebihan Berat'; w = 'c-warn'; }
+    else if (bmi >= 30) { s = 'Obesitas'; w = 'c-danger'; }
+    return { nilai: toComma(bmi, 2), satuan: 'kg/m²', status: s, warna: w, deskripsi: 'Mengukur proporsi berat badan terhadap kuadrat tinggi badan. Nilai di bawah 18,5 menandakan kekurangan berat, 18,5–24,9 normal, 25–29,9 kelebihan berat, dan ≥30 masuk kategori obesitas dengan risiko penyakit metabolik meningkat.' };
+  }, 'Indeks Massa Tubuh (Body Mass Index).');
 
-  K('umum','Indeks Ponderal',['height','weight'],()=>{
-    const pi=d.weight/(hM**3);
-    let s='Volume Normal',w='c-good';
-    if(pi<11){s='Volume Kurang';w='c-info';}else if(pi>15){s='Volume Berlebih';w='c-danger';}
-    return {nilai:toComma(pi, 2),satuan:'kg/m³',status:s,warna:w,deskripsi:'Mengukur kepadatan massa tubuh terhadap volume (tinggi pangkat tiga), sehingga lebih adil untuk individu sangat tinggi atau pendek dibanding IMT.'};
-  },'Alternatif BMI lebih akurat untuk individu sangat tinggi/pendek.');
+  K('umum', 'Indeks Ponderal', ['height','weight'], () => {
+    const pi = d.weight / (hM ** 3);
+    let s = 'Volume Normal', w = 'c-good';
+    if (pi < 11) { s = 'Volume Kurang'; w = 'c-info'; } else if (pi > 15) { s = 'Volume Berlebih'; w = 'c-danger'; }
+    return { nilai: toComma(pi, 2), satuan: 'kg/m³', status: s, warna: w, deskripsi: 'Mengukur kepadatan massa tubuh terhadap volume (tinggi pangkat tiga), sehingga lebih adil untuk individu sangat tinggi atau pendek dibanding IMT.' };
+  }, 'Alternatif BMI lebih akurat untuk individu sangat tinggi/pendek.');
 
-  K('umum','Rentang Sehat',['height'],()=>{
-    const lo=fmtW(18.5*(hM**2)), hi=fmtW(24.9*(hM**2));
-    return {nilai:`${toComma(lo.v, 2)} – ${toComma(hi.v, 2)}`,satuan:lo.u,status:'',warna:'',deskripsi:'Rentang berat badan di mana nilai IMT Anda berada pada 18,5–24,9 — zona tanpa peningkatan risiko penyakit terkait berat badan.'};
-  },'Rentang berat minimum dan maksimum agar IMT tetap sehat.');
+  K('umum', 'Rentang Sehat', ['height'], () => {
+    const lo = fmtW(18.5 * (hM ** 2)), hi = fmtW(24.9 * (hM ** 2));
+    return { nilai: `${toComma(lo.v, 2)} – ${toComma(hi.v, 2)}`, satuan: lo.u, status: 'Zona IMT 18,5–24,9', warna: 'c-good', deskripsi: 'Rentang berat badan di mana nilai IMT Anda berada pada 18,5–24,9 — zona tanpa peningkatan risiko penyakit terkait berat badan.' };
+  }, 'Rentang berat minimum dan maksimum agar IMT tetap sehat.');
 
-  K('umum','Berat Ideal',['height'],()=>{
-    const hIn=d.height/2.54;
-    const bKg=hIn>=60?(d.gender==='male'?50+2.3*(hIn-60):45.5+2.3*(hIn-60)):(21.7*(hM**2));
-    const o=fmtW(bKg);
-    return {nilai:toComma(o.v, 2),satuan:o.u,status:'',warna:'',deskripsi:'Berat badan target yang dihitung dari tinggi badan menggunakan formula Devine — standar klinis untuk menentukan dosis obat dan target rehabilitasi.'};
-  },'Target berat badan paling optimal yang direkomendasikan secara klinis.');
+  K('umum', 'Berat Ideal', ['height'], () => {
+    const hIn = d.height / 2.54;
+    const bKg = hIn >= 60 ? (d.gender === 'male' ? 50 + 2.3 * (hIn - 60) : 45.5 + 2.3 * (hIn - 60)) : (21.7 * (hM ** 2));
+    const o = fmtW(bKg);
+    return { nilai: toComma(o.v, 2), satuan: o.u, status: 'Formula Devine', warna: 'c-brand', deskripsi: 'Berat badan target yang dihitung dari tinggi badan menggunakan formula Devine — standar klinis untuk menentukan dosis obat dan target rehabilitasi.' };
+  }, 'Target berat badan paling optimal yang direkomendasikan secara klinis.');
 
-  K('umum','Ukuran Kerangka',['height','wrist'],()=>{
-    const r=d.height/d.wrist; let u='Sedang';
-    if(d.gender==='male'){if(r>10.4)u='Kecil';else if(r<9.6)u='Besar';}
-    else{if(r>11.0)u='Kecil';else if(r<10.1)u='Besar';}
-    return {nilai:u,satuan:'',status:'',warna:'',deskripsi:'Ukuran kerangka tulang ditentukan dari rasio tinggi terhadap lingkar pergelangan.'};
-  },'Analisis kerangka tulang berdasarkan rasio tinggi dan lingkar pergelangan tangan.');
+  K('umum', 'Ukuran Kerangka', ['height','wrist'], () => {
+    const r = d.height / d.wrist; let u = 'Sedang';
+    if (d.gender === 'male') { if (r > 10.4) u = 'Kecil'; else if (r < 9.6) u = 'Besar'; }
+    else { if (r > 11.0) u = 'Kecil'; else if (r < 10.1) u = 'Besar'; }
+    return { nilai: u, satuan: '', status: `Rasio ${toComma(r, 1)}`, warna: 'c-brand', deskripsi: 'Ukuran kerangka tulang ditentukan dari rasio tinggi terhadap lingkar pergelangan tangan.' };
+  }, 'Analisis kerangka tulang berdasarkan rasio tinggi dan lingkar pergelangan tangan.');
 
-  const nDeps=d.gender==='male'?['height','waist','neck']:['height','waist','neck','hip'];
-  K('komposisi','Lemak Tubuh (US Navy)',nDeps,()=>{
-    const f=calcNavy(d); let s='Normal / Bugar',w='c-good';
-    if(d.gender==='male'){
-      if(f<6){s='Lemak Esensial';w='c-info';}else if(f<14){s='Atletis';w='c-good';}else if(f<=19){s='Bugar';w='c-good';}else if(f<=24){s='Rata-rata';w='c-warn';}else{s='Obesitas';w='c-danger';}
-    }else{
-      if(f<14){s='Lemak Esensial';w='c-info';}else if(f<21){s='Atletis';w='c-good';}else if(f<=25){s='Bugar';w='c-good';}else if(f<=31){s='Rata-rata';w='c-warn';}else{s='Obesitas';w='c-danger';}
+  const nDeps = d.gender === 'male' ? ['height','waist','neck'] : ['height','waist','neck','hip'];
+  K('komposisi', 'Lemak Tubuh (US Navy)', nDeps, () => {
+    const f = calcNavy(d); let s = 'Normal / Bugar', w = 'c-good';
+    if (d.gender === 'male') {
+      if (f < 6) { s = 'Lemak Esensial'; w = 'c-info'; } else if (f < 14) { s = 'Atletis'; w = 'c-good'; } else if (f <= 19) { s = 'Bugar'; w = 'c-good'; } else if (f <= 24) { s = 'Rata-rata'; w = 'c-warn'; } else { s = 'Obesitas'; w = 'c-danger'; }
+    } else {
+      if (f < 14) { s = 'Lemak Esensial'; w = 'c-info'; } else if (f < 21) { s = 'Atletis'; w = 'c-good'; } else if (f <= 25) { s = 'Bugar'; w = 'c-good'; } else if (f <= 31) { s = 'Rata-rata'; w = 'c-warn'; } else { s = 'Obesitas'; w = 'c-danger'; }
     }
-    return {nilai:toComma(f, 2),satuan:'%',status:s,warna:w,deskripsi:'Persentase lemak tubuh diestimasi dari lingkar tubuh menggunakan metode Angkatan Laut AS.'};
-  },'Tingkat akurasi tinggi menggunakan metode antropometri angkatan laut.');
+    return { nilai: toComma(f, 2), satuan: '%', status: s, warna: w, deskripsi: 'Persentase lemak tubuh diestimasi dari lingkar tubuh menggunakan metode Angkatan Laut AS.' };
+  }, 'Tingkat akurasi tinggi menggunakan metode antropometri angkatan laut.');
 
-  K('komposisi','Adipositas (BAI)',['height','hip'],()=>{
-    const b=toComma(((d.hip/Math.pow(hM,1.5))-18), 1);
-    return {nilai:b,satuan:'%',status:'',warna:'',deskripsi:'Indeks Adipositas Tubuh menghitung estimasi lemak dari lingkar panggul dan tinggi badan tanpa menggunakan berat timbangan.'};
-  },'Body Adiposity Index: Estimasi lemak yang tak terpengaruh berat timbangan.');
+  K('komposisi', 'Adipositas (BAI)', ['height','hip'], () => {
+    const baiVal = (d.hip / Math.pow(hM, 1.5)) - 18;
+    if (baiVal < 2 || baiVal > 65) throw new Error('Hasil BAI di luar rentang biologis — periksa proporsi tinggi dan lingkar pinggul.');
+    const b = toComma(baiVal, 2);
+    return { nilai: b, satuan: '%', status: 'Tanpa Timbangan', warna: 'c-brand', deskripsi: 'Indeks Adipositas Tubuh menghitung estimasi lemak dari lingkar panggul dan tinggi badan tanpa menggunakan berat timbangan.' };
+  }, 'Body Adiposity Index: Estimasi lemak yang tak terpengaruh berat timbangan.');
 
-  K('komposisi','Lemak Relatif (RFM)',['height','waist'],()=>{
-    const rfm=d.gender==='male'?64-(20*(d.height/d.waist)):76-(20*(d.height/d.waist));
-    return {nilai:toComma(rfm, 2),satuan:'%',status:'',warna:'',deskripsi:'Relative Fat Mass menggunakan rasio tinggi terhadap lingkar pinggang untuk mengestimasi lemak tubuh secara lebih akurat.'};
-  },'Metode estimasi jaringan lemak yang dianggap jauh lebih akurat daripada IMT.');
+  K('komposisi', 'Lemak Relatif (RFM)', ['height','waist'], () => {
+    const rfm = d.gender === 'male' ? 64 - (20 * (d.height / d.waist)) : 76 - (20 * (d.height / d.waist));
+    if (rfm < 2 || rfm > 65) throw new Error('Hasil RFM di luar rentang biologis — periksa proporsi tinggi dan lingkar pinggang.');
+    return { nilai: toComma(rfm, 2), satuan: '%', status: 'Rasio Tinggi/Pinggang', warna: 'c-brand', deskripsi: 'Relative Fat Mass menggunakan rasio tinggi terhadap lingkar pinggang untuk mengestimasi lemak tubuh secara lebih akurat.' };
+  }, 'Metode estimasi jaringan lemak yang dianggap jauh lebih akurat daripada IMT.');
 
-  K('komposisi','Massa Tanpa Lemak',['weight',...nDeps],()=>{
-    const f=calcNavy(d), lbm=d.weight*(1-f/100), o=fmtW(lbm);
-    return {nilai:toComma(o.v, 2),satuan:o.u,status:'',warna:'',deskripsi:'Massa tubuh setelah seluruh lemak dikurangi — mencakup otot, tulang, organ, dan air tubuh.'};
-  },'Berat Anda jika seluruh sel lemak dihilangkan.');
+  K('komposisi', 'Massa Tanpa Lemak', ['weight', ...nDeps], () => {
+    const f = calcNavy(d), lbm = d.weight * (1 - f / 100), o = fmtW(lbm);
+    return { nilai: toComma(o.v, 2), satuan: o.u, status: `${toComma(100 - f, 1)}% Berat Total`, warna: 'c-good', deskripsi: 'Massa tubuh setelah seluruh lemak dikurangi — mencakup otot, tulang, organ, dan air tubuh.' };
+  }, 'Berat Anda jika seluruh sel lemak dihilangkan.');
 
-  K('komposisi','Indeks Bebas Lemak',['weight',...nDeps],()=>{
-    const f=calcNavy(d), lbm=d.weight*(1-f/100), ffmi=lbm/(hM**2);
-    let s='Kepadatan Normal',w='c-brand';
-    if(d.gender==='male'){if(ffmi>=22){s='Superior';w='c-good';}else if(ffmi<18)s='Sub-Standar';}
-    else{if(ffmi>=18){s='Superior';w='c-good';}else if(ffmi<15)s='Sub-Standar';}
-    return {nilai:toComma(ffmi, 2),satuan:'skala',status:s,warna:w,deskripsi:'Fat-Free Mass Index mengukur kepadatan massa bebas lemak relatif terhadap tinggi badan.'};
-  },'Fat-Free Mass Index: Standar untuk mengukur ketebalan perkembangan serabut otot rangka.');
+  K('komposisi', 'Indeks Bebas Lemak', ['weight', ...nDeps], () => {
+    const f = calcNavy(d), lbm = d.weight * (1 - f / 100), ffmi = lbm / (hM ** 2);
+    let s = 'Kepadatan Normal', w = 'c-brand';
+    if (d.gender === 'male') { if (ffmi >= 22) { s = 'Superior'; w = 'c-good'; } else if (ffmi < 18) { s = 'Sub-Standar'; w = 'c-warn'; } }
+    else { if (ffmi >= 18) { s = 'Superior'; w = 'c-good'; } else if (ffmi < 15) { s = 'Sub-Standar'; w = 'c-warn'; } }
+    return { nilai: toComma(ffmi, 2), satuan: 'kg/m²', status: s, warna: w, deskripsi: 'Fat-Free Mass Index mengukur kepadatan massa bebas lemak relatif terhadap tinggi badan.' };
+  }, 'Fat-Free Mass Index: Standar untuk mengukur ketebalan perkembangan serabut otot rangka.');
 
-  K('kardio','Estimasi VO2 Max',['age','rhr'],()=>{
-    const maxHr=208-0.7*d.age, vo2=15.3*(maxHr/d.rhr);
-    let s='Standar',w='c-brand';
-    if(vo2>=45){s='Eksepsional';w='c-info';}else if(vo2<30){s='Lemah';w='c-danger';}
-    return {nilai:toComma(vo2, 2),satuan:'ml/kg/min',status:s,warna:w,deskripsi:'Kapasitas aerobik maksimum — volume oksigen yang dapat diproses tubuh per menit per kilogram berat.'};
-  },'Kapasitas maksimum suplai oksigen yang diproses jantung Anda per menit.');
+  K('kardio', 'Estimasi VO2 Max', ['age','rhr'], () => {
+    const maxHr = 208 - 0.7 * d.age;
+    if (d.rhr >= maxHr) throw new Error('Denyut nadi istirahat melebihi atau sama dengan batas detak jantung maksimum usia Anda.');
+    const vo2 = 15.3 * (maxHr / d.rhr);
+    let s = 'Baik', w = 'c-good';
+    if (vo2 >= 45) { s = 'Sangat Baik'; w = 'c-info'; }
+    else if (vo2 >= 38) { s = 'Baik'; w = 'c-good'; }
+    else if (vo2 >= 30) { s = 'Cukup'; w = 'c-warn'; }
+    else { s = 'Rendah'; w = 'c-danger'; }
+    return { nilai: toComma(vo2, 2), satuan: 'ml/kg/min', status: s, warna: w, deskripsi: 'Kapasitas aerobik maksimum — volume oksigen yang dapat diproses tubuh per menit per kilogram berat.' };
+  }, 'Kapasitas maksimum suplai oksigen yang diproses jantung Anda per menit.');
 
-  K('kardio','Batas Max HR',['age'],()=>{
-    return {nilai:Math.round(208-0.7*d.age),satuan:'bpm',status:'',warna:'',deskripsi:'Perkiraan detak jantung tertinggi yang aman dicapai saat latihan intens.'};
-  },'Batas rasional tertinggi detak jantung aman saat berolahraga intens.');
+  K('kardio', 'Batas Max HR', ['age'], () => {
+    return { nilai: Math.round(208 - 0.7 * d.age), satuan: 'bpm', status: 'Tanaka 2001', warna: 'c-brand', deskripsi: 'Perkiraan detak jantung tertinggi yang aman dicapai saat latihan intens.' };
+  }, 'Batas rasional tertinggi detak jantung aman saat berolahraga intens.');
 
-  K('kardio','Zona Pembakaran Lemak',['age','rhr'],()=>{
-    const mx=Math.round(208-0.7*d.age), res=mx-d.rhr;
-    const lo=Math.round(res*0.6+d.rhr), hi=Math.round(res*0.7+d.rhr);
-    return {nilai:`${lo}–${hi}`,satuan:'bpm',status:'',warna:'',deskripsi:'Pada rentang detak ini (60–70% cadangan detak jantung), tubuh mengutamakan pembakaran lemak sebagai bahan bakar utama.'};
-  },'Rentang ritme detak jantung saat kardio agar prioritas tubuh adalah memecah lemak.');
+  K('kardio', 'Zona Pembakaran Lemak', ['age','rhr'], () => {
+    const mx = Math.round(208 - 0.7 * d.age);
+    if (d.rhr >= mx) throw new Error('Denyut nadi istirahat melebihi atau sama dengan batas detak jantung maksimum usia Anda.');
+    const res = mx - d.rhr;
+    const lo = Math.round(res * 0.6 + d.rhr), hi = Math.round(res * 0.7 + d.rhr);
+    return { nilai: `${lo}–${hi}`, satuan: 'bpm', status: '60–70% HRR', warna: 'c-good', deskripsi: 'Pada rentang detak ini (60–70% cadangan detak jantung), tubuh mengutamakan pembakaran lemak sebagai bahan bakar utama.' };
+  }, 'Rentang ritme detak jantung saat kardio agar prioritas tubuh adalah memecah lemak.');
 
-  K('kardio','Kebutuhan Hidrasi',['weight'],()=>{
-    let v=(d.weight*35)/1000; if(d.activity>=1.55)v+=0.5;
-    const o=fmtV(v);
-    return {nilai:toComma(o.v, 2),satuan:o.u,status:'',warna:'',deskripsi:'Kebutuhan cairan harian dihitung dari berat badan dengan penambahan untuk aktivitas fisik.'};
-  },'Target pemenuhan cairan harian Anda.');
+  K('kardio', 'Kebutuhan Hidrasi', ['weight'], () => {
+    let v = (d.weight * 35) / 1000; if (d.activity >= 1.55) v += 0.5;
+    const o = fmtV(v);
+    return { nilai: toComma(o.v, 2), satuan: o.u, status: d.activity >= 1.55 ? '+0,5 L Aktif' : '35 ml/kg', warna: 'c-info', deskripsi: 'Kebutuhan cairan harian dihitung dari berat badan dengan penambahan untuk aktivitas fisik.' };
+  }, 'Target pemenuhan cairan harian Anda.');
 
-  K('metabolisme','Total Kalori (TDEE)',['weight','height','age'],()=>{
-    return {nilai:Math.round(calcBmr(d)*d.activity),satuan:'kcal',status:'',warna:'',deskripsi:'Total energi yang dibakar tubuh dalam sehari, mencakup metabolisme basal, aktivitas fisik, dan efek termal makanan.'};
-  },'Total Daily Energy Expenditure: Kalori yang Anda bakar seharian berdasarkan rutinitas.');
+  K('metabolisme', 'Total Kalori (TDEE)', ['weight','height','age'], () => {
+    return { nilai: Math.round(calcBmr(d) * d.activity), satuan: 'kcal', status: `×${toComma(d.activity, 3).replace(/,?0+$/,'')}`, warna: 'c-brand', deskripsi: 'Total energi yang dibakar tubuh dalam sehari, mencakup metabolisme basal, aktivitas fisik, dan efek termal makanan.' };
+  }, 'Total Daily Energy Expenditure: Kalori yang Anda bakar seharian berdasarkan rutinitas.');
 
-  K('metabolisme','Target Protein',['weight','height','age'],()=>{
-    return {nilai:Math.round((calcBmr(d)*d.activity*0.3)/4),satuan:'g',status:'',warna:'',deskripsi:'Asupan protein harian yang direkomendasikan berdasarkan proporsi 30% dari total kebutuhan kalori.'};
-  },'Kebutuhan minimum asam amino untuk mempertahankan massa otot.');
+  K('metabolisme', 'Target Protein', ['weight','height','age'], () => {
+    return { nilai: Math.round((calcBmr(d) * d.activity * 0.3) / 4), satuan: 'g', status: '30% Kalori', warna: 'c-good', deskripsi: 'Asupan protein harian yang direkomendasikan berdasarkan proporsi 30% dari total kebutuhan kalori.' };
+  }, 'Kebutuhan minimum asam amino untuk mempertahankan massa otot.');
 
-  K('metabolisme','Karbo & Lemak',['weight','height','age'],()=>{
-    const tdee=calcBmr(d)*d.activity;
-    return {nilai:`${Math.round((tdee*0.5)/4)} / ${Math.round((tdee*0.2)/9)}`,satuan:'g',status:'',warna:'',deskripsi:'Distribusi makronutrien berdasarkan panduan gizi seimbang: karbohidrat dan lemak.'};
-  },'Alokasi sisa ruang kalori harian untuk sumber energi utama dan pelarut vitamin.');
+  K('metabolisme', 'Karbo & Lemak', ['weight','height','age'], () => {
+    const tdee = calcBmr(d) * d.activity;
+    return { nilai: `${Math.round((tdee * 0.5) / 4)} / ${Math.round((tdee * 0.2) / 9)}`, satuan: 'g', status: '50% Karbo · 20% Lemak', warna: 'c-brand', deskripsi: 'Distribusi makronutrien berdasarkan panduan gizi seimbang: karbohidrat dan lemak.' };
+  }, 'Alokasi sisa ruang kalori harian untuk sumber energi utama dan pelarut vitamin.');
 
-  K('risiko','ABSI (Mortalitas)',['waist','height','weight'],()=>{
-    const bmi=d.weight/(hM**2), absi=(d.waist/100)/(Math.pow(bmi,2/3)*Math.sqrt(hM));
-    const cutLow = d.gender==='male'?0.076:0.074;
-    const cutHigh = d.gender==='male'?0.081:0.079;
-    let s='Rata-rata',w='c-brand';
-    if(absi<cutLow){s='Rendah';w='c-good';}else if(absi>cutHigh){s='Tinggi';w='c-danger';}
-    return {nilai:toComma(absi, 4),satuan:'indeks',status:s,warna:w,deskripsi:'Indeks bentuk tubuh yang menghubungkan lingkar pinggang dengan IMT dan tinggi badan untuk memprediksi risiko mortalitas.'};
-  },'Prediktor spesifik ancaman penyakit akibat lipatan lemak viseral.');
+  K('risiko', 'ABSI (Mortalitas)', ['waist','height','weight'], () => {
+    const bmi = d.weight / (hM ** 2), absi = (d.waist / 100) / (Math.pow(bmi, 2 / 3) * Math.sqrt(hM));
+    const cutLow = d.gender === 'male' ? 0.076 : 0.074;
+    const cutHigh = d.gender === 'male' ? 0.081 : 0.079;
+    let s = 'Rata-rata', w = 'c-brand';
+    if (absi < cutLow) { s = 'Rendah'; w = 'c-good'; } else if (absi > cutHigh) { s = 'Tinggi'; w = 'c-danger'; }
+    return { nilai: toComma(absi, 4), satuan: 'indeks', status: s, warna: w, deskripsi: 'Indeks bentuk tubuh yang menghubungkan lingkar pinggang dengan IMT dan tinggi badan untuk memprediksi risiko mortalitas.' };
+  }, 'Prediktor spesifik ancaman penyakit akibat lipatan lemak viseral.');
 
-  K('risiko','Rasio Pinggang/Tinggi',['waist','height'],()=>{
-    const r=d.waist/d.height, safe=r<=0.5;
-    return {nilai:toComma(r,2),satuan:'rasio',status:safe?'Aman':'Rentan',warna:safe?'c-good':'c-danger',deskripsi:'Rasio pinggang terhadap tinggi badan adalah prediktor risiko kardiovaskular yang kuat. Target ideal < 0,5.'};
-  },'Indikator tajam prediksi penyakit kardiovaskular. Target < 0,5.');
+  K('risiko', 'Rasio Pinggang/Tinggi', ['waist','height'], () => {
+    const r = d.waist / d.height;
+    let st = 'Aman', w = 'c-good';
+    if (r > 0.60) { st = 'Risiko Tinggi'; w = 'c-danger'; }
+    else if (r > 0.50) { st = 'Batas Waspada'; w = 'c-warn'; }
+    return { nilai: toComma(r, 2), satuan: 'rasio', status: st, warna: w, deskripsi: 'Rasio pinggang terhadap tinggi badan adalah prediktor risiko kardiovaskular yang kuat. Target ideal ≤ 0,50.' };
+  }, 'Indikator tajam prediksi penyakit kardiovaskular. Target ≤ 0,50.');
 
-  K('risiko','Rasio Pinggang/Pinggul',['waist','hip'],()=>{
-    const r=d.waist/d.hip;
-    const risky=(d.gender==='male'&&r>=0.90)||(d.gender==='female'&&r>=0.85);
-    return {nilai:toComma(r,2),satuan:'rasio',status:risky?'Apel (Risiko)':'Pir (Aman)',warna:risky?'c-danger':'c-good',deskripsi:'Rasio pinggang terhadap pinggul membedakan distribusi lemak tipe apel (sentral, berbahaya) dan tipe pir.'};
-  },'Bentuk Apel dikaitkan erat dengan paparan sindrom metabolik diabetes.');
+  K('risiko', 'Rasio Pinggang/Pinggul', ['waist','hip'], () => {
+    const r = d.waist / d.hip;
+    const risky = (d.gender === 'male' && r >= 0.90) || (d.gender === 'female' && r >= 0.85);
+    return { nilai: toComma(r, 2), satuan: 'rasio', status: risky ? 'Apel (Risiko)' : 'Pir (Aman)', warna: risky ? 'c-danger' : 'c-good', deskripsi: 'Rasio pinggang terhadap pinggul membedakan distribusi lemak tipe apel (sentral, berbahaya) dan tipe pir.' };
+  }, 'Bentuk Apel dikaitkan erat dengan paparan sindrom metabolik diabetes.');
 
-  K('komposisi2','RMR Katch-McArdle',['weight',...nDeps],d=>{
-    const lbmKg = d.weight*(1-calcNavy(d)/100);
-    const rmr   = 370 + 21.6*lbmKg;
-    const diff  = rmr - calcBmr(d);
-    const sign  = diff>=0?'+':'-';
-    return {nilai:Math.round(rmr),satuan:'kcal',status:`${sign}${Math.abs(Math.round(diff))} vs Mifflin`,warna:Math.abs(diff)>100?'c-info':'c-brand',deskripsi:'Metabolisme basal dihitung dari massa bebas lemak, bukan berat total.'};
-  },'RMR Katch-McArdle menggunakan LBM, bukan berat total, sehingga lebih presisi untuk individu berotot.');
+  K('komposisi2', 'RMR Katch-McArdle', ['weight', ...nDeps], d => {
+    const lbmKg = d.weight * (1 - calcNavy(d) / 100);
+    const rmr = 370 + 21.6 * lbmKg;
+    const hasValidAge = !isNaN(d.age) && d.age >= BOUNDS.age.min && d.age <= BOUNDS.age.max;
+    if (!hasValidAge) {
+      return { nilai: Math.round(rmr), satuan: 'kcal', status: 'Berbasis LBM', warna: 'c-brand', deskripsi: 'Metabolisme basal dihitung dari massa bebas lemak, bukan berat total.' };
+    }
+    const diff = rmr - calcBmr(d);
+    const sign = diff >= 0 ? '+' : '-';
+    return { nilai: Math.round(rmr), satuan: 'kcal', status: `${sign}${Math.abs(Math.round(diff))} vs Mifflin`, warna: Math.abs(diff) > 100 ? 'c-info' : 'c-brand', deskripsi: 'Metabolisme basal dihitung dari massa bebas lemak, bukan berat total.' };
+  }, 'RMR Katch-McArdle menggunakan LBM, bukan berat total, sehingga lebih presisi untuk individu berotot.');
 
-  K('komposisi2','Total Air Tubuh',['age','height','weight'],d=>{
-    const tbw = d.gender==='male'?2.447 - 0.09156*d.age + 0.1074*d.height + 0.3362*d.weight:-2.097 + 0.1069*d.height + 0.2466*d.weight;
-    const pct = (tbw/d.weight*100); const norm = d.gender==='male'?60:55;
-    const st = pct>=norm-5&&pct<=norm+10?'Normal':'Perhatian';
+  K('komposisi2', 'Total Air Tubuh', ['age','height','weight'], d => {
+    const tbw = d.gender === 'male' ? 2.447 - 0.09156 * d.age + 0.1074 * d.height + 0.3362 * d.weight : -2.097 + 0.1069 * d.height + 0.2466 * d.weight;
+    const pct = (tbw / d.weight * 100); const norm = d.gender === 'male' ? 60 : 55;
+    const st = pct >= norm - 5 && pct <= norm + 10 ? 'Normal' : 'Perhatian';
     const o = fmtV(tbw);
-    return {nilai:toComma(o.v, 2),satuan:o.u,status:st,warna:st==='Normal'?'c-good':'c-warn',deskripsi:`Air menyusun ${toComma(pct,0)}% berat badan Anda.`};
-  },'Total Body Water (Watson 1980): digunakan luas di dunia medis untuk menghitung dosis obat berbasis cairan tubuh.');
+    return { nilai: toComma(o.v, 2), satuan: o.u, status: st, warna: st === 'Normal' ? 'c-good' : 'c-warn', deskripsi: `Air menyusun ${toComma(pct, 0)}% berat badan Anda.` };
+  }, 'Total Body Water (Watson 1980): digunakan luas di dunia medis untuk menghitung dosis obat berbasis cairan tubuh.');
 
-  K('komposisi2','Massa Otot Rangka',['weight',...nDeps],d=>{
-    const bf    = calcNavy(d); const lbmKg = d.weight*(1-bf/100); const smm = lbmKg*0.55;
-    const smmPct= smm/d.weight*100; const o = fmtW(smm);
-    const threshold = d.gender==='male'?34:27;
-    const st = smmPct>=threshold?'Baik':'Rendah';
-    return {nilai:toComma(o.v, 2),satuan:o.u,status:st,warna:st==='Baik'?'c-good':'c-warn',deskripsi:`Otot rangka menyusun ${toComma(smmPct, 2)}% berat badan Anda.`};
-  },'Skeletal Muscle Mass: otot yang dapat dikontraksikan secara sadar. Kunci metabolisme, mobilitas, dan longevitas.');
+  K('komposisi2', 'Massa Otot Rangka', ['weight', ...nDeps], d => {
+    const bf = calcNavy(d); const lbmKg = d.weight * (1 - bf / 100); const smm = lbmKg * 0.55;
+    const smmPct = smm / d.weight * 100; const o = fmtW(smm);
+    const threshold = d.gender === 'male' ? 34 : 27;
+    const st = smmPct >= threshold ? 'Baik' : 'Rendah';
+    return { nilai: toComma(o.v, 2), satuan: o.u, status: st, warna: st === 'Baik' ? 'c-good' : 'c-warn', deskripsi: `Otot rangka menyusun ${toComma(smmPct, 2)}% berat badan Anda.` };
+  }, 'Skeletal Muscle Mass: otot yang dapat dikontraksikan secara sadar. Kunci metabolisme, mobilitas, dan longevitas.');
 
-  K('komposisi2','Estimasi Massa Tulang',['height','weight','age'],d=>{
-    const bm = d.gender==='male'?3.6*Math.pow(d.height/100, 1.7):2.7*Math.pow(d.height/100, 1.7);
-    const bmAdj = Math.max(bm - Math.max(0,d.age-30)*0.01, bm*0.7); const o = fmtW(bmAdj);
-    return {nilai:toComma(o.v,2),satuan:o.u,status:'',warna:'',deskripsi:'Estimasi massa tulang dari tinggi badan.'};
-  },'Estimasi massa tulang dari tinggi badan. Menurun seiring usia — relevan untuk risiko osteoporosis.');
+  K('komposisi2', 'Estimasi Massa Tulang', ['height','weight','age'], d => {
+    const bm = d.gender === 'male' ? 3.6 * Math.pow(d.height / 100, 1.7) : 2.7 * Math.pow(d.height / 100, 1.7);
+    const bmAdj = Math.max(bm - Math.max(0, d.age - 30) * 0.01, bm * 0.7); const o = fmtW(bmAdj);
+    return { nilai: toComma(o.v, 2), satuan: o.u, status: `${toComma((bmAdj / d.weight) * 100, 1)}% Berat`, warna: 'c-brand', deskripsi: 'Estimasi massa tulang mineral dari tinggi badan dan usia.' };
+  }, 'Estimasi massa tulang dari tinggi badan. Menurun seiring usia — relevan untuk risiko osteoporosis.');
 
-  K('komposisi2','Persentase Lean Mass',['weight',...nDeps],d=>{
-    const bf = calcNavy(d); const lean = 100-bf; let st,w;
-    if(d.gender==='male'){
-      if(lean>=85){st='Elite';w='c-info';}else if(lean>=78){st='Sangat Baik';w='c-good';}else if(lean>=72){st='Baik';w='c-good';}else{st='Rata-rata';w='c-brand';}
-    }else{
-      if(lean>=77){st='Elite';w='c-info';}else if(lean>=71){st='Sangat Baik';w='c-good';}else if(lean>=65){st='Baik';w='c-good';}else{st='Rata-rata';w='c-brand';}
+  K('komposisi2', 'Persentase Lean Mass', ['weight', ...nDeps], d => {
+    const bf = calcNavy(d); const lean = 100 - bf; let st, w;
+    if (d.gender === 'male') {
+      if (lean >= 85) { st = 'Elite'; w = 'c-info'; } else if (lean >= 78) { st = 'Sangat Baik'; w = 'c-good'; } else if (lean >= 72) { st = 'Baik'; w = 'c-good'; } else { st = 'Rata-rata'; w = 'c-brand'; }
+    } else {
+      if (lean >= 77) { st = 'Elite'; w = 'c-info'; } else if (lean >= 71) { st = 'Sangat Baik'; w = 'c-good'; } else if (lean >= 65) { st = 'Baik'; w = 'c-good'; } else { st = 'Rata-rata'; w = 'c-brand'; }
     }
-    return {nilai:toComma(lean, 2),satuan:'%',status:st,warna:w,deskripsi:'Persentase seluruh massa tubuh yang bukan lemak.'};
-  },'Lean Mass %: persentase massa tubuh yang berfungsi secara metabolis aktif. Semakin tinggi, semakin baik.');
+    return { nilai: toComma(lean, 2), satuan: '%', status: st, warna: w, deskripsi: 'Persentase seluruh massa tubuh yang bukan lemak.' };
+  }, 'Lean Mass %: persentase massa tubuh yang berfungsi secara metabolis aktif. Semakin tinggi, semakin baik.');
 
-  K('komposisi2','Potensi Otot Alami',['weight','height',...nDeps],d=>{
-    const bf = calcNavy(d); const lbmKg = d.weight*(1-bf/100); const ffmi = lbmKg/(hM**2);
-    const ceiling = d.gender==='male'?25.0:21.0; const pct = Math.min((ffmi/ceiling)*100, 100);
-    let st,w; if(pct>=95){st='Maksimal';w='c-info';}else if(pct>=80){st='Atletis';w='c-good';}else{st='Berkembang';w='c-brand';}
-    return {nilai:toComma(pct, 1),satuan:'%',status:st,warna:w,deskripsi:`FFMI Anda ${toComma(ffmi, 2)} dari batas genetik natural ${ceiling}.`};
-  },'Persentase potensi otot alami yang telah dicapai. Mengacu batas FFMI atlet drug-free (Kouri 1995, NEJM).');
+  K('komposisi2', 'Potensi Otot Alami', ['weight','height', ...nDeps], d => {
+    const bf = calcNavy(d); const lbmKg = d.weight * (1 - bf / 100); const ffmi = lbmKg / (hM ** 2);
+    const ceiling = d.gender === 'male' ? 25.0 : 21.0; const pct = Math.min((ffmi / ceiling) * 100, 100);
+    let st, w; if (pct >= 95) { st = 'Maksimal'; w = 'c-info'; } else if (pct >= 80) { st = 'Atletis'; w = 'c-good'; } else { st = 'Berkembang'; w = 'c-brand'; }
+    return { nilai: toComma(pct, 1), satuan: '%', status: st, warna: w, deskripsi: `FFMI Anda ${toComma(ffmi, 2)} dari batas genetik natural ${ceiling}.` };
+  }, 'Persentase potensi otot alami yang telah dicapai. Mengacu batas FFMI atlet drug-free (Kouri 1995, NEJM).');
 
-  K('kardio2','Usia Kebugaran',['age','rhr','waist','height'],d=>{
-    const maxHr = 208-0.7*d.age; const vo2est = 15.3*(maxHr/d.rhr);
-    const vo2Exp = d.gender==='male'?Math.max(70 - (d.age-20)*0.6, 20):Math.max(58 - (d.age-20)*0.5, 16);
-    const actAdj = (d.activity-1.2)*15; const whtrPen= (d.waist/d.height)>0.5?((d.waist/d.height)-0.5)*30:0;
-    const delta = vo2est - vo2Exp + actAdj - whtrPen; const fitAge = Math.max(18, Math.min(100, Math.round(d.age - delta/0.5)));
-    const diff = d.age - fitAge; let st,w;
-    if(diff>=10){st='Jauh Lebih Muda';w='c-good';}else if(diff>=5){st='Lebih Muda';w='c-good';}else if(diff>=-5){st='Sesuai Usia';w='c-brand';}else{st='Lebih Tua';w='c-warn';}
-    return {nilai:fitAge,satuan:'thn',status:st,warna:w,deskripsi:`Jantung dan paru-paru Anda berfungsi setara dengan orang berusia ${fitAge} tahun.`};
-  },'Fitness Age: usia biologis kardiovaskular berdasarkan VO2Max, lingkar pinggang, dan RHR. Studi NTNU Norway.');
+  K('kardio2', 'Usia Kebugaran', ['age','rhr','waist','height'], d => {
+    const maxHr = 208 - 0.7 * d.age;
+    if (d.rhr >= maxHr) throw new Error('Denyut nadi istirahat melebihi atau sama dengan batas detak jantung maksimum usia Anda.');
+    const vo2est = 15.3 * (maxHr / d.rhr);
+    const vo2Exp = d.gender === 'male' ? Math.max(70 - (d.age - 20) * 0.6, 20) : Math.max(58 - (d.age - 20) * 0.5, 16);
+    const actAdj = (d.activity - 1.2) * 15; const whtrPen = (d.waist / d.height) > 0.5 ? ((d.waist / d.height) - 0.5) * 30 : 0;
+    const delta = vo2est - vo2Exp + actAdj - whtrPen; const fitAge = Math.max(18, Math.min(100, Math.round(d.age - delta / 0.5)));
+    const diff = d.age - fitAge; let st, w;
+    if (diff >= 10) { st = 'Jauh Lebih Muda'; w = 'c-good'; } else if (diff >= 5) { st = 'Lebih Muda'; w = 'c-good'; } else if (diff >= -5) { st = 'Sesuai Usia'; w = 'c-brand'; } else { st = 'Lebih Tua'; w = 'c-warn'; }
+    return { nilai: fitAge, satuan: 'thn', status: st, warna: w, deskripsi: `Jantung dan paru-paru Anda berfungsi setara dengan orang berusia ${fitAge} tahun.` };
+  }, 'Fitness Age: usia biologis kardiovaskular berdasarkan VO2Max, lingkar pinggang, dan RHR. Studi NTNU Norway.');
 
-  K('kardio2','Klasifikasi Denyut Nadi',['age','rhr'],d=>{
-    const maxHr = 208-0.7*d.age; const rhrPct = (d.rhr/maxHr*100); let st,w;
-    if(d.gender==='male'){
-      if(d.rhr<=55){st='Atlet';w='c-info';}else if(d.rhr<=65){st='Baik';w='c-good';}else if(d.rhr<=75){st='Rata-rata';w='c-brand';}else{st='Tinggi';w='c-danger';}
-    }else{
-      if(d.rhr<=60){st='Atlet';w='c-info';}else if(d.rhr<=70){st='Baik';w='c-good';}else if(d.rhr<=80){st='Rata-rata';w='c-brand';}else{st='Tinggi';w='c-danger';}
+  K('kardio2', 'Klasifikasi Denyut Nadi', ['age','rhr'], d => {
+    const maxHr = 208 - 0.7 * d.age;
+    if (d.rhr >= maxHr) throw new Error('Denyut nadi istirahat melebihi atau sama dengan batas detak jantung maksimum usia Anda.');
+    const rhrPct = (d.rhr / maxHr * 100); let st, w;
+    if (d.gender === 'male') {
+      if (d.rhr <= 55) { st = 'Atlet'; w = 'c-info'; } else if (d.rhr <= 65) { st = 'Baik'; w = 'c-good'; } else if (d.rhr <= 75) { st = 'Rata-rata'; w = 'c-brand'; } else { st = 'Tinggi'; w = 'c-danger'; }
+    } else {
+      if (d.rhr <= 60) { st = 'Atlet'; w = 'c-info'; } else if (d.rhr <= 70) { st = 'Baik'; w = 'c-good'; } else if (d.rhr <= 80) { st = 'Rata-rata'; w = 'c-brand'; } else { st = 'Tinggi'; w = 'c-danger'; }
     }
-    return {nilai:d.rhr,satuan:'bpm',status:st,warna:w,deskripsi:`Denyut nadi Anda saat istirahat setara ${toComma(rhrPct, 2)}% dari kapasitas maksimum jantung.`};
-  },'Denyut nadi istirahat adalah biomarker kebugaran kardiovaskular paling mudah diukur.');
+    return { nilai: d.rhr, satuan: 'bpm', status: st, warna: w, deskripsi: `Denyut nadi Anda saat istirahat setara ${toComma(rhrPct, 2)}% dari kapasitas maksimum jantung.` };
+  }, 'Denyut nadi istirahat adalah biomarker kebugaran kardiovaskular paling mudah diukur.');
 
-  K('kardio2','5 Zona Latihan',['age','rhr'],d=>{
-    const maxHr = 208-0.7*d.age; const hrr = maxHr-d.rhr;
-    const z = (lo,hi)=>`${Math.round(d.rhr+hrr*lo)}–${Math.round(d.rhr+hrr*hi)}`;
-    return {nilai:'Z1–Z5',satuan:'bpm',status:'',warna:'',deskripsi:`Z1 Pemulihan ${z(0.5,0.6)} · Z2 Pembakaran Lemak ${z(0.6,0.7)} · Z3 Aerobik ${z(0.7,0.8)} · Z4 Laktat ${z(0.8,0.9)} · Z5 Maks ${z(0.9,1.0)} bpm.`};
-  },'5 zona latihan Karvonen (1957): setiap zona memiliki manfaat berbeda dari pemulihan aktif hingga peningkatan kapasitas anaerob.');
+  K('kardio2', '5 Zona Latihan', ['age','rhr'], d => {
+    const maxHr = 208 - 0.7 * d.age;
+    if (d.rhr >= maxHr) throw new Error('Denyut nadi istirahat melebihi atau sama dengan batas detak jantung maksimum usia Anda.');
+    const hrr = maxHr - d.rhr;
+    const z = (lo, hi) => `${Math.round(d.rhr + hrr * lo)}–${Math.round(d.rhr + hrr * hi)}`;
+    return { nilai: 'Z1–Z5', satuan: 'bpm', status: 'Metode Karvonen', warna: 'c-brand', deskripsi: `Z1 Pemulihan ${z(0.5, 0.6)} · Z2 Pembakaran Lemak ${z(0.6, 0.7)} · Z3 Aerobik ${z(0.7, 0.8)} · Z4 Laktat ${z(0.8, 0.9)} · Z5 Maks ${z(0.9, 1.0)} bpm.` };
+  }, '5 zona latihan Karvonen (1957): setiap zona memiliki manfaat berbeda dari pemulihan aktif hingga peningkatan kapasitas anaerob.');
 
-  K('kardio2','Luas Permukaan Tubuh',['height','weight'],d=>{
-    const bsa = 0.007184 * Math.pow(d.height,0.725) * Math.pow(d.weight,0.425);
-    return {nilai:toComma(bsa, 2),satuan:'m²',status:'',warna:'',deskripsi:`Luas permukaan tubuh Anda ${toComma(bsa, 2)} m².`};
-  },'Body Surface Area (DuBois 1916): standar klinis global untuk perhitungan dosis obat.');
+  K('kardio2', 'Luas Permukaan Tubuh', ['height','weight'], d => {
+    const bsa = 0.007184 * Math.pow(d.height, 0.725) * Math.pow(d.weight, 0.425);
+    return { nilai: toComma(bsa, 2), satuan: 'm²', status: 'DuBois 1916', warna: 'c-brand', deskripsi: `Luas permukaan tubuh Anda ${toComma(bsa, 2)} m².` };
+  }, 'Body Surface Area (DuBois 1916): standar klinis global untuk perhitungan dosis obat.');
 
-  K('metabolisme2','Rincian Energi Harian',['weight','height','age'],d=>{
-    const bmr = calcBmr(d); const tdee = bmr*d.activity; const tef = tdee*0.10;
-    const eatFactor = [1.2,1.375,1.55,1.725,1.9].indexOf(d.activity);
-    const eatPct = [0,5,15,25,38][Math.max(0,eatFactor)]; const eat = tdee*(eatPct/100); const neat = tdee - bmr - tef - eat;
-    return {nilai:Math.round(tdee),satuan:'kcal',status:'',warna:'',deskripsi:`BMR ${Math.round(bmr)} + NEAT ${Math.round(neat)} + EAT ${Math.round(eat)} + TEF ${Math.round(tef)} = ${Math.round(tdee)} kkal.`};
-  },'Komponen TDEE: BMR + NEAT + EAT + TEF.');
+  K('metabolisme2', 'Rincian Energi Harian', ['weight','height','age'], d => {
+    const bmr = calcBmr(d); const tdee = bmr * d.activity; const tef = tdee * 0.10;
+    const availAct = Math.max(0, tdee - bmr - tef);
+    const eatFactor = [1.2, 1.375, 1.55, 1.725, 1.9].indexOf(d.activity);
+    const eatShare = [0, 0.35, 0.55, 0.70, 0.80][Math.max(0, eatFactor)];
+    const eat = availAct * eatShare;
+    const neat = Math.max(0, availAct - eat);
+    return { nilai: Math.round(tdee), satuan: 'kcal', status: 'BMR + NEAT + EAT + TEF', warna: 'c-brand', deskripsi: `BMR ${Math.round(bmr)} + NEAT ${Math.round(neat)} + EAT ${Math.round(eat)} + TEF ${Math.round(tef)} = ${Math.round(tdee)} kkal.` };
+  }, 'Komponen TDEE: BMR + NEAT + EAT + TEF.');
 
-  K('metabolisme2','Protein Berbasis Riset',['weight',...nDeps],d=>{
-    const bf = calcNavy(d); const lbm = d.weight*(1-bf/100); const act = d.activity;
-    let lo=1.6, hi=2.0; if(act<=1.2){lo=0.8;hi=1.0;}else if(act>=1.725){lo=1.8;hi=2.4;}
-    const loG = toComma((lbm*lo),0), hiG = toComma((lbm*hi),0);
-    return {nilai:`${loG}–${hiG}`,satuan:'g/hari',status:`${lo}–${hi} g/kg LBM`,warna:'c-brand',deskripsi:`Kebutuhan protein ${loG}–${hiG} g/hari dihitung dari massa bebas lemak Anda.`};
-  },'Kebutuhan protein evidence-based dari ISSN berdasarkan LBM dan level aktivitas.');
+  K('metabolisme2', 'Protein Berbasis Riset', ['weight', ...nDeps], d => {
+    const bf = calcNavy(d); const lbm = d.weight * (1 - bf / 100); const act = d.activity;
+    let lo = 1.6, hi = 2.0; if (act <= 1.2) { lo = 0.8; hi = 1.0; } else if (act >= 1.725) { lo = 1.8; hi = 2.4; }
+    const loG = toComma((lbm * lo), 0), hiG = toComma((lbm * hi), 0);
+    return { nilai: `${loG}–${hiG}`, satuan: 'g/hari', status: `${toComma(lo, 1)}–${toComma(hi, 1)} g/kg LBM`, warna: 'c-brand', deskripsi: `Kebutuhan protein ${loG}–${hiG} g/hari dihitung dari massa bebas lemak Anda.` };
+  }, 'Kebutuhan protein evidence-based dari ISSN berdasarkan LBM dan level aktivitas.');
 
-  K('metabolisme2','Kalori per Tujuan',['weight','height','age'],d=>{
-    const tdee = calcBmr(d)*d.activity;
-    return {nilai:Math.round(tdee),satuan:'kcal',status:'',warna:'',deskripsi:`Turun Agresif: ${Math.round(tdee-500)} · Pertahankan: ${Math.round(tdee)} · Lean Bulk: ${Math.round(tdee+250)} kkal.`};
-  },'Target kalori per tujuan. 1 kg lemak ≈ 7.700 kcal.');
+  K('metabolisme2', 'Kalori per Tujuan', ['weight','height','age'], d => {
+    const tdee = calcBmr(d) * d.activity;
+    return { nilai: Math.round(tdee), satuan: 'kcal', status: 'Defisit · Maintenance · Surplus', warna: 'c-brand', deskripsi: `Turun Agresif: ${Math.round(tdee - 500)} · Pertahankan: ${Math.round(tdee)} · Lean Bulk: ${Math.round(tdee + 250)} kkal.` };
+  }, 'Target kalori per tujuan. 1 kg lemak ≈ 7.700 kcal.');
 
-  K('risiko2','Indeks Kebulatan Tubuh',['waist','height'],d=>{
-    const waistM = d.waist/100, heightM = d.height/100;
-    const ratio = (waistM/(2*Math.PI)) / (0.5*heightM);
-    if(ratio>=1) throw new Error('Proporsi pinggang melampaui tinggi — periksa input.');
-    const bri = 364.2 - 365.5*Math.sqrt(1 - ratio**2);
-    let st='Rata-rata',w='c-brand'; if(bri<3.4){st='Rendah';w='c-good';}else if(bri>5.5){st='Tinggi';w='c-danger';}
-    return {nilai:toComma(bri,2),satuan:'BRI',status:st,warna:w,deskripsi:'Indeks Kebulatan Tubuh mengukur seberapa "bulat" penampang tubuh secara geometris.'};
-  },'BRI mengukur "kebulatan" tubuh secara geometris. Berkorelasi kuat dengan lemak viseral.');
+  K('risiko2', 'Indeks Kebulatan Tubuh', ['waist','height'], d => {
+    const waistM = d.waist / 100, heightM = d.height / 100;
+    const ratio = (waistM / (2 * Math.PI)) / (0.5 * heightM);
+    if (ratio >= 1) throw new Error('Proporsi pinggang melampaui tinggi — periksa input.');
+    const bri = 364.2 - 365.5 * Math.sqrt(1 - ratio ** 2);
+    let st = 'Rata-rata', w = 'c-brand'; if (bri < 3.4) { st = 'Rendah'; w = 'c-good'; } else if (bri > 5.5) { st = 'Tinggi'; w = 'c-danger'; }
+    return { nilai: toComma(bri, 2), satuan: 'BRI', status: st, warna: w, deskripsi: 'Indeks Kebulatan Tubuh mengukur seberapa "bulat" penampang tubuh secara geometris.' };
+  }, 'BRI mengukur "kebulatan" tubuh secara geometris. Berkorelasi kuat dengan lemak viseral.');
 
-  K('risiko2','Indeks Konisitas',['waist','weight','height'],d=>{
-    const ci = (d.waist/100) / (0.109*Math.sqrt(d.weight/(d.height/100)));
-    const cut = d.gender==='male'?1.25:1.18; const risky= ci>cut;
-    return {nilai:toComma(ci, 2),satuan:'CI',status:risky?'Risiko':'Aman',warna:risky?'c-danger':'c-good',deskripsi:'Indeks Konisitas membandingkan bentuk tubuh Anda dengan silinder sempurna (CI=1).'};
-  },'Conicity Index (Valdez 1991): bentuk tubuh ideal seperti kerucut (CI=1).');
+  K('risiko2', 'Indeks Konisitas', ['waist','weight','height'], d => {
+    const ci = (d.waist / 100) / (0.109 * Math.sqrt(d.weight / (d.height / 100)));
+    const cut = d.gender === 'male' ? 1.25 : 1.18; const risky = ci > cut;
+    return { nilai: toComma(ci, 2), satuan: 'CI', status: risky ? 'Risiko' : 'Aman', warna: risky ? 'c-danger' : 'c-good', deskripsi: 'Indeks Konisitas membandingkan bentuk tubuh Anda dengan silinder sempurna (CI=1).' };
+  }, 'Conicity Index (Valdez 1991): bentuk tubuh ideal seperti kerucut (CI=1).');
 
-  K('risiko2','Rasio Pinggul/Tinggi',['hip','height'],d=>{
-    const hhr = d.hip/d.height; const cut = d.gender==='male'?0.58:0.61; const risky= hhr>cut;
-    return {nilai:toComma(hhr, 2),satuan:'rasio',status:risky?'Berlebih':'Proporsional',warna:risky?'c-warn':'c-good',deskripsi:'Rasio pinggul terhadap tinggi mengukur proporsionalitas tubuh bagian bawah.'};
-  },'Hip-to-Height Ratio: proksi lemak tubuh bawah.');
+  K('risiko2', 'Rasio Pinggul/Tinggi', ['hip','height'], d => {
+    const hhr = d.hip / d.height; const cut = d.gender === 'male' ? 0.58 : 0.61; const risky = hhr > cut;
+    return { nilai: toComma(hhr, 2), satuan: 'rasio', status: risky ? 'Berlebih' : 'Proporsional', warna: risky ? 'c-warn' : 'c-good', deskripsi: 'Rasio pinggul terhadap tinggi mengukur proporsionalitas tubuh bagian bawah.' };
+  }, 'Hip-to-Height Ratio: proksi lemak tubuh bawah.');
 
-  K('risiko2','Rasio Pinggang/Leher',['waist','neck'],d=>{
-    const wnr = d.waist/d.neck; const cut = d.gender==='male'?2.45:2.50; const risky= wnr>cut;
-    return {nilai:toComma(wnr,2),satuan:'rasio',status:risky?'Risiko':'Normal',warna:risky?'c-danger':'c-good',deskripsi:'Membandingkan lingkar pinggang terhadap lingkar leher untuk mendeteksi penumpukan lemak torso.'};
-  },'Waist-to-Neck Ratio mendeteksi dominasi lemak viseral perut.');
+  K('risiko2', 'Rasio Pinggang/Leher', ['waist','neck'], d => {
+    const wnr = d.waist / d.neck; const cut = d.gender === 'male' ? 2.45 : 2.50; const risky = wnr > cut;
+    return { nilai: toComma(wnr, 2), satuan: 'rasio', status: risky ? 'Risiko' : 'Normal', warna: risky ? 'c-danger' : 'c-good', deskripsi: 'Membandingkan lingkar pinggang terhadap lingkar leher untuk mendeteksi penumpukan lemak torso.' };
+  }, 'Waist-to-Neck Ratio mendeteksi dominasi lemak viseral perut.');
 
   let totalActiveCards = 0;
   ['umum','komposisi','kardio','metabolisme','risiko','komposisi2','kardio2','metabolisme2','risiko2'].forEach(c => {
     const list = cats[c] || [];
-    const container = document.getElementById('cat-'+c);
+    const container = document.getElementById('cat-' + c);
     if (container) container.innerHTML = list.map(item => item.html).join('');
     const actCount = list.filter(item => item.active).length;
     totalActiveCards += actCount;
-    const badgeEl = document.getElementById('badge-'+c);
+    const badgeEl = document.getElementById('badge-' + c);
     if (badgeEl) {
       badgeEl.textContent = `${actCount}/${list.length} Aktif`;
       badgeEl.classList.toggle('ready', actCount === list.length && list.length > 0);
     }
   });
   const navAllCnt = document.getElementById('nav-cnt-all');
-  if (navAllCnt) navAllCnt.textContent = `${totalActiveCards}/27`;
+  if (navAllCnt) navAllCnt.textContent = `${totalActiveCards}/${TOTAL_CARDS}`;
 
+  if (activeFilter === 'pinned') applyPinnedFilter();
   updateInputValidationAndProgress(d);
   buildSummary(d);
 }
@@ -2995,7 +3197,7 @@ function updateInputValidationAndProgress(d) {
       statusEl.textContent = `${validCount}/8 parameter terisi (${pct}%)`;
       dotEl.style.background = 'var(--warn)';
     } else {
-      statusEl.textContent = '8/8 parameter lengkap (100%) — klik kartu mana saja untuk menyorot';
+      statusEl.textContent = `8/8 parameter lengkap (100%) — ${TOTAL_CARDS} analisis aktif`;
       dotEl.style.background = 'var(--good)';
     }
   }
@@ -3033,7 +3235,16 @@ function focusCardByTitle(cardTitle, pillEl) {
     const sec = coll.closest('.rsec'); const chev = sec ? sec.querySelector('.chev') : null;
     if (chev) chev.classList.add('open');
   }
-  selectedCards.add(cardTitle); cardEl.classList.add('is-selected');
+  if (cardEl.classList.contains('is-collapsed')) {
+    cardEl.classList.remove('is-collapsed');
+    collapsedCards.delete(cardTitle);
+    const foldBtn = cardEl.querySelector('.card-fold-btn');
+    if (foldBtn) foldBtn.setAttribute('aria-expanded', 'true');
+  }
+  selectedCards.add(cardTitle);
+  cardEl.classList.add('is-selected');
+  updatePinnedCount();
+  saveState();
   cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
   setTimeout(() => bounceElement(cardEl), 220);
 }
@@ -3046,15 +3257,17 @@ function buildSummary(d) {
   const hasAge   = !isNaN(d.age)    && d.age    >= BOUNDS.age.min    && d.age    <= BOUNDS.age.max;
   const hasRhr   = !isNaN(d.rhr)    && d.rhr    >= BOUNDS.rhr.min    && d.rhr    <= BOUNDS.rhr.max;
 
-  const hasBody   = hasBasic && hasWaist && hasNeck;
-  const hasCardio = hasBasic && hasAge   && hasRhr;
+  const isMale = d.gender === 'male';
+  const hasBody = hasBasic && hasWaist && hasNeck && (isMale || hasHip);
+  const maxHrEst = hasAge ? (208 - 0.7 * d.age) : 200;
+  const hasCardio = hasBasic && hasAge && hasRhr && d.rhr < maxHrEst;
 
   if (!hasBasic) {
     renderEmptySummaryAndReco();
     return;
   }
 
-  const hM = d.height / 100; const isMale = d.gender === 'male';
+  const hM = d.height / 100;
   const bmi = d.weight / (hM * hM);
   const sBmi = bmi < 18.5 ? Math.max(0, 60 - (18.5 - bmi) * 8) : bmi < 25 ? 100 : bmi < 30 ? Math.max(0, 100 - (bmi - 25) * 10) : Math.max(0, 50 - (bmi - 30) * 8);
 
@@ -3065,19 +3278,19 @@ function buildSummary(d) {
   }
 
   let sFat = null; let bf = null;
-  if (hasBody && (isMale || hasHip)) {
+  if (hasBody) {
     try {
       bf = calcNavy(d);
       const lo = isMale ? 10 : 20, hi = isMale ? 18 : 28, danger = isMale ? 25 : 35;
       sFat = bf < lo ? Math.max(20, 80 - (lo - bf) * 4) : bf <= hi ? 100 : bf <= danger ? Math.max(30, 100 - (bf - hi) * 5) : Math.max(0, 30 - (bf - danger) * 4);
-    } catch(e) { bf = null; sFat = null; }
+    } catch (e) { bf = null; sFat = null; }
   }
 
   let sCardio = null;
   if (hasCardio) {
     const maxHr = 208 - 0.7 * d.age; const vo2 = 15.3 * (maxHr / d.rhr);
     const excellent = isMale ? 48 : 43, good = isMale ? 43 : 38, avg = isMale ? 36 : 32, poor = isMale ? 30 : 26;
-    sCardio = vo2 >= excellent ? 100 : vo2 >= good ? Math.round(70 + (vo2-good)/(excellent-good)*30) : vo2 >= avg ? Math.round(45 + (vo2-avg)/(good-avg)*25) : vo2 >= poor ? Math.round(20 + (vo2-poor)/(avg-poor)*25) : Math.max(0, Math.round(vo2/poor*20));
+    sCardio = vo2 >= excellent ? 100 : vo2 >= good ? Math.round(70 + (vo2 - good) / (excellent - good) * 30) : vo2 >= avg ? Math.round(45 + (vo2 - avg) / (good - avg) * 25) : vo2 >= poor ? Math.round(20 + (vo2 - poor) / (avg - poor) * 25) : Math.max(0, Math.round(vo2 / poor * 20));
   }
 
   let sWhr = null;
@@ -3092,14 +3305,14 @@ function buildSummary(d) {
   if (sCardio !== null) { scores.push(sCardio * 0.30); wTotal += 0.30; }
   if (sWhr !== null)    { scores.push(sWhr    * 0.15); wTotal += 0.15; }
 
-  const raw = scores.reduce((a,b) => a+b, 0);
+  const raw = scores.reduce((a, b) => a + b, 0);
   const scoreFin = Math.min(100, Math.max(0, Math.round(raw / wTotal)));
 
-  const tier = scoreFin >= 85 ? {label:'Sangat Baik',  cls:'c-good',   col:'var(--good)'}
-             : scoreFin >= 70 ? {label:'Baik',          cls:'c-good',   col:'var(--good)'}
-             : scoreFin >= 55 ? {label:'Cukup',         cls:'c-warn',   col:'var(--warn)'}
-             : scoreFin >= 40 ? {label:'Perlu Perbaikan',cls:'c-warn',  col:'var(--warn)'}
-             :                  {label:'Perlu Perhatian',cls:'c-danger', col:'var(--danger)'};
+  const tier = scoreFin >= 85 ? { label:'Sangat Baik',   cls:'c-good',   col:'var(--good)' }
+             : scoreFin >= 70 ? { label:'Baik',          cls:'c-good',   col:'var(--good)' }
+             : scoreFin >= 55 ? { label:'Cukup',         cls:'c-warn',   col:'var(--warn)' }
+             : scoreFin >= 40 ? { label:'Perlu Perbaikan',cls:'c-warn',  col:'var(--warn)' }
+             :                  { label:'Perlu Perhatian',cls:'c-danger', col:'var(--danger)' };
 
   const ring = document.getElementById('ring-fill');
   const circ = 2 * Math.PI * 50;
@@ -3120,43 +3333,45 @@ function buildSummary(d) {
   badge.style.display = 'inline-flex';
 
   const pills = [];
-  const bmiLbl = bmi < 18.5 ? {t:'Kurang', c:'c-info'} : bmi < 25 ? {t:'Normal', c:'c-good'} : bmi < 30 ? {t:'Lebih',  c:'c-warn'} : {t:'Obesitas',c:'c-danger'};
-  pills.push({label:'IMT', val:toComma(bmi, 2), unit:'kg/m²', status:bmiLbl.t, cls:bmiLbl.c, target:'Indeks Massa Tubuh'});
+  const bmiLbl = bmi < 18.5 ? { t:'Kurang', c:'c-info' } : bmi < 25 ? { t:'Normal', c:'c-good' } : bmi < 30 ? { t:'Lebih', c:'c-warn' } : { t:'Obesitas', c:'c-danger' };
+  pills.push({ label:'IMT', val:toComma(bmi, 2), unit:'kg/m²', status:bmiLbl.t, cls:bmiLbl.c, target:'Indeks Massa Tubuh' });
 
   if (hasWaist) {
     const whtr = d.waist / d.height;
-    const wLbl = whtr <= 0.50 ? {t:'Aman', c:'c-good'} : whtr <= 0.60 ? {t:'Batas', c:'c-warn'} : {t:'Risiko', c:'c-danger'};
-    pills.push({label:'Pinggang/Tinggi', val:toComma(whtr,2), unit:'rasio', status:wLbl.t, cls:wLbl.c, target:'Rasio Pinggang/Tinggi'});
+    const wLbl = whtr <= 0.50 ? { t:'Aman', c:'c-good' } : whtr <= 0.60 ? { t:'Batas Waspada', c:'c-warn' } : { t:'Risiko Tinggi', c:'c-danger' };
+    pills.push({ label:'Pinggang/Tinggi', val:toComma(whtr, 2), unit:'rasio', status:wLbl.t, cls:wLbl.c, target:'Rasio Pinggang/Tinggi' });
   }
 
   if (bf !== null) {
     const bfLo = isMale ? 8 : 20, bfHi = isMale ? 19 : 30;
-    const bfLbl = bf < bfLo ? {t:'Rendah', c:'c-info'} : bf <= bfHi ? {t:'Normal', c:'c-good'} : bf <= (isMale?25:35) ? {t:'Tinggi', c:'c-warn'} : {t:'Sangat Tinggi', c:'c-danger'};
-    pills.push({label:'Lemak Tubuh', val:toComma(bf, 2), unit:'%', status:bfLbl.t, cls:bfLbl.c, target:'Lemak Tubuh (US Navy)'});
+    const bfLbl = bf < bfLo ? { t:'Rendah', c:'c-info' } : bf <= bfHi ? { t:'Normal', c:'c-good' } : bf <= (isMale ? 25 : 35) ? { t:'Tinggi', c:'c-warn' } : { t:'Sangat Tinggi', c:'c-danger' };
+    pills.push({ label:'Lemak Tubuh', val:toComma(bf, 2), unit:'%', status:bfLbl.t, cls:bfLbl.c, target:'Lemak Tubuh (US Navy)' });
   }
 
   if (hasCardio) {
     const maxHr = 208 - 0.7 * d.age; const vo2 = 15.3 * maxHr / d.rhr;
-    const vLbl = vo2 >= 45 ? {t:'Sangat Baik', c:'c-good'} : vo2 >= 38 ? {t:'Baik', c:'c-good'} : vo2 >= 30 ? {t:'Cukup', c:'c-warn'} : {t:'Rendah', c:'c-danger'};
-    pills.push({label:'VO₂ Maks', val:toComma(vo2, 2), unit:'ml/kg/min', status:vLbl.t, cls:vLbl.c, target:'Estimasi VO2 Max'});
+    const vLbl = vo2 >= 45 ? { t:'Sangat Baik', c:'c-good' } : vo2 >= 38 ? { t:'Baik', c:'c-good' } : vo2 >= 30 ? { t:'Cukup', c:'c-warn' } : { t:'Rendah', c:'c-danger' };
+    pills.push({ label:'VO2 Maks', val:toComma(vo2, 2), unit:'ml/kg/min', status:vLbl.t, cls:vLbl.c, target:'Estimasi VO2 Max' });
   }
 
   if (hasWaist && hasHip) {
-    const whr = d.waist/d.hip; const safe = isMale ? 0.90 : 0.85;
-    const wLbl = whr <= safe ? {t:'Aman', c:'c-good'} : {t:'Risiko', c:'c-danger'};
-    pills.push({label:'Pinggang/Pinggul', val:toComma(whr, 2), unit:'rasio', status:wLbl.t, cls:wLbl.c, target:'Rasio Pinggang/Pinggul'});
+    const whr = d.waist / d.hip; const safe = isMale ? 0.90 : 0.85;
+    const wLbl = whr <= safe ? { t:'Aman', c:'c-good' } : { t:'Risiko', c:'c-danger' };
+    pills.push({ label:'Pinggang/Pinggul', val:toComma(whr, 2), unit:'rasio', status:wLbl.t, cls:wLbl.c, target:'Rasio Pinggang/Pinggul' });
   }
 
   if (hasRhr) {
-    const rhrCut = isMale ? [55,65,75] : [60,70,80];
-    const rhrLbl = d.rhr<=rhrCut[0] ? {t:'Atlet', c:'c-info'} : d.rhr<=rhrCut[1] ? {t:'Baik', c:'c-good'} : d.rhr<=rhrCut[2] ? {t:'Rata-rata',c:'c-warn'} : {t:'Tinggi', c:'c-danger'};
-    pills.push({label:'Nadi Istirahat', val:d.rhr, unit:'bpm', status:rhrLbl.t, cls:rhrLbl.c, target:'Klasifikasi Denyut Nadi'});
+    const rhrCut = isMale ? [55, 65, 75] : [60, 70, 80];
+    const rhrLbl = d.rhr <= rhrCut[0] ? { t:'Atlet', c:'c-info' } : d.rhr <= rhrCut[1] ? { t:'Baik', c:'c-good' } : d.rhr <= rhrCut[2] ? { t:'Rata-rata', c:'c-warn' } : { t:'Tinggi', c:'c-danger' };
+    pills.push({ label:'Nadi Istirahat', val:d.rhr, unit:'bpm', status:rhrLbl.t, cls:rhrLbl.c, target:'Klasifikasi Denyut Nadi' });
   }
 
   if (hasBasic && hasAge) {
-    const bmr = Math.round(10*d.weight + 6.25*d.height - 5*d.age + (isMale?5:-161));
-    const tdee = Math.round(bmr * d.activity);
-    pills.push({label:'TDEE', val:tdee.toLocaleString('id-ID'), unit:'kkal/hari', status:'Estimasi', cls:'c-brand', target:'Total Kalori (TDEE)'});
+    try {
+      const bmr = Math.round(calcBmr(d));
+      const tdee = Math.round(bmr * d.activity);
+      pills.push({ label:'TDEE', val:tdee.toLocaleString('id-ID'), unit:'kkal/hari', status:'Estimasi', cls:'c-brand', target:'Total Kalori (TDEE)' });
+    } catch (e) {}
   }
 
   const emptyNotice = document.getElementById('sum-empty-notice');
@@ -3165,11 +3380,11 @@ function buildSummary(d) {
   const pillsEl = document.getElementById('sum-metrics');
   if (pillsEl) {
     pillsEl.innerHTML = pills.map(p => `
-      <div class="mpill" onclick="focusCardByTitle('${p.target}',this)" title="Klik untuk lompat ke kartu ${p.target}">
+      <button type="button" class="mpill" onclick="focusCardByTitle('${p.target}',this)" title="Klik untuk lompat ke kartu ${p.target}">
         <span class="mpill-label">${p.label}</span>
         <span class="mpill-val">${p.val} <small style="font-size:.6rem;font-weight:600;color:var(--tx3)">${p.unit}</small></span>
         <span class="mpill-status ${p.cls}">${p.status}</span>
-      </div>`).join('');
+      </button>`).join('');
   }
 
   const alerts = [];
@@ -3178,40 +3393,40 @@ function buildSummary(d) {
   const SVG_I = `<svg class="alert-ico" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`;
 
   if (bmi >= 30)
-    alerts.push({lvl:'danger', ico:SVG_W, title:'IMT masuk zona obesitas',
-      desc:`IMT ${toComma(bmi, 2)} kg/m² berada di zona yang dikaitkan dengan peningkatan risiko diabetes tipe 2, hipertensi, dan gangguan jantung. Penurunan 5–10% berat badan sudah terbukti menurunkan risiko secara bermakna.`});
+    alerts.push({ lvl:'danger', ico:SVG_W, title:'IMT masuk zona obesitas',
+      desc:`IMT ${toComma(bmi, 2)} kg/m² berada di zona yang dikaitkan dengan peningkatan risiko diabetes tipe 2, hipertensi, dan gangguan jantung. Penurunan 5–10% berat badan sudah terbukti menurunkan risiko secara bermakna.` });
   else if (bmi >= 25)
-    alerts.push({lvl:'warn', ico:SVG_W, title:'Berat badan di atas rentang ideal',
-      desc:`IMT ${toComma(bmi, 2)} kg/m² masuk zona kelebihan berat. Penurunan ringan 5–8 kg sudah cukup untuk mengembalikan ke zona normal dan menurunkan tekanan pada sendi serta sistem kardiovaskular.`});
+    alerts.push({ lvl:'warn', ico:SVG_W, title:'Berat badan di atas rentang ideal',
+      desc:`IMT ${toComma(bmi, 2)} kg/m² masuk zona kelebihan berat. Penurunan ringan 5–8 kg sudah cukup untuk mengembalikan ke zona normal dan menurunkan tekanan pada sendi serta sistem kardiovaskular.` });
   else if (bmi < 18.5)
-    alerts.push({lvl:'info', ico:SVG_I, title:'Berat badan di bawah rentang ideal',
-      desc:`IMT ${toComma(bmi, 2)} kg/m² menandakan kekurangan berat badan. Kondisi ini bisa menurunkan imunitas, kepadatan tulang, dan energi harian.`});
+    alerts.push({ lvl:'info', ico:SVG_I, title:'Berat badan di bawah rentang ideal',
+      desc:`IMT ${toComma(bmi, 2)} kg/m² menandakan kekurangan berat badan. Kondisi ini bisa menurunkan imunitas, kepadatan tulang, dan energi harian.` });
 
   if (hasWaist) {
     const whtr = d.waist / d.height;
     if (whtr > 0.60)
-      alerts.push({lvl:'danger', ico:SVG_W, title:'Lemak sentral sangat tinggi',
-        desc:`Rasio pinggang/tinggi ${toComma(whtr,2)} jauh di atas batas aman 0,50. Lemak di area perut ini bersifat metabolik aktif dan meningkatkan risiko kardiometabolik.`});
+      alerts.push({ lvl:'danger', ico:SVG_W, title:'Lemak sentral sangat tinggi',
+        desc:`Rasio pinggang/tinggi ${toComma(whtr, 2)} jauh di atas batas aman 0,50. Lemak di area perut ini bersifat metabolik aktif dan meningkatkan risiko kardiometabolik.` });
     else if (whtr > 0.50)
-      alerts.push({lvl:'warn', ico:SVG_W, title:'Lemak sentral perlu diperhatikan',
-        desc:`Rasio pinggang/tinggi ${toComma(whtr,2)} melewati batas 0,50. Jaga lingkar pinggang di bawah setengah tinggi badan Anda.`});
+      alerts.push({ lvl:'warn', ico:SVG_W, title:'Lemak sentral perlu diperhatikan',
+        desc:`Rasio pinggang/tinggi ${toComma(whtr, 2)} melewati batas 0,50. Jaga lingkar pinggang di bawah setengah tinggi badan Anda.` });
   }
 
   if (sCardio !== null && sCardio < 45)
-    alerts.push({lvl:'warn', ico:SVG_W, title:'Kapasitas aerobik di bawah optimal',
-      desc:`Estimasi VO₂ Maks Anda mengindikasikan kebugaran aerobik yang perlu ditingkatkan melalui latihan kardio rutin 150 menit/minggu.`});
+    alerts.push({ lvl:'warn', ico:SVG_W, title:'Kapasitas aerobik di bawah optimal',
+      desc:`Estimasi VO2 Maks Anda mengindikasikan kebugaran aerobik yang perlu ditingkatkan melalui latihan kardio rutin 150 menit/minggu.` });
 
-  if (hasRhr && d.rhr > (isMale?80:85))
-    alerts.push({lvl:'warn', ico:SVG_W, title:'Denyut nadi istirahat tinggi',
-      desc:`RHR ${d.rhr} bpm berada di atas rentang ideal. Perhatikan kualitas tidur, hidrasi, dan manajemen stres harian.`});
+  if (hasRhr && d.rhr > (isMale ? 80 : 85))
+    alerts.push({ lvl:'warn', ico:SVG_W, title:'Denyut nadi istirahat tinggi',
+      desc:`RHR ${d.rhr} bpm berada di atas rentang ideal. Perhatikan kualitas tidur, hidrasi, dan manajemen stres harian.` });
 
-  if (bf !== null && bf > (isMale?25:35))
-    alerts.push({lvl:'danger', ico:SVG_W, title:'Persentase lemak tubuh tinggi',
-      desc:`Lemak tubuh ${toComma(bf, 2)}% masuk zona berisiko. Kombinasi latihan beban dan defisit kalori moderat adalah strategi paling efektif.`});
+  if (bf !== null && bf > (isMale ? 25 : 35))
+    alerts.push({ lvl:'danger', ico:SVG_W, title:'Persentase lemak tubuh tinggi',
+      desc:`Lemak tubuh ${toComma(bf, 2)}% masuk zona berisiko. Kombinasi latihan beban dan defisit kalori moderat adalah strategi paling efektif.` });
 
   if (scoreFin >= 80)
-    alerts.push({lvl:'good', ico:SVG_C, title:'Kondisi tubuh Anda secara keseluruhan baik',
-      desc:`Skor ${scoreFin}/100 menunjukkan profil biometrik yang bugar. Pertahankan pola hidup aktif dan nutrisi seimbang Anda.`});
+    alerts.push({ lvl:'good', ico:SVG_C, title:'Kondisi tubuh Anda secara keseluruhan baik',
+      desc:`Skor ${scoreFin}/100 menunjukkan profil biometrik yang bugar. Pertahankan pola hidup aktif dan nutrisi seimbang Anda.` });
 
   const alertsEl = document.getElementById('sum-alerts');
   if (alertsEl) {
@@ -3225,19 +3440,22 @@ function buildSummary(d) {
       </div>`).join('');
   }
 
-  buildReco(d, {scoreFin, bmi, bf, sCardio, sWhtr, isMale, hasCardio, hasBody, hasWaist, hasRhr, hasAge});
+  buildReco(d, { scoreFin, bmi, bf, sCardio, sWhtr, isMale, hasCardio, hasBody, hasWaist, hasRhr, hasAge });
 
   const recoEls = document.querySelectorAll('.reco-title');
   const recoTitles = [];
   recoEls.forEach(el => recoTitles.push(el.textContent.trim()));
 
-  const bmiStatus  = bmi<18.5?'Kurang':bmi<25?'Normal':bmi<30?'Lebih':'Obesitas';
-  const bfStatus   = bf===null?'N/A':bf<(isMale?8:20)?'Rendah':bf<(isMale?19:30)?'Normal':bf<(isMale?25:35)?'Tinggi':'Sangat Tinggi';
-  const whtrVal    = hasWaist ? d.waist/d.height : NaN;
-  const whtrStatus = isNaN(whtrVal)?'N/A':whtrVal<=0.5?'Aman':whtrVal<=0.6?'Batas':'Risiko';
-  const vo2Val     = hasCardio ? 15.3*((208-0.7*d.age)/d.rhr) : NaN;
-  const vo2Status  = isNaN(vo2Val)?'N/A':vo2Val>=45?'Sangat Baik':vo2Val>=38?'Baik':vo2Val>=30?'Cukup':'Rendah';
-  const tdeeVal    = (hasBasic && hasAge) ? Math.round((10*d.weight+6.25*d.height-5*d.age+(isMale?5:-161))*d.activity) : null;
+  const bmiStatus  = bmi < 18.5 ? 'Kurang' : bmi < 25 ? 'Normal' : bmi < 30 ? 'Lebih' : 'Obesitas';
+  const bfStatus   = bf === null ? 'N/A' : bf < (isMale ? 8 : 20) ? 'Rendah' : bf < (isMale ? 19 : 30) ? 'Normal' : bf < (isMale ? 25 : 35) ? 'Tinggi' : 'Sangat Tinggi';
+  const whtrVal    = hasWaist ? d.waist / d.height : NaN;
+  const whtrStatus = isNaN(whtrVal) ? 'N/A' : whtrVal <= 0.5 ? 'Aman' : whtrVal <= 0.6 ? 'Batas' : 'Risiko';
+  const vo2Val     = hasCardio ? 15.3 * ((208 - 0.7 * d.age) / d.rhr) : NaN;
+  const vo2Status  = isNaN(vo2Val) ? 'N/A' : vo2Val >= 45 ? 'Sangat Baik' : vo2Val >= 38 ? 'Baik' : vo2Val >= 30 ? 'Cukup' : 'Rendah';
+  let tdeeVal = null;
+  if (hasBasic && hasAge) {
+    try { tdeeVal = Math.round(calcBmr(d) * d.activity); } catch (e) {}
+  }
 
   buildQR(d, {
     scoreFin,
@@ -3281,9 +3499,9 @@ function renderEmptySummaryAndReco() {
 
   const pillsEl = document.getElementById('sum-metrics');
   if (pillsEl) {
-    const samplePills = ['IMT', 'Pinggang/Tinggi', 'Lemak Tubuh', 'VO₂ Maks'];
+    const samplePills = ['IMT', 'Pinggang/Tinggi', 'Lemak Tubuh', 'VO2 Maks'];
     pillsEl.innerHTML = samplePills.map(lbl => `
-      <div class="mpill" style="opacity:.65;">
+      <div class="mpill" style="opacity:.65;cursor:default;">
         <span class="mpill-label">${lbl}</span>
         <span class="mpill-val">–</span>
         <span class="mpill-status" style="color:var(--tx3);">Menunggu</span>
@@ -3299,7 +3517,7 @@ function renderEmptySummaryAndReco() {
   const recoEl = document.getElementById('reco-body');
   if (recoEl) {
     recoEl.innerHTML = `
-      <div class="reco-card" style="opacity:.85;">
+      <div class="reco-card" style="opacity:.85;cursor:default;">
         <div class="reco-ico-wrap" style="color:var(--cat-accent)">
           <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         </div>
@@ -3312,7 +3530,7 @@ function renderEmptySummaryAndReco() {
 }
 
 function buildReco(d, ctx) {
-  const {scoreFin, bmi, bf, sCardio, isMale, hasCardio, hasWaist, hasRhr, hasAge} = ctx;
+  const { bmi, bf, sCardio, isMale, hasCardio, hasWaist, hasRhr, hasAge } = ctx;
   const recs = [];
   const COL = {
     high: 'var(--danger)', med: 'var(--warn)', low: 'var(--good)',
@@ -3330,22 +3548,28 @@ function buildReco(d, ctx) {
   };
 
   const ico = (key, col) =>
-    `<div class="reco-ico-wrap" style="color:${col}"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">${ICOS[key]||ICOS.check}</svg></div>`;
+    `<div class="reco-ico-wrap" style="color:${col}"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">${ICOS[key] || ICOS.check}</svg></div>`;
 
-  const steps = (...s) => s.map((t,i) =>
-    `<li class="reco-step" data-n="${i+1}" onclick="this.classList.toggle('done');event.stopPropagation();" title="Klik untuk menandai selesai"><span>${t}</span></li>`).join('');
+  const steps = (recKey, ...s) => s.map((t, i) => {
+    const stepKey = `${recKey}-${i}`;
+    const isDone = doneRecoSteps.has(stepKey);
+    return `<li class="reco-step ${isDone ? 'done' : ''}" data-n="${i + 1}" tabindex="0" role="checkbox" aria-checked="${isDone}" onclick="toggleRecoStep(this,'${stepKey}',event)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleRecoStep(this,'${stepKey}',event);}" title="Klik untuk menandai selesai"><span>${t}</span></li>`;
+  }).join('');
 
   const target = (label, col) =>
-    `<div class="reco-target" style="color:${col}">🎯 ${label}</div>`;
+    `<div class="reco-target" style="color:${col}">Target: ${label}</div>`;
 
   const overweight  = bmi >= 25;
   const obese       = bmi >= 30;
   const underweight = bmi < 18.5;
-  const highWhtr    = hasWaist && (d.waist/d.height) > 0.50;
-  const highFat     = bf !== null && bf > (isMale?20:30);
+  const highWhtr    = hasWaist && (d.waist / d.height) > 0.50;
+  const highFat     = bf !== null && bf > (isMale ? 20 : 30);
   const lowCardio   = sCardio !== null && sCardio < 60;
-  const highRhr     = hasRhr && d.rhr > (isMale?70:75);
-  const tdee        = hasAge ? Math.round((10*d.weight+6.25*d.height-5*d.age+(isMale?5:-161))*d.activity) : null;
+  const highRhr     = hasRhr && d.rhr > (isMale ? 70 : 75);
+  let tdee = null;
+  if (hasAge) {
+    try { tdee = Math.round(calcBmr(d) * d.activity); } catch (e) {}
+  }
 
   if (obese || (overweight && highFat)) {
     const deficit = obese ? 500 : 300;
@@ -3354,8 +3578,8 @@ function buildReco(d, ctx) {
     recs.push({
       priority:'high', col:COL.high, key:'food',
       title:'Kurangi asupan kalori secara moderat',
-      why:`IMT ${toComma(bmi, 2)} dan lemak tubuh ${bf!=null?toComma(bf, 2):'-'}% berada di atas rentang ideal. Defisit ${deficit} kkal/hari membantu menurunkan lemak sambil menjaga otot.`,
-      steps_html: steps(
+      why:`IMT ${toComma(bmi, 2)} dan lemak tubuh ${bf != null ? toComma(bf, 2) : '-'}% berada di atas rentang ideal. Defisit ${deficit} kkal/hari membantu menurunkan lemak sambil menjaga otot.`,
+      steps_html: steps('deficit',
         tdeeTarget ? `Targetkan total kalori harian <span class="reco-em">${tdeeTarget.toLocaleString('id-ID')} kkal</span> (defisit ${deficit} kkal dari TDEE Anda).` : 'Kurangi 300–500 kkal dari asupan harian saat ini.',
         'Prioritaskan protein 1,6–2,0 g per kg massa bebas lemak agar otot terjaga.',
         'Batasi minuman manis, makanan ultra-proses, dan gorengan berlebih.'
@@ -3371,7 +3595,7 @@ function buildReco(d, ctx) {
       priority:'high', col:COL.med, key:'food',
       title:'Tingkatkan asupan kalori dan protein padat gizi',
       why:`IMT ${toComma(bmi, 2)} berada di bawah 18,5 — peningkatan massa tubuh secara sehat akan mendukung imunitas dan kepadatan tulang.`,
-      steps_html: steps(
+      steps_html: steps('surplus',
         tdeeTarget ? `Targetkan asupan <span class="reco-em">${tdeeTarget.toLocaleString('id-ID')} kkal/hari</span> (surplus ${surplus} kkal dari TDEE Anda).` : 'Tambahkan 300 kkal/hari dari makanan padat nutrisi.',
         'Pilih sumber kalori berkualitas: telur, ikan, kacang-kacangan, alpukat, dan karbohidrat kompleks.',
         'Kombinasikan dengan latihan beban 2–3×/minggu agar kenaikan berat berupa massa otot.'
@@ -3381,21 +3605,21 @@ function buildReco(d, ctx) {
   }
 
   if (lowCardio || highRhr) {
-    const vo2val = hasCardio ? (15.3*(208-0.7*d.age)/d.rhr) : null;
+    const vo2val = hasCardio ? (15.3 * (208 - 0.7 * d.age) / d.rhr) : null;
     recs.push({
       priority: lowCardio && sCardio < 40 ? 'high' : 'med',
       col: lowCardio && sCardio < 40 ? COL.high : COL.med,
       key:'heart',
       title:'Tingkatkan kebugaran kardiovaskular',
       why: vo2val !== null
-        ? `Estimasi VO₂ Maks ${toComma(vo2val, 2)} ml/kg/min dan RHR ${d.rhr||'-'} bpm menunjukkan kapasitas aerobik yang masih dapat ditingkatkan.`
+        ? `Estimasi VO2 Maks ${toComma(vo2val, 2)} ml/kg/min dan RHR ${d.rhr || '-'} bpm menunjukkan kapasitas aerobik yang masih dapat ditingkatkan.`
         : 'Denyut nadi istirahat yang tinggi menandakan efisiensi pompa jantung perlu dilatih.',
-      steps_html: steps(
+      steps_html: steps('cardio',
         'Lakukan <span class="reco-em">150 menit/minggu kardio zona 2</span> (jalan cepat, sepeda, atau renang).',
         'Tambahkan 1 sesi latihan interval (HIIT) per minggu setelah 4 minggu rutin.',
         'Pantau denyut nadi istirahat di pagi hari sebagai indikator adaptasi jantung.'
       ),
-      target: target('VO₂ Maks naik ≥3 ml/kg/min dalam 8 minggu', COL.med)
+      target: target('VO2 Maks naik ≥3 ml/kg/min dalam 8 minggu', COL.med)
     });
   }
 
@@ -3403,13 +3627,13 @@ function buildReco(d, ctx) {
     recs.push({
       priority:'med', col:COL.med, key:'steps',
       title:'Kurangi lingkar pinggang melalui aktivitas harian (NEAT)',
-      why:`Rasio pinggang/tinggi ${toComma(d.waist/d.height,2)} melewati batas 0,50 yang mengindikasikan penumpukan lemak viseral.`,
-      steps_html: steps(
+      why:`Rasio pinggang/tinggi ${toComma(d.waist / d.height, 2)} melewati batas 0,50 yang mengindikasikan penumpukan lemak viseral.`,
+      steps_html: steps('neat',
         'Capai <span class="reco-em">8.000–10.000 langkah/hari</span> untuk meningkatkan pembakaran energi non-olahraga.',
         'Berdiri atau jalan ringan 2–3 menit setiap 45–60 menit duduk bekerja.',
         'Jaga durasi tidur 7–8 jam untuk menekan hormon kortisol pemicu lemak perut.'
       ),
-      target: target(`Lingkar pinggang < ${Math.round(d.height*0.5)} cm`, COL.med)
+      target: target(`Lingkar pinggang < ${Math.round(d.height * 0.5)} cm`, COL.med)
     });
   }
 
@@ -3417,7 +3641,7 @@ function buildReco(d, ctx) {
     priority:'low', col:COL.main, key:'muscle',
     title:'Pertahankan & bangun massa otot rangka',
     why:'Massa otot aktif meningkatkan metabolisme basal, memperbaiki sensitivitas insulin, dan menjaga kekuatan sendi.',
-    steps_html: steps(
+    steps_html: steps('muscle',
       'Latihan beban progresif <span class="reco-em">2–3× per minggu</span> dengan gerakan majemuk (squat, push, pull).',
       'Penuhi kebutuhan protein harian secara merata di setiap waktu makan.',
       'Berikan jeda pemulihan 48 jam untuk kelompok otot yang sama.'
@@ -3425,20 +3649,22 @@ function buildReco(d, ctx) {
     target: target('Latihan konsisten 8–12 minggu', COL.main)
   });
 
-  const waterL = toComma(((d.weight * 35) / 1000 + (d.activity >= 1.55 ? 0.5 : 0)), 1);
+  const waterRawL = (d.weight * 35) / 1000 + (d.activity >= 1.55 ? 0.5 : 0);
+  const waterFmt = fmtV(waterRawL);
+  const waterStr = `${toComma(waterFmt.v, curUnit === 'metric' ? 1 : 0)} ${waterFmt.u}`;
   recs.push({
     priority:'low', col:COL.good, key:'water',
-    title:`Penuhi hidrasi harian ${waterL} Liter`,
+    title:`Penuhi hidrasi harian ${waterStr}`,
     why:'Kecukupan cairan menjaga volume darah, suhu tubuh, fungsi ginjal, serta fokus kognitif.',
-    steps_html: steps(
+    steps_html: steps('water',
       'Minum 1 gelas (250 ml) air setiap 1–1,5 jam selama beraktivitas.',
       'Minum 300–500 ml air 30 menit sebelum waktu makan utama.'
     ),
-    target: target(`${waterL} L air per hari`, COL.good)
+    target: target(`${waterStr} air per hari`, COL.good)
   });
 
-  const order = {high:0, med:1, low:2};
-  recs.sort((a,b) => order[a.priority] - order[b.priority]);
+  const order = { high:0, med:1, low:2 };
+  recs.sort((a, b) => order[a.priority] - order[b.priority]);
 
   const badgeReco = document.getElementById('badge-reco');
   if (badgeReco) {
@@ -3449,7 +3675,7 @@ function buildReco(d, ctx) {
   const recoEl = document.getElementById('reco-body');
   if (recoEl) {
     recoEl.innerHTML = recs.map((r, i) => `
-      <div class="reco-card" style="animation-delay:${i*0.05}s" onclick="this.classList.toggle('is-selected');bounceElement(this);">
+      <div class="reco-card" style="animation-delay:${i * 0.05}s" onclick="this.classList.toggle('is-selected');bounceElement(this);">
         ${ico(r.key, r.col)}
         <div class="reco-content">
           <p class="reco-title">${r.title}</p>
@@ -3465,13 +3691,13 @@ var _qrPayload = '';
 var _qrVisible = false;
 
 function buildQR(d, s) {
-  if (!s || !s.scoreFin) {
+  if (!s || typeof s.scoreFin !== 'number' || isNaN(s.scoreFin)) {
     document.getElementById('qr-panel').style.display = 'none';
     return;
   }
   var isMale = d.gender === 'male';
   var lines = [];
-  lines.push('BIOMETRICS PRO');
+  lines.push('BIOMETRICS PRO — LAPORAN KLINIS');
   var gend = isMale ? 'Pria' : 'Wanita';
   var ageStr = (!isNaN(d.age) && d.age > 0) ? Math.round(d.age) + ' thn, ' : '';
   var htR = Math.round(d.height);
@@ -3513,7 +3739,7 @@ function renderQR() {
     qr.addData(_qrPayload);
     qr.make();
     out.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 8 });
-  } catch(e) {
+  } catch (e) {
     out.innerHTML = '<p style="color:var(--danger);font-size:.75rem;padding:8px">QR gagal dibuat.</p>';
   }
 }
@@ -3537,20 +3763,33 @@ function toggleQR() {
 
 function copySummaryText() {
   if (!_qrPayload) return;
-  var ta = document.createElement('textarea');
-  ta.value = _qrPayload;
-  ta.style.position = 'fixed';
-  ta.style.opacity = '0';
-  document.body.appendChild(ta);
-  ta.select();
-  try {
-    document.execCommand('copy');
+  var onSuccess = function() {
     var lbl = document.getElementById('copy-btn-label');
     if (lbl) {
       lbl.textContent = 'Tersalin!';
       setTimeout(function() { lbl.textContent = 'Salin Teks'; }, 1800);
     }
     showToast('Ringkasan berhasil disalin ke papan klip!', 'var(--good)');
+  };
+  if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+    navigator.clipboard.writeText(_qrPayload).then(onSuccess).catch(function() {
+      fallbackCopy(_qrPayload, onSuccess);
+    });
+  } else {
+    fallbackCopy(_qrPayload, onSuccess);
+  }
+}
+
+function fallbackCopy(text, onSuccess) {
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try {
+    document.execCommand('copy');
+    onSuccess();
   } catch (e) {
     showToast('Gagal menyalin teks', 'var(--danger)');
   }
@@ -3560,10 +3799,11 @@ function copySummaryText() {
 let dbT;
 document.addEventListener('DOMContentLoaded', () => {
   loadState();
+  syncUnitPlaceholders();
   document.querySelectorAll('input,select').forEach(el => {
     el.addEventListener('input', () => {
       clearTimeout(dbT);
-      dbT = setTimeout(() => { saveState(); calc(); }, 100);
+      dbT = setTimeout(() => { saveState(); calc(); }, 90);
     });
   });
   calc();
