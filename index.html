@@ -184,6 +184,13 @@ html.dark [data-filter="pinned"] {
   --cat-accent: #facc15; --cat-text: #fef08a; --cat-soft: rgba(250,204,21,0.16); --cat-border: rgba(250,204,21,0.42);
 }
 
+[data-filter="active"] {
+  --cat-accent: #10b981; --cat-text: #047857; --cat-soft: #d1fae5; --cat-border: #6ee7b7;
+}
+html.dark [data-filter="active"] {
+  --cat-accent: #34d399; --cat-text: #a7f3d0; --cat-soft: rgba(52,211,153,0.16); --cat-border: rgba(52,211,153,0.42);
+}
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;}
 body{
@@ -363,9 +370,9 @@ html.dark .inp-panel{background:var(--s1);box-shadow:var(--sh1);}
 .cp{padding:var(--sp-1) var(--sp-4) var(--sp-5);}
 @media(min-width:640px){.cp{padding:var(--sp-1) var(--sp-5) var(--sp-6);}}
 
-.fgrid{display:grid;gap:var(--sp-3) var(--sp-4);grid-template-columns:1fr;}
-@media(min-width:520px){.fgrid{grid-template-columns:repeat(2,1fr);}}
-@media(min-width:1024px){.fgrid{grid-template-columns:repeat(4,1fr);}}
+.fgrid{display:grid;gap:var(--sp-3) var(--sp-4);grid-template-columns:minmax(0,1fr);align-items:stretch;}
+@media(min-width:520px){.fgrid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(min-width:1024px){.fgrid{grid-template-columns:repeat(3,minmax(0,1fr));}}
 .sp2{grid-column:span 2;}
 @media(min-width:1024px){.sp3{grid-column:span 3;}}
 @media(max-width:519px){.sp2,.sp3{grid-column:span 1;}}
@@ -377,8 +384,11 @@ html.dark .inp-panel{background:var(--s1);box-shadow:var(--sh1);}
   border:none;
   background:var(--s0);
   box-shadow:var(--sh0);
+  display:flex;flex-direction:column;justify-content:space-between;
+  height:6rem;min-height:6rem;
   transition:transform var(--t2) var(--spring),background var(--t2) var(--smooth),box-shadow var(--t2) var(--smooth);
 }
+#fitem-activity{height:auto;min-height:6rem;}
 html.dark .fitem{background:var(--s0);box-shadow:var(--sh0);}
 .fitem:hover{transform:translateY(-1px);box-shadow:var(--sh1);}
 .fitem:focus-within{
@@ -406,7 +416,8 @@ html.dark .fitem:focus-within{background:var(--s2);}
   margin-bottom:var(--sp-2);min-height:1.5rem;
 }
 .flbl{
-  font-size:.75rem;font-weight:700;letter-spacing:.005em;
+  font-size:.78rem;font-weight:700;letter-spacing:.005em;
+  text-transform:capitalize;
   color:var(--tx2);cursor:pointer;
   transition:color var(--t2) var(--smooth);
 }
@@ -527,10 +538,9 @@ html.dark .rsec{
 }
 .rsec:hover{box-shadow:var(--sh2);}
 
-.cgrid{display:grid;gap:var(--sp-3);grid-template-columns:1fr;align-items:start;}
-@media(min-width:520px){.cgrid{grid-template-columns:repeat(2,1fr);}}
-@media(min-width:1024px){.cgrid{grid-template-columns:repeat(3,1fr);}}
-@media(min-width:1280px){.cgrid.w{grid-template-columns:repeat(4,1fr);}}
+.cgrid,.cgrid.w{display:grid;gap:var(--sp-3);grid-template-columns:minmax(0,1fr);align-items:stretch;}
+@media(min-width:560px){.cgrid,.cgrid.w{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(min-width:1024px){.cgrid,.cgrid.w{grid-template-columns:repeat(3,minmax(0,1fr));}}
 
 @keyframes cardIn{
   from{opacity:0;transform:translateY(6px);}
@@ -548,12 +558,16 @@ html.dark .rsec{
   border:none;
   border-radius:var(--r-l);
   padding:var(--sp-4);
-  display:flex;flex-direction:column;justify-content:flex-start;
+  display:flex;flex-direction:column;justify-content:space-between;
+  height:15.5rem;min-height:15.5rem;
   gap:0;box-shadow:var(--sh0);
   cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manipulation;
   animation:cardIn .32s var(--spring) both;
-  transition:transform var(--t2) var(--spring),box-shadow var(--t2) var(--smooth),background var(--t2) var(--smooth),padding var(--t2) var(--smooth);
+  transition:transform var(--t2) var(--spring),box-shadow var(--t2) var(--smooth),background var(--t2) var(--smooth),padding var(--t2) var(--smooth),height var(--t2) var(--smooth);
   will-change:transform;overflow:visible;
+}
+@media(min-width:640px){
+  .card{height:16.25rem;min-height:16.25rem;}
 }
 html.dark .card{background:var(--s0);box-shadow:var(--sh0);}
 .card:hover{transform:translateY(-2px);box-shadow:var(--sh2);background:color-mix(in oklab, var(--s0) 94%, var(--cat-soft));}
@@ -600,8 +614,18 @@ html.dark .card-e{background:var(--danger-bg);}
 /* ═══════════════════════════════════════════════════════════════
    CARD TYPOGRAPHY, COLLAPSIBLE BODY & REFINED ICONS
 ═══════════════════════════════════════════════════════════════ */
-.card-head{display:flex;align-items:center;gap:var(--sp-2);padding-right:2.4rem;min-height:2.1rem;}
-.card-head .clbl{margin-bottom:0;flex:1;min-width:0;}
+.card-head{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:var(--sp-2);min-height:2.15rem;width:100%;flex-shrink:0;
+}
+.card-title-wrap{
+  display:flex;align-items:center;gap:var(--sp-2);
+  flex:1;min-width:0;
+}
+.card-actions{
+  display:inline-flex;align-items:center;gap:5px;
+  flex-shrink:0;margin-left:4px;
+}
 
 .card-ico{
   flex-shrink:0;width:2rem;height:2rem;padding:4.5px;
@@ -626,11 +650,10 @@ html.dark .card-e{background:var(--danger-bg);}
 }
 
 .card-fold-btn{
-  position:absolute;top:10px;right:10px;
-  width:2rem;height:2rem;border-radius:50%;
+  width:1.85rem;height:1.85rem;border-radius:50%;
   display:inline-flex;align-items:center;justify-content:center;
   background:var(--s1);color:var(--tx2);
-  border:none;
+  border:none;flex-shrink:0;
   cursor:pointer;z-index:3;touch-action:manipulation;
   transition:transform var(--t2) var(--spring),background var(--t2) var(--smooth),color var(--t2) var(--smooth);
 }
@@ -638,52 +661,59 @@ html.dark .card-fold-btn{background:var(--s2);color:var(--tx2);}
 .card-fold-btn svg{stroke-width:2.5px;transition:transform var(--t3) var(--spring);}
 .card-fold-btn:hover{background:var(--cat-soft);color:var(--cat-text);transform:scale(1.06);}
 .card.is-collapsed .card-fold-btn svg{transform:rotate(-90deg);}
-.card.is-collapsed{padding-top:var(--sp-3);padding-bottom:var(--sp-3);}
+.card.is-collapsed{height:3.75rem;min-height:3.75rem;padding-top:var(--sp-3);padding-bottom:var(--sp-3);justify-content:center;}
 
 .card-detail{
+  flex:1;min-height:0;
   display:grid;grid-template-rows:1fr;overflow:hidden;
   transition:grid-template-rows var(--t3) var(--spring),opacity var(--t2) var(--smooth);
   opacity:1;
 }
 .card-detail-inner{
-  min-height:0;overflow:hidden;
-  padding-top:var(--sp-3);
-  display:flex;flex-direction:column;gap:var(--sp-2);
+  min-height:0;height:100%;overflow:hidden;
+  padding-top:var(--sp-2);
+  display:flex;flex-direction:column;gap:6px;
   transition:padding-top var(--t3) var(--spring);
 }
-.card.is-collapsed .card-detail{grid-template-rows:0fr;opacity:0;pointer-events:none;}
+.card.is-collapsed .card-detail{grid-template-rows:0fr;opacity:0;pointer-events:none;flex:0;}
 .card.is-collapsed .card-detail-inner{padding-top:0;}
 
 .card-pin{
-  position:absolute;top:12px;right:3.25rem;
-  width:1.55rem;height:1.55rem;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  background:var(--cat-soft);color:var(--cat-text);
-  border:none;
-  opacity:0;transform:scale(.7);
+  width:1.85rem;height:1.85rem;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--s1);color:var(--tx3);
+  border:none;flex-shrink:0;cursor:pointer;
+  opacity:.75;transform:scale(1);
   transition:opacity var(--t2) var(--smooth),transform var(--t2) var(--spring),background var(--t2) var(--smooth),color var(--t2) var(--smooth);
-  pointer-events:none;
 }
-.card:hover .card-pin{opacity:.55;transform:scale(.92);}
+html.dark .card-pin{background:var(--s2);color:var(--tx3);}
+.card:hover .card-pin,.card-pin:hover{opacity:1;transform:scale(1.06);background:var(--cat-soft);color:var(--cat-text);}
 .card.is-selected .card-pin{
-  opacity:1;transform:scale(1);
-  background:color-mix(in oklab, var(--cat-accent) 28%, var(--cat-soft));
-  color:var(--cat-text);
+  opacity:1;transform:scale(1.06);
+  background:color-mix(in oklab, #eab308 26%, var(--cat-soft));
+  color:#ca8a04;
+}
+html.dark .card.is-selected .card-pin{
+  background:rgba(250,204,21,.22);
+  color:#facc15;
 }
 
 .clbl{
-  font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--tx2);display:flex;align-items:center;justify-content:space-between;gap:6px;
-  margin-bottom:0;line-height:1.25;overflow:visible;
+  font-size:.82rem;font-weight:800;letter-spacing:-.01em;text-transform:capitalize;
+  color:var(--tx1);display:flex;align-items:center;gap:6px;
+  margin-bottom:0;line-height:1.25;overflow:hidden;
   transition:color var(--t2) var(--smooth);
 }
+.clbl span{
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
 .card:hover .clbl,.card.is-selected .clbl{color:var(--cat-text);}
-html.dark .clbl{color:var(--tx2);}
+html.dark .clbl{color:var(--tx1);}
 html.dark .card:hover .clbl,html.dark .card.is-selected .clbl{color:var(--cat-text);}
 
-.cval{display:flex;align-items:baseline;gap:5px;margin:0;flex-wrap:wrap;}
+.cval{display:flex;align-items:baseline;gap:5px;margin:0;flex-wrap:wrap;flex-shrink:0;}
 .cnum{
-  font-size:2.1rem;font-weight:900;letter-spacing:-.04em;line-height:1.05;
+  font-size:1.95rem;font-weight:900;letter-spacing:-.04em;line-height:1.05;
   color:var(--tx1);font-variant-numeric:tabular-nums;
   transition:color var(--t2) var(--smooth);
 }
@@ -692,19 +722,22 @@ html.dark .card.is-selected .cnum{color:var(--cat-text);}
 .cunit{font-size:.8125rem;font-weight:600;color:var(--tx3);letter-spacing:.01em;padding-bottom:.1em;}
 
 .cbadge{
-  display:inline-flex;align-items:center;align-self:flex-start;padding:3px 9px;border-radius:var(--r-s);
-  font-size:.625rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;line-height:1.4;
+  display:inline-flex;align-items:center;align-self:flex-start;padding:2px 8px;border-radius:var(--r-s);
+  font-size:.6rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;line-height:1.4;
   background:color-mix(in oklab,currentColor 12%,transparent);
-  border:none;
+  border:none;flex-shrink:0;
 }
 
-.cdesc{font-size:.75rem;line-height:1.58;color:var(--tx2);font-weight:400;margin-top:2px;}
+.cdesc{
+  font-size:.73rem;line-height:1.52;color:var(--tx2);font-weight:400;margin-top:2px;
+  flex:1;overflow-y:auto;scrollbar-width:thin;padding-right:2px;
+}
 html.dark .cdesc{color:var(--tx2);}
 
 .card-ref{
-  display:inline-flex;align-items:center;align-self:flex-start;gap:4px;margin-top:2px;
+  display:inline-flex;align-items:center;align-self:flex-start;gap:4px;margin-top:auto;padding-top:2px;
   font-size:.6875rem;font-weight:600;letter-spacing:.01em;color:var(--tx3);
-  text-decoration:none;background:transparent;border:none;padding:2px 0;cursor:pointer;
+  text-decoration:none;background:transparent;border:none;cursor:pointer;flex-shrink:0;
   transition:color var(--t2) var(--smooth),opacity var(--t2) var(--smooth);opacity:.85;
 }
 .card-ref:hover{opacity:1;color:var(--cat-text);}
@@ -714,7 +747,7 @@ html.dark .cdesc{color:var(--tx2);}
   display:inline-flex;align-items:center;align-self:flex-start;gap:var(--sp-2);
   padding:5px var(--sp-3);border-radius:var(--r-s);
   font-size:.75rem;font-weight:500;background:var(--s1);color:var(--tx2);
-  border:none;box-shadow:none;
+  border:none;box-shadow:none;flex-shrink:0;
 }
 html.dark .wtag{background:rgba(255,255,255,.05);}
 .wdot{
@@ -723,19 +756,19 @@ html.dark .wtag{background:rgba(255,255,255,.05);}
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   ENLARGED & CLICKABLE TOOLTIP AREA
+   CIRCULAR INFO ICON BUTTON (NO "INFO" TEXT)
 ═══════════════════════════════════════════════════════════════ */
 .tico {
   box-sizing: border-box;
-  min-width: 48px; min-height: 28px;
-  padding: 4px 10px; margin: -2px 0 -2px 4px;
-  display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+  width: 1.85rem; height: 1.85rem;
+  min-width: 1.85rem; min-height: 1.85rem;
+  padding: 0; margin: 0;
+  display: inline-flex; align-items: center; justify-content: center;
   background: var(--cat-soft, var(--s2));
   border: none;
-  border-radius: 999px;
+  border-radius: 50%;
   cursor: pointer;
   color: var(--cat-text, var(--tx1));
-  font-size: .625rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase;
   flex-shrink: 0;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
@@ -743,11 +776,7 @@ html.dark .wtag{background:rgba(255,255,255,.05);}
   transition: color var(--t2) var(--smooth), background var(--t2) var(--smooth), transform var(--t2) var(--spring), box-shadow var(--t2) var(--smooth);
 }
 .tico svg {
-  width: 13px; height: 13px; stroke-width: 2.5px; flex-shrink: 0;
-}
-.tico::after {
-  content: 'Info';
-  line-height: 1;
+  width: 15px; height: 15px; stroke-width: 2.4px; flex-shrink: 0;
 }
 .tico:hover,
 .tico:focus-visible,
@@ -755,7 +784,7 @@ html.dark .wtag{background:rgba(255,255,255,.05);}
 .tico.is-active {
   background: color-mix(in oklab, var(--cat-accent, var(--tx1)) 28%, var(--cat-soft, var(--s2)));
   color: var(--cat-text, var(--tx1));
-  transform: scale(1.04);
+  transform: scale(1.06);
   box-shadow: var(--sh0);
   outline: none;
 }
@@ -1084,6 +1113,52 @@ html.dark .step-btn { background: var(--s2); }
 #bm-toast.show { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
 #bm-toast-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-brand-400); flex-shrink: 0; }
 
+#btn-back-to-top {
+  position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 9900;
+  width: 2.75rem; height: 2.75rem; border-radius: var(--r-m);
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--tx1); color: var(--s0);
+  border: none; box-shadow: var(--sh2);
+  cursor: pointer; touch-action: manipulation;
+  transition: transform var(--t2) var(--spring), background var(--t2) var(--smooth), box-shadow var(--t2) var(--smooth), opacity var(--t2) var(--smooth);
+}
+#btn-back-to-top:hover { transform: translateY(-3px) scale(1.04); box-shadow: var(--sh3); }
+#btn-back-to-top:active { transform: scale(.94); }
+#btn-back-to-top:focus-visible { outline: 2px solid var(--tx2); outline-offset: 2px; }
+
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 9995;
+  background: rgba(9, 9, 12, 0.48);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  display: none; align-items: center; justify-content: center;
+  padding: var(--sp-4); opacity: 0;
+  transition: opacity 180ms var(--smooth);
+}
+.modal-backdrop.open { display: flex; opacity: 1; }
+.modal-box {
+  background: var(--s0); color: var(--tx1);
+  border-radius: var(--r-xl); padding: var(--sp-5);
+  width: 100%; max-width: 22rem;
+  box-shadow: var(--sh3);
+  transform: scale(.95) translateY(6px);
+  transition: transform 220ms var(--spring);
+}
+.modal-backdrop.open .modal-box { transform: scale(1) translateY(0); }
+.modal-title { font-size: .95rem; font-weight: 800; letter-spacing: -.015em; color: var(--tx1); margin-bottom: 6px; }
+.modal-desc { font-size: .78rem; color: var(--tx2); line-height: 1.5; margin-bottom: var(--sp-4); }
+.modal-actions { display: flex; align-items: center; justify-content: flex-end; gap: var(--sp-2); }
+.modal-btn {
+  min-height: 2.25rem; padding: 0 14px; border-radius: var(--r-m);
+  font-size: .78rem; font-weight: 700; font-family: inherit;
+  border: none; cursor: pointer; touch-action: manipulation;
+  transition: transform var(--t1) var(--spring), background var(--t1) var(--smooth);
+}
+.modal-btn:active { transform: scale(.96); }
+.modal-btn.cancel { background: var(--s1); color: var(--tx2); }
+.modal-btn.cancel:hover { background: var(--s2); color: var(--tx1); }
+.modal-btn.confirm { background: var(--danger); color: #fff; }
+.modal-btn.confirm:hover { filter: brightness(1.08); }
+
 .app-footer {
   max-width: 72rem; margin: var(--sp-6) auto 0; padding: var(--sp-4);
   display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--sp-3);
@@ -1093,7 +1168,7 @@ html.dark .step-btn { background: var(--s2); }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 </style>
-<script src="/_aistudio-iframe.js?v=6634132a"></script></head>
+<script src="/_aistudio-iframe.js?v=1f94f900"></script></head>
 <body>
 
 <header class="hdr">
@@ -1113,11 +1188,18 @@ html.dark .step-btn { background: var(--s2); }
     </button>
 
     <div class="ctrl" role="toolbar" aria-label="Kontrol Utama">
-      <button type="button" class="hdr-btn" id="btn-download-html" onclick="bounceBtn(this);downloadSelfHTML()" title="Unduh aplikasi lengkap dalam 1 file HTML Offline" aria-label="Unduh HTML">
+      <button type="button" class="hdr-btn" id="btn-sample" onclick="bounceBtn(this);fillSampleData()" title="Simulasi data fisik manusia acak yang logis" aria-label="Simulasi">
         <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
         </svg>
-        <span class="hdr-btn-lbl">Unduh HTML</span>
+        <span class="hdr-btn-lbl">Simulasi</span>
+      </button>
+
+      <button type="button" class="hdr-btn" id="btn-fold-cards" onclick="bounceBtn(this);toggleAllCardsFold()" title="Ringkas atau buka rincian semua 37 kartu" aria-label="Kartu">
+        <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/>
+        </svg>
+        <span class="hdr-btn-lbl" id="lbl-fold-cards">Kartu</span>
       </button>
 
       <div class="psep"></div>
@@ -1129,7 +1211,7 @@ html.dark .step-btn { background: var(--s2); }
         <span class="hdr-btn-lbl" id="lbl-toggle-all">Kategori</span>
       </button>
 
-      <button type="button" class="hdr-btn danger" id="btn-reset" onclick="bounceBtn(this);resetAllData()" title="Kosongkan semua input" aria-label="Reset">
+      <button type="button" class="hdr-btn danger" id="btn-reset" onclick="bounceBtn(this);openResetModal()" title="Kosongkan semua input" aria-label="Reset">
         <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
         </svg>
@@ -1187,16 +1269,6 @@ html.dark .step-btn { background: var(--s2); }
             <div class="inp-bar-track" aria-hidden="true">
               <div class="inp-bar-fill" id="inp-bar-fill"></div>
             </div>
-          </div>
-          <div class="inp-actions">
-            <button type="button" class="act-btn" id="btn-sample" onclick="bounceBtn(this);fillSampleData()" title="Isi dengan contoh data">
-              <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-              Isi Contoh
-            </button>
-            <button type="button" class="act-btn" id="btn-fold-cards" onclick="bounceBtn(this);toggleAllCardsFold()" title="Ringkas atau buka rincian semua 37 kartu">
-              <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/></svg>
-              <span id="lbl-fold-cards">Ringkas Kartu</span>
-            </button>
           </div>
         </div>
 
@@ -1413,12 +1485,15 @@ html.dark .step-btn { background: var(--s2); }
     </div>
   </div>
 
-  <nav class="cat-nav-wrap" aria-label="Filter Kategori Analisis">
+  <nav class="cat-nav-wrap" id="cat-nav-wrap" aria-label="Filter Kategori Analisis">
     <button type="button" class="cat-pill active" data-filter="all" onclick="filterCategory('all',this)">
       Semua Kategori <span class="cat-pill-count" id="nav-cnt-all">0/37</span>
     </button>
+    <button type="button" class="cat-pill" data-filter="active" id="pill-active" onclick="filterCategory('active',this)">
+      Kartu Aktif <span class="cat-pill-count" id="nav-cnt-active">0</span>
+    </button>
     <button type="button" class="cat-pill" data-filter="pinned" id="pill-pinned" onclick="filterCategory('pinned',this)">
-      <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" style="flex-shrink:0"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg> Disorot <span class="cat-pill-count" id="nav-cnt-pinned">0</span>
+      <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true" style="flex-shrink:0"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg> Favorit <span class="cat-pill-count" id="nav-cnt-pinned">0</span>
     </button>
     <button type="button" class="cat-pill" data-filter="umum" onclick="filterCategory('umum',this)">
       Fisik Umum <span class="cat-pill-count">5</span>
@@ -1571,7 +1646,7 @@ html.dark .step-btn { background: var(--s2); }
       <div class="coll" id="sum-coll"><div>
       <div class="sum-body">
         <div id="sum-empty-notice" class="wtag" style="display:none;align-self:flex-start;">
-          <span class="wdot"></span><span>Menunggu input Tinggi &amp; Berat Badan untuk menghitung skor kesehatan komposit (atau klik tombol <strong>Isi Contoh</strong> di atas).</span>
+          <span class="wdot"></span><span>Menunggu input Tinggi &amp; Berat Badan untuk menghitung skor kesehatan komposit (atau klik tombol <strong>Simulasi</strong> di atas).</span>
         </div>
         <div class="sum-top" id="sum-top-content">
           <div class="score-ring-wrap">
@@ -1641,11 +1716,24 @@ html.dark .step-btn { background: var(--s2); }
 
   <footer class="app-footer">
     <span>BioMetrics Pro — 100% Offline Single-File HTML PWA · 37 Parameter Klinis</span>
-    <button type="button" class="act-btn" onclick="downloadSelfHTML()">
-      <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-      Unduh File HTML Lengkap (.html)
-    </button>
   </footer>
+
+  <button type="button" id="btn-back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Kembali ke Atas" aria-label="Kembali ke Atas">
+    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+    </svg>
+  </button>
+
+  <div class="modal-backdrop" id="reset-modal" role="dialog" aria-modal="true" aria-labelledby="reset-modal-title" onclick="if(event.target===this)closeResetModal()">
+    <div class="modal-box">
+      <div class="modal-title" id="reset-modal-title">Reset Semua Data?</div>
+      <p class="modal-desc">Semua data fisik, kartu favorit, dan progres checklist rekomendasi akan dikosongkan ke kondisi awal.</p>
+      <div class="modal-actions">
+        <button type="button" class="modal-btn cancel" id="btn-cancel-reset" onclick="closeResetModal()">Batal</button>
+        <button type="button" class="modal-btn confirm" id="btn-confirm-reset" onclick="confirmResetAllData()">Ya, Reset</button>
+      </div>
+    </div>
+  </div>
 </main>
 <script id="qr-lib">
 /* QR Code Generator — Kazuhiko Arase v1.4.4 | MIT License (Full 40-Version RS_M & GF256 Table) */
@@ -2127,10 +2215,23 @@ function toggleAllCardsFold() {
       if (foldBtn) foldBtn.setAttribute('aria-expanded', 'true');
     }
   });
+  const btnFold = document.getElementById('btn-fold-cards');
+  if (btnFold) btnFold.classList.toggle('is-active', shouldCollapse);
   const lbl = document.getElementById('lbl-fold-cards');
-  if (lbl) lbl.textContent = shouldCollapse ? 'Buka Kartu' : 'Ringkas Kartu';
+  if (lbl) lbl.textContent = 'Kartu';
   saveState();
   showToast(shouldCollapse ? 'Semua kartu diringkas' : 'Semua rincian kartu dibuka', 'var(--cat-accent)');
+}
+
+function toggleCardPin(btnEl, title, ev) {
+  if (ev) ev.stopPropagation();
+  const card = btnEl ? btnEl.closest('.card') : null;
+  if (!card) return;
+  if (card.classList.contains('card-w') || card.classList.contains('card-e')) {
+    showToast('Lengkapi data parameter untuk menambahkan ke Favorit', 'var(--warn)');
+    return;
+  }
+  toggleCardSelect(card, title, null);
 }
 
 function toggleCardSelect(el, title, ev) {
@@ -2143,14 +2244,19 @@ function toggleCardSelect(el, title, ev) {
     if (foldBtn) toggleCardFold(foldBtn, title, ev);
     return;
   }
+  const pinBtn = el.querySelector('.card-pin');
   if (selectedCards.has(title)) {
     selectedCards.delete(title);
     el.classList.remove('is-selected');
-    showToast(`Sorotan dihapus: ${title}`, 'var(--tx3)');
+    el.setAttribute('aria-pressed', 'false');
+    if (pinBtn) pinBtn.setAttribute('aria-pressed', 'false');
+    showToast(`Dihapus dari Favorit: ${title}`, 'var(--tx3)');
   } else {
     selectedCards.add(title);
     el.classList.add('is-selected');
-    showToast(`★ Disorot: ${title}`, 'var(--cat-accent)');
+    el.setAttribute('aria-pressed', 'true');
+    if (pinBtn) pinBtn.setAttribute('aria-pressed', 'true');
+    showToast(`★ Ditambahkan ke Favorit: ${title}`, 'var(--cat-accent)');
   }
   updatePinnedCount();
   saveState();
@@ -2244,6 +2350,19 @@ function setGender(val) {
 
 let activeFilter = 'all';
 
+function scrollCatPillIntoView(btnEl) {
+  if (!btnEl) return;
+  const nav = btnEl.closest('.cat-nav-wrap');
+  if (!nav) return;
+  const navRect = nav.getBoundingClientRect();
+  const btnRect = btnEl.getBoundingClientRect();
+  const edgeThreshold = Math.min(110, navRect.width * 0.28);
+  if (btnRect.left < navRect.left + edgeThreshold || btnRect.right > navRect.right - edgeThreshold) {
+    const targetLeft = btnEl.offsetLeft - (nav.clientWidth / 2) + (btnEl.offsetWidth / 2);
+    nav.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
+  }
+}
+
 function applyPinnedFilter() {
   if (selectedCards.size === 0 && activeFilter === 'pinned') {
     filterCategory('all', document.querySelector('.cat-pill[data-filter="all"]'));
@@ -2269,11 +2388,47 @@ function applyPinnedFilter() {
   });
 }
 
+function applyActiveFilter() {
+  let totalAct = 0;
+  document.querySelectorAll('.rsec[data-group]').forEach(sec => {
+    let hasActiveInSec = false;
+    sec.querySelectorAll('.card').forEach(card => {
+      const isAct = !card.classList.contains('card-w') && !card.classList.contains('card-e');
+      card.style.display = isAct ? '' : 'none';
+      if (isAct) {
+        hasActiveInSec = true;
+        totalAct++;
+      }
+    });
+    sec.style.display = hasActiveInSec ? '' : 'none';
+    if (hasActiveInSec) {
+      const coll = sec.querySelector('.coll');
+      const chev = sec.querySelector('.chev');
+      if (coll && coll.classList.contains('shut')) {
+        coll.classList.remove('shut');
+        if (chev) chev.classList.add('open');
+      }
+    }
+  });
+  if (totalAct === 0 && activeFilter === 'active') {
+    filterCategory('all', document.querySelector('.cat-pill[data-filter="all"]'));
+  }
+}
+
 function filterCategory(group, btnEl) {
+  if (btnEl) scrollCatPillIntoView(btnEl);
   if (group === 'pinned' && selectedCards.size === 0) {
     if (btnEl) bounceBtn(btnEl);
-    showToast('Klik kartu hasil mana saja untuk menyorotnya terlebih dahulu!', 'var(--warn)');
+    showToast('Klik ikon bintang ★ pada kartu hasil untuk menambahkan ke Favorit!', 'var(--warn)');
     return;
+  }
+  if (group === 'active') {
+    const activeCards = document.querySelectorAll('.rsec[data-group] .card:not(.card-w):not(.card-e)');
+    if (activeCards.length === 0) {
+      if (btnEl) bounceBtn(btnEl);
+      showToast('Belum ada kartu aktif — isi data fisik atau klik Simulasi terlebih dahulu!', 'var(--warn)');
+      return;
+    }
   }
   activeFilter = group;
   document.querySelectorAll('.cat-pill').forEach(p => p.classList.toggle('active', p === btnEl));
@@ -2281,6 +2436,10 @@ function filterCategory(group, btnEl) {
 
   if (group === 'pinned') {
     applyPinnedFilter();
+    return;
+  }
+  if (group === 'active') {
+    applyActiveFilter();
     return;
   }
 
@@ -2300,6 +2459,7 @@ function filterCategory(group, btnEl) {
 }
 
 function jumpToSummary(btnEl) {
+  if (btnEl) scrollCatPillIntoView(btnEl);
   filterCategory('all', document.querySelector('.cat-pill[data-filter="all"]'));
   document.querySelectorAll('.cat-pill').forEach(p => p.classList.toggle('active', p === btnEl));
   if (btnEl) bounceBtn(btnEl);
@@ -2429,30 +2589,87 @@ function toggleUnit() {
   calc();
 }
 
-function fillSampleData() {
-  const isMale = document.getElementById('gender').value === 'male';
-  const sampleMetric = isMale
-    ? { age: '28', height: '172', weight: '68', waist: '78', neck: '38', hip: '94', wrist: '17', rhr: '62', activity: '1.55' }
-    : { age: '26', height: '160', weight: '55', waist: '68', neck: '32', hip: '92', wrist: '15', rhr: '66', activity: '1.375' };
+let _lastSimIdx = -1;
+const SIMULATION_PROFILES = [
+  { label: 'Pria Bugar Aktif', gender: 'male', age: 27, height: 174, weight: 69, waist: 77, neck: 38, hip: 94, wrist: 17.2, rhr: 60, activity: '1.55' },
+  { label: 'Wanita Proporsional Sehat', gender: 'female', age: 25, height: 162, weight: 55, waist: 67, neck: 32, hip: 92, wrist: 15.0, rhr: 64, activity: '1.375' },
+  { label: 'Pria Atlet Daya Tahan', gender: 'male', age: 24, height: 178, weight: 71, waist: 74, neck: 39, hip: 93, wrist: 17.5, rhr: 51, activity: '1.725' },
+  { label: 'Wanita Aktif Olahraga', gender: 'female', age: 29, height: 166, weight: 58, waist: 66, neck: 32.5, hip: 93, wrist: 15.2, rhr: 56, activity: '1.55' },
+  { label: 'Pria Pekerja Kantoran (Overweight)', gender: 'male', age: 38, height: 170, weight: 83, waist: 94, neck: 40, hip: 102, wrist: 17.5, rhr: 76, activity: '1.2' },
+  { label: 'Wanita Dewasa Sedenter', gender: 'female', age: 41, height: 158, weight: 69, waist: 84, neck: 34, hip: 103, wrist: 15.5, rhr: 78, activity: '1.2' },
+  { label: 'Pria Postur Ramping (Ektomorf)', gender: 'male', age: 22, height: 176, weight: 58, waist: 70, neck: 35.5, hip: 88, wrist: 16.0, rhr: 66, activity: '1.375' },
+  { label: 'Wanita Postur Mungil Aktif', gender: 'female', age: 23, height: 155, weight: 47, waist: 63, neck: 30.5, hip: 87, wrist: 14.2, rhr: 65, activity: '1.375' },
+  { label: 'Pria Berotot / Lifter', gender: 'male', age: 31, height: 175, weight: 82, waist: 80, neck: 41.5, hip: 98, wrist: 18.2, rhr: 58, activity: '1.725' },
+  { label: 'Lansia Bugar Mandiri', gender: 'male', age: 56, height: 168, weight: 67, waist: 82, neck: 37.5, hip: 94, wrist: 17.0, rhr: 64, activity: '1.375' }
+];
 
-  Object.entries(sampleMetric).forEach(([k, val], idx) => {
+function fillSampleData() {
+  let idx = Math.floor(Math.random() * SIMULATION_PROFILES.length);
+  if (idx === _lastSimIdx) idx = (idx + 1) % SIMULATION_PROFILES.length;
+  _lastSimIdx = idx;
+  const base = SIMULATION_PROFILES[idx];
+  const jitter = (range, dec) => {
+    const v = (Math.random() * 2 - 1) * range;
+    return dec ? Number(v.toFixed(dec)) : Math.round(v);
+  };
+  const sim = {
+    gender: base.gender,
+    age: String(Math.max(18, Math.min(75, base.age + jitter(2, 0)))),
+    height: String(base.height + jitter(1, 0)),
+    weight: cleanNumStr(base.weight + jitter(1.2, 1), 1),
+    waist: cleanNumStr(base.waist + jitter(1.0, 1), 1),
+    neck: cleanNumStr(base.neck + jitter(0.4, 1), 1),
+    hip: cleanNumStr(base.hip + jitter(1.0, 1), 1),
+    wrist: cleanNumStr(base.wrist + jitter(0.2, 1), 1),
+    rhr: String(Math.max(46, Math.min(95, base.rhr + jitter(2, 0)))),
+    activity: base.activity
+  };
+
+  const genSel = document.getElementById('gender');
+  if (genSel) {
+    genSel.value = sim.gender;
+    syncGenderUI(sim.gender);
+  }
+
+  ['age','height','weight','waist','neck','hip','wrist','rhr','activity'].forEach((k, i) => {
     const el = document.getElementById(k);
     if (!el) return;
+    const val = sim[k];
     if (k === 'activity') { el.value = val; syncActivityUI(val); return; }
-    let num = parseFloat(val);
+    let num = parseFloat(String(val).replace(',', '.'));
     if (curUnit === 'imperial') {
       if (lenIds.includes(k)) num = num * CM2IN;
       else if (k === 'weight') num = num * KG2LB;
-      el.value = (k === 'age' || k === 'rhr') ? String(num) : cleanNumStr(num, 1);
+      el.value = (k === 'age' || k === 'rhr') ? String(Math.round(num)) : cleanNumStr(num, 1);
     } else {
       el.value = val;
     }
     const fitem = document.getElementById('fitem-' + k);
-    if (fitem) setTimeout(() => bounceElement(fitem), idx * 35);
+    if (fitem) setTimeout(() => bounceElement(fitem), i * 30);
   });
-  showToast(`Data simulasi berhasil dimuat — ${TOTAL_CARDS} analisis aktif!`, 'var(--good)');
+  showToast(`Simulasi: ${base.label} (${TOTAL_CARDS} analisis aktif)`, 'var(--good)');
   saveState();
   calc();
+}
+
+function openResetModal() {
+  const m = document.getElementById('reset-modal');
+  if (!m) { resetAllData(); return; }
+  m.classList.add('open');
+  m.setAttribute('aria-hidden', 'false');
+}
+
+function closeResetModal(ev) {
+  if (ev && ev.target && ev.target.id !== 'reset-modal') return;
+  const m = document.getElementById('reset-modal');
+  if (!m) return;
+  m.classList.remove('open');
+  m.setAttribute('aria-hidden', 'true');
+}
+
+function confirmResetAllData() {
+  closeResetModal();
+  resetAllData();
 }
 
 function resetAllData() {
@@ -2476,9 +2693,13 @@ function resetAllData() {
   collapsedCards.clear();
   doneRecoSteps.clear();
   updatePinnedCount();
+  const btnFold = document.getElementById('btn-fold-cards');
+  if (btnFold) btnFold.classList.remove('is-active');
   const lblFold = document.getElementById('lbl-fold-cards');
-  if (lblFold) lblFold.textContent = 'Ringkas Kartu';
-  if (activeFilter === 'pinned') filterCategory('all', document.querySelector('.cat-pill[data-filter="all"]'));
+  if (lblFold) lblFold.textContent = 'Kartu';
+  if (activeFilter === 'pinned' || activeFilter === 'active') {
+    filterCategory('all', document.querySelector('.cat-pill[data-filter="all"]'));
+  }
   showToast('Semua input telah direset', 'var(--tx3)');
   try { localStorage.removeItem('bm-state-v1'); } catch (e) {}
   calc();
@@ -2525,9 +2746,11 @@ function buildCard(title, deps, data, fn, tip, icoSvg, refHtml) {
   const isSel = selectedCards.has(title);
   const isCollapsed = collapsedCards.has(title);
   const foldBtn = `<button type="button" class="card-fold-btn" aria-expanded="${!isCollapsed}" aria-label="Buka atau tutup rincian ${title}" onclick="toggleCardFold(this,'${safeTitle}',event)" title="Buka / tutup rincian kartu"><svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></button>`;
-  const pinIco = `<span class="card-pin" aria-hidden="true"><svg width="11" height="11" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></span>`;
+  const pinIco = `<button type="button" class="card-pin" aria-pressed="${isSel}" aria-label="Favoritkan ${title}" onclick="toggleCardPin(this,'${safeTitle}',event)" title="Tambahkan / hapus Favorit"><svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></button>`;
+  const headHtml = `<div class="card-head"><div class="card-title-wrap">${headIco}<div class="clbl"><span>${title}</span></div></div><div class="card-actions">${pinIco}${tipIco}${foldBtn}</div></div>`;
+  const errHeadHtml = `<div class="card-head"><div class="card-title-wrap">${headIco}<div class="clbl c-danger"><span>${title}</span></div></div><div class="card-actions">${pinIco}${tipIco}${foldBtn}</div></div>`;
   const refEl = refHtml
-    ? `<button type="button" class="card-ref" data-tip="Referensi Ilmiah: ${refHtml.label} (${refHtml.url})" aria-label="Referensi ${refHtml.label}"><svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>Ref: ${refHtml.label}</button>`
+    ? `<a class="card-ref" href="${refHtml.url}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" title="Buka artikel jurnal ilmiah (${refHtml.label})" aria-label="Artikel jurnal ${refHtml.label}"><svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>${refHtml.label}</a>`
     : '';
 
   if (nonEmptyInvalidDep) {
@@ -2535,9 +2758,8 @@ function buildCard(title, deps, data, fn, tip, icoSvg, refHtml) {
     return {
       active: false,
       html: `<div class="card card-e ${isCollapsed ? 'is-collapsed' : ''}" data-card-title="${title}" onclick="toggleCardSelect(this,'${safeTitle}',event)">
-        ${foldBtn}
-        <div class="card-head">${headIco}<div class="clbl c-danger"><span>${title}</span> ${tipIco}</div></div>
-        <div class="card-detail"><div class="card-detail-inner"><p class="cdesc c-danger">${errMsg}</p></div></div>
+        ${errHeadHtml}
+        <div class="card-detail"><div class="card-detail-inner"><p class="cdesc c-danger">${errMsg}</p>${refEl}</div></div>
       </div>`
     };
   }
@@ -2546,8 +2768,7 @@ function buildCard(title, deps, data, fn, tip, icoSvg, refHtml) {
     return {
       active: false,
       html: `<div class="card card-w ${isCollapsed ? 'is-collapsed' : ''}" data-card-title="${title}" onclick="toggleCardSelect(this,'${safeTitle}',event)" title="Klik untuk membuka/menutup kartu">
-        ${foldBtn}
-        <div class="card-head">${headIco}<div class="clbl"><span>${title}</span> ${tipIco}</div></div>
+        ${headHtml}
         <div class="card-detail"><div class="card-detail-inner">
           <div class="wtag"><span class="wdot"></span><span>Menunggu: ${miss.map(m => DEP[m]).join(', ')}</span></div>
           <p class="cdesc">${tip}</p>
@@ -2564,9 +2785,8 @@ function buildCard(title, deps, data, fn, tip, icoSvg, refHtml) {
     if (r.error) throw new Error(r.error);
     return {
       active: true,
-      html: `<div class="card ${isSel ? 'is-selected' : ''} ${isCollapsed ? 'is-collapsed' : ''}" tabindex="0" role="button" aria-pressed="${isSel}" data-card-title="${title}" onclick="toggleCardSelect(this,'${safeTitle}',event)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCardSelect(this,'${safeTitle}',event);}" title="Klik untuk menyorot kartu ini">
-        ${pinIco}${foldBtn}
-        <div class="card-head">${headIco}<div class="clbl"><span>${title}</span> ${tipIco}</div></div>
+      html: `<div class="card ${isSel ? 'is-selected' : ''} ${isCollapsed ? 'is-collapsed' : ''}" tabindex="0" role="button" aria-pressed="${isSel}" data-card-title="${title}" onclick="toggleCardSelect(this,'${safeTitle}',event)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCardSelect(this,'${safeTitle}',event);}" title="Klik untuk menambahkan ke Favorit">
+        ${headHtml}
         <div class="card-detail"><div class="card-detail-inner">
           <div class="cval"><span class="cnum">${r.nilai}</span><span class="cunit">${r.satuan}</span></div>
           ${r.status ? `<div class="cbadge ${r.warna}">${r.status}</div>` : ''}
@@ -2579,9 +2799,8 @@ function buildCard(title, deps, data, fn, tip, icoSvg, refHtml) {
     return {
       active: false,
       html: `<div class="card card-e ${isCollapsed ? 'is-collapsed' : ''}" data-card-title="${title}" onclick="toggleCardSelect(this,'${safeTitle}',event)">
-        ${foldBtn}
-        <div class="card-head">${headIco}<div class="clbl c-danger"><span>${title}</span> ${tipIco}</div></div>
-        <div class="card-detail"><div class="card-detail-inner"><p class="cdesc c-danger">${e.message}</p></div></div>
+        ${errHeadHtml}
+        <div class="card-detail"><div class="card-detail-inner"><p class="cdesc c-danger">${e.message}</p>${refEl}</div></div>
       </div>`
     };
   }
@@ -2742,6 +2961,7 @@ function toComma(x, n) {
 }
 function fmtW(v) { return curUnit === 'metric' ? { v, u: 'kg' } : { v: v * KG2LB, u: 'lbs' }; }
 function fmtV(v) { return curUnit === 'metric' ? { v, u: 'L' } : { v: v * 33.814, u: 'fl oz' }; }
+function fmtL(v) { return curUnit === 'metric' ? { v, u: 'cm' } : { v: v * CM2IN, u: 'in' }; }
 function calcBmr(d) {
   const b = 10 * d.weight + 6.25 * d.height - 5 * d.age;
   const res = d.gender === 'male' ? b + 5 : b - 161;
@@ -2812,7 +3032,7 @@ function calc() {
     "Luas Permukaan Tubuh": '<svg class="card-ico" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>',
     "Rincian Energi Harian": '<svg class="card-ico" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>',
     "Protein Berbasis Riset": '<svg class="card-ico" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>',
-    "Kalori per Tujuan": '<svg class="card-ico" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>',
+    "Kalori Per Tujuan": '<svg class="card-ico" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>',
     "Indeks Kebulatan Tubuh": '<svg class="card-ico" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 12h6m-3-3v6"/></svg>',
     "Indeks Konisitas": '<svg class="card-ico" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 3l9 18H3L12 3z"/></svg>',
     "Rasio Pinggul/Tinggi": '<svg class="card-ico" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"/></svg>',
@@ -2820,118 +3040,187 @@ function calc() {
   };
 
   const _REFS = {
-    "Indeks Massa Tubuh": {label:"WHO, 2000", url:"WHO Obesity & Overweight Guidelines"},
-    "Indeks Ponderal": {label:"Slaughter 1988", url:"Pediatric Research 1988; 23(4)"},
-    "Rentang Sehat": {label:"WHO BMI Classification", url:"WHO Healthy Lifestyle Recommendations"},
-    "Berat Ideal": {label:"Devine 1974", url:"Drug Intell Clin Pharm 1974; 8:650"},
-    "Ukuran Kerangka": {label:"Frisancho & Flegel 1983", url:"Am J Clin Nutr 1983; 37(2):311"},
-    "Lemak Tubuh (US Navy)": {label:"Hodgdon & Beckett 1984", url:"Naval Health Research Center Report 84-29"},
-    "Adipositas (BAI)": {label:"Bergman et al. 2011", url:"Obesity 2011; 19(5):1083"},
-    "Lemak Relatif (RFM)": {label:"Woolcott & Bergman 2018", url:"Scientific Reports 2018; 8:10980"},
-    "Massa Tanpa Lemak": {label:"Wang et al. 2000", url:"Am J Clin Nutr 2000; 72(4):929"},
-    "Indeks Bebas Lemak": {label:"Kouri et al. 1995", url:"Clin J Sport Med 1995; 5(4):223"},
-    "Estimasi VO2 Max": {label:"Uth et al. 2004", url:"Eur J Appl Physiol 2004; 91(1):111"},
-    "Batas Max HR": {label:"Tanaka et al. 2001", url:"J Am Coll Cardiol 2001; 37(1):153"},
-    "Zona Pembakaran Lemak": {label:"Karvonen et al. 1957", url:"Ann Med Exp Biol Fenn 1957; 35(3):307"},
-    "Kebutuhan Hidrasi": {label:"EFSA, 2010", url:"EFSA Journal 2010; 8(3):1459"},
-    "Total Kalori (TDEE)": {label:"Mifflin et al. 1990", url:"Am J Clin Nutr 1990; 51(2):241"},
-    "Target Protein": {label:"ISSN 2017", url:"J Int Soc Sports Nutr 2017; 14:20"},
-    "Karbo & Lemak": {label:"AMDR — IOM 2005", url:"Dietary Reference Intakes, IOM 2005"},
-    "ABSI (Mortalitas)": {label:"Krakauer & Krakauer 2012", url:"PLoS ONE 2012; 7(7):e39504"},
-    "Rasio Pinggang/Tinggi": {label:"Ashwell & Hsieh 2005", url:"Nutr Res Rev 2005; 18(1):118"},
-    "Rasio Pinggang/Pinggul": {label:"WHO, 2008", url:"WHO Waist Circumference & WHR Report 2008"},
-    "RMR Katch-McArdle": {label:"McArdle et al. 2010", url:"Exercise Physiology, 7th Ed."},
-    "Total Air Tubuh": {label:"Watson et al. 1980", url:"Am J Clin Nutr 1980; 33(1):27"},
-    "Massa Otot Rangka": {label:"Wang et al. 2000", url:"Am J Clin Nutr 2000; 72(4):929"},
-    "Estimasi Massa Tulang": {label:"Doupe et al. 1997", url:"Am J Hum Biol 1997; 9(6):709"},
-    "Persentase Lean Mass": {label:"ACSM Guidelines 2018", url:"ACSM Guidelines for Exercise Testing"},
-    "Potensi Otot Alami": {label:"Kouri et al. 1995", url:"Clin J Sport Med 1995; 5(4):223"},
-    "Usia Kebugaran": {label:"Nes et al. 2013", url:"Med Sci Sports Exerc 2013; 45(6):1150"},
-    "Klasifikasi Denyut Nadi": {label:"AHA 2023", url:"American Heart Association Target HR"},
-    "5 Zona Latihan": {label:"Karvonen et al. 1957", url:"Ann Med Exp Biol Fenn 1957; 35(3):307"},
-    "Luas Permukaan Tubuh": {label:"DuBois & DuBois 1916", url:"Arch Intern Med 1916; 17(6):863"},
-    "Rincian Energi Harian": {label:"Levine 2005", url:"Science 2005; 307(5709):584"},
-    "Protein Berbasis Riset": {label:"Morton et al. 2018", url:"Br J Sports Med 2018; 52(6):376"},
-    "Kalori per Tujuan": {label:"Hall et al. 2012", url:"Lancet 2011; 378(9793):826"},
-    "Indeks Kebulatan Tubuh": {label:"Thomas et al. 2013", url:"Obesity 2013; 21(11):2264"},
-    "Indeks Konisitas": {label:"Valdez 1991", url:"J Clin Epidemiol 1991; 44(9):955"},
-    "Rasio Pinggul/Tinggi": {label:"Lin et al. 2002", url:"Int J Obes Relat Metab Disord 2002"},
-    "Rasio Pinggang/Leher": {label:"Ben-Noun & Laor 2006", url:"Am J Hypertens 2006; 19(5):470"}
+    "Indeks Massa Tubuh": {label:"WHO, 2000", url:"https://pubmed.ncbi.nlm.nih.gov/11234459/"},
+    "Indeks Ponderal": {label:"Slaughter et al., 1988", url:"https://pubmed.ncbi.nlm.nih.gov/3225420/"},
+    "Rentang Sehat": {label:"WHO, 2004", url:"https://pubmed.ncbi.nlm.nih.gov/14726171/"},
+    "Berat Ideal": {label:"Devine, 1974", url:"https://doi.org/10.1177/106002807400801104"},
+    "Ukuran Kerangka": {label:"Frisancho & Flegel, 1983", url:"https://pubmed.ncbi.nlm.nih.gov/6823895/"},
+    "Lemak Tubuh (US Navy)": {label:"Hodgdon & Beckett, 1984", url:"https://doi.org/10.21236/ADA143890"},
+    "Adipositas (BAI)": {label:"Bergman et al., 2011", url:"https://pubmed.ncbi.nlm.nih.gov/21372804/"},
+    "Lemak Relatif (RFM)": {label:"Woolcott & Bergman, 2018", url:"https://pubmed.ncbi.nlm.nih.gov/30030479/"},
+    "Massa Tanpa Lemak": {label:"Wang et al., 2000", url:"https://pubmed.ncbi.nlm.nih.gov/11010935/"},
+    "Indeks Bebas Lemak": {label:"Kouri et al., 1995", url:"https://pubmed.ncbi.nlm.nih.gov/7496846/"},
+    "Estimasi VO2 Max": {label:"Uth et al., 2004", url:"https://pubmed.ncbi.nlm.nih.gov/14624296/"},
+    "Batas Max HR": {label:"Tanaka et al., 2001", url:"https://pubmed.ncbi.nlm.nih.gov/11153730/"},
+    "Zona Pembakaran Lemak": {label:"Karvonen et al., 1957", url:"https://pubmed.ncbi.nlm.nih.gov/13470504/"},
+    "Kebutuhan Hidrasi": {label:"EFSA, 2010", url:"https://doi.org/10.2903/j.efsa.2010.1459"},
+    "Total Kalori (TDEE)": {label:"Mifflin et al., 1990", url:"https://pubmed.ncbi.nlm.nih.gov/2305711/"},
+    "Target Protein": {label:"Jäger et al., 2017", url:"https://pubmed.ncbi.nlm.nih.gov/28642676/"},
+    "Karbo & Lemak": {label:"IOM, 2005", url:"https://pubmed.ncbi.nlm.nih.gov/16004827/"},
+    "ABSI (Mortalitas)": {label:"Krakauer & Krakauer, 2012", url:"https://pubmed.ncbi.nlm.nih.gov/22815707/"},
+    "Rasio Pinggang/Tinggi": {label:"Ashwell & Hsieh, 2005", url:"https://pubmed.ncbi.nlm.nih.gov/19059927/"},
+    "Rasio Pinggang/Pinggul": {label:"WHO, 2008", url:"https://www.who.int/publications/i/item/9789241501491"},
+    "RMR Katch-McArdle": {label:"McArdle et al., 2010", url:"https://pubmed.ncbi.nlm.nih.gov/8841932/"},
+    "Total Air Tubuh": {label:"Watson et al., 1980", url:"https://pubmed.ncbi.nlm.nih.gov/6986753/"},
+    "Massa Otot Rangka": {label:"Kyle et al., 2001", url:"https://pubmed.ncbi.nlm.nih.gov/11440959/"},
+    "Estimasi Massa Tulang": {label:"Doupe et al., 1997", url:"https://doi.org/10.1002/(SICI)1520-6300(1997)9:6%3C709::AID-AJHB4%3E3.0.CO;2-S"},
+    "Persentase Lean Mass": {label:"ACSM, 2018", url:"https://pubmed.ncbi.nlm.nih.gov/29800984/"},
+    "Potensi Otot Alami": {label:"Kouri et al., 1995", url:"https://pubmed.ncbi.nlm.nih.gov/7496846/"},
+    "Usia Kebugaran": {label:"Nes et al., 2013", url:"https://pubmed.ncbi.nlm.nih.gov/23274603/"},
+    "Klasifikasi Denyut Nadi": {label:"Ostchega et al., 2011", url:"https://pubmed.ncbi.nlm.nih.gov/21865610/"},
+    "5 Zona Latihan": {label:"Karvonen et al., 1957", url:"https://pubmed.ncbi.nlm.nih.gov/13470504/"},
+    "Luas Permukaan Tubuh": {label:"Du Bois & Du Bois, 1916", url:"https://doi.org/10.1001/archinte.1916.00080130010002"},
+    "Rincian Energi Harian": {label:"Levine, 2005", url:"https://pubmed.ncbi.nlm.nih.gov/15681386/"},
+    "Protein Berbasis Riset": {label:"Morton et al., 2018", url:"https://pubmed.ncbi.nlm.nih.gov/28698222/"},
+    "Kalori Per Tujuan": {label:"Hall et al., 2011", url:"https://pubmed.ncbi.nlm.nih.gov/21872751/"},
+    "Indeks Kebulatan Tubuh": {label:"Thomas et al., 2013", url:"https://pubmed.ncbi.nlm.nih.gov/23519954/"},
+    "Indeks Konisitas": {label:"Valdez, 1991", url:"https://pubmed.ncbi.nlm.nih.gov/1890497/"},
+    "Rasio Pinggul/Tinggi": {label:"Lin et al., 2002", url:"https://pubmed.ncbi.nlm.nih.gov/12187398/"},
+    "Rasio Pinggang/Leher": {label:"Ben-Noun & Laor, 2006", url:"https://pubmed.ncbi.nlm.nih.gov/16647616/"}
   };
 
   const K = (c, t, deps, fn, tip) => cats[c].push(buildCard(t, deps, d, fn, tip, _ICOS[t] || '', _REFS[t] || null));
 
   K('umum', 'Indeks Massa Tubuh', ['height','weight'], () => {
     const bmi = d.weight / (hM ** 2);
-    let s = 'Normal', w = 'c-good';
-    if (bmi < 18.5) { s = 'Kekurangan Berat'; w = 'c-info'; }
-    else if (bmi >= 25 && bmi < 30) { s = 'Kelebihan Berat'; w = 'c-warn'; }
-    else if (bmi >= 30) { s = 'Obesitas'; w = 'c-danger'; }
-    return { nilai: toComma(bmi, 2), satuan: 'kg/m²', status: s, warna: w, deskripsi: 'Mengukur proporsi berat badan terhadap kuadrat tinggi badan. Nilai di bawah 18,5 menandakan kekurangan berat, 18,5–24,9 normal, 25–29,9 kelebihan berat, dan ≥30 masuk kategori obesitas dengan risiko penyakit metabolik meningkat.' };
-  }, 'Indeks Massa Tubuh (Body Mass Index).');
+    const wMin = fmtW(18.5 * (hM ** 2)), wMax = fmtW(24.9 * (hM ** 2)), wOpt = fmtW(21.7 * (hM ** 2));
+    const curW = fmtW(d.weight);
+    let s = 'Normal', w = 'c-good', actTxt = '';
+    if (bmi < 18.5) {
+      s = 'Kekurangan Berat'; w = 'c-info';
+      actTxt = ` berada di bawah standar sehat WHO (18,5–24,9 kg/m²). Target yang perlu dicapai: tingkatkan berat badan minimal +${toComma(wMin.v - curW.v, 1)} ${curW.u} menuju rentang sehat ${toComma(wMin.v, 1)}–${toComma(wMax.v, 1)} ${curW.u} (titik optimal ${toComma(wOpt.v, 1)} ${curW.u} pada IMT 21,7).`;
+    } else if (bmi < 25) {
+      actTxt = ` sudah berada di dalam standar sehat WHO (18,5–24,9 kg/m²). Target yang perlu dicapai: pertahankan IMT di sekitar titik ideal 21,7 kg/m² (berat optimal ${toComma(wOpt.v, 1)} ${curW.u}, rentang aman ${toComma(wMin.v, 1)}–${toComma(wMax.v, 1)} ${curW.u}).`;
+    } else if (bmi < 30) {
+      s = 'Kelebihan Berat'; w = 'c-warn';
+      actTxt = ` melampaui standar sehat WHO (18,5–24,9 kg/m²). Target yang perlu dicapai: turunkan berat badan minimal −${toComma(curW.v - wMax.v, 1)} ${curW.u} agar mencapai ≤ ${toComma(wMax.v, 1)} ${curW.u} (target optimal ${toComma(wOpt.v, 1)} ${curW.u}).`;
+    } else {
+      s = 'Obesitas'; w = 'c-danger';
+      actTxt = ` berada jauh di atas standar sehat WHO (18,5–24,9 kg/m²). Target yang perlu dicapai: turunkan −${toComma(curW.v - wMax.v, 1)} ${curW.u} untuk masuk batas sehat ≤ ${toComma(wMax.v, 1)} ${curW.u} (tahap awal turunkan 5–10% atau ${toComma(curW.v * 0.07, 1)} ${curW.u}).`;
+    }
+    return { nilai: toComma(bmi, 2), satuan: 'kg/m²', status: s, warna: w, deskripsi: `IMT Anda ${toComma(bmi, 2)} kg/m²${actTxt}` };
+  }, 'Definisi: Rasio berat badan terhadap kuadrat tinggi badan untuk klasifikasi status gizi dewasa. | Rumus: IMT = Berat (kg) / [Tinggi (m)]²');
 
   K('umum', 'Indeks Ponderal', ['height','weight'], () => {
     const pi = d.weight / (hM ** 3);
-    let s = 'Volume Normal', w = 'c-good';
-    if (pi < 11) { s = 'Volume Kurang'; w = 'c-info'; } else if (pi > 15) { s = 'Volume Berlebih'; w = 'c-danger'; }
-    return { nilai: toComma(pi, 2), satuan: 'kg/m³', status: s, warna: w, deskripsi: 'Mengukur kepadatan massa tubuh terhadap volume (tinggi pangkat tiga), sehingga lebih adil untuk individu sangat tinggi atau pendek dibanding IMT.' };
-  }, 'Alternatif BMI lebih akurat untuk individu sangat tinggi/pendek.');
+    const wLo = fmtW(11 * (hM ** 3)), wHi = fmtW(15 * (hM ** 3)), wOpt = fmtW(12.5 * (hM ** 3));
+    let s = 'Volume Normal', w = 'c-good', cmp = 'sesuai dengan standar kepadatan tubuh sehat (11,0–15,0 kg/m³)';
+    if (pi < 11) { s = 'Volume Kurang'; w = 'c-info'; cmp = 'di bawah standar kepadatan tubuh sehat (11,0–15,0 kg/m³)'; }
+    else if (pi > 15) { s = 'Volume Berlebih'; w = 'c-danger'; cmp = 'melebihi standar kepadatan tubuh sehat (11,0–15,0 kg/m³)'; }
+    return { nilai: toComma(pi, 2), satuan: 'kg/m³', status: s, warna: w, deskripsi: `Indeks Ponderal Anda ${toComma(pi, 2)} kg/m³ (${cmp}). Target yang perlu dicapai: jaga nilai IP pada 12,0–13,5 kg/m³ yang setara dengan berat badan ${toComma(wLo.v, 1)}–${toComma(wHi.v, 1)} ${wOpt.u} (optimal ${toComma(wOpt.v, 1)} ${wOpt.u}).` };
+  }, 'Definisi: Ukuran kepadatan massa tubuh tiga dimensi (Corpulence Index) yang bebas bias pada postur tubuh sangat tinggi atau pendek. | Rumus: IP = Berat (kg) / [Tinggi (m)]³');
 
   K('umum', 'Rentang Sehat', ['height'], () => {
-    const lo = fmtW(18.5 * (hM ** 2)), hi = fmtW(24.9 * (hM ** 2));
-    return { nilai: `${toComma(lo.v, 2)} – ${toComma(hi.v, 2)}`, satuan: lo.u, status: 'Zona IMT 18,5–24,9', warna: 'c-good', deskripsi: 'Rentang berat badan di mana nilai IMT Anda berada pada 18,5–24,9 — zona tanpa peningkatan risiko penyakit terkait berat badan.' };
-  }, 'Rentang berat minimum dan maksimum agar IMT tetap sehat.');
+    const lo = fmtW(18.5 * (hM ** 2)), hi = fmtW(24.9 * (hM ** 2)), mid = fmtW(21.7 * (hM ** 2));
+    const hasW = !isNaN(d.weight) && d.weight > 0;
+    const curW = hasW ? fmtW(d.weight) : null;
+    let cmp = `Standar berat sehat untuk tinggi badan Anda adalah ${toComma(lo.v, 1)}–${toComma(hi.v, 1)} ${lo.u}.`;
+    if (curW) {
+      if (curW.v < lo.v) cmp = `Berat Anda saat ini (${toComma(curW.v, 1)} ${lo.u}) masih kurang ${toComma(lo.v - curW.v, 1)} ${lo.u} dari batas bawah sehat.`;
+      else if (curW.v > hi.v) cmp = `Berat Anda saat ini (${toComma(curW.v, 1)} ${lo.u}) berlebih ${toComma(curW.v - hi.v, 1)} ${lo.u} di atas batas atas sehat.`;
+      else cmp = `Berat Anda saat ini (${toComma(curW.v, 1)} ${lo.u}) sudah berada tepat di dalam rentang standar sehat.`;
+    }
+    return { nilai: `${toComma(lo.v, 2)} – ${toComma(hi.v, 2)}`, satuan: lo.u, status: 'Zona IMT 18,5–24,9', warna: 'c-good', deskripsi: `${cmp} Target yang perlu dicapai: pertahankan berat di antara ${toComma(lo.v, 1)}–${toComma(hi.v, 1)} ${lo.u} dengan titik tengah ideal ${toComma(mid.v, 1)} ${lo.u}.` };
+  }, 'Definisi: Batas berat badan minimum dan maksimum agar IMT berada dalam zona normoweight WHO (18,5–24,9 kg/m²). | Rumus: Berat Min = 18,5 × Tinggi (m)²; Berat Maks = 24,9 × Tinggi (m)²');
 
   K('umum', 'Berat Ideal', ['height'], () => {
     const hIn = d.height / 2.54;
     const bKg = hIn >= 60 ? (d.gender === 'male' ? 50 + 2.3 * (hIn - 60) : 45.5 + 2.3 * (hIn - 60)) : (21.7 * (hM ** 2));
     const o = fmtW(bKg);
-    return { nilai: toComma(o.v, 2), satuan: o.u, status: 'Formula Devine', warna: 'c-brand', deskripsi: 'Berat badan target yang dihitung dari tinggi badan menggunakan formula Devine — standar klinis untuk menentukan dosis obat dan target rehabilitasi.' };
-  }, 'Target berat badan paling optimal yang direkomendasikan secara klinis.');
+    const hasW = !isNaN(d.weight) && d.weight > 0;
+    const curW = hasW ? fmtW(d.weight) : null;
+    let deltaTxt = `Target yang perlu dicapai: arahkan berat badan menuju ${toComma(o.v, 1)} ${o.u} (toleransi sehat ±10% yaitu ${toComma(o.v * 0.9, 1)}–${toComma(o.v * 1.1, 1)} ${o.u}).`;
+    if (curW) {
+      const diff = curW.v - o.v;
+      if (Math.abs(diff) <= o.v * 0.05) deltaTxt = `Berat Anda (${toComma(curW.v, 1)} ${o.u}) sudah sangat ideal dibanding standar Devine (${toComma(o.v, 1)} ${o.u}). Target: pertahankan di ${toComma(o.v * 0.95, 1)}–${toComma(o.v * 1.05, 1)} ${o.u}.`;
+      else if (diff > 0) deltaTxt = `Berat Anda (${toComma(curW.v, 1)} ${o.u}) berada +${toComma(diff, 1)} ${o.u} di atas standar ideal Devine. Target yang perlu dicapai: turunkan sekitar ${toComma(diff, 1)} ${o.u} menuju ${toComma(o.v, 1)} ${o.u}.`;
+      else deltaTxt = `Berat Anda (${toComma(curW.v, 1)} ${o.u}) berada ${toComma(diff, 1)} ${o.u} di bawah standar ideal Devine. Target yang perlu dicapai: tambah massa tubuh sehat sebesar +${toComma(Math.abs(diff), 1)} ${o.u} menuju ${toComma(o.v, 1)} ${o.u}.`;
+    }
+    return { nilai: toComma(o.v, 2), satuan: o.u, status: 'Formula Devine', warna: 'c-brand', deskripsi: deltaTxt };
+  }, 'Definisi: Estimasi berat badan ideal klinis berdasarkan tinggi badan dan jenis kelamin untuk acuan terapi gizi dan medis. | Rumus: Pria = 50 + 2,3 × (Tinggi [in] − 60); Wanita = 45,5 + 2,3 × (Tinggi [in] − 60)');
 
   K('umum', 'Ukuran Kerangka', ['height','wrist'], () => {
     const r = d.height / d.wrist; let u = 'Sedang';
     if (d.gender === 'male') { if (r > 10.4) u = 'Kecil'; else if (r < 9.6) u = 'Besar'; }
     else { if (r > 11.0) u = 'Kecil'; else if (r < 10.1) u = 'Besar'; }
-    return { nilai: u, satuan: '', status: `Rasio ${toComma(r, 1)}`, warna: 'c-brand', deskripsi: 'Ukuran kerangka tulang ditentukan dari rasio tinggi terhadap lingkar pergelangan tangan.' };
-  }, 'Analisis kerangka tulang berdasarkan rasio tinggi dan lingkar pergelangan tangan.');
+    const hIn = d.height / 2.54;
+    const baseKg = hIn >= 60 ? (d.gender === 'male' ? 50 + 2.3 * (hIn - 60) : 45.5 + 2.3 * (hIn - 60)) : (21.7 * (hM ** 2));
+    const adjFactor = u === 'Kecil' ? 0.93 : u === 'Besar' ? 1.07 : 1.0;
+    const adjW = fmtW(baseKg * adjFactor);
+    const stdRange = d.gender === 'male' ? '9,6–10,4' : '10,1–11,0';
+    return { nilai: u, satuan: '', status: `Rasio ${toComma(r, 1)}`, warna: 'c-brand', deskripsi: `Rasio tinggi/pergelangan Anda ${toComma(r, 1)} termasuk kerangka ${u} (standar kerangka sedang: ${stdRange}). Target yang perlu dicapai: sesuaikan target berat badan ideal Anda menjadi sekitar ${toComma(adjW.v, 1)} ${adjW.u} sesuai proporsi tulang ${u.toLowerCase()}.` };
+  }, 'Definisi: Klasifikasi ukuran struktur tulang rangka (kecil, sedang, besar) dari rasio tinggi badan terhadap lingkar pergelangan tangan. | Rumus: Rasio Kerangka (r) = Tinggi Badan (cm) / Lingkar Pergelangan Tangan (cm)');
 
   const nDeps = d.gender === 'male' ? ['height','waist','neck'] : ['height','waist','neck','hip'];
   K('komposisi', 'Lemak Tubuh (US Navy)', nDeps, () => {
     const f = calcNavy(d); let s = 'Normal / Bugar', w = 'c-good';
-    if (d.gender === 'male') {
+    const isM = d.gender === 'male';
+    if (isM) {
       if (f < 6) { s = 'Lemak Esensial'; w = 'c-info'; } else if (f < 14) { s = 'Atletis'; w = 'c-good'; } else if (f <= 19) { s = 'Bugar'; w = 'c-good'; } else if (f <= 24) { s = 'Rata-rata'; w = 'c-warn'; } else { s = 'Obesitas'; w = 'c-danger'; }
     } else {
       if (f < 14) { s = 'Lemak Esensial'; w = 'c-info'; } else if (f < 21) { s = 'Atletis'; w = 'c-good'; } else if (f <= 25) { s = 'Bugar'; w = 'c-good'; } else if (f <= 31) { s = 'Rata-rata'; w = 'c-warn'; } else { s = 'Obesitas'; w = 'c-danger'; }
     }
-    return { nilai: toComma(f, 2), satuan: '%', status: s, warna: w, deskripsi: 'Persentase lemak tubuh diestimasi dari lingkar tubuh menggunakan metode Angkatan Laut AS.' };
-  }, 'Tingkat akurasi tinggi menggunakan metode antropometri angkatan laut.');
+    const idealLo = isM ? 10 : 18, idealHi = isM ? 18 : 25, idealMid = isM ? 14 : 22;
+    let targetTxt = `Target yang perlu dicapai: arahkan lemak tubuh ke zona bugar ideal ${idealLo}–${idealHi}% (optimal ${idealMid}%).`;
+    if (!isNaN(d.weight) && d.weight > 0) {
+      const fatMass = fmtW(d.weight * (f / 100));
+      const targetFatMass = fmtW(d.weight * (idealHi / 100));
+      if (f > idealHi) {
+        const loseFat = Math.max(0, fatMass.v - targetFatMass.v);
+        targetTxt = `Massa lemak saat ini ${toComma(fatMass.v, 1)} ${fatMass.u} (di atas standar bugar ${idealLo}–${idealHi}%). Target yang perlu dicapai: kurangi sekitar −${toComma(loseFat, 1)} ${fatMass.u} lemak murni agar mencapai ≤ ${idealHi}%.`;
+      } else if (f < idealLo) {
+        targetTxt = `Kadar lemak berada di bawah zona bugar standar (${idealLo}–${idealHi}%). Target yang perlu dicapai: jaga asupan nutrisi agar lemak esensial tidak turun di bawah ${isM ? 6 : 14}%.`;
+      } else {
+        targetTxt = `Kadar lemak Anda (${toComma(fatMass.v, 1)} ${fatMass.u}) sudah berada di dalam standar bugar ideal (${idealLo}–${idealHi}%). Target: pertahankan di kisaran ${idealMid}%.`;
+      }
+    }
+    return { nilai: toComma(f, 2), satuan: '%', status: s, warna: w, deskripsi: `Estimasi lemak tubuh Anda ${toComma(f, 2)}% (${s}). ${targetTxt}` };
+  }, 'Definisi: Estimasi persentase jaringan adiposa tubuh menggunakan persamaan antropometri logaritmik US Navy. | Rumus: Pria = 495 / [1,0324 − 0,19077×log10(Pinggang−Leher) + 0,15456×log10(Tinggi)] − 450; Wanita = 495 / [1,29579 − 0,35004×log10(Pinggang+Pinggul−Leher) + 0,22100×log10(Tinggi)] − 450');
 
   K('komposisi', 'Adipositas (BAI)', ['height','hip'], () => {
     const baiVal = (d.hip / Math.pow(hM, 1.5)) - 18;
     if (baiVal < 2 || baiVal > 65) throw new Error('Hasil BAI di luar rentang biologis — periksa proporsi tinggi dan lingkar pinggul.');
-    const b = toComma(baiVal, 2);
-    return { nilai: b, satuan: '%', status: 'Tanpa Timbangan', warna: 'c-brand', deskripsi: 'Indeks Adipositas Tubuh menghitung estimasi lemak dari lingkar panggul dan tinggi badan tanpa menggunakan berat timbangan.' };
-  }, 'Body Adiposity Index: Estimasi lemak yang tak terpengaruh berat timbangan.');
+    const isM = d.gender === 'male';
+    const stdLo = isM ? 8 : 21, stdHi = isM ? 21 : 33;
+    const idealHipCm = (stdHi + 18) * Math.pow(hM, 1.5);
+    const hipDisp = fmtL(idealHipCm);
+    const s = baiVal < stdLo ? 'Rendah' : baiVal <= stdHi ? 'Sehat' : 'Berlebih';
+    const w = baiVal < stdLo ? 'c-info' : baiVal <= stdHi ? 'c-good' : 'c-warn';
+    return { nilai: toComma(baiVal, 2), satuan: '%', status: s, warna: w, deskripsi: `BAI Anda ${toComma(baiVal, 2)}% dibanding standar sehat ${stdLo}–${stdHi}%. Target yang perlu dicapai: jaga indeks BAI ≤ ${stdHi}% dengan mempertahankan lingkar pinggul proporsional ≤ ${toComma(hipDisp.v, 1)} ${hipDisp.u}.` };
+  }, 'Definisi: Body Adiposity Index mengestimasi persentase adipositas tubuh secara langsung dari rasio lingkar pinggul terhadap tinggi badan tanpa timbangan. | Rumus: BAI (%) = [Lingkar Pinggul (cm) / Tinggi (m)^1,5] − 18');
 
   K('komposisi', 'Lemak Relatif (RFM)', ['height','waist'], () => {
-    const rfm = d.gender === 'male' ? 64 - (20 * (d.height / d.waist)) : 76 - (20 * (d.height / d.waist));
+    const isM = d.gender === 'male';
+    const rfm = isM ? 64 - (20 * (d.height / d.waist)) : 76 - (20 * (d.height / d.waist));
     if (rfm < 2 || rfm > 65) throw new Error('Hasil RFM di luar rentang biologis — periksa proporsi tinggi dan lingkar pinggang.');
-    return { nilai: toComma(rfm, 2), satuan: '%', status: 'Rasio Tinggi/Pinggang', warna: 'c-brand', deskripsi: 'Relative Fat Mass menggunakan rasio tinggi terhadap lingkar pinggang untuk mengestimasi lemak tubuh secara lebih akurat.' };
-  }, 'Metode estimasi jaringan lemak yang dianggap jauh lebih akurat daripada IMT.');
+    const cut = isM ? 22.8 : 33.9;
+    const idealRfm = isM ? 18 : 26;
+    const targetWaistCm = (20 * d.height) / ((isM ? 64 : 76) - idealRfm);
+    const wDisp = fmtL(targetWaistCm);
+    const s = rfm <= idealRfm ? 'Bugar' : rfm < cut ? 'Normal' : 'Tinggi';
+    const w = rfm <= idealRfm ? 'c-good' : rfm < cut ? 'c-brand' : 'c-danger';
+    return { nilai: toComma(rfm, 2), satuan: '%', status: s, warna: w, deskripsi: `RFM Anda ${toComma(rfm, 2)}% (batas aman klinis < ${toComma(cut, 1)}%, ideal ≤ ${idealRfm}%). Target yang perlu dicapai: arahkan lingkar pinggang ke ≤ ${toComma(wDisp.v, 1)} ${wDisp.u} agar RFM mencapai zona bugar ≤ ${idealRfm}%.` };
+  }, 'Definisi: Relative Fat Mass menghitung persentase lemak seluruh tubuh menggunakan rasio tinggi badan dan lingkar pinggang yang tervalidasi terhadap pemindaian DXA. | Rumus: Pria = 64 − [20 × (Tinggi / Pinggang)]; Wanita = 76 − [20 × (Tinggi / Pinggang)]');
 
   K('komposisi', 'Massa Tanpa Lemak', ['weight', ...nDeps], () => {
     const f = calcNavy(d), lbm = d.weight * (1 - f / 100), o = fmtW(lbm);
-    return { nilai: toComma(o.v, 2), satuan: o.u, status: `${toComma(100 - f, 1)}% Berat Total`, warna: 'c-good', deskripsi: 'Massa tubuh setelah seluruh lemak dikurangi — mencakup otot, tulang, organ, dan air tubuh.' };
-  }, 'Berat Anda jika seluruh sel lemak dihilangkan.');
+    const pct = 100 - f;
+    const isM = d.gender === 'male';
+    const stdLo = isM ? 80 : 72, stdHi = isM ? 90 : 82;
+    const targetLbm = fmtW(d.weight * (stdLo / 100));
+    return { nilai: toComma(o.v, 2), satuan: o.u, status: `${toComma(pct, 1)}% Berat Total`, warna: pct >= stdLo ? 'c-good' : 'c-warn', deskripsi: `Massa Tanpa Lemak (LBM) Anda ${toComma(o.v, 2)} ${o.u} (${toComma(pct, 1)}% dari berat total), dibandingkan standar ideal ${stdLo}–${stdHi}%. Target yang perlu dicapai: pertahankan atau bangun LBM minimal ≥ ${toComma(targetLbm.v, 1)} ${o.u} (≥ ${stdLo}% berat tubuh).` };
+  }, 'Definisi: Lean Body Mass (LBM) adalah berat seluruh komponen tubuh non-lemak yang meliputi otot rangka, tulang, organ vital, dan air tubuh. | Rumus: LBM (kg) = Berat Badan (kg) × [1 − (Lemak Tubuh (%) / 100)]');
 
   K('komposisi', 'Indeks Bebas Lemak', ['weight', ...nDeps], () => {
     const f = calcNavy(d), lbm = d.weight * (1 - f / 100), ffmi = lbm / (hM ** 2);
+    const isM = d.gender === 'male';
     let s = 'Kepadatan Normal', w = 'c-brand';
-    if (d.gender === 'male') { if (ffmi >= 22) { s = 'Superior'; w = 'c-good'; } else if (ffmi < 18) { s = 'Sub-Standar'; w = 'c-warn'; } }
-    else { if (ffmi >= 18) { s = 'Superior'; w = 'c-good'; } else if (ffmi < 15) { s = 'Sub-Standar'; w = 'c-warn'; } }
-    return { nilai: toComma(ffmi, 2), satuan: 'kg/m²', status: s, warna: w, deskripsi: 'Fat-Free Mass Index mengukur kepadatan massa bebas lemak relatif terhadap tinggi badan.' };
-  }, 'Fat-Free Mass Index: Standar untuk mengukur ketebalan perkembangan serabut otot rangka.');
+    if (isM) { if (ffmi >= 21) { s = 'Superior'; w = 'c-good'; } else if (ffmi < 18) { s = 'Sub-Standar'; w = 'c-warn'; } }
+    else { if (ffmi >= 17.5) { s = 'Superior'; w = 'c-good'; } else if (ffmi < 15) { s = 'Sub-Standar'; w = 'c-warn'; } }
+    const idealFfmi = isM ? 20.0 : 16.5;
+    const targetLbm = fmtW(idealFfmi * (hM ** 2));
+    return { nilai: toComma(ffmi, 2), satuan: 'kg/m²', status: s, warna: w, deskripsi: `FFMI Anda ${toComma(ffmi, 2)} kg/m² dibanding standar atletis ideal ${toComma(idealFfmi, 1)}–${toComma(idealFfmi + 2, 1)} kg/m². Target yang perlu dicapai: capai FFMI ≥ ${toComma(idealFfmi, 1)} kg/m² (setara massa bebas lemak ${toComma(targetLbm.v, 1)} ${targetLbm.u}).` };
+  }, 'Definisi: Fat-Free Mass Index (FFMI) mengukur kepadatan massa otot dan jaringan bebas lemak yang dinormalisasi terhadap tinggi badan. | Rumus: FFMI (kg/m²) = Massa Tanpa Lemak (kg) / [Tinggi (m)]²');
 
   K('kardio', 'Estimasi VO2 Max', ['age','rhr'], () => {
     const maxHr = 208 - 0.7 * d.age;
@@ -2942,39 +3231,57 @@ function calc() {
     else if (vo2 >= 38) { s = 'Baik'; w = 'c-good'; }
     else if (vo2 >= 30) { s = 'Cukup'; w = 'c-warn'; }
     else { s = 'Rendah'; w = 'c-danger'; }
-    return { nilai: toComma(vo2, 2), satuan: 'ml/kg/min', status: s, warna: w, deskripsi: 'Kapasitas aerobik maksimum — volume oksigen yang dapat diproses tubuh per menit per kilogram berat.' };
-  }, 'Kapasitas maksimum suplai oksigen yang diproses jantung Anda per menit.');
+    const targetVo2 = d.gender === 'male' ? 42 : 38;
+    const targetRhr = Math.min(70, Math.round((15.3 * maxHr) / Math.max(vo2 + 2, targetVo2)));
+    return { nilai: toComma(vo2, 2), satuan: 'ml/kg/min', status: s, warna: w, deskripsi: `VO2 Max Anda ${toComma(vo2, 2)} ml/kg/min (${s}; standar bugar ≥ ${targetVo2} ml/kg/min, unggulan ≥ 45 ml/kg/min). Target yang perlu dicapai: tingkatkan kapasitas aerobik menuju ≥ ${Math.max(targetVo2, Math.round(vo2 + 2))} ml/kg/min dengan menurunkan RHR ke ≤ ${targetRhr} bpm.` };
+  }, 'Definisi: Volume oksigen maksimal yang mampu diserap dan digunakan tubuh per menit per kilogram berat badan saat kerja fisik puncak. | Rumus: VO2 Max (ml/kg/min) = 15,3 × [Max HR (bpm) / Denyut Nadi Istirahat (bpm)]');
 
   K('kardio', 'Batas Max HR', ['age'], () => {
-    return { nilai: Math.round(208 - 0.7 * d.age), satuan: 'bpm', status: 'Tanaka 2001', warna: 'c-brand', deskripsi: 'Perkiraan detak jantung tertinggi yang aman dicapai saat latihan intens.' };
-  }, 'Batas rasional tertinggi detak jantung aman saat berolahraga intens.');
+    const mx = Math.round(208 - 0.7 * d.age);
+    const safeLo = Math.round(mx * 0.70), safeHi = Math.round(mx * 0.85);
+    return { nilai: mx, satuan: 'bpm', status: 'Batas Puncak', warna: 'c-brand', deskripsi: `Batas detak jantung maksimum fisiologis untuk usia ${Math.round(d.age)} tahun adalah ${mx} bpm. Target yang perlu dicapai saat latihan: jaga detak jantung latihan kardio intensitas sedang–tinggi di zona aman ${safeLo}–${safeHi} bpm (70–85% Max HR) dan jangan melampaui ${mx} bpm.` };
+  }, 'Definisi: Estimasi frekuensi detak jantung tertinggi per menit yang aman dicapai sistem kardiovaskular pada aktivitas maksimal sesuai usia. | Rumus: Max HR (bpm) = 208 − (0,7 × Usia [tahun])');
 
   K('kardio', 'Zona Pembakaran Lemak', ['age','rhr'], () => {
     const mx = Math.round(208 - 0.7 * d.age);
     if (d.rhr >= mx) throw new Error('Denyut nadi istirahat melebihi atau sama dengan batas detak jantung maksimum usia Anda.');
     const res = mx - d.rhr;
     const lo = Math.round(res * 0.6 + d.rhr), hi = Math.round(res * 0.7 + d.rhr);
-    return { nilai: `${lo}–${hi}`, satuan: 'bpm', status: '60–70% HRR', warna: 'c-good', deskripsi: 'Pada rentang detak ini (60–70% cadangan detak jantung), tubuh mengutamakan pembakaran lemak sebagai bahan bakar utama.' };
-  }, 'Rentang ritme detak jantung saat kardio agar prioritas tubuh adalah memecah lemak.');
+    return { nilai: `${lo}–${hi}`, satuan: 'bpm', status: '60–70% HRR', warna: 'c-good', deskripsi: `Zona oksidasi lemak optimal Anda berada pada ${lo}–${hi} bpm (dibandingkan nadi istirahat ${Math.round(d.rhr)} bpm dan Max HR ${mx} bpm). Target yang perlu dicapai: pertahankan detak jantung di ${lo}–${hi} bpm selama 30–45 menit per sesi (total 150–200 menit/minggu).` };
+  }, 'Definisi: Rentang detak jantung latihan aerobik (60–70% Heart Rate Reserve) di mana tubuh memaksimalkan pemecahan asam lemak sebagai sumber ATP. | Rumus: Zona Lemak (bpm) = [(Max HR − RHR) × 0,60 s.d. 0,70] + RHR');
 
   K('kardio', 'Kebutuhan Hidrasi', ['weight'], () => {
-    let v = (d.weight * 35) / 1000; if (d.activity >= 1.55) v += 0.5;
-    const o = fmtV(v);
-    return { nilai: toComma(o.v, 2), satuan: o.u, status: d.activity >= 1.55 ? '+0,5 L Aktif' : '35 ml/kg', warna: 'c-info', deskripsi: 'Kebutuhan cairan harian dihitung dari berat badan dengan penambahan untuk aktivitas fisik.' };
-  }, 'Target pemenuhan cairan harian Anda.');
+    const baseL = (d.weight * 35) / 1000;
+    const v = baseL + (d.activity >= 1.55 ? 0.5 : 0);
+    const o = fmtV(v), baseO = fmtV(baseL);
+    const glasses = Math.round((v * 1000) / 250);
+    return { nilai: toComma(o.v, 2), satuan: o.u, status: d.activity >= 1.55 ? '+0,5 L Aktif' : '35 ml/kg', warna: 'c-info', deskripsi: `Kebutuhan cairan Anda ${toComma(o.v, 2)} ${o.u}/hari (basis istirahat ${toComma(baseO.v, 2)} ${o.u} + koreksi aktivitas). Target yang perlu dicapai: minum ${toComma(o.v, 2)} ${o.u} setiap hari (setara ±${glasses} gelas ukuran 250 ml, atau 250–300 ml tiap 1,5 jam).` };
+  }, 'Definisi: Estimasi kebutuhan asupan air harian berdasarkan berat badan dan tingkat pengeluaran keringat aktivitas fisik. | Rumus: Hidrasi (L/hari) = [Berat Badan (kg) × 0,035] + (0,5 L jika faktor aktivitas ≥ 1,55)');
 
   K('metabolisme', 'Total Kalori (TDEE)', ['weight','height','age'], () => {
-    return { nilai: Math.round(calcBmr(d) * d.activity), satuan: 'kcal', status: `×${toComma(d.activity, 3).replace(/,?0+$/,'')}`, warna: 'c-brand', deskripsi: 'Total energi yang dibakar tubuh dalam sehari, mencakup metabolisme basal, aktivitas fisik, dan efek termal makanan.' };
-  }, 'Total Daily Energy Expenditure: Kalori yang Anda bakar seharian berdasarkan rutinitas.');
+    const bmr = Math.round(calcBmr(d));
+    const tdee = Math.round(bmr * d.activity);
+    const bmi = d.weight / (hM ** 2);
+    const goalCal = bmi >= 25 ? tdee - 400 : bmi < 18.5 ? tdee + 300 : tdee;
+    const goalLbl = bmi >= 25 ? `defisit moderat ${goalCal.toLocaleString('id-ID')} kkal/hari untuk turun berat` : bmi < 18.5 ? `surplus sehat ${goalCal.toLocaleString('id-ID')} kkal/hari untuk naik berat` : `pemeliharaan ${tdee.toLocaleString('id-ID')} kkal/hari`;
+    return { nilai: tdee, satuan: 'kcal', status: `×${toComma(d.activity, 3).replace(/,?0+$/,'')}`, warna: 'c-brand', deskripsi: `Tubuh Anda membakar ${tdee.toLocaleString('id-ID')} kkal/hari (di atas kebutuhan basal istirahat BMR ${bmr.toLocaleString('id-ID')} kkal/hari). Target yang perlu dicapai: konsumsi ${goalLbl} agar mencapai berat badan ideal.` };
+  }, 'Definisi: Total Daily Energy Expenditure (TDEE) adalah total pembakaran kalori tubuh selama 24 jam dari metabolisme basal dan seluruh aktivitas fisik. | Rumus: BMR = (10×Berat) + (6,25×Tinggi) − (5×Usia) + (5 Pria / −161 Wanita); TDEE = BMR × Faktor Aktivitas');
 
   K('metabolisme', 'Target Protein', ['weight','height','age'], () => {
-    return { nilai: Math.round((calcBmr(d) * d.activity * 0.3) / 4), satuan: 'g', status: '30% Kalori', warna: 'c-good', deskripsi: 'Asupan protein harian yang direkomendasikan berdasarkan proporsi 30% dari total kebutuhan kalori.' };
-  }, 'Kebutuhan minimum asam amino untuk mempertahankan massa otot.');
+    const tdee = calcBmr(d) * d.activity;
+    const protG = Math.round((tdee * 0.3) / 4);
+    const minRda = Math.round(d.weight * 0.8);
+    const optWeightG = Math.round(d.weight * 1.6);
+    const perMeal = Math.round(protG / 4);
+    return { nilai: protG, satuan: 'g', status: '30% Kalori', warna: 'c-good', deskripsi: `Alokasi protein 30% energi menghasilkan ${protG} g/hari (jauh di atas batas minimum defisiensi RDA ${minRda} g/hari dan mendukung target sintesis otot ${optWeightG} g/hari). Target yang perlu dicapai: penuhi ${protG} g protein/hari yang dibagi menjadi ±${perMeal} g pada 4 waktu makan.` };
+  }, 'Definisi: Alokasi asupan protein harian sebesar 30% dari total kalori untuk mendukung pemeliharaan otot, rasa kenyang, dan efek termik makanan. | Rumus: Protein (g/hari) = (0,30 × TDEE [kkal]) / 4 kkal/g');
 
   K('metabolisme', 'Karbo & Lemak', ['weight','height','age'], () => {
     const tdee = calcBmr(d) * d.activity;
-    return { nilai: `${Math.round((tdee * 0.5) / 4)} / ${Math.round((tdee * 0.2) / 9)}`, satuan: 'g', status: '50% Karbo · 20% Lemak', warna: 'c-brand', deskripsi: 'Distribusi makronutrien berdasarkan panduan gizi seimbang: karbohidrat dan lemak.' };
-  }, 'Alokasi sisa ruang kalori harian untuk sumber energi utama dan pelarut vitamin.');
+    const carbG = Math.round((tdee * 0.5) / 4), fatG = Math.round((tdee * 0.2) / 9);
+    const fiberTarget = d.gender === 'male' ? 38 : 25;
+    return { nilai: `${carbG} / ${fatG}`, satuan: 'g', status: '50% Karbo · 20% Lemak', warna: 'c-brand', deskripsi: `Berdasarkan standar distribusi makronutrien seimbang (AMDR: 45–65% karbohidrat, 20–35% lemak), kuota Anda adalah ${carbG} g karbohidrat dan ${fatG} g lemak sehat. Target yang perlu dicapai: konsumsi ${carbG} g karbohidrat kompleks (termasuk ≥ ${fiberTarget} g serat) dan ${fatG} g lemak tak jenuh/hari.` };
+  }, 'Definisi: Kebutuhan makronutrien karbohidrat (sumber glikogen utama) dan lemak esensial (penyerapan vitamin A, D, E, K & hormon) harian. | Rumus: Karbohidrat (g) = (0,50 × TDEE) / 4 kkal/g; Lemak (g) = (0,20 × TDEE) / 9 kkal/g');
 
   K('risiko', 'ABSI (Mortalitas)', ['waist','height','weight'], () => {
     const bmi = d.weight / (hM ** 2), absi = (d.waist / 100) / (Math.pow(bmi, 2 / 3) * Math.sqrt(hM));
@@ -2982,56 +3289,67 @@ function calc() {
     const cutHigh = d.gender === 'male' ? 0.081 : 0.079;
     let s = 'Rata-rata', w = 'c-brand';
     if (absi < cutLow) { s = 'Rendah'; w = 'c-good'; } else if (absi > cutHigh) { s = 'Tinggi'; w = 'c-danger'; }
-    return { nilai: toComma(absi, 4), satuan: 'indeks', status: s, warna: w, deskripsi: 'Indeks bentuk tubuh yang menghubungkan lingkar pinggang dengan IMT dan tinggi badan untuk memprediksi risiko mortalitas.' };
-  }, 'Prediktor spesifik ancaman penyakit akibat lipatan lemak viseral.');
+    const targetWaist = fmtL((cutHigh * Math.pow(bmi, 2 / 3) * Math.sqrt(hM)) * 100);
+    return { nilai: toComma(absi, 4), satuan: 'indeks', status: s, warna: w, deskripsi: `Dibandingkan ambang aman ABSI (${d.gender === 'male' ? '≤ 0,0810' : '≤ 0,0790'}), indeks Anda ${toComma(absi, 4)} berada pada kategori risiko mortalitas ${s.toLowerCase()}. Target yang perlu dicapai: ${absi <= cutHigh ? `pertahankan ABSI ≤ ${toComma(cutHigh, 4)}` : `turunkan lingkar pinggang menuju ≤ ${toComma(targetWaist.v, 1)} ${targetWaist.u} agar ABSI ≤ ${toComma(cutHigh, 4)}`}.` };
+  }, 'Definisi: A Body Shape Index (ABSI), indeks geometri bentuk tubuh yang mengukur risiko mortalitas dini akibat adipositas sentral secara independen dari IMT. | Rumus: ABSI = Pinggang (m) / [IMT^(2/3) × √Tinggi (m)]');
 
   K('risiko', 'Rasio Pinggang/Tinggi', ['waist','height'], () => {
     const r = d.waist / d.height;
     let st = 'Aman', w = 'c-good';
     if (r > 0.60) { st = 'Risiko Tinggi'; w = 'c-danger'; }
     else if (r > 0.50) { st = 'Batas Waspada'; w = 'c-warn'; }
-    return { nilai: toComma(r, 2), satuan: 'rasio', status: st, warna: w, deskripsi: 'Rasio pinggang terhadap tinggi badan adalah prediktor risiko kardiovaskular yang kuat. Target ideal ≤ 0,50.' };
-  }, 'Indikator tajam prediksi penyakit kardiovaskular. Target ≤ 0,50.');
+    const maxWaist = fmtL(0.49 * d.height);
+    const diffW = fmtL(Math.max(0, d.waist - 0.49 * d.height));
+    return { nilai: toComma(r, 2), satuan: 'rasio', status: st, warna: w, deskripsi: `Dibandingkan standar sehat klinis (WHtR ≤ 0,50), rasio Anda ${toComma(r, 2)} tergolong ${st.toLowerCase()}. Target yang perlu dicapai: ${r <= 0.50 ? `pertahankan lingkar pinggang ≤ ${toComma(maxWaist.v, 1)} ${maxWaist.u}` : `kurangi lingkar pinggang sebesar ${toComma(diffW.v, 1)} ${diffW.u} menuju ≤ ${toComma(maxWaist.v, 1)} ${maxWaist.u} (rasio ≤ 0,49)`}.` };
+  }, 'Definisi: Waist-to-Height Ratio (WHtR), rasio lingkar pinggang terhadap tinggi badan sebagai prediktor risiko kardiometabolik. | Rumus: WHtR = Lingkar Pinggang (cm) / Tinggi Badan (cm)');
 
   K('risiko', 'Rasio Pinggang/Pinggul', ['waist','hip'], () => {
     const r = d.waist / d.hip;
-    const risky = (d.gender === 'male' && r >= 0.90) || (d.gender === 'female' && r >= 0.85);
-    return { nilai: toComma(r, 2), satuan: 'rasio', status: risky ? 'Apel (Risiko)' : 'Pir (Aman)', warna: risky ? 'c-danger' : 'c-good', deskripsi: 'Rasio pinggang terhadap pinggul membedakan distribusi lemak tipe apel (sentral, berbahaya) dan tipe pir.' };
-  }, 'Bentuk Apel dikaitkan erat dengan paparan sindrom metabolik diabetes.');
+    const cut = d.gender === 'male' ? 0.90 : 0.85;
+    const risky = r >= cut;
+    const targetWaist = fmtL((cut - 0.02) * d.hip);
+    return { nilai: toComma(r, 2), satuan: 'rasio', status: risky ? 'Apel (Risiko)' : 'Pir (Aman)', warna: risky ? 'c-danger' : 'c-good', deskripsi: `Dibandingkan batas aman WHO (${d.gender === 'male' ? '< 0,90 pria' : '< 0,85 wanita'}), rasio Anda ${toComma(r, 2)} menunjukkan distribusi lemak tipe ${risky ? 'apel (viseral berisiko)' : 'pir (aman)'}. Target yang perlu dicapai: ${!risky ? `pertahankan WHR < ${toComma(cut, 2)}` : `kecilkan lingkar pinggang menuju ≤ ${toComma(targetWaist.v, 1)} ${targetWaist.u} agar WHR < ${toComma(cut, 2)}`}.` };
+  }, 'Definisi: Waist-to-Hip Ratio (WHR), perbandingan lingkar pinggang terhadap lingkar pinggul untuk menilai distribusi lemak sentral vs perifer. | Rumus: WHR = Lingkar Pinggang (cm) / Lingkar Pinggul (cm)');
 
   K('komposisi2', 'RMR Katch-McArdle', ['weight', ...nDeps], d => {
     const lbmKg = d.weight * (1 - calcNavy(d) / 100);
     const rmr = 370 + 21.6 * lbmKg;
+    const targetLbmKg = (d.gender === 'male' ? 0.85 : 0.78) * d.weight;
+    const targetRmr = Math.round(370 + 21.6 * targetLbmKg);
     const hasValidAge = !isNaN(d.age) && d.age >= BOUNDS.age.min && d.age <= BOUNDS.age.max;
     if (!hasValidAge) {
-      return { nilai: Math.round(rmr), satuan: 'kcal', status: 'Berbasis LBM', warna: 'c-brand', deskripsi: 'Metabolisme basal dihitung dari massa bebas lemak, bukan berat total.' };
+      return { nilai: Math.round(rmr), satuan: 'kcal', status: 'Berbasis LBM', warna: 'c-brand', deskripsi: `Berdasarkan massa bebas lemak Anda, laju metabolisme istirahat (RMR) adalah ${Math.round(rmr)} kkal/hari. Target yang perlu dicapai: penuhi minimal ${Math.round(rmr)} kkal/hari untuk fungsi organ vital dan tingkatkan massa otot menuju RMR ≥ ${targetRmr} kkal/hari.` };
     }
     const diff = rmr - calcBmr(d);
     const sign = diff >= 0 ? '+' : '-';
-    return { nilai: Math.round(rmr), satuan: 'kcal', status: `${sign}${Math.abs(Math.round(diff))} vs Mifflin`, warna: Math.abs(diff) > 100 ? 'c-info' : 'c-brand', deskripsi: 'Metabolisme basal dihitung dari massa bebas lemak, bukan berat total.' };
-  }, 'RMR Katch-McArdle menggunakan LBM, bukan berat total, sehingga lebih presisi untuk individu berotot.');
+    return { nilai: Math.round(rmr), satuan: 'kcal', status: `${sign}${Math.abs(Math.round(diff))} vs Mifflin`, warna: Math.abs(diff) > 100 ? 'c-info' : 'c-brand', deskripsi: `Dibandingkan rumus Mifflin-St Jeor (${Math.round(calcBmr(d))} kkal), RMR berbasis massa otot Anda adalah ${Math.round(rmr)} kkal/hari (selisih ${sign}${Math.abs(Math.round(diff))} kkal). Target yang perlu dicapai: jaga asupan di atas RMR (${Math.round(rmr)} kkal) dan bangun otot menuju kapasitas RMR ≥ ${targetRmr} kkal/hari.` };
+  }, 'Definisi: Resting Metabolic Rate (RMR) yang dihitung spesifik dari Massa Tanpa Lemak (LBM), memberikan akurasi lebih tinggi pada individu atletis/berotot. | Rumus: RMR (kkal/hari) = 370 + [21,6 × LBM (kg)]');
 
   K('komposisi2', 'Total Air Tubuh', ['age','height','weight'], d => {
     const tbw = d.gender === 'male' ? 2.447 - 0.09156 * d.age + 0.1074 * d.height + 0.3362 * d.weight : -2.097 + 0.1069 * d.height + 0.2466 * d.weight;
     const pct = (tbw / d.weight * 100); const norm = d.gender === 'male' ? 60 : 55;
     const st = pct >= norm - 5 && pct <= norm + 10 ? 'Normal' : 'Perhatian';
     const o = fmtV(tbw);
-    return { nilai: toComma(o.v, 2), satuan: o.u, status: st, warna: st === 'Normal' ? 'c-good' : 'c-warn', deskripsi: `Air menyusun ${toComma(pct, 0)}% berat badan Anda.` };
-  }, 'Total Body Water (Watson 1980): digunakan luas di dunia medis untuk menghitung dosis obat berbasis cairan tubuh.');
+    const targetTbw = fmtV(d.weight * (norm / 100));
+    return { nilai: toComma(o.v, 2), satuan: o.u, status: st, warna: st === 'Normal' ? 'c-good' : 'c-warn', deskripsi: `Dibandingkan standar fisiologis (${norm - 5}–${norm + 5}% berat tubuh), air tubuh Anda mencapai ${toComma(pct, 1)}% (${toComma(o.v, 2)} ${o.u}, kategori ${st.toLowerCase()}). Target yang perlu dicapai: capai proporsi air tubuh ≥ ${norm}% (≈ ${toComma(targetTbw.v, 2)} ${targetTbw.u}) dengan hidrasi cukup dan pengurangan lemak.` };
+  }, 'Definisi: Total Body Water (TBW), estimasi total volume cairan intraseluler dan ekstraseluler dalam jaringan tubuh. | Rumus: Pria = 2,447 − 0,09156U + 0,1074T + 0,3362B; Wanita = −2,097 + 0,1069T + 0,2466B');
 
   K('komposisi2', 'Massa Otot Rangka', ['weight', ...nDeps], d => {
     const bf = calcNavy(d); const lbmKg = d.weight * (1 - bf / 100); const smm = lbmKg * 0.55;
     const smmPct = smm / d.weight * 100; const o = fmtW(smm);
-    const threshold = d.gender === 'male' ? 34 : 27;
-    const st = smmPct >= threshold ? 'Baik' : 'Rendah';
-    return { nilai: toComma(o.v, 2), satuan: o.u, status: st, warna: st === 'Baik' ? 'c-good' : 'c-warn', deskripsi: `Otot rangka menyusun ${toComma(smmPct, 2)}% berat badan Anda.` };
-  }, 'Skeletal Muscle Mass: otot yang dapat dikontraksikan secara sadar. Kunci metabolisme, mobilitas, dan longevitas.');
+    const threshold = d.gender === 'male' ? 38 : 30;
+    const st = smmPct >= (d.gender === 'male' ? 34 : 27) ? 'Baik' : 'Rendah';
+    const targetSmm = fmtW(d.weight * (threshold / 100));
+    return { nilai: toComma(o.v, 2), satuan: o.u, status: st, warna: st === 'Baik' ? 'c-good' : 'c-warn', deskripsi: `Dibandingkan standar otot rangka sehat (≥ ${d.gender === 'male' ? '34–40%' : '27–33%'} berat tubuh), proporsi Anda adalah ${toComma(smmPct, 1)}% (${toComma(o.v, 2)} ${o.u}, status ${st.toLowerCase()}). Target yang perlu dicapai: bangun massa otot rangka menuju ≥ ${toComma(targetSmm.v, 1)} ${targetSmm.u} (${threshold}% berat tubuh).` };
+  }, 'Definisi: Skeletal Muscle Mass (SMM), massa jaringan otot lurik sukarela yang menggerakkan rangka dan membakar glukosa. | Rumus: SMM = 0,55 × Massa Tanpa Lemak (LBM)');
 
   K('komposisi2', 'Estimasi Massa Tulang', ['height','weight','age'], d => {
     const bm = d.gender === 'male' ? 3.6 * Math.pow(d.height / 100, 1.7) : 2.7 * Math.pow(d.height / 100, 1.7);
     const bmAdj = Math.max(bm - Math.max(0, d.age - 30) * 0.01, bm * 0.7); const o = fmtW(bmAdj);
-    return { nilai: toComma(o.v, 2), satuan: o.u, status: `${toComma((bmAdj / d.weight) * 100, 1)}% Berat`, warna: 'c-brand', deskripsi: 'Estimasi massa tulang mineral dari tinggi badan dan usia.' };
-  }, 'Estimasi massa tulang dari tinggi badan. Menurun seiring usia — relevan untuk risiko osteoporosis.');
+    const pct = (bmAdj / d.weight) * 100;
+    const idealBone = fmtW(bm);
+    return { nilai: toComma(o.v, 2), satuan: o.u, status: `${toComma(pct, 1)}% Berat`, warna: 'c-brand', deskripsi: `Dibandingkan standar mineral tulang dewasa sehat (3,5–5,0% berat tubuh), estimasi massa tulang Anda adalah ${toComma(o.v, 2)} ${o.u} (${toComma(pct, 1)}%). Target yang perlu dicapai: pertahankan puncak massa tulang ${toComma(idealBone.v, 2)} ${idealBone.u} dengan asupan kalsium 1.000 mg/hari, vitamin D, dan latihan beban.` };
+  }, 'Definisi: Bone Mineral Content (BMC), estimasi berat mineral matriks tulang rangka berdasarkan tinggi badan dan koreksi usia. | Rumus: BMC = [k × (Tinggi_m^1,7)] − [max(0, Usia − 30) × 0,01] (k = 3,6 pria; 2,7 wanita)');
 
   K('komposisi2', 'Persentase Lean Mass', ['weight', ...nDeps], d => {
     const bf = calcNavy(d); const lean = 100 - bf; let st, w;
@@ -3040,15 +3358,17 @@ function calc() {
     } else {
       if (lean >= 77) { st = 'Elite'; w = 'c-info'; } else if (lean >= 71) { st = 'Sangat Baik'; w = 'c-good'; } else if (lean >= 65) { st = 'Baik'; w = 'c-good'; } else { st = 'Rata-rata'; w = 'c-brand'; }
     }
-    return { nilai: toComma(lean, 2), satuan: '%', status: st, warna: w, deskripsi: 'Persentase seluruh massa tubuh yang bukan lemak.' };
-  }, 'Lean Mass %: persentase massa tubuh yang berfungsi secara metabolis aktif. Semakin tinggi, semakin baik.');
+    const targetLean = d.gender === 'male' ? 85 : 78;
+    return { nilai: toComma(lean, 2), satuan: '%', status: st, warna: w, deskripsi: `Dibandingkan standar persentase massa bebas lemak bugar (≥ ${d.gender === 'male' ? '81%' : '75%'}), capaian Anda ${toComma(lean, 2)}% berada di level ${st.toLowerCase()}. Target yang perlu dicapai: tingkatkan proporsi Lean Mass menuju ≥ ${targetLean}% melalui rekomposisi tubuh.` };
+  }, 'Definisi: Persentase total berat badan yang terdiri dari jaringan non-lemak aktif secara metabolik. | Rumus: Lean Mass (%) = 100% − Persentase Lemak Tubuh (%)');
 
   K('komposisi2', 'Potensi Otot Alami', ['weight','height', ...nDeps], d => {
     const bf = calcNavy(d); const lbmKg = d.weight * (1 - bf / 100); const ffmi = lbmKg / (hM ** 2);
     const ceiling = d.gender === 'male' ? 25.0 : 21.0; const pct = Math.min((ffmi / ceiling) * 100, 100);
     let st, w; if (pct >= 95) { st = 'Maksimal'; w = 'c-info'; } else if (pct >= 80) { st = 'Atletis'; w = 'c-good'; } else { st = 'Berkembang'; w = 'c-brand'; }
-    return { nilai: toComma(pct, 1), satuan: '%', status: st, warna: w, deskripsi: `FFMI Anda ${toComma(ffmi, 2)} dari batas genetik natural ${ceiling}.` };
-  }, 'Persentase potensi otot alami yang telah dicapai. Mengacu batas FFMI atlet drug-free (Kouri 1995, NEJM).');
+    const targetLbm = fmtW((d.gender === 'male' ? 21.0 : 17.5) * (hM ** 2));
+    return { nilai: toComma(pct, 1), satuan: '%', status: st, warna: w, deskripsi: `Dibandingkan batas genetik alami (FFMI ${toComma(ceiling, 1)} kg/m²), Anda telah mencapai ${toComma(pct, 1)}% potensi otot (${st.toLowerCase()}). Target yang perlu dicapai: capai ≥ 84% potensi alami (massa bebas lemak ≈ ${toComma(targetLbm.v, 1)} ${targetLbm.u}) untuk postur atletis optimal.` };
+  }, 'Definisi: Persentase pencapaian perkembangan otot relatif terhadap batas maksimum genetik alami tanpa zat ergogenik. | Rumus: Potensi Otot (%) = (FFMI Saat Ini / Batas FFMI Alami) × 100% (Batas = 25 pria; 21 wanita)');
 
   K('kardio2', 'Usia Kebugaran', ['age','rhr','waist','height'], d => {
     const maxHr = 208 - 0.7 * d.age;
@@ -3059,8 +3379,9 @@ function calc() {
     const delta = vo2est - vo2Exp + actAdj - whtrPen; const fitAge = Math.max(18, Math.min(100, Math.round(d.age - delta / 0.5)));
     const diff = d.age - fitAge; let st, w;
     if (diff >= 10) { st = 'Jauh Lebih Muda'; w = 'c-good'; } else if (diff >= 5) { st = 'Lebih Muda'; w = 'c-good'; } else if (diff >= -5) { st = 'Sesuai Usia'; w = 'c-brand'; } else { st = 'Lebih Tua'; w = 'c-warn'; }
-    return { nilai: fitAge, satuan: 'thn', status: st, warna: w, deskripsi: `Jantung dan paru-paru Anda berfungsi setara dengan orang berusia ${fitAge} tahun.` };
-  }, 'Fitness Age: usia biologis kardiovaskular berdasarkan VO2Max, lingkar pinggang, dan RHR. Studi NTNU Norway.');
+    const targetAge = Math.max(18, Math.round(d.age - 3));
+    return { nilai: fitAge, satuan: 'thn', status: st, warna: w, deskripsi: `Dibandingkan usia kronologis Anda (${Math.round(d.age)} tahun), fungsi kardiorespirasi Anda setara individu berusia ${fitAge} tahun (${st.toLowerCase()}). Target yang perlu dicapai: ${fitAge <= d.age ? `pertahankan usia kebugaran ≤ ${Math.round(d.age)} tahun` : `turunkan usia kebugaran menuju ≤ ${targetAge} tahun dengan menaikkan VO2 Max dan mengecilkan lingkar pinggang`}.` };
+  }, 'Definisi: Fitness Age, estimasi usia biologis sistem kardiorespirasi berdasarkan perbandingan VO2 Max aktual terhadap standar populasi seusia dan rasio pinggang. | Rumus: Usia Kebugaran = Usia − [(VO2_Aktual − VO2_Referensi + Koreksi_Aktivitas − Penalti_WHtR) / 0,5]');
 
   K('kardio2', 'Klasifikasi Denyut Nadi', ['age','rhr'], d => {
     const maxHr = 208 - 0.7 * d.age;
@@ -3071,21 +3392,24 @@ function calc() {
     } else {
       if (d.rhr <= 60) { st = 'Atlet'; w = 'c-info'; } else if (d.rhr <= 70) { st = 'Baik'; w = 'c-good'; } else if (d.rhr <= 80) { st = 'Rata-rata'; w = 'c-brand'; } else { st = 'Tinggi'; w = 'c-danger'; }
     }
-    return { nilai: d.rhr, satuan: 'bpm', status: st, warna: w, deskripsi: `Denyut nadi Anda saat istirahat setara ${toComma(rhrPct, 2)}% dari kapasitas maksimum jantung.` };
-  }, 'Denyut nadi istirahat adalah biomarker kebugaran kardiovaskular paling mudah diukur.');
+    const targetRhr = d.gender === 'male' ? 65 : 70;
+    return { nilai: d.rhr, satuan: 'bpm', status: st, warna: w, deskripsi: `Dibandingkan standar detak nadi istirahat bugar (${d.gender === 'male' ? '50–65' : '55–70'} bpm), nadi Anda ${d.rhr} bpm (${toComma(rhrPct, 1)}% HRmax) masuk kategori ${st.toLowerCase()}. Target yang perlu dicapai: ${d.rhr <= targetRhr ? `pertahankan RHR di kisaran 50–${targetRhr} bpm` : `turunkan nadi istirahat menuju ≤ ${targetRhr} bpm melalui latihan aerobik rutin`}.` };
+  }, 'Definisi: Resting Heart Rate (RHR), frekuensi detak jantung per menit saat tubuh beristirahat penuh sebagai indikator efisiensi otot miokardium. | Rumus: %HRmax Istirahat = (RHR / HRmax) × 100%');
 
   K('kardio2', '5 Zona Latihan', ['age','rhr'], d => {
     const maxHr = 208 - 0.7 * d.age;
     if (d.rhr >= maxHr) throw new Error('Denyut nadi istirahat melebihi atau sama dengan batas detak jantung maksimum usia Anda.');
     const hrr = maxHr - d.rhr;
     const z = (lo, hi) => `${Math.round(d.rhr + hrr * lo)}–${Math.round(d.rhr + hrr * hi)}`;
-    return { nilai: 'Z1–Z5', satuan: 'bpm', status: 'Metode Karvonen', warna: 'c-brand', deskripsi: `Z1 Pemulihan ${z(0.5, 0.6)} · Z2 Pembakaran Lemak ${z(0.6, 0.7)} · Z3 Aerobik ${z(0.7, 0.8)} · Z4 Laktat ${z(0.8, 0.9)} · Z5 Maks ${z(0.9, 1.0)} bpm.` };
-  }, '5 zona latihan Karvonen (1957): setiap zona memiliki manfaat berbeda dari pemulihan aktif hingga peningkatan kapasitas anaerob.');
+    return { nilai: 'Z1–Z5', satuan: 'bpm', status: 'Metode Karvonen', warna: 'c-brand', deskripsi: `Berdasarkan cadangan detak jantung Anda (${Math.round(hrr)} bpm): Z1 Pemulihan ${z(0.5, 0.6)} · Z2 Pembakaran Lemak ${z(0.6, 0.7)} · Z3 Aerobik ${z(0.7, 0.8)} · Z4 Ambang Laktat ${z(0.8, 0.9)} · Z5 VO2Max ${z(0.9, 1.0)} bpm. Target yang perlu dicapai: alokasikan 80% durasi kardio di Z2 (${z(0.6, 0.7)} bpm) dan 20% di Z4 (${z(0.8, 0.9)} bpm).` };
+  }, 'Definisi: Lima spektrum intensitas detak jantung latihan untuk menargetkan sistem metabolisme energi spesifik (aerobik vs anaerobik). | Rumus: Zona N = [(HRmax − RHR) × %Intensitas_Zona] + RHR');
 
   K('kardio2', 'Luas Permukaan Tubuh', ['height','weight'], d => {
     const bsa = 0.007184 * Math.pow(d.height, 0.725) * Math.pow(d.weight, 0.425);
-    return { nilai: toComma(bsa, 2), satuan: 'm²', status: 'DuBois 1916', warna: 'c-brand', deskripsi: `Luas permukaan tubuh Anda ${toComma(bsa, 2)} m².` };
-  }, 'Body Surface Area (DuBois 1916): standar klinis global untuk perhitungan dosis obat.');
+    const idealW = 21.7 * (hM ** 2);
+    const idealBsa = 0.007184 * Math.pow(d.height, 0.725) * Math.pow(idealW, 0.425);
+    return { nilai: toComma(bsa, 2), satuan: 'm²', status: 'DuBois 1916', warna: 'c-brand', deskripsi: `Dibandingkan BSA referensi pada berat ideal untuk tinggi Anda (${toComma(idealBsa, 2)} m²), luas permukaan tubuh Anda saat ini adalah ${toComma(bsa, 2)} m². Target yang perlu dicapai: sesuaikan berat badan menuju zona ideal sehingga BSA berada di kisaran ${toComma(idealBsa, 2)} m² untuk efisiensi termoregulasi dan indeks curah jantung.` };
+  }, 'Definisi: Body Surface Area (BSA), estimasi total luas area luar tubuh manusia yang digunakan untuk indeks kardiak dan dosis klinis. | Rumus: BSA (m²) = 0,007184 × Tinggi(cm)^0,725 × Berat(kg)^0,425');
 
   K('metabolisme2', 'Rincian Energi Harian', ['weight','height','age'], d => {
     const bmr = calcBmr(d); const tdee = bmr * d.activity; const tef = tdee * 0.10;
@@ -3094,45 +3418,53 @@ function calc() {
     const eatShare = [0, 0.35, 0.55, 0.70, 0.80][Math.max(0, eatFactor)];
     const eat = availAct * eatShare;
     const neat = Math.max(0, availAct - eat);
-    return { nilai: Math.round(tdee), satuan: 'kcal', status: 'BMR + NEAT + EAT + TEF', warna: 'c-brand', deskripsi: `BMR ${Math.round(bmr)} + NEAT ${Math.round(neat)} + EAT ${Math.round(eat)} + TEF ${Math.round(tef)} = ${Math.round(tdee)} kkal.` };
-  }, 'Komponen TDEE: BMR + NEAT + EAT + TEF.');
+    return { nilai: Math.round(tdee), satuan: 'kcal', status: 'BMR + NEAT + EAT + TEF', warna: 'c-brand', deskripsi: `Komposisi pengeluaran energi Anda: BMR ${Math.round(bmr)} kkal (basal) + NEAT ${Math.round(neat)} kkal (gerak harian) + EAT ${Math.round(eat)} kkal (olahraga) + TEF ${Math.round(tef)} kkal (pencernaan). Target yang perlu dicapai: tingkatkan aktivitas NEAT + EAT hingga ≥ ${Math.round(bmr * 0.35)} kkal/hari (≈ 8.000–10.000 langkah/hari).` };
+  }, 'Definisi: Dekomposisi pengeluaran energi harian menjadi Metabolisme Basal (BMR), Aktivitas Non-Olahraga (NEAT), Latihan Fisik (EAT), dan Efek Termal Makanan (TEF). | Rumus: TDEE = BMR + NEAT + EAT + TEF (dengan TEF ≈ 10% × TDEE)');
 
   K('metabolisme2', 'Protein Berbasis Riset', ['weight', ...nDeps], d => {
     const bf = calcNavy(d); const lbm = d.weight * (1 - bf / 100); const act = d.activity;
-    let lo = 1.6, hi = 2.0; if (act <= 1.2) { lo = 0.8; hi = 1.0; } else if (act >= 1.725) { lo = 1.8; hi = 2.4; }
-    const loG = toComma((lbm * lo), 0), hiG = toComma((lbm * hi), 0);
-    return { nilai: `${loG}–${hiG}`, satuan: 'g/hari', status: `${toComma(lo, 1)}–${toComma(hi, 1)} g/kg LBM`, warna: 'c-brand', deskripsi: `Kebutuhan protein ${loG}–${hiG} g/hari dihitung dari massa bebas lemak Anda.` };
-  }, 'Kebutuhan protein evidence-based dari ISSN berdasarkan LBM dan level aktivitas.');
+    let lo = 1.6, hi = 2.0; if (act <= 1.2) { lo = 1.2; hi = 1.6; } else if (act >= 1.725) { lo = 1.8; hi = 2.4; }
+    const loG = Math.round(lbm * lo), hiG = Math.round(lbm * hi);
+    const perMeal = Math.round(((loG + hiG) / 2) / 3);
+    return { nilai: `${loG}–${hiG}`, satuan: 'g/hari', status: `${toComma(lo, 1)}–${toComma(hi, 1)} g/kg LBM`, warna: 'c-brand', deskripsi: `Berdasarkan standar ilmiah hipertrofi & retensi otot (${toComma(lo, 1)}–${toComma(hi, 1)} g/kg LBM), kebutuhan spesifik Anda adalah ${loG}–${hiG} g/hari. Target yang perlu dicapai: konsumsi ${loG}–${hiG} g protein/hari yang dibagi merata menjadi ≈ ${perMeal} g per sesi makan utama (3× sehari).` };
+  }, 'Definisi: Kebutuhan protein presisi yang dihitung dari Massa Tanpa Lemak (LBM) untuk memaksimalkan sintesis protein otot (MPS). | Rumus: Protein Presisi (g/hari) = LBM (kg) × Faktor Aktivitas (1,2 hingga 2,4 g/kg)');
 
-  K('metabolisme2', 'Kalori per Tujuan', ['weight','height','age'], d => {
+  K('metabolisme2', 'Kalori Per Tujuan', ['weight','height','age'], d => {
     const tdee = calcBmr(d) * d.activity;
-    return { nilai: Math.round(tdee), satuan: 'kcal', status: 'Defisit · Maintenance · Surplus', warna: 'c-brand', deskripsi: `Turun Agresif: ${Math.round(tdee - 500)} · Pertahankan: ${Math.round(tdee)} · Lean Bulk: ${Math.round(tdee + 250)} kkal.` };
-  }, 'Target kalori per tujuan. 1 kg lemak ≈ 7.700 kcal.');
+    const bmi = d.weight / (hM ** 2);
+    const recCal = bmi >= 25 ? Math.round(tdee - 400) : bmi < 18.5 ? Math.round(tdee + 300) : Math.round(tdee);
+    const recGoal = bmi >= 25 ? 'defisit (turun lemak)' : bmi < 18.5 ? 'surplus (naik massa)' : 'pemeliharaan';
+    return { nilai: Math.round(tdee), satuan: 'kcal', status: 'Defisit · Maintenance · Surplus', warna: 'c-brand', deskripsi: `Opsi kalori harian: Turun Lemak ${Math.round(tdee - 500)} kkal · Pertahankan ${Math.round(tdee)} kkal · Lean Bulk ${Math.round(tdee + 250)} kkal. Target yang perlu dicapai sesuai profil IMT Anda: konsumsi ${recCal} kkal/hari untuk fokus ${recGoal}.` };
+  }, 'Definisi: Penyesuaian target asupan energi harian berdasarkan kesetimbangan termodinamika untuk penurunan lemak, pemeliharaan, atau penambahan otot. | Rumus: Defisit = TDEE − 500 kkal; Maintenance = TDEE; Lean Bulk = TDEE + 250 kkal');
 
   K('risiko2', 'Indeks Kebulatan Tubuh', ['waist','height'], d => {
     const waistM = d.waist / 100, heightM = d.height / 100;
     const ratio = (waistM / (2 * Math.PI)) / (0.5 * heightM);
     if (ratio >= 1) throw new Error('Proporsi pinggang melampaui tinggi — periksa input.');
     const bri = 364.2 - 365.5 * Math.sqrt(1 - ratio ** 2);
-    let st = 'Rata-rata', w = 'c-brand'; if (bri < 3.4) { st = 'Rendah'; w = 'c-good'; } else if (bri > 5.5) { st = 'Tinggi'; w = 'c-danger'; }
-    return { nilai: toComma(bri, 2), satuan: 'BRI', status: st, warna: w, deskripsi: 'Indeks Kebulatan Tubuh mengukur seberapa "bulat" penampang tubuh secara geometris.' };
-  }, 'BRI mengukur "kebulatan" tubuh secara geometris. Berkorelasi kuat dengan lemak viseral.');
+    let st = 'Normal', w = 'c-good'; if (bri < 3.4) { st = 'Ramping'; w = 'c-good'; } else if (bri > 5.5) { st = 'Risiko Tinggi'; w = 'c-danger'; } else if (bri > 4.5) { st = 'Waspada'; w = 'c-warn'; }
+    const targetWaist = fmtL(0.49 * d.height);
+    return { nilai: toComma(bri, 2), satuan: 'BRI', status: st, warna: w, deskripsi: `Dibandingkan rentang BRI sehat (1,00–4,49), skor Anda ${toComma(bri, 2)} masuk kategori ${st.toLowerCase()}. Target yang perlu dicapai: ${bri <= 4.49 ? 'pertahankan BRI < 4,50' : `kecilkan lingkar pinggang menuju ≤ ${toComma(targetWaist.v, 1)} ${targetWaist.u} agar BRI turun ke < 4,50`}.` };
+  }, 'Definisi: Body Roundness Index (BRI), model elips eksentrisitas tubuh untuk mengestimasi akumulasi jaringan adiposa viseral. | Rumus: BRI = 364,2 − 365,5 × √[1 − ((Pinggang / 2π) / (0,5 × Tinggi))²]');
 
   K('risiko2', 'Indeks Konisitas', ['waist','weight','height'], d => {
     const ci = (d.waist / 100) / (0.109 * Math.sqrt(d.weight / (d.height / 100)));
     const cut = d.gender === 'male' ? 1.25 : 1.18; const risky = ci > cut;
-    return { nilai: toComma(ci, 2), satuan: 'CI', status: risky ? 'Risiko' : 'Aman', warna: risky ? 'c-danger' : 'c-good', deskripsi: 'Indeks Konisitas membandingkan bentuk tubuh Anda dengan silinder sempurna (CI=1).' };
-  }, 'Conicity Index (Valdez 1991): bentuk tubuh ideal seperti kerucut (CI=1).');
+    const targetWaist = fmtL(cut * 0.109 * Math.sqrt(d.weight / (d.height / 100)) * 100);
+    return { nilai: toComma(ci, 2), satuan: 'CI', status: risky ? 'Risiko' : 'Aman', warna: risky ? 'c-danger' : 'c-good', deskripsi: `Dibandingkan ambang aman klinis (≤ ${toComma(cut, 2)}), Indeks Konisitas Anda ${toComma(ci, 2)} berada pada zona ${risky ? 'berisiko kardiometabolik' : 'aman'}. Target yang perlu dicapai: ${!risky ? `pertahankan CI ≤ ${toComma(cut, 2)}` : `turunkan lingkar pinggang menuju ≤ ${toComma(targetWaist.v, 1)} ${targetWaist.u} agar CI ≤ ${toComma(cut, 2)}`}.` };
+  }, 'Definisi: Conicity Index (CI), parameter geometris yang menilai redistribusi lemak perut dengan membandingkan tubuh terhadap bentuk silinder ke kerucut ganda. | Rumus: CI = Pinggang (m) / [0,109 × √(Berat_kg / Tinggi_m)]');
 
   K('risiko2', 'Rasio Pinggul/Tinggi', ['hip','height'], d => {
     const hhr = d.hip / d.height; const cut = d.gender === 'male' ? 0.58 : 0.61; const risky = hhr > cut;
-    return { nilai: toComma(hhr, 2), satuan: 'rasio', status: risky ? 'Berlebih' : 'Proporsional', warna: risky ? 'c-warn' : 'c-good', deskripsi: 'Rasio pinggul terhadap tinggi mengukur proporsionalitas tubuh bagian bawah.' };
-  }, 'Hip-to-Height Ratio: proksi lemak tubuh bawah.');
+    const targetHip = fmtL(cut * d.height);
+    return { nilai: toComma(hhr, 2), satuan: 'rasio', status: risky ? 'Berlebih' : 'Proporsional', warna: risky ? 'c-warn' : 'c-good', deskripsi: `Dibandingkan rasio proporsional (≤ ${toComma(cut, 2)}), rasio pinggul/tinggi Anda adalah ${toComma(hhr, 2)} (${risky ? 'adipositas gluteofemoral berlebih' : 'proporsional'}). Target yang perlu dicapai: ${!risky ? `pertahankan rasio ≤ ${toComma(cut, 2)}` : `jaga lingkar pinggul di kisaran ≤ ${toComma(targetHip.v, 1)} ${targetHip.u} (rasio ≤ ${toComma(cut, 2)})`}.` };
+  }, 'Definisi: Hip-to-Height Ratio (HHR), perbandingan lingkar pinggul terhadap tinggi badan untuk mengevaluasi proporsi jaringan gluteofemoral. | Rumus: HHR = Lingkar Pinggul (cm) / Tinggi Badan (cm)');
 
   K('risiko2', 'Rasio Pinggang/Leher', ['waist','neck'], d => {
     const wnr = d.waist / d.neck; const cut = d.gender === 'male' ? 2.45 : 2.50; const risky = wnr > cut;
-    return { nilai: toComma(wnr, 2), satuan: 'rasio', status: risky ? 'Risiko' : 'Normal', warna: risky ? 'c-danger' : 'c-good', deskripsi: 'Membandingkan lingkar pinggang terhadap lingkar leher untuk mendeteksi penumpukan lemak torso.' };
-  }, 'Waist-to-Neck Ratio mendeteksi dominasi lemak viseral perut.');
+    const targetWaist = fmtL(cut * d.neck);
+    return { nilai: toComma(wnr, 2), satuan: 'rasio', status: risky ? 'Risiko' : 'Normal', warna: risky ? 'c-danger' : 'c-good', deskripsi: `Dibandingkan batas normal (≤ ${toComma(cut, 2)}), rasio pinggang terhadap leher Anda adalah ${toComma(wnr, 2)} (${risky ? 'dominasi lemak viseral perut' : 'normal'}). Target yang perlu dicapai: ${!risky ? `pertahankan rasio ≤ ${toComma(cut, 2)}` : `turunkan lingkar pinggang menuju ≤ ${toComma(targetWaist.v, 1)} ${targetWaist.u} agar rasio ≤ ${toComma(cut, 2)}`}.` };
+  }, 'Definisi: Waist-to-Neck Ratio (WNR), perbandingan lingkar pinggang terhadap lingkar leher sebagai penanda keseimbangan jaringan adiposa atas dan tengah. | Rumus: WNR = Lingkar Pinggang (cm) / Lingkar Leher (cm)');
 
   let totalActiveCards = 0;
   ['umum','komposisi','kardio','metabolisme','risiko','komposisi2','kardio2','metabolisme2','risiko2'].forEach(c => {
@@ -3149,8 +3481,11 @@ function calc() {
   });
   const navAllCnt = document.getElementById('nav-cnt-all');
   if (navAllCnt) navAllCnt.textContent = `${totalActiveCards}/${TOTAL_CARDS}`;
+  const navActCnt = document.getElementById('nav-cnt-active');
+  if (navActCnt) navActCnt.textContent = String(totalActiveCards);
 
   if (activeFilter === 'pinned') applyPinnedFilter();
+  else if (activeFilter === 'active') applyActiveFilter();
   updateInputValidationAndProgress(d);
   buildSummary(d);
 }
@@ -3191,7 +3526,7 @@ function updateInputValidationAndProgress(d) {
       statusEl.textContent = `${invalidCount} input di luar rentang biologis wajar`;
       dotEl.style.background = 'var(--danger)';
     } else if (validCount === 0) {
-      statusEl.textContent = '0/8 parameter diisi — klik "Isi Contoh" untuk simulasi';
+      statusEl.textContent = '0/8 parameter diisi';
       dotEl.style.background = 'var(--tx3)';
     } else if (validCount < numKeys.length) {
       statusEl.textContent = `${validCount}/8 parameter terisi (${pct}%)`;
@@ -3523,7 +3858,7 @@ function renderEmptySummaryAndReco() {
         </div>
         <div class="reco-content">
           <p class="reco-title">Menunggu Data Fisik untuk Rekomendasi Personal</p>
-          <p class="reco-why">Isi minimal Tinggi dan Berat Badan pada panel di atas (atau tekan tombol <strong>Isi Contoh</strong>) untuk mendapatkan langkah tindakan klinis yang disesuaikan dengan kondisi tubuh Anda.</p>
+          <p class="reco-why">Isi minimal Tinggi dan Berat Badan pada panel di atas (atau tekan tombol <strong>Simulasi</strong>) untuk mendapatkan langkah tindakan klinis yang disesuaikan dengan kondisi tubuh Anda.</p>
         </div>
       </div>`;
   }
@@ -3571,20 +3906,61 @@ function buildReco(d, ctx) {
     try { tdee = Math.round(calcBmr(d) * d.activity); } catch (e) {}
   }
 
+  const hM = d.height / 100;
+  const hIn = d.height / 2.54;
+  const idealKg = hIn >= 60 ? (isMale ? 50 + 2.3 * (hIn - 60) : 45.5 + 2.3 * (hIn - 60)) : (21.7 * (hM ** 2));
+  const minHealthyKg = 18.5 * (hM ** 2);
+  const maxHealthyKg = 24.9 * (hM ** 2);
+  const idealW = fmtW(idealKg);
+  const minHW = fmtW(minHealthyKg);
+  const maxHW = fmtW(maxHealthyKg);
+  const targetWaistCm = 0.49 * d.height;
+  const targetWaistFmt = fmtL(targetWaistCm);
+  const maxHrVal = hasAge ? Math.round(208 - 0.7 * d.age) : (isMale ? 188 : 190);
+  const rhrBase = (hasRhr && d.rhr < maxHrVal) ? d.rhr : (isMale ? 65 : 68);
+  const z2Lo = Math.round((maxHrVal - rhrBase) * 0.6 + rhrBase);
+  const z2Hi = Math.round((maxHrVal - rhrBase) * 0.7 + rhrBase);
+  const rhrTargetStr = isMale ? '55–65 bpm' : '60–70 bpm';
+  const bfTargetStr = isMale ? '10–18%' : '18–25%';
+  const waterRawL = (d.weight * 35) / 1000 + (d.activity >= 1.55 ? 0.5 : 0);
+  const waterFmt = fmtV(waterRawL);
+
+  const recCalVal = tdee ? (bmi >= 25 ? Math.round(tdee - (obese ? 500 : 300)) : bmi < 18.5 ? Math.round(tdee + 300) : tdee) : null;
+  const recProtVal = tdee ? Math.round((tdee * 0.3) / 4) : Math.round(d.weight * 1.6);
+
+  const wtDiffKg = d.weight - idealKg;
+  const wtDiffFmt = fmtW(Math.abs(wtDiffKg));
+  const wtActionStr = Math.abs(wtDiffKg) <= 1.5
+    ? `pertahankan di ${toComma(idealW.v, 1)} ${idealW.u}`
+    : (wtDiffKg > 0 ? `turunkan ${toComma(wtDiffFmt.v, 1)} ${wtDiffFmt.u} menuju ${toComma(idealW.v, 1)} ${idealW.u}` : `naikkan ${toComma(wtDiffFmt.v, 1)} ${wtDiffFmt.u} menuju ${toComma(idealW.v, 1)} ${idealW.u}`);
+
+  recs.push({
+    priority:'top', col:COL.main, key:'check',
+    title:`Target Angka Biometrik: Berat ${toComma(idealW.v, 1)} ${idealW.u} & Nadi ${rhrTargetStr}`,
+    why:`Ringkasan target numerik spesifik berdasarkan profil fisik Anda saat ini agar seluruh parameter mencapai standar klinis ideal:`,
+    steps_html: steps('numtargets',
+      `<span class="reco-em">Target Berat Badan: ${toComma(idealW.v, 1)} ${idealW.u}</span> (${wtActionStr}; rentang sehat IMT: <span class="reco-em">${toComma(minHW.v, 1)}–${toComma(maxHW.v, 1)} ${minHW.u}</span>).`,
+      `<span class="reco-em">Target Detak Jantung: Nadi istirahat ${rhrTargetStr}</span>, zona latihan pembakaran lemak <span class="reco-em">${z2Lo}–${z2Hi} bpm</span>, dan batas detak maksimum aman <span class="reco-em">${maxHrVal} bpm</span>.`,
+      `<span class="reco-em">Target Lingkar Pinggang & Lemak: Pinggang ≤ ${toComma(targetWaistFmt.v, 1)} ${targetWaistFmt.u}</span> (WHtR ≤ 0,49) dan persentase lemak tubuh ideal <span class="reco-em">${bfTargetStr}</span>.`,
+      `<span class="reco-em">Target Kalori, Protein & Air: ${recCalVal ? recCalVal.toLocaleString('id-ID') + ' kkal/hari' : 'Sesuai TDEE'}</span>, protein <span class="reco-em">${recProtVal} g/hari</span>, dan hidrasi <span class="reco-em">${toComma(waterFmt.v, curUnit === 'metric' ? 1 : 0)} ${waterFmt.u}/hari</span>.`
+    ),
+    target: target(`Berat ${toComma(idealW.v, 1)} ${idealW.u} · RHR ${rhrTargetStr} · Zona Kardio ${z2Lo}–${z2Hi} bpm`, COL.main)
+  });
+
   if (obese || (overweight && highFat)) {
     const deficit = obese ? 500 : 300;
     const target_kg = obese ? '0,5 kg/minggu' : '0,3 kg/minggu';
     const tdeeTarget = tdee ? tdee - deficit : null;
     recs.push({
       priority:'high', col:COL.high, key:'food',
-      title:'Kurangi asupan kalori secara moderat',
-      why:`IMT ${toComma(bmi, 2)} dan lemak tubuh ${bf != null ? toComma(bf, 2) : '-'}% berada di atas rentang ideal. Defisit ${deficit} kkal/hari membantu menurunkan lemak sambil menjaga otot.`,
+      title:`Defisit Kalori Menuju Berat Target ${toComma(idealW.v, 1)} ${idealW.u}`,
+      why:`IMT ${toComma(bmi, 2)} kg/m² dan lemak tubuh ${bf != null ? toComma(bf, 2) : '-'}% berada di atas rentang ideal. Defisit ${deficit} kkal/hari membantu menurunkan lemak menuju berat ideal ${toComma(idealW.v, 1)} ${idealW.u}.`,
       steps_html: steps('deficit',
-        tdeeTarget ? `Targetkan total kalori harian <span class="reco-em">${tdeeTarget.toLocaleString('id-ID')} kkal</span> (defisit ${deficit} kkal dari TDEE Anda).` : 'Kurangi 300–500 kkal dari asupan harian saat ini.',
-        'Prioritaskan protein 1,6–2,0 g per kg massa bebas lemak agar otot terjaga.',
-        'Batasi minuman manis, makanan ultra-proses, dan gorengan berlebih.'
+        tdeeTarget ? `Targetkan total kalori harian <span class="reco-em">${tdeeTarget.toLocaleString('id-ID')} kkal/hari</span> (defisit ${deficit} kkal dari TDEE ${tdee.toLocaleString('id-ID')} kkal).` : 'Kurangi 300–500 kkal dari asupan harian saat ini.',
+        `Konsumsi protein minimal <span class="reco-em">${recProtVal} g/hari</span> (1,6–2,0 g/kg LBM) agar massa otot terjaga.`,
+        `Kurangi berat badan bertahap menuju rentang sehat <span class="reco-em">${toComma(minHW.v, 1)}–${toComma(maxHW.v, 1)} ${minHW.u}</span>.`
       ),
-      target: target(`Turun ${target_kg} hingga IMT < 25`, COL.high)
+      target: target(`Turun ${target_kg} menuju ${toComma(idealW.v, 1)} ${idealW.u} (IMT < 25)`, COL.high)
     });
   }
 
@@ -3593,14 +3969,14 @@ function buildReco(d, ctx) {
     const tdeeTarget = tdee ? tdee + surplus : null;
     recs.push({
       priority:'high', col:COL.med, key:'food',
-      title:'Tingkatkan asupan kalori dan protein padat gizi',
-      why:`IMT ${toComma(bmi, 2)} berada di bawah 18,5 — peningkatan massa tubuh secara sehat akan mendukung imunitas dan kepadatan tulang.`,
+      title:`Surplus Kalori Menuju Berat Sehat ${toComma(minHW.v, 1)}–${toComma(idealW.v, 1)} ${idealW.u}`,
+      why:`IMT ${toComma(bmi, 2)} kg/m² berada di bawah 18,5 — peningkatan massa tubuh menuju ${toComma(idealW.v, 1)} ${idealW.u} akan mendukung imunitas dan kepadatan tulang.`,
       steps_html: steps('surplus',
         tdeeTarget ? `Targetkan asupan <span class="reco-em">${tdeeTarget.toLocaleString('id-ID')} kkal/hari</span> (surplus ${surplus} kkal dari TDEE Anda).` : 'Tambahkan 300 kkal/hari dari makanan padat nutrisi.',
-        'Pilih sumber kalori berkualitas: telur, ikan, kacang-kacangan, alpukat, dan karbohidrat kompleks.',
-        'Kombinasikan dengan latihan beban 2–3×/minggu agar kenaikan berat berupa massa otot.'
+        `Penuhi target protein <span class="reco-em">${recProtVal} g/hari</span> dari telur, ikan, daging tanpa lemak, dan tempe.`,
+        'Kombinasikan dengan latihan beban 3×/minggu agar kenaikan berat berupa massa otot.'
       ),
-      target: target('IMT 18,5–24,9 dalam 8–12 minggu', COL.med)
+      target: target(`Capai berat minimal ${toComma(minHW.v, 1)} ${minHW.u} (optimal ${toComma(idealW.v, 1)} ${idealW.u})`, COL.med)
     });
   }
 
@@ -3610,60 +3986,58 @@ function buildReco(d, ctx) {
       priority: lowCardio && sCardio < 40 ? 'high' : 'med',
       col: lowCardio && sCardio < 40 ? COL.high : COL.med,
       key:'heart',
-      title:'Tingkatkan kebugaran kardiovaskular',
+      title:`Latihan Kardio pada Detak Jantung ${z2Lo}–${z2Hi} bpm`,
       why: vo2val !== null
-        ? `Estimasi VO2 Maks ${toComma(vo2val, 2)} ml/kg/min dan RHR ${d.rhr || '-'} bpm menunjukkan kapasitas aerobik yang masih dapat ditingkatkan.`
-        : 'Denyut nadi istirahat yang tinggi menandakan efisiensi pompa jantung perlu dilatih.',
+        ? `Estimasi VO2 Maks ${toComma(vo2val, 2)} ml/kg/min dan nadi istirahat ${d.rhr || '-'} bpm menunjukkan efisiensi jantung perlu ditingkatkan menuju RHR ${rhrTargetStr}.`
+        : `Latihan aerobik terukur diperlukan untuk menurunkan denyut nadi istirahat menuju ${rhrTargetStr}.`,
       steps_html: steps('cardio',
-        'Lakukan <span class="reco-em">150 menit/minggu kardio zona 2</span> (jalan cepat, sepeda, atau renang).',
-        'Tambahkan 1 sesi latihan interval (HIIT) per minggu setelah 4 minggu rutin.',
-        'Pantau denyut nadi istirahat di pagi hari sebagai indikator adaptasi jantung.'
+        `Lakukan <span class="reco-em">150 menit/minggu kardio Zona 2 pada detak ${z2Lo}–${z2Hi} bpm</span> (jalan cepat, lari ringan, bersepeda).`,
+        `Tambahkan 1 sesi interval mendekati <span class="reco-em">${Math.round((maxHrVal - rhrBase) * 0.8 + rhrBase)}–${Math.round((maxHrVal - rhrBase) * 0.9 + rhrBase)} bpm</span> (batas aman maks ${maxHrVal} bpm).`,
+        `Pantau nadi pagi hari hingga mencapai target <span class="reco-em">${rhrTargetStr}</span> dan VO2 Maks ≥ ${isMale ? '42' : '38'} ml/kg/min.`
       ),
-      target: target('VO2 Maks naik ≥3 ml/kg/min dalam 8 minggu', COL.med)
+      target: target(`Nadi istirahat ${rhrTargetStr} & Zona Latihan ${z2Lo}–${z2Hi} bpm`, COL.med)
     });
   }
 
   if (highWhtr && !obese) {
     recs.push({
       priority:'med', col:COL.med, key:'steps',
-      title:'Kurangi lingkar pinggang melalui aktivitas harian (NEAT)',
-      why:`Rasio pinggang/tinggi ${toComma(d.waist / d.height, 2)} melewati batas 0,50 yang mengindikasikan penumpukan lemak viseral.`,
+      title:`Turunkan Lingkar Pinggang Menuju ≤ ${toComma(targetWaistFmt.v, 1)} ${targetWaistFmt.u}`,
+      why:`Rasio pinggang/tinggi ${toComma(d.waist / d.height, 2)} melewati batas 0,50 yang mengindikasikan penumpukan lemak viseral perut.`,
       steps_html: steps('neat',
-        'Capai <span class="reco-em">8.000–10.000 langkah/hari</span> untuk meningkatkan pembakaran energi non-olahraga.',
-        'Berdiri atau jalan ringan 2–3 menit setiap 45–60 menit duduk bekerja.',
-        'Jaga durasi tidur 7–8 jam untuk menekan hormon kortisol pemicu lemak perut.'
+        'Capai <span class="reco-em">8.000–10.000 langkah/hari</span> untuk membakar ekstra 300–400 kkal melalui aktivitas NEAT.',
+        `Kecilkan lingkar pinggang dari ${toComma(fmtL(d.waist).v, 1)} ${targetWaistFmt.u} menuju <span class="reco-em">≤ ${toComma(targetWaistFmt.v, 1)} ${targetWaistFmt.u}</span>.`,
+        'Jaga durasi tidur 7–8 jam/malam untuk menekan hormon kortisol pemicu lemak viseral.'
       ),
-      target: target(`Lingkar pinggang < ${Math.round(d.height * 0.5)} cm`, COL.med)
+      target: target(`Lingkar pinggang ≤ ${toComma(targetWaistFmt.v, 1)} ${targetWaistFmt.u} (WHtR ≤ 0,49)`, COL.med)
     });
   }
 
   recs.push({
     priority:'low', col:COL.main, key:'muscle',
-    title:'Pertahankan & bangun massa otot rangka',
-    why:'Massa otot aktif meningkatkan metabolisme basal, memperbaiki sensitivitas insulin, dan menjaga kekuatan sendi.',
+    title:`Bangun Massa Otot & Jaga Lemak Tubuh di ${bfTargetStr}`,
+    why:'Massa otot rangka aktif meningkatkan metabolisme basal (BMR), sensitivitas insulin, dan kekuatan fisik jangka panjang.',
     steps_html: steps('muscle',
       'Latihan beban progresif <span class="reco-em">2–3× per minggu</span> dengan gerakan majemuk (squat, push, pull).',
-      'Penuhi kebutuhan protein harian secara merata di setiap waktu makan.',
-      'Berikan jeda pemulihan 48 jam untuk kelompok otot yang sama.'
+      `Penuhi asupan protein <span class="reco-em">${recProtVal} g/hari</span> yang terbagi rata ~${Math.round(recProtVal / 3)} g setiap makan.`,
+      `Capai dan pertahankan proporsi lemak tubuh ideal <span class="reco-em">${bfTargetStr}</span>.`
     ),
-    target: target('Latihan konsisten 8–12 minggu', COL.main)
+    target: target(`Lemak tubuh ${bfTargetStr} & Protein ${recProtVal} g/hari`, COL.main)
   });
 
-  const waterRawL = (d.weight * 35) / 1000 + (d.activity >= 1.55 ? 0.5 : 0);
-  const waterFmt = fmtV(waterRawL);
   const waterStr = `${toComma(waterFmt.v, curUnit === 'metric' ? 1 : 0)} ${waterFmt.u}`;
   recs.push({
     priority:'low', col:COL.good, key:'water',
-    title:`Penuhi hidrasi harian ${waterStr}`,
-    why:'Kecukupan cairan menjaga volume darah, suhu tubuh, fungsi ginjal, serta fokus kognitif.',
+    title:`Penuhi Target Hidrasi Harian ${waterStr}`,
+    why:'Kecukupan cairan menjaga volume plasma darah, menurunkan beban detak jantung, serta mengoptimalkan metabolisme sel.',
     steps_html: steps('water',
-      'Minum 1 gelas (250 ml) air setiap 1–1,5 jam selama beraktivitas.',
+      `Minum bertahap hingga mencapai <span class="reco-em">${waterStr} (${Math.round(waterRawL * 1000 / 250)} gelas @250 ml)</span> per hari.`,
       'Minum 300–500 ml air 30 menit sebelum waktu makan utama.'
     ),
     target: target(`${waterStr} air per hari`, COL.good)
   });
 
-  const order = { high:0, med:1, low:2 };
+  const order = { top:-1, high:0, med:1, low:2 };
   recs.sort((a, b) => order[a.priority] - order[b.priority]);
 
   const badgeReco = document.getElementById('badge-reco');
@@ -3696,22 +4070,47 @@ function buildQR(d, s) {
     return;
   }
   var isMale = d.gender === 'male';
+  var hM = d.height / 100;
+  var hIn = d.height / 2.54;
+  var idealKg = hIn >= 60 ? (isMale ? 50 + 2.3 * (hIn - 60) : 45.5 + 2.3 * (hIn - 60)) : (21.7 * (hM * hM));
+  var minHealthyKg = 18.5 * (hM * hM);
+  var maxHealthyKg = 24.9 * (hM * hM);
+  var targetWaistCm = 0.49 * d.height;
+  var hasAge = !isNaN(d.age) && d.age > 0;
+  var hasRhr = !isNaN(d.rhr) && d.rhr > 0;
+  var maxHrVal = hasAge ? Math.round(208 - 0.7 * d.age) : (isMale ? 188 : 190);
+  var rhrBase = (hasRhr && d.rhr < maxHrVal) ? d.rhr : (isMale ? 65 : 68);
+  var z2Lo = Math.round((maxHrVal - rhrBase) * 0.6 + rhrBase);
+  var z2Hi = Math.round((maxHrVal - rhrBase) * 0.7 + rhrBase);
+  var rhrTargetStr = isMale ? '55-65 bpm' : '60-70 bpm';
+  var bfTargetStr = isMale ? '10-18%' : '18-25%';
+  var waterL = (d.weight * 35) / 1000 + (d.activity >= 1.55 ? 0.5 : 0);
+  var recCalVal = s.tdee ? (s.bmi >= 25 ? Math.round(s.tdee - (s.bmi >= 30 ? 500 : 300)) : s.bmi < 18.5 ? Math.round(s.tdee + 300) : s.tdee) : null;
+  var recProtVal = s.tdee ? Math.round((s.tdee * 0.3) / 4) : Math.round(d.weight * 1.6);
+
   var lines = [];
   lines.push('BIOMETRICS PRO — LAPORAN KLINIS');
   var gend = isMale ? 'Pria' : 'Wanita';
-  var ageStr = (!isNaN(d.age) && d.age > 0) ? Math.round(d.age) + ' thn, ' : '';
+  var ageStr = hasAge ? Math.round(d.age) + ' thn, ' : '';
   var htR = Math.round(d.height);
   var wtStr = toComma(parseFloat(d.weight), 1);
   lines.push('Profil: ' + gend + ', ' + ageStr + htR + ' cm, ' + wtStr + ' kg');
   lines.push('Skor Kesehatan: ' + s.scoreFin + '/100 (' + s.tierLabel + ')');
   lines.push('');
-  lines.push('Parameter Utama:');
+  lines.push('Hasil Saat Ini:');
   if (!isNaN(s.bmi)) lines.push('- IMT: ' + toComma(s.bmi, 2) + ' kg/m2 (' + s.bmiStatus + ')');
   if (s.bf !== null) lines.push('- Lemak Tubuh: ' + toComma(s.bf, 2) + '% (' + s.bfStatus + ')');
   if (!isNaN(s.whtr)) lines.push('- Pinggang/Tinggi: ' + toComma(s.whtr, 2) + ' (' + s.whtrStatus + ')');
   if (!isNaN(s.vo2)) lines.push('- VO2 Maks: ' + toComma(s.vo2, 2) + ' ml/kg/min (' + s.vo2Status + ')');
-  if (!isNaN(d.rhr) && d.rhr > 0) lines.push('- Nadi Istirahat: ' + Math.round(d.rhr) + ' bpm');
+  if (hasRhr) lines.push('- Nadi Istirahat: ' + Math.round(d.rhr) + ' bpm');
   if (s.tdee) lines.push('- TDEE: ' + s.tdee.toLocaleString('id-ID') + ' kkal/hari');
+
+  lines.push('');
+  lines.push('Target Angka yang Harus Dicapai:');
+  lines.push('- Target Berat Badan: ' + toComma(idealKg, 1) + ' kg (Rentang sehat: ' + toComma(minHealthyKg, 1) + '-' + toComma(maxHealthyKg, 1) + ' kg)');
+  lines.push('- Target Detak Jantung: Nadi istirahat ' + rhrTargetStr + ' | Zona bakar lemak ' + z2Lo + '-' + z2Hi + ' bpm (Maks ' + maxHrVal + ' bpm)');
+  lines.push('- Target Pinggang & Lemak: Pinggang <= ' + toComma(targetWaistCm, 1) + ' cm | Lemak ' + bfTargetStr);
+  lines.push('- Target Nutrisi & Air: ' + (recCalVal ? recCalVal.toLocaleString('id-ID') + ' kkal/hari, ' : '') + 'Protein ' + recProtVal + ' g/hari, Air ' + toComma(waterL, 1) + ' L/hari');
 
   if (s.recoTitles && s.recoTitles.length > 0) {
     lines.push('');
@@ -3805,6 +4204,9 @@ document.addEventListener('DOMContentLoaded', () => {
       clearTimeout(dbT);
       dbT = setTimeout(() => { saveState(); calc(); }, 90);
     });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeResetModal();
   });
   calc();
   initTooltips();
